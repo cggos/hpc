@@ -336,6 +336,5 @@ int main() {
 	free(platforms);
 	free(devices);
 
-	system("pause");
 	return 0;
 }

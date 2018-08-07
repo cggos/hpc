@@ -186,6 +186,5 @@ int main() {
 	/* Deallocate resources */  
 	free(platforms); 
 
-	system("pause");
 	return 0;  
 } 
