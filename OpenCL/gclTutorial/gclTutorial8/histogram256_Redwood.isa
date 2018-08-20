@@ -1,0 +1,863 @@
+ShaderType = IL_SHADER_COMPUTE
+TargetChip = c
+; ------------- SC_SRCSHADER Dump ------------------
+SC_SHADERSTATE: u32NumIntVSConst = 0
+SC_SHADERSTATE: u32NumIntPSConst = 0
+SC_SHADERSTATE: u32NumIntGSConst = 0
+SC_SHADERSTATE: u32NumBoolVSConst = 0
+SC_SHADERSTATE: u32NumBoolPSConst = 0
+SC_SHADERSTATE: u32NumBoolGSConst = 0
+SC_SHADERSTATE: u32NumFloatVSConst = 0
+SC_SHADERSTATE: u32NumFloatPSConst = 0
+SC_SHADERSTATE: u32NumFloatGSConst = 0
+fConstantsAvailable = 0
+iConstantsAvailable = 0
+bConstantsAvailable = 0
+u32SCOptions[0] = 0x01A00000 SCOption_IGNORE_SAMPLE_L_BUG SCOption_FLOAT_DO_NOT_DIST SCOption_FLOAT_DO_NOT_REASSOC
+u32SCOptions[1] = 0x00202000 SCOption_R600_ERROR_ON_DOUBLE_MEMEXP SCOption_SET_VPM_FOR_SCATTER
+u32SCOptions[2] = 0x00000045 SCOption_R800_UAV_NONARRAY_FIXUP SCOption_R8XX_CF_ALU_STACK_ENTRY_WORKAROUND SCOption_R800_UAV_NONUAV_SYNC_WORKAROUND_BUG216513_1
+
+; --------  Disassembly --------------------
+00 ALU: ADDR(32) CNT(121) KCACHE0(CB1:0-15) 
+      0  z: LSHL        ____,  R0.x,  8      
+         w: MOV         R0.w,  R0.x      
+      1  y: ADD_INT     ____,  KC0[1].x,  PV0.z      
+      2  x: ADD_INT     R2.x,  PV1.y,  8      
+      3  x: ADD_INT     T1.x,  PV2.x,  16      
+         w: ADD_INT     T3.w,  PV2.x,  0.0f      
+      4  x: ADD_INT     T0.x,  -6,  PV3.w      
+         y: ADD_INT     T0.y,  -7,  PV3.w      
+         z: ADD_INT     ____,  -8,  PV3.w      
+         w: ADD_INT     T0.w,  -5,  PV3.w      
+         t: ADD_INT     T2.w,  -1,  PV3.w      
+      5  x: LDS_BYTE_WRITE ____,  PV4.z,  0.0f      
+         y: ADD_INT     T1.y,  -3,  T3.w      
+         z: ADD_INT     T0.z,  -4,  T3.w      
+         w: ADD_INT     T1.w,  -2,  T3.w      
+         t: ADD_INT     T1.z,  T3.w,  1      
+      6  x: LDS_BYTE_WRITE ____,  T0.y,  0.0f      
+         y: ADD_INT     T0.y,  T3.w,  2      
+         z: ADD_INT     T2.z,  T3.w,  3      
+         w: ADD_INT     R2.w,  T3.w,  4      
+         t: ADD_INT     T3.z,  T3.w,  5      
+      7  x: LDS_BYTE_WRITE ____,  T0.x,  0.0f      
+         y: ADD_INT     T2.y,  T3.w,  6      
+         z: ADD_INT     R2.z,  T3.w,  7      
+         w: ADD_INT     R3.w,  -8,  T1.x      
+         t: ADD_INT     R5.w,  -1,  T1.x      
+      8  x: LDS_BYTE_WRITE ____,  T0.w,  0.0f      
+         y: ADD_INT     T3.y,  -7,  T1.x      
+         z: ADD_INT     R3.z,  -6,  T1.x      
+         w: ADD_INT     T0.w,  -5,  T1.x      
+         t: ADD_INT     R4.z,  T1.x,  1      
+      9  x: LDS_BYTE_WRITE ____,  T0.z,  0.0f      
+         y: ADD_INT     R2.y,  -3,  T1.x      
+         z: ADD_INT     T0.z,  -4,  T1.x      
+         w: ADD_INT     R4.w,  -2,  T1.x      
+         t: ADD_INT     R3.y,  T1.x,  2      
+     10  x: LDS_BYTE_WRITE ____,  T1.y,  0.0f      
+         y: ADD_INT     R4.y,  T1.x,  3      
+         z: ADD_INT     R5.z,  T1.x,  5      
+         w: ADD_INT     R6.w,  T1.x,  4      
+         t: ADD_INT     R5.y,  T1.x,  6      
+     11  x: LDS_BYTE_WRITE ____,  T1.w,  0.0f      
+         y: ADD_INT     R6.y,  T1.x,  7      
+         w: ADD_INT     R10.w,  R2.x,  32      VEC_120 
+     12  x: LDS_BYTE_WRITE ____,  T2.w,  0.0f      
+         y: ADD_INT     R7.y,  -7,  PV11.w      
+         z: ADD_INT     R6.z,  -8,  PV11.w      
+         w: ADD_INT     R7.w,  -6,  PV11.w      
+     13  x: LDS_BYTE_WRITE ____,  T3.w,  0.0f      
+         y: ADD_INT     R8.y,  -3,  R10.w      
+         z: ADD_INT     R7.z,  -4,  R10.w      
+         w: ADD_INT     R8.w,  -5,  R10.w      
+     14  x: LDS_BYTE_WRITE ____,  T1.z,  0.0f      
+         y: ADD_INT     R9.y,  -2,  R10.w      
+         w: ADD_INT     R9.w,  -1,  R10.w      
+     15  x: LDS_BYTE_WRITE ____,  T0.y,  0.0f      
+     16  x: LDS_BYTE_WRITE ____,  T2.z,  0.0f      
+         z: ADD_INT     R8.z,  R10.w,  1      
+     17  x: LDS_BYTE_WRITE ____,  R2.w,  0.0f      
+         y: ADD_INT     R10.y,  R10.w,  2      VEC_120 
+     18  x: LDS_BYTE_WRITE ____,  T3.z,  0.0f      
+         y: ADD_INT     R11.y,  R10.w,  3      
+     19  x: LDS_BYTE_WRITE ____,  T2.y,  0.0f      
+         w: ADD_INT     R2.w,  R10.w,  4      
+     20  x: LDS_BYTE_WRITE ____,  R2.z,  0.0f      
+         z: ADD_INT     R2.z,  R10.w,  5      
+     21  x: LDS_BYTE_WRITE ____,  R3.w,  0.0f      
+         y: ADD_INT     R12.y,  R10.w,  6      VEC_120 
+         z: ADD_INT     R9.z,  R10.w,  7      VEC_120 
+     22  x: LDS_BYTE_WRITE ____,  T3.y,  0.0f      
+         w: ADD_INT     R11.w,  R2.x,  48      
+     23  x: LDS_BYTE_WRITE ____,  R3.z,  0.0f      
+         z: ADD_INT     R3.z,  -8,  PV22.w      
+     24  x: LDS_BYTE_WRITE ____,  T0.w,  0.0f      
+         y: ADD_INT     R13.y,  -7,  R11.w      
+     25  x: LDS_BYTE_WRITE ____,  T0.z,  0.0f      
+         y: ADD_INT     R14.y,  -6,  R11.w      
+     26  x: LDS_BYTE_WRITE ____,  R2.y,  0.0f      
+         w: ADD_INT     R3.w,  -5,  R11.w      
+     27  x: LDS_BYTE_WRITE ____,  R4.w,  0.0f      
+         z: ADD_INT     R10.z,  -4,  R11.w      
+     28  x: LDS_BYTE_WRITE ____,  R5.w,  0.0f      
+         y: ADD_INT     R2.y,  -3,  R11.w      
+     29  x: LDS_BYTE_WRITE ____,  T1.x,  0.0f      
+         y: ADD_INT     R15.y,  -2,  R11.w      
+01 ALU: ADDR(153) CNT(123) 
+     30  x: LDS_BYTE_WRITE ____,  R4.z,  0.0f      
+         w: ADD_INT     T0.w,  -1,  R11.w      
+     31  x: LDS_BYTE_WRITE ____,  R3.y,  0.0f      
+     32  x: LDS_BYTE_WRITE ____,  R4.y,  0.0f      
+         z: ADD_INT     T0.z,  R11.w,  1      
+     33  x: LDS_BYTE_WRITE ____,  R6.w,  0.0f      
+         y: ADD_INT     T3.y,  R11.w,  2      VEC_120 
+     34  x: LDS_BYTE_WRITE ____,  R5.z,  0.0f      
+         y: ADD_INT     T2.y,  R11.w,  3      
+     35  x: LDS_BYTE_WRITE ____,  R5.y,  0.0f      
+         w: ADD_INT     T3.w,  R11.w,  4      
+     36  x: LDS_BYTE_WRITE ____,  R6.y,  0.0f      
+         z: ADD_INT     T3.z,  R11.w,  5      
+     37  x: LDS_BYTE_WRITE ____,  R6.z,  0.0f      
+         y: ADD_INT     T0.y,  R11.w,  6      
+         z: ADD_INT     T2.z,  R11.w,  7      
+     38  x: LDS_BYTE_WRITE ____,  R7.y,  0.0f      
+         w: ADD_INT     R6.w,  R2.x,  64      
+     39  x: LDS_BYTE_WRITE ____,  R7.w,  0.0f      
+         z: ADD_INT     T1.z,  -8,  PV38.w      
+     40  x: LDS_BYTE_WRITE ____,  R8.w,  0.0f      
+         y: ADD_INT     T1.y,  -7,  R6.w      
+     41  x: LDS_BYTE_WRITE ____,  R7.z,  0.0f      
+         y: ADD_INT     R7.y,  -6,  R6.w      
+     42  x: LDS_BYTE_WRITE ____,  R8.y,  0.0f      
+         w: ADD_INT     T2.w,  -5,  R6.w      
+     43  x: LDS_BYTE_WRITE ____,  R9.y,  0.0f      
+         z: ADD_INT     R7.z,  -4,  R6.w      
+     44  x: LDS_BYTE_WRITE ____,  R9.w,  0.0f      
+         y: ADD_INT     R9.y,  -3,  R6.w      
+     45  x: LDS_BYTE_WRITE ____,  R10.w,  0.0f      
+         y: ADD_INT     R8.y,  -2,  R6.w      
+     46  x: LDS_BYTE_WRITE ____,  R8.z,  0.0f      
+         w: ADD_INT     R10.w,  -1,  R6.w      
+     47  x: LDS_BYTE_WRITE ____,  R10.y,  0.0f      
+     48  x: LDS_BYTE_WRITE ____,  R11.y,  0.0f      
+         z: ADD_INT     R8.z,  R6.w,  1      
+     49  x: LDS_BYTE_WRITE ____,  R2.w,  0.0f      
+         y: ADD_INT     R11.y,  R6.w,  2      VEC_120 
+     50  x: LDS_BYTE_WRITE ____,  R2.z,  0.0f      
+         y: ADD_INT     R10.y,  R6.w,  3      
+     51  x: LDS_BYTE_WRITE ____,  R12.y,  0.0f      
+         w: ADD_INT     R2.w,  R6.w,  4      
+     52  x: LDS_BYTE_WRITE ____,  R9.z,  0.0f      
+         z: ADD_INT     R9.z,  R6.w,  5      
+     53  x: LDS_BYTE_WRITE ____,  R3.z,  0.0f      
+         y: ADD_INT     R12.y,  R6.w,  6      
+         z: ADD_INT     R3.z,  R6.w,  7      
+     54  x: LDS_BYTE_WRITE ____,  R13.y,  0.0f      
+         w: ADD_INT     R9.w,  R2.x,  80      
+     55  x: LDS_BYTE_WRITE ____,  R14.y,  0.0f      
+         z: ADD_INT     R2.z,  -8,  PV54.w      
+     56  x: LDS_BYTE_WRITE ____,  R3.w,  0.0f      
+         y: ADD_INT     R14.y,  -7,  R9.w      
+     57  x: LDS_BYTE_WRITE ____,  R10.z,  0.0f      
+         y: ADD_INT     R13.y,  -6,  R9.w      
+     58  x: LDS_BYTE_WRITE ____,  R2.y,  0.0f      
+         w: ADD_INT     R3.w,  -5,  R9.w      
+     59  x: LDS_BYTE_WRITE ____,  R15.y,  0.0f      
+         z: ADD_INT     R10.z,  -4,  R9.w      
+     60  x: LDS_BYTE_WRITE ____,  T0.w,  0.0f      
+         y: ADD_INT     R15.y,  -3,  R9.w      
+     61  x: LDS_BYTE_WRITE ____,  R11.w,  0.0f      
+         y: ADD_INT     R2.y,  -2,  R9.w      
+     62  x: LDS_BYTE_WRITE ____,  T0.z,  0.0f      
+         w: ADD_INT     R11.w,  -1,  R9.w      
+     63  x: LDS_BYTE_WRITE ____,  T3.y,  0.0f      
+     64  x: LDS_BYTE_WRITE ____,  T2.y,  0.0f      
+         z: ADD_INT     R6.z,  R9.w,  1      
+     65  x: LDS_BYTE_WRITE ____,  T3.w,  0.0f      
+         y: ADD_INT     R6.y,  R9.w,  2      VEC_120 
+     66  x: LDS_BYTE_WRITE ____,  T3.z,  0.0f      
+         y: ADD_INT     R5.y,  R9.w,  3      
+     67  x: LDS_BYTE_WRITE ____,  T0.y,  0.0f      
+         w: ADD_INT     R8.w,  R9.w,  4      
+     68  x: LDS_BYTE_WRITE ____,  T2.z,  0.0f      
+         z: ADD_INT     R5.z,  R9.w,  5      
+     69  x: LDS_BYTE_WRITE ____,  T1.z,  0.0f      
+         y: ADD_INT     R4.y,  R9.w,  6      
+         z: ADD_INT     R4.z,  R9.w,  7      
+     70  x: LDS_BYTE_WRITE ____,  T1.y,  0.0f      
+         w: ADD_INT     R7.w,  R2.x,  96      
+     71  x: LDS_BYTE_WRITE ____,  R7.y,  0.0f      
+         z: ADD_INT     R11.z,  -8,  PV70.w      
+     72  x: LDS_BYTE_WRITE ____,  T2.w,  0.0f      
+         y: ADD_INT     R7.y,  -7,  R7.w      
+     73  x: LDS_BYTE_WRITE ____,  R7.z,  0.0f      
+         y: ADD_INT     R3.y,  -6,  R7.w      
+02 ALU: ADDR(276) CNT(123) 
+     74  x: LDS_BYTE_WRITE ____,  R9.y,  0.0f      
+         w: ADD_INT     T2.w,  -5,  R7.w      
+     75  x: LDS_BYTE_WRITE ____,  R8.y,  0.0f      
+         z: ADD_INT     T1.z,  -4,  R7.w      
+     76  x: LDS_BYTE_WRITE ____,  R10.w,  0.0f      
+         y: ADD_INT     T1.y,  -3,  R7.w      
+     77  x: LDS_BYTE_WRITE ____,  R6.w,  0.0f      
+         y: ADD_INT     T0.y,  -2,  R7.w      
+     78  x: LDS_BYTE_WRITE ____,  R8.z,  0.0f      
+         w: ADD_INT     T3.w,  -1,  R7.w      
+     79  x: LDS_BYTE_WRITE ____,  R11.y,  0.0f      
+     80  x: LDS_BYTE_WRITE ____,  R10.y,  0.0f      
+         z: ADD_INT     T2.z,  R7.w,  1      
+     81  x: LDS_BYTE_WRITE ____,  R2.w,  0.0f      
+         y: ADD_INT     T2.y,  R7.w,  2      VEC_120 
+     82  x: LDS_BYTE_WRITE ____,  R9.z,  0.0f      
+         y: ADD_INT     T3.y,  R7.w,  3      
+     83  x: LDS_BYTE_WRITE ____,  R12.y,  0.0f      
+         w: ADD_INT     T0.w,  R7.w,  4      
+     84  x: LDS_BYTE_WRITE ____,  R3.z,  0.0f      
+         z: ADD_INT     T3.z,  R7.w,  5      
+     85  x: LDS_BYTE_WRITE ____,  R2.z,  0.0f      
+         y: ADD_INT     R12.y,  R7.w,  6      
+         z: ADD_INT     T0.z,  R7.w,  7      
+     86  x: LDS_BYTE_WRITE ____,  R14.y,  0.0f      
+         w: ADD_INT     R2.w,  R2.x,  112      
+     87  x: LDS_BYTE_WRITE ____,  R13.y,  0.0f      
+         z: ADD_INT     R2.z,  -8,  PV86.w      
+     88  x: LDS_BYTE_WRITE ____,  R3.w,  0.0f      
+         y: ADD_INT     R13.y,  -7,  R2.w      
+     89  x: LDS_BYTE_WRITE ____,  R10.z,  0.0f      
+         y: ADD_INT     R14.y,  -6,  R2.w      
+     90  x: LDS_BYTE_WRITE ____,  R15.y,  0.0f      
+         w: ADD_INT     R3.w,  -5,  R2.w      
+     91  x: LDS_BYTE_WRITE ____,  R2.y,  0.0f      
+         z: ADD_INT     R10.z,  -4,  R2.w      
+     92  x: LDS_BYTE_WRITE ____,  R11.w,  0.0f      
+         y: ADD_INT     R2.y,  -3,  R2.w      
+     93  x: LDS_BYTE_WRITE ____,  R9.w,  0.0f      
+         y: ADD_INT     R15.y,  -2,  R2.w      
+     94  x: LDS_BYTE_WRITE ____,  R6.z,  0.0f      
+         w: ADD_INT     R9.w,  -1,  R2.w      
+     95  x: LDS_BYTE_WRITE ____,  R6.y,  0.0f      
+     96  x: LDS_BYTE_WRITE ____,  R5.y,  0.0f      
+         z: ADD_INT     R6.z,  R2.w,  1      
+     97  x: LDS_BYTE_WRITE ____,  R8.w,  0.0f      
+         y: ADD_INT     R5.y,  R2.w,  2      VEC_120 
+     98  x: LDS_BYTE_WRITE ____,  R5.z,  0.0f      
+         y: ADD_INT     R6.y,  R2.w,  3      
+     99  x: LDS_BYTE_WRITE ____,  R4.y,  0.0f      
+         w: ADD_INT     R8.w,  R2.w,  4      
+    100  x: LDS_BYTE_WRITE ____,  R4.z,  0.0f      
+         z: ADD_INT     R4.z,  R2.w,  5      
+    101  x: LDS_BYTE_WRITE ____,  R11.z,  0.0f      
+         y: ADD_INT     R4.y,  R2.w,  6      
+         z: ADD_INT     R11.z,  R2.w,  7      
+    102  x: LDS_BYTE_WRITE ____,  R7.y,  0.0f      
+         w: ADD_INT     R6.w,  R2.x,  128      
+    103  x: LDS_BYTE_WRITE ____,  R3.y,  0.0f      
+         z: ADD_INT     R5.z,  -8,  PV102.w      
+    104  x: LDS_BYTE_WRITE ____,  T2.w,  0.0f      
+         y: ADD_INT     R3.y,  -7,  R6.w      
+    105  x: LDS_BYTE_WRITE ____,  T1.z,  0.0f      
+         y: ADD_INT     R7.y,  -6,  R6.w      
+    106  x: LDS_BYTE_WRITE ____,  T1.y,  0.0f      
+         w: ADD_INT     R11.w,  -5,  R6.w      
+    107  x: LDS_BYTE_WRITE ____,  T0.y,  0.0f      
+         z: ADD_INT     R3.z,  -4,  R6.w      
+    108  x: LDS_BYTE_WRITE ____,  T3.w,  0.0f      
+         y: ADD_INT     R10.y,  -3,  R6.w      
+    109  x: LDS_BYTE_WRITE ____,  R7.w,  0.0f      
+         y: ADD_INT     R11.y,  -2,  R6.w      
+    110  x: LDS_BYTE_WRITE ____,  T2.z,  0.0f      
+         w: ADD_INT     R7.w,  -1,  R6.w      
+    111  x: LDS_BYTE_WRITE ____,  T2.y,  0.0f      
+    112  x: LDS_BYTE_WRITE ____,  T3.y,  0.0f      
+         z: ADD_INT     R9.z,  R6.w,  1      
+    113  x: LDS_BYTE_WRITE ____,  T0.w,  0.0f      
+         y: ADD_INT     R8.y,  R6.w,  2      VEC_120 
+    114  x: LDS_BYTE_WRITE ____,  T3.z,  0.0f      
+         y: ADD_INT     R9.y,  R6.w,  3      
+    115  x: LDS_BYTE_WRITE ____,  R12.y,  0.0f      
+         w: ADD_INT     R10.w,  R6.w,  4      
+    116  x: LDS_BYTE_WRITE ____,  T0.z,  0.0f      
+         z: ADD_INT     R8.z,  R6.w,  5      
+    117  x: LDS_BYTE_WRITE ____,  R2.z,  0.0f      
+         y: ADD_INT     R12.y,  R6.w,  6      
+         z: ADD_INT     R2.z,  R6.w,  7      
+03 ALU: ADDR(399) CNT(122) 
+    118  x: LDS_BYTE_WRITE ____,  R13.y,  0.0f      
+         w: ADD_INT     T2.w,  R2.x,  144      
+    119  x: LDS_BYTE_WRITE ____,  R14.y,  0.0f      
+         z: ADD_INT     T0.z,  -8,  PV118.w      
+    120  x: LDS_BYTE_WRITE ____,  R3.w,  0.0f      
+         y: ADD_INT     T3.y,  -7,  T2.w      
+    121  x: LDS_BYTE_WRITE ____,  R10.z,  0.0f      
+         y: ADD_INT     T2.y,  -6,  T2.w      
+    122  x: LDS_BYTE_WRITE ____,  R2.y,  0.0f      
+         w: ADD_INT     T0.w,  -5,  T2.w      
+    123  x: LDS_BYTE_WRITE ____,  R15.y,  0.0f      
+         z: ADD_INT     T3.z,  -4,  T2.w      
+    124  x: LDS_BYTE_WRITE ____,  R9.w,  0.0f      
+         y: ADD_INT     T0.y,  -3,  T2.w      
+    125  x: LDS_BYTE_WRITE ____,  R2.w,  0.0f      
+         y: ADD_INT     T1.y,  -2,  T2.w      
+    126  x: LDS_BYTE_WRITE ____,  R6.z,  0.0f      
+         w: ADD_INT     T3.w,  -1,  T2.w      
+    127  x: LDS_BYTE_WRITE ____,  R5.y,  0.0f      
+    128  x: LDS_BYTE_WRITE ____,  R6.y,  0.0f      
+         z: ADD_INT     T2.z,  T2.w,  1      
+    129  x: LDS_BYTE_WRITE ____,  R8.w,  0.0f      
+         y: ADD_INT     R6.y,  T2.w,  2      VEC_120 
+    130  x: LDS_BYTE_WRITE ____,  R4.z,  0.0f      
+         y: ADD_INT     R5.y,  T2.w,  3      
+    131  x: LDS_BYTE_WRITE ____,  R4.y,  0.0f      
+         w: ADD_INT     T1.w,  T2.w,  4      
+    132  x: LDS_BYTE_WRITE ____,  R11.z,  0.0f      
+         z: ADD_INT     R11.z,  T2.w,  5      
+    133  x: LDS_BYTE_WRITE ____,  R5.z,  0.0f      
+         y: ADD_INT     R4.y,  T2.w,  6      
+         z: ADD_INT     R5.z,  T2.w,  7      
+    134  x: LDS_BYTE_WRITE ____,  R3.y,  0.0f      
+         w: ADD_INT     R8.w,  R2.x,  160      
+    135  x: LDS_BYTE_WRITE ____,  R7.y,  0.0f      
+         z: ADD_INT     R4.z,  -8,  PV134.w      
+    136  x: LDS_BYTE_WRITE ____,  R11.w,  0.0f      
+         y: ADD_INT     R7.y,  -7,  R8.w      
+    137  x: LDS_BYTE_WRITE ____,  R3.z,  0.0f      
+         y: ADD_INT     R3.y,  -6,  R8.w      
+    138  x: LDS_BYTE_WRITE ____,  R10.y,  0.0f      
+         w: ADD_INT     R11.w,  -5,  R8.w      
+    139  x: LDS_BYTE_WRITE ____,  R11.y,  0.0f      
+         z: ADD_INT     R3.z,  -4,  R8.w      
+    140  x: LDS_BYTE_WRITE ____,  R7.w,  0.0f      
+         y: ADD_INT     R11.y,  -3,  R8.w      
+    141  x: LDS_BYTE_WRITE ____,  R6.w,  0.0f      
+         y: ADD_INT     R10.y,  -2,  R8.w      
+    142  x: LDS_BYTE_WRITE ____,  R9.z,  0.0f      
+         w: ADD_INT     R6.w,  -1,  R8.w      
+    143  x: LDS_BYTE_WRITE ____,  R8.y,  0.0f      
+    144  x: LDS_BYTE_WRITE ____,  R9.y,  0.0f      
+         z: ADD_INT     R9.z,  R8.w,  1      
+    145  x: LDS_BYTE_WRITE ____,  R10.w,  0.0f      
+         y: ADD_INT     R9.y,  R8.w,  2      VEC_120 
+    146  x: LDS_BYTE_WRITE ____,  R8.z,  0.0f      
+         y: ADD_INT     R8.y,  R8.w,  3      
+    147  x: LDS_BYTE_WRITE ____,  R12.y,  0.0f      
+         w: ADD_INT     R10.w,  R8.w,  4      
+    148  x: LDS_BYTE_WRITE ____,  R2.z,  0.0f      
+         z: ADD_INT     R2.z,  R8.w,  5      
+    149  x: LDS_BYTE_WRITE ____,  T0.z,  0.0f      
+         y: ADD_INT     R12.y,  R8.w,  6      
+         z: ADD_INT     R8.z,  R8.w,  7      
+    150  x: LDS_BYTE_WRITE ____,  T3.y,  0.0f      
+         w: ADD_INT     R9.w,  R2.x,  176      
+    151  x: LDS_BYTE_WRITE ____,  T2.y,  0.0f      
+         z: ADD_INT     R6.z,  -8,  PV150.w      
+    152  x: LDS_BYTE_WRITE ____,  T0.w,  0.0f      
+         y: ADD_INT     R15.y,  -7,  R9.w      
+    153  x: LDS_BYTE_WRITE ____,  T3.z,  0.0f      
+         y: ADD_INT     R2.y,  -6,  R9.w      
+    154  x: LDS_BYTE_WRITE ____,  T0.y,  0.0f      
+         w: ADD_INT     R7.w,  -5,  R9.w      
+    155  x: LDS_BYTE_WRITE ____,  T1.y,  0.0f      
+         z: ADD_INT     R10.z,  -4,  R9.w      
+    156  x: LDS_BYTE_WRITE ____,  T3.w,  0.0f      
+         y: ADD_INT     R14.y,  -3,  R9.w      
+    157  x: LDS_BYTE_WRITE ____,  T2.w,  0.0f      
+         y: ADD_INT     R13.y,  -2,  R9.w      
+    158  x: LDS_BYTE_WRITE ____,  T2.z,  0.0f      
+         w: ADD_INT     R2.w,  -1,  R9.w      
+    159  x: LDS_BYTE_WRITE ____,  R6.y,  0.0f      
+    160  x: LDS_BYTE_WRITE ____,  R5.y,  0.0f      
+         z: ADD_INT     R7.z,  R9.w,  1      
+    161  x: LDS_BYTE_WRITE ____,  T1.w,  0.0f      
+         y: ADD_INT     R5.y,  R9.w,  2      VEC_120 
+04 ALU: ADDR(521) CNT(122) 
+    162  x: LDS_BYTE_WRITE ____,  R11.z,  0.0f      
+         y: ADD_INT     T1.y,  R9.w,  3      
+    163  x: LDS_BYTE_WRITE ____,  R4.y,  0.0f      
+         w: ADD_INT     T1.w,  R9.w,  4      
+    164  x: LDS_BYTE_WRITE ____,  R5.z,  0.0f      
+         z: ADD_INT     T2.z,  R9.w,  5      
+    165  x: LDS_BYTE_WRITE ____,  R4.z,  0.0f      
+         y: ADD_INT     T0.y,  R9.w,  6      
+         z: ADD_INT     T3.z,  R9.w,  7      
+    166  x: LDS_BYTE_WRITE ____,  R7.y,  0.0f      
+         w: ADD_INT     R3.w,  R2.x,  192      
+    167  x: LDS_BYTE_WRITE ____,  R3.y,  0.0f      
+         z: ADD_INT     T0.z,  -8,  PV166.w      
+    168  x: LDS_BYTE_WRITE ____,  R11.w,  0.0f      
+         y: ADD_INT     T2.y,  -7,  R3.w      
+    169  x: LDS_BYTE_WRITE ____,  R3.z,  0.0f      
+         y: ADD_INT     T3.y,  -6,  R3.w      
+    170  x: LDS_BYTE_WRITE ____,  R11.y,  0.0f      
+         w: ADD_INT     T2.w,  -5,  R3.w      
+    171  x: LDS_BYTE_WRITE ____,  R10.y,  0.0f      
+         z: ADD_INT     T1.z,  -4,  R3.w      
+    172  x: LDS_BYTE_WRITE ____,  R6.w,  0.0f      
+         y: ADD_INT     R10.y,  -3,  R3.w      
+    173  x: LDS_BYTE_WRITE ____,  R8.w,  0.0f      
+         y: ADD_INT     R11.y,  -2,  R3.w      
+    174  x: LDS_BYTE_WRITE ____,  R9.z,  0.0f      
+         w: ADD_INT     R8.w,  -1,  R3.w      
+    175  x: LDS_BYTE_WRITE ____,  R9.y,  0.0f      
+    176  x: LDS_BYTE_WRITE ____,  R8.y,  0.0f      
+         z: ADD_INT     R9.z,  R3.w,  1      
+    177  x: LDS_BYTE_WRITE ____,  R10.w,  0.0f      
+         y: ADD_INT     R8.y,  R3.w,  2      VEC_120 
+    178  x: LDS_BYTE_WRITE ____,  R2.z,  0.0f      
+         y: ADD_INT     R9.y,  R3.w,  3      
+    179  x: LDS_BYTE_WRITE ____,  R12.y,  0.0f      
+         w: ADD_INT     R10.w,  R3.w,  4      
+    180  x: LDS_BYTE_WRITE ____,  R8.z,  0.0f      
+         z: ADD_INT     R8.z,  R3.w,  5      
+    181  x: LDS_BYTE_WRITE ____,  R6.z,  0.0f      
+         y: ADD_INT     R12.y,  R3.w,  6      
+         z: ADD_INT     R6.z,  R3.w,  7      
+    182  x: LDS_BYTE_WRITE ____,  R15.y,  0.0f      
+         w: ADD_INT     R6.w,  R2.x,  208      
+    183  x: LDS_BYTE_WRITE ____,  R2.y,  0.0f      
+         z: ADD_INT     R2.z,  -8,  PV182.w      
+    184  x: LDS_BYTE_WRITE ____,  R7.w,  0.0f      
+         y: ADD_INT     R2.y,  -7,  R6.w      
+    185  x: LDS_BYTE_WRITE ____,  R10.z,  0.0f      
+         y: ADD_INT     R15.y,  -6,  R6.w      
+    186  x: LDS_BYTE_WRITE ____,  R14.y,  0.0f      
+         w: ADD_INT     R7.w,  -5,  R6.w      
+    187  x: LDS_BYTE_WRITE ____,  R13.y,  0.0f      
+         z: ADD_INT     R10.z,  -4,  R6.w      
+    188  x: LDS_BYTE_WRITE ____,  R2.w,  0.0f      
+         y: ADD_INT     R13.y,  -3,  R6.w      
+    189  x: LDS_BYTE_WRITE ____,  R9.w,  0.0f      
+         y: ADD_INT     R14.y,  -2,  R6.w      
+    190  x: LDS_BYTE_WRITE ____,  R7.z,  0.0f      
+         w: ADD_INT     R9.w,  -1,  R6.w      
+    191  x: LDS_BYTE_WRITE ____,  R5.y,  0.0f      
+    192  x: LDS_BYTE_WRITE ____,  T1.y,  0.0f      
+         z: ADD_INT     R7.z,  R6.w,  1      
+    193  x: LDS_BYTE_WRITE ____,  T1.w,  0.0f      
+         y: ADD_INT     R5.y,  R6.w,  2      VEC_120 
+    194  x: LDS_BYTE_WRITE ____,  T2.z,  0.0f      
+         y: ADD_INT     R3.y,  R6.w,  3      
+    195  x: LDS_BYTE_WRITE ____,  T0.y,  0.0f      
+         w: ADD_INT     R2.w,  R6.w,  4      
+    196  x: LDS_BYTE_WRITE ____,  T3.z,  0.0f      
+         z: ADD_INT     R3.z,  R6.w,  5      
+    197  x: LDS_BYTE_WRITE ____,  T0.z,  0.0f      
+         y: ADD_INT     R7.y,  R6.w,  6      
+         z: ADD_INT     R4.z,  R6.w,  7      
+    198  x: LDS_BYTE_WRITE ____,  T2.y,  0.0f      
+         y: ADD_INT     R16.y,  R2.x,  240      
+         w: ADD_INT     R5.w,  R2.x,  224      
+    199  x: LDS_BYTE_WRITE ____,  T3.y,  0.0f      
+         z: ADD_INT     R5.z,  -8,  PV198.w      
+    200  x: LDS_BYTE_WRITE ____,  T2.w,  0.0f      
+         y: ADD_INT     R4.y,  -7,  R5.w      
+    201  x: LDS_BYTE_WRITE ____,  T1.z,  0.0f      
+         y: ADD_INT     R6.y,  -6,  R5.w      
+    202  x: LDS_BYTE_WRITE ____,  R10.y,  0.0f      
+         w: ADD_INT     R11.w,  -5,  R5.w      
+    203  x: LDS_BYTE_WRITE ____,  R11.y,  0.0f      
+         z: ADD_INT     R11.z,  -4,  R5.w      
+05 ALU: ADDR(643) CNT(102) 
+    204  x: LDS_BYTE_WRITE ____,  R8.w,  0.0f      
+         y: ADD_INT     T3.y,  -3,  R5.w      
+    205  x: LDS_BYTE_WRITE ____,  R3.w,  0.0f      
+         y: ADD_INT     T2.y,  -2,  R5.w      
+    206  x: LDS_BYTE_WRITE ____,  R9.z,  0.0f      
+         w: ADD_INT     T2.w,  -1,  R5.w      
+    207  x: LDS_BYTE_WRITE ____,  R8.y,  0.0f      
+    208  x: LDS_BYTE_WRITE ____,  R9.y,  0.0f      
+         z: ADD_INT     T1.z,  R5.w,  1      
+    209  x: LDS_BYTE_WRITE ____,  R10.w,  0.0f      
+         y: ADD_INT     T0.y,  R5.w,  2      VEC_120 
+    210  x: LDS_BYTE_WRITE ____,  R8.z,  0.0f      
+         y: ADD_INT     T1.y,  R5.w,  3      
+    211  x: LDS_BYTE_WRITE ____,  R12.y,  0.0f      
+         w: ADD_INT     T1.w,  R5.w,  4      
+    212  x: LDS_BYTE_WRITE ____,  R6.z,  0.0f      
+         z: ADD_INT     T0.z,  R5.w,  5      
+    213  x: LDS_BYTE_WRITE ____,  R2.z,  0.0f      
+         y: ADD_INT     R12.y,  R5.w,  6      
+         z: ADD_INT     T3.z,  R5.w,  7      
+    214  x: LDS_BYTE_WRITE ____,  R2.y,  0.0f      
+    215  x: LDS_BYTE_WRITE ____,  R15.y,  0.0f      
+         z: ADD_INT     T2.z,  -8,  R16.y      
+    216  x: LDS_BYTE_WRITE ____,  R7.w,  0.0f      
+         y: ADD_INT     R15.y,  -7,  R16.y      
+    217  x: LDS_BYTE_WRITE ____,  R10.z,  0.0f      
+         y: ADD_INT     R2.y,  -6,  R16.y      
+    218  x: LDS_BYTE_WRITE ____,  R13.y,  0.0f      
+         w: ADD_INT     T3.w,  -5,  R16.y      
+    219  x: LDS_BYTE_WRITE ____,  R14.y,  0.0f      
+         z: ADD_INT     R10.z,  -4,  R16.y      
+    220  x: LDS_BYTE_WRITE ____,  R9.w,  0.0f      
+         y: ADD_INT     R14.y,  -3,  R16.y      
+    221  x: LDS_BYTE_WRITE ____,  R6.w,  0.0f      
+         y: ADD_INT     R13.y,  -2,  R16.y      
+    222  x: LDS_BYTE_WRITE ____,  R7.z,  0.0f      
+         w: ADD_INT     T0.w,  -1,  R16.y      
+    223  x: LDS_BYTE_WRITE ____,  R5.y,  0.0f      
+    224  x: LDS_BYTE_WRITE ____,  R3.y,  0.0f      
+         z: ADD_INT     R7.z,  R16.y,  1      VEC_120 
+    225  x: LDS_BYTE_WRITE ____,  R2.w,  0.0f      
+         y: ADD_INT     R3.y,  R16.y,  2      
+    226  x: LDS_BYTE_WRITE ____,  R3.z,  0.0f      
+         y: ADD_INT     R5.y,  R16.y,  3      
+    227  x: LDS_BYTE_WRITE ____,  R7.y,  0.0f      
+         w: ADD_INT     R2.w,  R16.y,  4      VEC_120 
+    228  x: LDS_BYTE_WRITE ____,  R4.z,  0.0f      
+         z: ADD_INT     R4.z,  R16.y,  5      
+    229  x: LDS_BYTE_WRITE ____,  R5.z,  0.0f      
+         y: ADD_INT     R7.y,  R16.y,  6      
+         z: ADD_INT     R5.z,  R16.y,  7      
+    230  x: LDS_BYTE_WRITE ____,  R4.y,  0.0f      
+    231  x: LDS_BYTE_WRITE ____,  R6.y,  0.0f      
+    232  x: LDS_BYTE_WRITE ____,  R11.w,  0.0f      
+    233  x: LDS_BYTE_WRITE ____,  R11.z,  0.0f      
+    234  x: LDS_BYTE_WRITE ____,  T3.y,  0.0f      
+    235  x: LDS_BYTE_WRITE ____,  T2.y,  0.0f      
+    236  x: LDS_BYTE_WRITE ____,  T2.w,  0.0f      
+    237  x: LDS_BYTE_WRITE ____,  R5.w,  0.0f      
+    238  x: LDS_BYTE_WRITE ____,  T1.z,  0.0f      
+    239  x: LDS_BYTE_WRITE ____,  T0.y,  0.0f      
+    240  x: LDS_BYTE_WRITE ____,  T1.y,  0.0f      
+    241  x: LDS_BYTE_WRITE ____,  T1.w,  0.0f      
+    242  x: LDS_BYTE_WRITE ____,  T0.z,  0.0f      
+    243  x: LDS_BYTE_WRITE ____,  R12.y,  0.0f      
+    244  x: LDS_BYTE_WRITE ____,  T3.z,  0.0f      
+    245  x: LDS_BYTE_WRITE ____,  T2.z,  0.0f      
+    246  x: LDS_BYTE_WRITE ____,  R15.y,  0.0f      
+    247  x: LDS_BYTE_WRITE ____,  R2.y,  0.0f      
+    248  x: LDS_BYTE_WRITE ____,  T3.w,  0.0f      
+    249  x: LDS_BYTE_WRITE ____,  R10.z,  0.0f      
+    250  x: LDS_BYTE_WRITE ____,  R14.y,  0.0f      
+    251  x: LDS_BYTE_WRITE ____,  R13.y,  0.0f      
+    252  x: LDS_BYTE_WRITE ____,  T0.w,  0.0f      
+    253  x: LDS_BYTE_WRITE ____,  R16.y,  0.0f      
+    254  x: LDS_BYTE_WRITE ____,  R7.z,  0.0f      
+    255  x: LDS_BYTE_WRITE ____,  R3.y,  0.0f      
+    256  x: LDS_BYTE_WRITE ____,  R5.y,  0.0f      
+    257  x: LDS_BYTE_WRITE ____,  R2.w,  0.0f      
+    258  x: LDS_BYTE_WRITE ____,  R4.z,  0.0f      
+    259  x: LDS_BYTE_WRITE ____,  R7.y,  0.0f      
+    260  x: LDS_BYTE_WRITE ____,  R5.z,  0.0f      
+    261  x: GROUP_BARRIER  ____      
+06 ALU: ADDR(745) CNT(19) KCACHE0(CB0:0-15) KCACHE1(CB1:0-15) 
+    262  x: MOV         R11.x,  0.0f      
+         z: ADD_INT     R0.z,  R1.x,  KC0[7].x      
+         w: LSHL        R5.w,  KC0[1].x,  3      
+    263  y: LSHL        ____,  PV262.z,  8      
+         t: MULLO_INT   ____,  PV262.z,  KC0[1].x      
+    264  x: LSHL        ____,  PS263,  8      
+         w: OR_INT      ____,  1,  PV263.y      
+    265  x: ADD_INT     ____,  R0.x,  PV264.x      
+         t: MULLO_INT   ____,  KC0[1].x,  PV264.w      
+    266  x: LSHL        ____,  PV265.x,  2      
+         z: ADD_INT     ____,  R0.x,  PS265      
+    267  y: LSHL        ____,  PV266.z,  2      
+         t: ADD_INT     R0.y,  KC1[0].x,  PV266.x      
+    268  w: ADD_INT     R6.w,  KC1[0].x,  PV267.y      
+07 LOOP_NO_AL i2 FAIL_JUMP_ADDR(13) 
+    08 ALU: ADDR(764) CNT(33) 
+        269  x: LSHL        R7.x,  R0.x,  8      
+             y: SUB_INT     ____,  R6.w,  R11.x      
+             z: SUB_INT     ____,  R0.y,  R11.x      
+             w: SUB_INT     ____,  R5.w,  R11.x      VEC_210 
+             t: LSHL        R9.x,  R0.x,  8      
+        270  x: LSHR        R1.x,  PV269.y,  2      
+             y: LSHR        R1.y,  PV269.z,  2      
+             z: ADD_INT     ____,  R6.w,  PV269.w      
+             w: ADD_INT     ____,  R0.y,  PV269.w      
+             t: SUB_INT     ____,  R11.x,  R5.w      
+        271  x: LSHR        R2.x,  PV270.z,  2      
+             y: LSHL        R5.y,  R0.x,  8      
+             z: LSHR        R1.z,  PV270.w,  2      
+             w: SUB_INT     ____,  R5.w,  PS270      
+             t: SUB_INT     ____,  PS270,  R5.w      
+        272  x: SUB_INT     ____,  R5.w,  PS271      
+             y: ADD_INT     ____,  R6.w,  PV271.w      VEC_201 
+             z: ADD_INT     ____,  R0.y,  PV271.w      
+             w: LSHL        R3.w,  R0.x,  8      
+             t: SUB_INT     ____,  PS271,  R5.w      
+        273  x: LSHR        R3.x,  PV272.y,  2      
+             y: LSHR        R2.y,  PV272.z,  2      
+             z: ADD_INT     ____,  R6.w,  PV272.x      
+             w: ADD_INT     ____,  R0.y,  PV272.x      
+             t: SUB_INT     R11.x,  PS272,  R5.w      
+        274  x: LSHR        R4.x,  PV273.z,  2      
+             z: LSHR        R2.z,  PV273.w,  2      
+    09 TEX: ADDR(1040) CNT(8) 
+        275  VFETCH R5.x___, R1.y, fc153  MEGA(4) 
+             FETCH_TYPE(NO_INDEX_OFFSET) 
+        276  VFETCH R1.x___, R1.x, fc153  MEGA(4) 
+             FETCH_TYPE(NO_INDEX_OFFSET) 
+        277  VFETCH R6.x___, R1.z, fc153  MEGA(4) 
+             FETCH_TYPE(NO_INDEX_OFFSET) 
+        278  VFETCH R2.x___, R2.x, fc153  MEGA(4) 
+             FETCH_TYPE(NO_INDEX_OFFSET) 
+        279  VFETCH R8.x___, R2.y, fc153  MEGA(4) 
+             FETCH_TYPE(NO_INDEX_OFFSET) 
+        280  VFETCH R3.x___, R3.x, fc153  MEGA(4) 
+             FETCH_TYPE(NO_INDEX_OFFSET) 
+        281  VFETCH R10.x___, R2.z, fc153  MEGA(4) 
+             FETCH_TYPE(NO_INDEX_OFFSET) 
+        282  VFETCH R4.x___, R4.x, fc153  MEGA(4) 
+             FETCH_TYPE(NO_INDEX_OFFSET) 
+    10 ALU: ADDR(797) CNT(125) KCACHE0(CB1:0-15) 
+        283  x: BFE_UINT    T0.x,  R5.x,  0.0f,  0x00000008      
+             y: LSHR        ____,  R5.x,  24      
+             z: LSHR        ____,  R5.x,  16      
+             w: LSHR        ____,  R5.x,  8      
+             t: LSHR        T0.w,  R1.x,  8      
+        284  x: BFE_UINT    R123.x,  PV283.y,  0.0f,  0x00000008      
+             y: BFE_UINT    R123.y,  PV283.w,  0.0f,  0x00000008      
+             z: LSHR        ____,  R1.x,  16      
+             w: BFE_UINT    R123.w,  PV283.z,  0.0f,  0x00000008      
+             t: LSHR        ____,  R1.x,  24      
+        285  x: MAX_UINT    ____,  PV284.x,  PV284.w      
+             y: BFE_UINT    R123.y,  PS284,  0.0f,  0x00000008      
+             z: MAX_UINT    ____,  PV284.y,  T0.x      
+             w: BFE_UINT    R123.w,  PV284.z,  0.0f,  0x00000008      
+             t: LSHR        T1.y,  R6.x,  8      
+        286  x: AND_INT     ____,  PV285.x,  0x000000FF      
+             y: AND_INT     ____,  PV285.z,  0x000000FF      
+             z: BFE_UINT    R123.z,  T0.w,  0.0f,  0x00000008      
+             w: BFE_UINT    R123.w,  R1.x,  0.0f,  0x00000008      
+             t: MAX_UINT    ____,  PV285.y,  PV285.w      
+        287  x: MAX_UINT    ____,  PV286.x,  PV286.y      
+             y: AND_INT     T0.y,  PS286,  0x000000FF      
+             z: MAX_UINT    ____,  PV286.z,  PV286.w      
+             w: LSHR        T0.w,  R6.x,  16      
+             t: LSHR        ____,  R6.x,  24      
+        288  x: BFE_UINT    T0.x,  R6.x,  0.0f,  0x00000008      
+             y: AND_INT     ____,  PV287.z,  0x000000FF      
+             z: BFE_UINT    T0.z,  PS287,  0.0f,  0x00000008      
+             w: AND_INT     ____,  PV287.x,  0x000000FF      
+             t: LSHR        T2.y,  R2.x,  8      
+        289  x: MAX_UINT    ____,  T0.y,  PV288.y      
+             y: BFI_INT     R123.y,  0xFFFFFF00,  R7.x,  PV288.w      
+             z: BFE_UINT    R123.z,  T0.w,  0.0f,  0x00000008      
+             w: BFE_UINT    R123.w,  T1.y,  0.0f,  0x00000008      VEC_120 
+             t: LSHR        T1.x,  R2.x,  16      
+        290  x: ADD_INT     T0.x,  KC0[1].x,  PV289.y      
+             y: MAX_UINT    ____,  PV289.w,  T0.x      
+             z: MAX_UINT    ____,  T0.z,  PV289.z      
+             w: AND_INT     ____,  PV289.x,  0x000000FF      
+             t: LSHR        T0.w,  R2.x,  24      
+        291  x: LDS_BYTE_READ_RET QA,  PV290.x      
+             y: AND_INT     ____,  PV290.z,  0x000000FF      
+             z: BFI_INT     R123.z,  0xFFFFFF00,  R7.x,  PV290.w      
+             w: AND_INT     ____,  PV290.y,  0x000000FF      
+             t: LSHR        T1.w,  R8.x,  8      
+        292  x: BFE_UINT    R123.x,  T0.w,  0.0f,  0x00000008      
+             y: ADD_INT     R3.y,  KC0[1].x,  PV291.z      
+             z: MAX_UINT    ____,  PV291.y,  PV291.w      
+             w: BFE_UINT    R123.w,  T1.x,  0.0f,  0x00000008      
+             t: LSHR        T0.z,  R8.x,  16      
+        293  x: BFE_UINT    R123.x,  R2.x,  0.0f,  0x00000008      
+             y: AND_INT     ____,  PV292.z,  0x000000FF      
+             z: BFE_UINT    R123.z,  T2.y,  0.0f,  0x00000008      
+             w: MAX_UINT    ____,  PV292.x,  PV292.w      
+             t: LSHR        T2.y,  R8.x,  24      
+        294  x: MAX_UINT    ____,  PV293.z,  PV293.x      
+             y: AND_INT     T0.y,  PV293.w,  0x000000FF      
+             z: BFE_UINT    T1.z,  R8.x,  0.0f,  0x00000008      
+             w: BFI_INT     R123.w,  0xFFFFFF00,  R9.x,  PV293.y      
+             t: LSHR        T0.w,  R3.x,  8      
+        295  x: BFE_UINT    R123.x,  T2.y,  0.0f,  0x00000008      
+             y: BFE_UINT    R123.y,  T0.z,  0.0f,  0x00000008      
+             z: ADD_INT     R1.z,  KC0[1].x,  PV294.w      
+             w: AND_INT     ____,  PV294.x,  0x000000FF      
+             t: LSHR        T0.z,  R3.x,  16      
+        296  x: MAX_UINT    ____,  T0.y,  PV295.w      
+             y: BFE_UINT    R123.y,  T1.w,  0.0f,  0x00000008      
+             z: ADD_INT     ____,  QA[291].pop,  1      
+             w: MAX_UINT    ____,  PV295.x,  PV295.y      
+             t: LSHR        T0.y,  R3.x,  24      
+        297  x: LDS_BYTE_WRITE ____,  T0.x,  PV296.z      
+             y: AND_INT     ____,  PV296.x,  0x000000FF      
+             z: MAX_UINT    ____,  PV296.y,  T1.z      
+             w: AND_INT     T1.w,  PV296.w,  0x000000FF      
+             t: LSHR        R1.y,  R10.x,  8      
+        298  x: LDS_BYTE_READ_RET QA,  R3.y      
+             y: BFI_INT     R123.y,  0xFFFFFF00,  R9.x,  PV297.y      
+             z: AND_INT     ____,  PV297.z,  0x000000FF      
+             w: BFE_UINT    T2.w,  T0.y,  0.0f,  0x00000008      VEC_120 
+             t: LSHR        R9.x,  R10.x,  16      
+        299  x: MAX_UINT    ____,  T1.w,  PV298.z      
+             y: BFE_UINT    R123.y,  T0.z,  0.0f,  0x00000008      
+             z: BFE_UINT    T0.z,  T0.w,  0.0f,  0x00000008      VEC_120 
+             w: ADD_INT     R4.w,  KC0[1].x,  PV298.y      
+             t: LSHR        T0.w,  R10.x,  24      
+        300  x: BFE_UINT    R123.x,  R3.x,  0.0f,  0x00000008      
+             y: BFE_UINT    R4.y,  R10.x,  0.0f,  0x00000008      VEC_120 
+             z: MAX_UINT    ____,  T2.w,  PV299.y      
+             w: AND_INT     ____,  PV299.x,  0x000000FF      
+             t: LSHR        R6.y,  R4.x,  8      
+        301  x: AND_INT     R3.x,  PV300.z,  0x000000FF      
+             y: BFI_INT     R2.y,  0xFFFFFF00,  R5.y,  PV300.w      
+             z: MAX_UINT    R2.z,  T0.z,  PV300.x      
+             w: BFE_UINT    R2.w,  T0.w,  0.0f,  0x00000008      
+             t: LSHR        R10.x,  R4.x,  16      
+        302  w: ADD_INT     R1.w,  QA[298].pop,  1      
+    11 ALU: ADDR(922) CNT(57) KCACHE0(CB1:0-15) 
+        303  x: ADD_INT     T0.x,  KC0[1].x,  R2.y      
+             y: AND_INT     ____,  R2.z,  0x000000FF      
+             z: BFE_UINT    R123.z,  R9.x,  0.0f,  0x00000008      
+             w: BFE_UINT    R123.w,  R1.y,  0.0f,  0x00000008      
+             t: LSHR        T0.w,  R4.x,  24      
+        304  x: LDS_BYTE_WRITE ____,  R3.y,  R1.w      
+             y: MAX_UINT    ____,  R3.x,  PV303.y      
+             z: MAX_UINT    ____,  PV303.w,  R4.y      
+             w: MAX_UINT    ____,  R2.w,  PV303.z      
+        305  x: LDS_BYTE_READ_RET QA,  R1.z      
+             y: AND_INT     ____,  PV304.z,  0x000000FF      
+             z: AND_INT     ____,  PV304.w,  0x000000FF      
+             w: AND_INT     ____,  PV304.y,  0x000000FF      
+        306  x: MAX_UINT    ____,  PV305.z,  PV305.y      
+             y: BFE_UINT    R123.y,  T0.w,  0.0f,  0x00000008      
+             z: BFI_INT     R123.z,  0xFFFFFF00,  R5.y,  PV305.w      
+             w: BFE_UINT    R123.w,  R10.x,  0.0f,  0x00000008      
+        307  x: AND_INT     ____,  PV306.x,  0x000000FF      
+             y: ADD_INT     T2.y,  KC0[1].x,  PV306.z      
+             z: BFE_UINT    R123.z,  R6.y,  0.0f,  0x00000008      
+             w: BFE_UINT    R123.w,  R4.x,  0.0f,  0x00000008      
+             t: MAX_UINT    ____,  PV306.y,  PV306.w      
+        308  x: MAX_UINT    ____,  PV307.z,  PV307.w      
+             y: AND_INT     T0.y,  PS307,  0x000000FF      
+             w: BFI_INT     R123.w,  0xFFFFFF00,  R3.w,  PV307.x      
+        309  z: ADD_INT     T0.z,  KC0[1].x,  PV308.w      
+             w: AND_INT     ____,  PV308.x,  0x000000FF      
+        310  y: ADD_INT     ____,  QA[305].pop,  1      
+             z: MAX_UINT    ____,  T0.y,  PV309.w      
+        311  x: LDS_BYTE_WRITE ____,  R1.z,  PV310.y      
+             y: AND_INT     ____,  PV310.z,  0x000000FF      
+        312  x: LDS_BYTE_READ_RET QA,  R4.w      
+             y: BFI_INT     R123.y,  0xFFFFFF00,  R3.w,  PV311.y      
+        313  w: ADD_INT     T0.w,  KC0[1].x,  PV312.y      
+        314  y: ADD_INT     ____,  QA[312].pop,  1      
+        315  x: LDS_BYTE_WRITE ____,  R4.w,  PV314.y      
+        316  x: LDS_BYTE_READ_RET QA,  T0.x      
+        317  z: ADD_INT     ____,  QA[316].pop,  1      
+        318  x: LDS_BYTE_WRITE ____,  T0.x,  PV317.z      
+        319  x: LDS_BYTE_READ_RET QA,  T2.y      
+        320  w: ADD_INT     ____,  QA[319].pop,  1      
+        321  x: LDS_BYTE_WRITE ____,  T2.y,  PV320.w      
+        322  x: LDS_BYTE_READ_RET QA,  T0.z      
+        323  y: ADD_INT     ____,  QA[322].pop,  1      
+        324  x: LDS_BYTE_WRITE ____,  T0.z,  PV323.y      
+        325  x: LDS_BYTE_READ_RET QA,  T0.w      
+        326  y: ADD_INT     ____,  QA[325].pop,  1      
+        327  x: LDS_BYTE_WRITE ____,  T0.w,  PV326.y      
+12 ENDLOOP i2 PASS_JUMP_ADDR(8) 
+13 ALU: ADDR(979) CNT(24) KCACHE0(CB0:0-15) 
+    328  t: RCP_UINT__EG  T0.x,  KC0[1].x      
+    329  t: MULLO_UINT  T0.z,  KC0[1].x,  PS328      
+    330  w: SUB_INT     ____,  0.0f,  PS329      
+         t: MULHI_UINT  T0.y,  KC0[1].x,  T0.x      
+    331  x: CNDE_INT    R123.x,  PS330,  PV330.w,  T0.z      
+    332  t: MULHI_UINT  ____,  PV331.x,  T0.x      
+    333  y: SUB_INT     ____,  T0.x,  PS332      
+         w: ADD_INT     ____,  T0.x,  PS332      
+    334  x: CNDE_INT    R123.x,  T0.y,  PV333.w,  PV333.y      
+    335  t: MULHI_UINT  T0.z,  PV334.x,  256      
+    336  x: ADD_INT     T1.x,  -1,  PS335      
+         z: ADD_INT     T1.z,  PS335,  1      
+         t: MULLO_UINT  ____,  PS335,  KC0[1].x      
+    337  x: SETGE_UINT  T0.x,  256,  PS336      
+         w: SUB_INT     ____,  256,  PS336      
+    338  y: SETGE_UINT  ____,  PV337.w,  KC0[1].x      
+    339  w: AND_INT     ____,  T0.x,  PV338.y      
+    340  x: CNDE_INT    R123.x,  PV339.w,  T0.z,  T1.z      
+    341  y: CNDE_INT    R123.y,  T0.x,  T1.x,  PV340.x      
+    342  x: CNDE_INT    R1.x,  KC0[1].x,  -1,  PV341.y      
+    343  w: SETE_INT    R1.w,  PV342.x,  0.0f      
+    344  x: GROUP_BARRIER  ____      
+14 ALU_PUSH_BEFORE: ADDR(1003) CNT(1) 
+    345  x: PREDE_INT   ____,  R1.w,  0.0f      UPDATE_EXEC_MASK UPDATE_PRED 
+15 JUMP  POP_CNT(1) ADDR(30) 
+16 ALU: ADDR(1004) CNT(3) KCACHE0(CB1:0-15) 
+    346  x: LSHL        ____,  R0.z,  10      
+    347  y: ADD_INT     R0.y,  KC0[2].x,  PV346.x      
+17 LOOP_DX10 i0 FAIL_JUMP_ADDR(29) 
+    18 ALU_PUSH_BEFORE: ADDR(1007) CNT(5) KCACHE0(CB1:0-15) KCACHE1(CB0:0-15) 
+        348  x: MOV         R2.x,  0.0f      
+             z: SETE_INT    R0.z,  KC1[1].x,  0.0f      
+             w: ADD_INT     R1.w,  KC0[1].x,  R0.w      
+        349  y: MOV         R1.y,  KC1[1].x      
+        350  x: PREDE_INT   ____,  R0.z,  0.0f      UPDATE_EXEC_MASK UPDATE_PRED 
+    19 JUMP  POP_CNT(1) ADDR(25) 
+    20 ALU: ADDR(1012) CNT(1) 
+        351  x: MOV         R2.x,  0.0f      
+    21 LOOP_DX10 i0 FAIL_JUMP_ADDR(24) 
+        22 ALU_BREAK: ADDR(1013) CNT(8) 
+            352  x: LDS_UBYTE_READ_RET QA,  R1.w      
+                 y: ADD_INT     R1.y,  -1,  R1.y      
+                 w: ADD_INT     R1.w,  R1.w,  256      
+            353  z: AND_INT     ____,  QA[352].pop,  0x000000FF      
+            354  x: ADD_INT     R2.x,  R2.x,  PV353.z      
+            355  x: PREDNE_INT  ____,  R1.y,  0.0f      UPDATE_EXEC_MASK UPDATE_PRED 
+    23 ENDLOOP i0 PASS_JUMP_ADDR(22) 
+    24 POP (1) ADDR(25) 
+    25 ALU: ADDR(1021) CNT(7) KCACHE0(CB0:0-15) 
+        356  x: ADD_INT     R1.x,  -1,  R1.x      
+             z: LSHL        ____,  R0.w,  2      
+             w: ADD_INT     R0.w,  R0.w,  KC0[1].x      
+        357  y: ADD_INT     ____,  R0.y,  PV356.z      
+        358  x: LSHR        R0.x,  PV357.y,  2      
+    26 MEM_RAT_CACHELESS_STORE_RAW: RAT(11)[R0].x___, R2, ARRAY_SIZE(4)  MARK  VPM 
+    27 ALU_BREAK: ADDR(1028) CNT(1) 
+        359  x: PREDNE_INT  ____,  R1.x,  0.0f      UPDATE_EXEC_MASK UPDATE_PRED 
+28 ENDLOOP i0 PASS_JUMP_ADDR(18) 
+29 POP (1) ADDR(30) 
+30 NOP NO_BARRIER 
+END_OF_PROGRAM
+
+; ----------------- CS Data ------------------------
+; Input Semantic Mappings
+;    No input mappings
+
+GprPoolSize = 0
+CodeLen                 = 8448;Bytes
+PGM_END_CF              = 0; words(64 bit)
+PGM_END_ALU             = 0; words(64 bit)
+PGM_END_FETCH           = 0; words(64 bit)
+MaxScratchRegsNeeded    = 0
+;AluPacking              = 0.0
+;AluClauses              = 0
+;PowerThrottleRate       = 0.0
+; texResourceUsage[0]     = 0x00000000
+; texResourceUsage[1]     = 0x00000000
+; texResourceUsage[2]     = 0x00000000
+; texResourceUsage[3]     = 0x00000000
+; texResourceUsage[4]     = 0x00000000
+; texResourceUsage[5]     = 0x00000000
+; texResourceUsage[6]     = 0x00000000
+; texResourceUsage[7]     = 0x00000000
+; fetch4ResourceUsage[0]  = 0x00000000
+; fetch4ResourceUsage[1]  = 0x00000000
+; fetch4ResourceUsage[2]  = 0x00000000
+; fetch4ResourceUsage[3]  = 0x00000000
+; fetch4ResourceUsage[4]  = 0x00000000
+; fetch4ResourceUsage[5]  = 0x00000000
+; fetch4ResourceUsage[6]  = 0x00000000
+; fetch4ResourceUsage[7]  = 0x00000000
+; texSamplerUsage         = 0x00000000
+; constBufUsage           = 0x00000000
+ResourcesAffectAlphaOutput[0]  = 0x00000000
+ResourcesAffectAlphaOutput[1]  = 0x00000000
+ResourcesAffectAlphaOutput[2]  = 0x00000000
+ResourcesAffectAlphaOutput[3]  = 0x00000000
+ResourcesAffectAlphaOutput[4]  = 0x00000000
+ResourcesAffectAlphaOutput[5]  = 0x00000000
+ResourcesAffectAlphaOutput[6]  = 0x00000000
+ResourcesAffectAlphaOutput[7]  = 0x00000000
+
+;SQ_PGM_RESOURCES        = 0x30000311
+SQ_PGM_RESOURCES:NUM_GPRS     = 17
+SQ_PGM_RESOURCES:STACK_SIZE           = 3
+SQ_PGM_RESOURCES:PRIME_CACHE_ENABLE   = 1
+;SQ_PGM_RESOURCES_2      = 0x000000C0
+SQ_LDS_ALLOC:SIZE        = 0x00002000
+; RatOpIsUsed = 0x800
+; NumThreadPerGroupFlattened = 256
+; SetBufferForNumGroup = true

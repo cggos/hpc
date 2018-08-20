@@ -1,0 +1,138 @@
+ShaderType = IL_SHADER_COMPUTE
+TargetChip = c
+; ------------- SC_SRCSHADER Dump ------------------
+SC_SHADERSTATE: u32NumIntVSConst = 0
+SC_SHADERSTATE: u32NumIntPSConst = 0
+SC_SHADERSTATE: u32NumIntGSConst = 0
+SC_SHADERSTATE: u32NumBoolVSConst = 0
+SC_SHADERSTATE: u32NumBoolPSConst = 0
+SC_SHADERSTATE: u32NumBoolGSConst = 0
+SC_SHADERSTATE: u32NumFloatVSConst = 0
+SC_SHADERSTATE: u32NumFloatPSConst = 0
+SC_SHADERSTATE: u32NumFloatGSConst = 0
+fConstantsAvailable = 0
+iConstantsAvailable = 0
+bConstantsAvailable = 0
+u32SCOptions[0] = 0x01A00000 SCOption_IGNORE_SAMPLE_L_BUG SCOption_FLOAT_DO_NOT_DIST SCOption_FLOAT_DO_NOT_REASSOC
+u32SCOptions[1] = 0x00202000 SCOption_R600_ERROR_ON_DOUBLE_MEMEXP SCOption_SET_VPM_FOR_SCATTER
+u32SCOptions[2] = 0x00000045 SCOption_R800_UAV_NONARRAY_FIXUP SCOption_R8XX_CF_ALU_STACK_ENTRY_WORKAROUND SCOption_R800_UAV_NONUAV_SYNC_WORKAROUND_BUG216513_1
+
+; --------  Disassembly --------------------
+00 ALU_PUSH_BEFORE: ADDR(32) CNT(39) KCACHE0(CB0:0-15) KCACHE1(CB1:0-15) 
+      0  w: LSHR        T0.w,  KC1[2].x,  31      
+         t: MULLO_INT   ____,  R1.x,  KC0[1].x      
+      1  x: LSHR        T0.x,  KC1[3].x,  31      
+         w: ADD_INT     ____,  R0.x,  PS0      
+         t: MULLO_INT   ____,  R1.y,  KC0[1].y      
+      2  x: ADD_INT     R0.x,  PV1.w,  KC0[6].x      
+         y: ADD_INT     ____,  R0.y,  PS1      
+         z: ADD_INT     ____,  KC1[2].x,  T0.w      
+      3  y: ASHR        ____,  PV2.z,  1      
+         w: ADD_INT     ____,  KC1[3].x,  T0.x      
+         t: ADD_INT     R0.y,  PV2.y,  KC0[6].y      
+      4  x: SUB_INT     ____,  R0.x,  PV3.y      
+         z: ASHR        T0.z,  PV3.w,  1      
+         t: I_TO_F      T0.x,  PV3.y      
+      5  y: SUB_INT     ____,  R0.y,  PV4.z      
+         t: I_TO_F      ____,  PV4.x      
+      6  z: MUL_e       ____,  KC1[5].x,  PS5      
+         w: MUL_e       ____,  KC1[4].x,  PS5      
+         t: I_TO_F      ____,  PV5.y      
+      7  y: MULADD_e    R123.y, -KC1[4].x,  PS6,  PV6.z      
+         z: MULADD_e    R123.z,  KC1[5].x,  PS6,  PV6.w      
+         t: I_TO_F      ____,  T0.z      
+      8  x: ADD         T0.x,  PV7.z,  PS7      
+         w: ADD         ____,  PV7.y,  T0.x      
+      9  y: NOP         ____      
+         t: F_TO_I      R1.y,  PV8.w      
+     10  y: SETGT_INT   ____,  KC1[2].x,  PS9      
+         z: SETGT_INT   ____,  PS9,  -1      
+         w: NOP         ____      
+         t: F_TO_I      R0.w,  T0.x      
+     11  x: AND_INT     ____,  PV10.z,  PV10.y      
+         y: SETGT_INT   ____,  KC1[3].x,  PS10      
+         z: SETGT_INT   ____,  PS10,  -1      
+     12  x: AND_INT     ____,  1,  PV11.y      
+         w: AND_INT     ____,  PV11.x,  PV11.z      
+     13  z: AND_INT     R0.z,  PV12.w,  PV12.x      
+     14  x: PREDNE_INT  ____,  R0.z,  0.0f      UPDATE_EXEC_MASK UPDATE_PRED 
+01 JUMP  POP_CNT(1) ADDR(7) 
+02 ALU: ADDR(71) CNT(15) KCACHE0(CB1:0-15) 
+     15  t: MULLO_INT   ____,  R0.y,  KC0[2].x      
+     16  x: ADD_INT     ____,  R0.x,  PS15      
+         t: MULLO_INT   ____,  R0.w,  KC0[2].x      
+     17  z: ADD_INT     ____,  R1.y,  PS16      
+         w: ADD_INT     ____,  KC0[0].x,  PV16.x      
+     18  x: ADD_INT     R2.x,  KC0[1].x,  PV17.z      
+         y: AND_INT     ____,  0xFFFFFFFC,  PV17.w      
+         z: AND_INT     ____,  PV17.w,  0x00000003      
+     19  x: ADD_INT     R0.x,  -1,  PV18.z      
+         y: LSHR        R0.y,  PV18.y,  2      
+         z: CNDE_INT    R0.z,  PV18.z,  0.0f,  24      
+         w: ADD_INT     R0.w,  -2,  PV18.z      
+03 TEX: ADDR(112) CNT(1) 
+     20  VFETCH R1.x___, R0.y, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+04 ALU: ADDR(86) CNT(11) 
+     21  y: CNDE_INT    R123.y,  R0.x,  8,  R0.z      
+     22  w: CNDE_INT    R123.w,  R0.w,  16,  PV21.y      
+     23  y: ASHR        ____,  R1.x,  PV22.w      
+     24  x: BFE_UINT    R123.x,  PV23.y,  0.0f,  0x00000008      
+     25  x: MOV         R1.x,  PV24.x      
+         y: MOV         R1.y,  PV24.x      
+         z: MOV         R1.z,  PV24.x      
+         w: MOV         R1.w,  PV24.x      
+05 MEM_RAT_STORE_TYPED: RAT(10)[R2], R1,  MARK  VPM 
+06 POP (1) ADDR(7) 
+07 NOP NO_BARRIER 
+END_OF_PROGRAM
+
+; ----------------- CS Data ------------------------
+; Input Semantic Mappings
+;    No input mappings
+
+GprPoolSize = 0
+CodeLen                 = 912;Bytes
+PGM_END_CF              = 0; words(64 bit)
+PGM_END_ALU             = 0; words(64 bit)
+PGM_END_FETCH           = 0; words(64 bit)
+MaxScratchRegsNeeded    = 0
+;AluPacking              = 0.0
+;AluClauses              = 0
+;PowerThrottleRate       = 0.0
+; texResourceUsage[0]     = 0x00000000
+; texResourceUsage[1]     = 0x00000000
+; texResourceUsage[2]     = 0x00000000
+; texResourceUsage[3]     = 0x00000000
+; texResourceUsage[4]     = 0x00000000
+; texResourceUsage[5]     = 0x00000000
+; texResourceUsage[6]     = 0x00000000
+; texResourceUsage[7]     = 0x00000000
+; fetch4ResourceUsage[0]  = 0x00000000
+; fetch4ResourceUsage[1]  = 0x00000000
+; fetch4ResourceUsage[2]  = 0x00000000
+; fetch4ResourceUsage[3]  = 0x00000000
+; fetch4ResourceUsage[4]  = 0x00000000
+; fetch4ResourceUsage[5]  = 0x00000000
+; fetch4ResourceUsage[6]  = 0x00000000
+; fetch4ResourceUsage[7]  = 0x00000000
+; texSamplerUsage         = 0x00000000
+; constBufUsage           = 0x00000000
+ResourcesAffectAlphaOutput[0]  = 0x00000000
+ResourcesAffectAlphaOutput[1]  = 0x00000000
+ResourcesAffectAlphaOutput[2]  = 0x00000000
+ResourcesAffectAlphaOutput[3]  = 0x00000000
+ResourcesAffectAlphaOutput[4]  = 0x00000000
+ResourcesAffectAlphaOutput[5]  = 0x00000000
+ResourcesAffectAlphaOutput[6]  = 0x00000000
+ResourcesAffectAlphaOutput[7]  = 0x00000000
+
+;SQ_PGM_RESOURCES        = 0x30000103
+SQ_PGM_RESOURCES:NUM_GPRS     = 3
+SQ_PGM_RESOURCES:STACK_SIZE           = 1
+SQ_PGM_RESOURCES:PRIME_CACHE_ENABLE   = 1
+;SQ_PGM_RESOURCES_2      = 0x000000C0
+SQ_LDS_ALLOC:SIZE        = 0x00000000
+; RatOpIsUsed = 0xC00
+; NumThreadPerGroupFlattened = 256
+; SetBufferForNumGroup = true

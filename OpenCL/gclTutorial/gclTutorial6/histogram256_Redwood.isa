@@ -1,0 +1,3146 @@
+ShaderType = IL_SHADER_COMPUTE
+TargetChip = c
+; ------------- SC_SRCSHADER Dump ------------------
+SC_SHADERSTATE: u32NumIntVSConst = 0
+SC_SHADERSTATE: u32NumIntPSConst = 0
+SC_SHADERSTATE: u32NumIntGSConst = 0
+SC_SHADERSTATE: u32NumBoolVSConst = 0
+SC_SHADERSTATE: u32NumBoolPSConst = 0
+SC_SHADERSTATE: u32NumBoolGSConst = 0
+SC_SHADERSTATE: u32NumFloatVSConst = 0
+SC_SHADERSTATE: u32NumFloatPSConst = 0
+SC_SHADERSTATE: u32NumFloatGSConst = 0
+fConstantsAvailable = 0
+iConstantsAvailable = 0
+bConstantsAvailable = 0
+u32SCOptions[0] = 0x01A00000 SCOption_IGNORE_SAMPLE_L_BUG SCOption_FLOAT_DO_NOT_DIST SCOption_FLOAT_DO_NOT_REASSOC
+u32SCOptions[1] = 0x00202000 SCOption_R600_ERROR_ON_DOUBLE_MEMEXP SCOption_SET_VPM_FOR_SCATTER
+u32SCOptions[2] = 0x00000045 SCOption_R800_UAV_NONARRAY_FIXUP SCOption_R8XX_CF_ALU_STACK_ENTRY_WORKAROUND SCOption_R800_UAV_NONUAV_SYNC_WORKAROUND_BUG216513_1
+
+; --------  Disassembly --------------------
+00 ALU: ADDR(160) CNT(121) KCACHE0(CB1:0-15) 
+      0  z: LSHL        R9.z,  R0.x,  8      
+         w: MOV         R10.w,  R0.x      
+      1  y: ADD_INT     ____,  KC0[1].x,  PV0.z      
+      2  w: ADD_INT     R9.w,  PV1.y,  8      
+      3  x: ADD_INT     T2.x,  PV2.w,  16      
+         z: ADD_INT     T3.z,  PV2.w,  0.0f      
+      4  x: ADD_INT     ____,  -8,  PV3.z      
+         y: ADD_INT     T0.y,  -7,  PV3.z      
+         z: ADD_INT     T0.z,  -5,  PV3.z      
+         w: ADD_INT     T0.w,  -6,  PV3.z      
+         t: ADD_INT     T2.z,  -1,  PV3.z      
+      5  x: LDS_BYTE_WRITE ____,  PV4.x,  0.0f      
+         y: ADD_INT     T1.y,  -4,  T3.z      
+         z: ADD_INT     T1.z,  -3,  T3.z      
+         w: ADD_INT     T1.w,  -2,  T3.z      
+         t: ADD_INT     T0.x,  T3.z,  1      
+      6  x: LDS_BYTE_WRITE ____,  T0.y,  0.0f      
+         y: ADD_INT     T0.y,  T3.z,  2      
+         z: ADD_INT     R0.z,  T3.z,  4      
+         w: ADD_INT     T2.w,  T3.z,  3      
+         t: ADD_INT     T1.x,  T3.z,  5      
+      7  x: LDS_BYTE_WRITE ____,  T0.w,  0.0f      
+         y: ADD_INT     T2.y,  T3.z,  6      
+         z: ADD_INT     R1.z,  -8,  T2.x      
+         w: ADD_INT     T0.w,  T3.z,  7      
+         t: ADD_INT     R3.z,  -1,  T2.x      
+      8  x: LDS_BYTE_WRITE ____,  T0.z,  0.0f      
+         y: ADD_INT     T3.y,  -7,  T2.x      
+         z: ADD_INT     T0.z,  -5,  T2.x      
+         w: ADD_INT     T3.w,  -6,  T2.x      
+         t: ADD_INT     R2.x,  T2.x,  1      
+      9  x: LDS_BYTE_WRITE ____,  T1.y,  0.0f      
+         y: ADD_INT     T1.y,  -4,  T2.x      
+         z: ADD_INT     R2.z,  -3,  T2.x      
+         w: ADD_INT     R0.w,  -2,  T2.x      
+         t: ADD_INT     R0.y,  T2.x,  2      
+     10  x: LDS_BYTE_WRITE ____,  T1.z,  0.0f      
+         y: ADD_INT     R1.y,  T2.x,  5      
+         z: ADD_INT     R4.z,  T2.x,  4      
+         w: ADD_INT     R1.w,  T2.x,  3      
+         t: ADD_INT     R2.y,  T2.x,  6      
+     11  x: LDS_BYTE_WRITE ____,  T1.w,  0.0f      
+         z: ADD_INT     R8.z,  R9.w,  32      VEC_120 
+         w: ADD_INT     R2.w,  T2.x,  7      
+     12  x: LDS_BYTE_WRITE ____,  T2.z,  0.0f      
+         y: ADD_INT     R3.y,  -8,  PV11.z      
+         z: ADD_INT     R5.z,  -7,  PV11.z      
+         w: ADD_INT     R3.w,  -6,  PV11.z      
+     13  x: LDS_BYTE_WRITE ____,  T3.z,  0.0f      
+         y: ADD_INT     R4.y,  -4,  R8.z      
+         z: ADD_INT     R6.z,  -5,  R8.z      
+         w: ADD_INT     R4.w,  -3,  R8.z      
+     14  x: LDS_BYTE_WRITE ____,  T0.x,  0.0f      
+         z: ADD_INT     R7.z,  -1,  R8.z      
+         w: ADD_INT     R5.w,  -2,  R8.z      
+     15  x: LDS_BYTE_WRITE ____,  T0.y,  0.0f      
+     16  x: LDS_BYTE_WRITE ____,  T2.w,  0.0f      
+         y: ADD_INT     R5.y,  R8.z,  1      
+     17  x: LDS_BYTE_WRITE ____,  R0.z,  0.0f      
+         y: ADD_INT     R6.y,  R8.z,  2      VEC_120 
+     18  x: LDS_BYTE_WRITE ____,  T1.x,  0.0f      
+         w: ADD_INT     R6.w,  R8.z,  3      
+     19  x: LDS_BYTE_WRITE ____,  T2.y,  0.0f      
+         z: ADD_INT     R0.z,  R8.z,  4      
+     20  x: LDS_BYTE_WRITE ____,  T0.w,  0.0f      
+         y: ADD_INT     R7.y,  R8.z,  5      
+     21  x: LDS_BYTE_WRITE ____,  R1.z,  0.0f      
+         y: ADD_INT     R8.y,  R8.z,  6      VEC_120 
+         w: ADD_INT     R7.w,  R8.z,  7      VEC_120 
+     22  x: LDS_BYTE_WRITE ____,  T3.y,  0.0f      
+         z: ADD_INT     R1.z,  R9.w,  48      
+     23  x: LDS_BYTE_WRITE ____,  T3.w,  0.0f      
+         y: ADD_INT     R9.y,  -8,  PV22.z      
+     24  x: LDS_BYTE_WRITE ____,  T0.z,  0.0f      
+         y: ADD_INT     R10.y,  -7,  R1.z      
+     25  x: LDS_BYTE_WRITE ____,  T1.y,  0.0f      
+         w: ADD_INT     R8.w,  -6,  R1.z      
+     26  x: LDS_BYTE_WRITE ____,  R2.z,  0.0f      
+         z: ADD_INT     R2.z,  -5,  R1.z      
+     27  x: LDS_BYTE_WRITE ____,  R0.w,  0.0f      
+         y: ADD_INT     R11.y,  -4,  R1.z      
+     28  x: LDS_BYTE_WRITE ____,  R3.z,  0.0f      
+         y: ADD_INT     R12.y,  -3,  R1.z      
+     29  x: LDS_BYTE_WRITE ____,  T2.x,  0.0f      
+         w: ADD_INT     R0.w,  -2,  R1.z      
+01 ALU: ADDR(281) CNT(123) 
+     30  x: LDS_BYTE_WRITE ____,  R2.x,  0.0f      
+         z: ADD_INT     T0.z,  -1,  R1.z      
+     31  x: LDS_BYTE_WRITE ____,  R0.y,  0.0f      
+     32  x: LDS_BYTE_WRITE ____,  R1.w,  0.0f      
+         y: ADD_INT     T1.y,  R1.z,  1      
+     33  x: LDS_BYTE_WRITE ____,  R4.z,  0.0f      
+         y: ADD_INT     T3.y,  R1.z,  2      VEC_120 
+     34  x: LDS_BYTE_WRITE ____,  R1.y,  0.0f      
+         w: ADD_INT     T3.w,  R1.z,  3      
+     35  x: LDS_BYTE_WRITE ____,  R2.y,  0.0f      
+         z: ADD_INT     T3.z,  R1.z,  4      
+     36  x: LDS_BYTE_WRITE ____,  R2.w,  0.0f      
+         y: ADD_INT     T2.y,  R1.z,  5      
+     37  x: LDS_BYTE_WRITE ____,  R3.y,  0.0f      
+         y: ADD_INT     T0.y,  R1.z,  6      
+         w: ADD_INT     T0.w,  R1.z,  7      
+     38  x: LDS_BYTE_WRITE ____,  R5.z,  0.0f      
+         z: ADD_INT     R5.z,  R9.w,  64      
+     39  x: LDS_BYTE_WRITE ____,  R3.w,  0.0f      
+         y: ADD_INT     R3.y,  -8,  PV38.z      
+     40  x: LDS_BYTE_WRITE ____,  R6.z,  0.0f      
+         y: ADD_INT     R2.y,  -7,  R5.z      
+     41  x: LDS_BYTE_WRITE ____,  R4.y,  0.0f      
+         w: ADD_INT     T2.w,  -6,  R5.z      
+     42  x: LDS_BYTE_WRITE ____,  R4.w,  0.0f      
+         z: ADD_INT     T2.z,  -5,  R5.z      
+     43  x: LDS_BYTE_WRITE ____,  R5.w,  0.0f      
+         y: ADD_INT     R4.y,  -4,  R5.z      
+     44  x: LDS_BYTE_WRITE ____,  R7.z,  0.0f      
+         y: ADD_INT     R1.y,  -3,  R5.z      
+     45  x: LDS_BYTE_WRITE ____,  R8.z,  0.0f      
+         w: ADD_INT     R5.w,  -2,  R5.z      
+     46  x: LDS_BYTE_WRITE ____,  R5.y,  0.0f      
+         z: ADD_INT     R8.z,  -1,  R5.z      
+     47  x: LDS_BYTE_WRITE ____,  R6.y,  0.0f      
+     48  x: LDS_BYTE_WRITE ____,  R6.w,  0.0f      
+         y: ADD_INT     R6.y,  R5.z,  1      
+     49  x: LDS_BYTE_WRITE ____,  R0.z,  0.0f      
+         y: ADD_INT     R5.y,  R5.z,  2      VEC_120 
+     50  x: LDS_BYTE_WRITE ____,  R7.y,  0.0f      
+         w: ADD_INT     R6.w,  R5.z,  3      
+     51  x: LDS_BYTE_WRITE ____,  R8.y,  0.0f      
+         z: ADD_INT     R0.z,  R5.z,  4      
+     52  x: LDS_BYTE_WRITE ____,  R7.w,  0.0f      
+         y: ADD_INT     R8.y,  R5.z,  5      
+     53  x: LDS_BYTE_WRITE ____,  R9.y,  0.0f      
+         y: ADD_INT     R9.y,  R5.z,  6      
+         w: ADD_INT     R7.w,  R5.z,  7      
+     54  x: LDS_BYTE_WRITE ____,  R10.y,  0.0f      
+         z: ADD_INT     R7.z,  R9.w,  80      
+     55  x: LDS_BYTE_WRITE ____,  R8.w,  0.0f      
+         y: ADD_INT     R10.y,  -8,  PV54.z      
+     56  x: LDS_BYTE_WRITE ____,  R2.z,  0.0f      
+         y: ADD_INT     R7.y,  -7,  R7.z      
+     57  x: LDS_BYTE_WRITE ____,  R11.y,  0.0f      
+         w: ADD_INT     R8.w,  -6,  R7.z      
+     58  x: LDS_BYTE_WRITE ____,  R12.y,  0.0f      
+         z: ADD_INT     R2.z,  -5,  R7.z      
+     59  x: LDS_BYTE_WRITE ____,  R0.w,  0.0f      
+         y: ADD_INT     R12.y,  -4,  R7.z      
+     60  x: LDS_BYTE_WRITE ____,  T0.z,  0.0f      
+         y: ADD_INT     R11.y,  -3,  R7.z      
+     61  x: LDS_BYTE_WRITE ____,  R1.z,  0.0f      
+         w: ADD_INT     R0.w,  -2,  R7.z      
+     62  x: LDS_BYTE_WRITE ____,  T1.y,  0.0f      
+         z: ADD_INT     R1.z,  -1,  R7.z      
+     63  x: LDS_BYTE_WRITE ____,  T3.y,  0.0f      
+     64  x: LDS_BYTE_WRITE ____,  T3.w,  0.0f      
+         y: ADD_INT     R0.y,  R7.z,  1      
+     65  x: LDS_BYTE_WRITE ____,  T3.z,  0.0f      
+         y: ADD_INT     R13.y,  R7.z,  2      VEC_120 
+     66  x: LDS_BYTE_WRITE ____,  T2.y,  0.0f      
+         w: ADD_INT     R4.w,  R7.z,  3      
+     67  x: LDS_BYTE_WRITE ____,  T0.y,  0.0f      
+         z: ADD_INT     R6.z,  R7.z,  4      
+     68  x: LDS_BYTE_WRITE ____,  T0.w,  0.0f      
+         y: ADD_INT     R14.y,  R7.z,  5      
+     69  x: LDS_BYTE_WRITE ____,  R3.y,  0.0f      
+         y: ADD_INT     R3.y,  R7.z,  6      
+         w: ADD_INT     R3.w,  R7.z,  7      
+     70  x: LDS_BYTE_WRITE ____,  R2.y,  0.0f      
+         z: ADD_INT     R4.z,  R9.w,  96      
+     71  x: LDS_BYTE_WRITE ____,  T2.w,  0.0f      
+         y: ADD_INT     R2.y,  -8,  PV70.z      
+     72  x: LDS_BYTE_WRITE ____,  T2.z,  0.0f      
+         y: ADD_INT     R15.y,  -7,  R4.z      
+     73  x: LDS_BYTE_WRITE ____,  R4.y,  0.0f      
+         w: ADD_INT     R2.w,  -6,  R4.z      
+02 ALU: ADDR(404) CNT(123) 
+     74  x: LDS_BYTE_WRITE ____,  R1.y,  0.0f      
+         z: ADD_INT     T2.z,  -5,  R4.z      
+     75  x: LDS_BYTE_WRITE ____,  R5.w,  0.0f      
+         y: ADD_INT     T0.y,  -4,  R4.z      
+     76  x: LDS_BYTE_WRITE ____,  R8.z,  0.0f      
+         y: ADD_INT     T2.y,  -3,  R4.z      
+     77  x: LDS_BYTE_WRITE ____,  R5.z,  0.0f      
+         w: ADD_INT     T2.w,  -2,  R4.z      
+     78  x: LDS_BYTE_WRITE ____,  R6.y,  0.0f      
+         z: ADD_INT     T3.z,  -1,  R4.z      
+     79  x: LDS_BYTE_WRITE ____,  R5.y,  0.0f      
+     80  x: LDS_BYTE_WRITE ____,  R6.w,  0.0f      
+         y: ADD_INT     T3.y,  R4.z,  1      
+     81  x: LDS_BYTE_WRITE ____,  R0.z,  0.0f      
+         y: ADD_INT     T1.y,  R4.z,  2      VEC_120 
+     82  x: LDS_BYTE_WRITE ____,  R8.y,  0.0f      
+         w: ADD_INT     T0.w,  R4.z,  3      
+     83  x: LDS_BYTE_WRITE ____,  R9.y,  0.0f      
+         z: ADD_INT     T0.z,  R4.z,  4      
+     84  x: LDS_BYTE_WRITE ____,  R7.w,  0.0f      
+         y: ADD_INT     R9.y,  R4.z,  5      
+     85  x: LDS_BYTE_WRITE ____,  R10.y,  0.0f      
+         y: ADD_INT     R10.y,  R4.z,  6      
+         w: ADD_INT     T3.w,  R4.z,  7      
+     86  x: LDS_BYTE_WRITE ____,  R7.y,  0.0f      
+         z: ADD_INT     R0.z,  R9.w,  112      
+     87  x: LDS_BYTE_WRITE ____,  R8.w,  0.0f      
+         y: ADD_INT     R7.y,  -8,  PV86.z      
+     88  x: LDS_BYTE_WRITE ____,  R2.z,  0.0f      
+         y: ADD_INT     R8.y,  -7,  R0.z      
+     89  x: LDS_BYTE_WRITE ____,  R12.y,  0.0f      
+         w: ADD_INT     R8.w,  -6,  R0.z      
+     90  x: LDS_BYTE_WRITE ____,  R11.y,  0.0f      
+         z: ADD_INT     R2.z,  -5,  R0.z      
+     91  x: LDS_BYTE_WRITE ____,  R0.w,  0.0f      
+         y: ADD_INT     R11.y,  -4,  R0.z      
+     92  x: LDS_BYTE_WRITE ____,  R1.z,  0.0f      
+         y: ADD_INT     R12.y,  -3,  R0.z      
+     93  x: LDS_BYTE_WRITE ____,  R7.z,  0.0f      
+         w: ADD_INT     R0.w,  -2,  R0.z      
+     94  x: LDS_BYTE_WRITE ____,  R0.y,  0.0f      
+         z: ADD_INT     R7.z,  -1,  R0.z      
+     95  x: LDS_BYTE_WRITE ____,  R13.y,  0.0f      
+     96  x: LDS_BYTE_WRITE ____,  R4.w,  0.0f      
+         y: ADD_INT     R13.y,  R0.z,  1      
+     97  x: LDS_BYTE_WRITE ____,  R6.z,  0.0f      
+         y: ADD_INT     R0.y,  R0.z,  2      VEC_120 
+     98  x: LDS_BYTE_WRITE ____,  R14.y,  0.0f      
+         w: ADD_INT     R4.w,  R0.z,  3      
+     99  x: LDS_BYTE_WRITE ____,  R3.y,  0.0f      
+         z: ADD_INT     R6.z,  R0.z,  4      
+    100  x: LDS_BYTE_WRITE ____,  R3.w,  0.0f      
+         y: ADD_INT     R3.y,  R0.z,  5      
+    101  x: LDS_BYTE_WRITE ____,  R2.y,  0.0f      
+         y: ADD_INT     R2.y,  R0.z,  6      
+         w: ADD_INT     R3.w,  R0.z,  7      
+    102  x: LDS_BYTE_WRITE ____,  R15.y,  0.0f      
+         z: ADD_INT     R5.z,  R9.w,  128      
+    103  x: LDS_BYTE_WRITE ____,  R2.w,  0.0f      
+         y: ADD_INT     R15.y,  -8,  PV102.z      
+    104  x: LDS_BYTE_WRITE ____,  T2.z,  0.0f      
+         y: ADD_INT     R14.y,  -7,  R5.z      
+    105  x: LDS_BYTE_WRITE ____,  T0.y,  0.0f      
+         w: ADD_INT     R2.w,  -6,  R5.z      
+    106  x: LDS_BYTE_WRITE ____,  T2.y,  0.0f      
+         z: ADD_INT     R1.z,  -5,  R5.z      
+    107  x: LDS_BYTE_WRITE ____,  T2.w,  0.0f      
+         y: ADD_INT     R5.y,  -4,  R5.z      
+    108  x: LDS_BYTE_WRITE ____,  T3.z,  0.0f      
+         y: ADD_INT     R6.y,  -3,  R5.z      
+    109  x: LDS_BYTE_WRITE ____,  R4.z,  0.0f      
+         w: ADD_INT     R7.w,  -2,  R5.z      
+    110  x: LDS_BYTE_WRITE ____,  T3.y,  0.0f      
+         z: ADD_INT     R4.z,  -1,  R5.z      
+    111  x: LDS_BYTE_WRITE ____,  T1.y,  0.0f      
+    112  x: LDS_BYTE_WRITE ____,  T0.w,  0.0f      
+         y: ADD_INT     R1.y,  R5.z,  1      
+    113  x: LDS_BYTE_WRITE ____,  T0.z,  0.0f      
+         y: ADD_INT     R4.y,  R5.z,  2      VEC_120 
+    114  x: LDS_BYTE_WRITE ____,  R9.y,  0.0f      
+         w: ADD_INT     R6.w,  R5.z,  3      
+    115  x: LDS_BYTE_WRITE ____,  R10.y,  0.0f      
+         z: ADD_INT     R8.z,  R5.z,  4      
+    116  x: LDS_BYTE_WRITE ____,  T3.w,  0.0f      
+         y: ADD_INT     R10.y,  R5.z,  5      
+    117  x: LDS_BYTE_WRITE ____,  R7.y,  0.0f      
+         y: ADD_INT     R7.y,  R5.z,  6      
+         w: ADD_INT     R5.w,  R5.z,  7      
+03 ALU: ADDR(527) CNT(122) 
+    118  x: LDS_BYTE_WRITE ____,  R8.y,  0.0f      
+         z: ADD_INT     T2.z,  R9.w,  144      
+    119  x: LDS_BYTE_WRITE ____,  R8.w,  0.0f      
+         y: ADD_INT     T1.y,  -8,  PV118.z      
+    120  x: LDS_BYTE_WRITE ____,  R2.z,  0.0f      
+         y: ADD_INT     T3.y,  -7,  T2.z      
+    121  x: LDS_BYTE_WRITE ____,  R11.y,  0.0f      
+         w: ADD_INT     T3.w,  -6,  T2.z      
+    122  x: LDS_BYTE_WRITE ____,  R12.y,  0.0f      
+         z: ADD_INT     T0.z,  -5,  T2.z      
+    123  x: LDS_BYTE_WRITE ____,  R0.w,  0.0f      
+         y: ADD_INT     T2.y,  -4,  T2.z      
+    124  x: LDS_BYTE_WRITE ____,  R7.z,  0.0f      
+         y: ADD_INT     T0.y,  -3,  T2.z      
+    125  x: LDS_BYTE_WRITE ____,  R0.z,  0.0f      
+         w: ADD_INT     T0.w,  -2,  T2.z      
+    126  x: LDS_BYTE_WRITE ____,  R13.y,  0.0f      
+         z: ADD_INT     T3.z,  -1,  T2.z      
+    127  x: LDS_BYTE_WRITE ____,  R0.y,  0.0f      
+    128  x: LDS_BYTE_WRITE ____,  R4.w,  0.0f      
+         y: ADD_INT     R0.y,  T2.z,  1      
+    129  x: LDS_BYTE_WRITE ____,  R6.z,  0.0f      
+         y: ADD_INT     R13.y,  T2.z,  2      VEC_120 
+    130  x: LDS_BYTE_WRITE ____,  R3.y,  0.0f      
+         w: ADD_INT     T2.w,  T2.z,  3      
+    131  x: LDS_BYTE_WRITE ____,  R2.y,  0.0f      
+         z: ADD_INT     T1.z,  T2.z,  4      
+    132  x: LDS_BYTE_WRITE ____,  R3.w,  0.0f      
+         y: ADD_INT     R2.y,  T2.z,  5      
+    133  x: LDS_BYTE_WRITE ____,  R15.y,  0.0f      
+         y: ADD_INT     R15.y,  T2.z,  6      
+         w: ADD_INT     R3.w,  T2.z,  7      
+    134  x: LDS_BYTE_WRITE ____,  R14.y,  0.0f      
+         z: ADD_INT     R6.z,  R9.w,  160      
+    135  x: LDS_BYTE_WRITE ____,  R2.w,  0.0f      
+         y: ADD_INT     R14.y,  -8,  PV134.z      
+    136  x: LDS_BYTE_WRITE ____,  R1.z,  0.0f      
+         y: ADD_INT     R3.y,  -7,  R6.z      
+    137  x: LDS_BYTE_WRITE ____,  R5.y,  0.0f      
+         w: ADD_INT     R2.w,  -6,  R6.z      
+    138  x: LDS_BYTE_WRITE ____,  R6.y,  0.0f      
+         z: ADD_INT     R1.z,  -5,  R6.z      
+    139  x: LDS_BYTE_WRITE ____,  R7.w,  0.0f      
+         y: ADD_INT     R6.y,  -4,  R6.z      
+    140  x: LDS_BYTE_WRITE ____,  R4.z,  0.0f      
+         y: ADD_INT     R5.y,  -3,  R6.z      
+    141  x: LDS_BYTE_WRITE ____,  R5.z,  0.0f      
+         w: ADD_INT     R7.w,  -2,  R6.z      
+    142  x: LDS_BYTE_WRITE ____,  R1.y,  0.0f      
+         z: ADD_INT     R5.z,  -1,  R6.z      
+    143  x: LDS_BYTE_WRITE ____,  R4.y,  0.0f      
+    144  x: LDS_BYTE_WRITE ____,  R6.w,  0.0f      
+         y: ADD_INT     R4.y,  R6.z,  1      
+    145  x: LDS_BYTE_WRITE ____,  R8.z,  0.0f      
+         y: ADD_INT     R1.y,  R6.z,  2      VEC_120 
+    146  x: LDS_BYTE_WRITE ____,  R10.y,  0.0f      
+         w: ADD_INT     R6.w,  R6.z,  3      
+    147  x: LDS_BYTE_WRITE ____,  R7.y,  0.0f      
+         z: ADD_INT     R8.z,  R6.z,  4      
+    148  x: LDS_BYTE_WRITE ____,  R5.w,  0.0f      
+         y: ADD_INT     R7.y,  R6.z,  5      
+    149  x: LDS_BYTE_WRITE ____,  T1.y,  0.0f      
+         y: ADD_INT     R10.y,  R6.z,  6      
+         w: ADD_INT     R5.w,  R6.z,  7      
+    150  x: LDS_BYTE_WRITE ____,  T3.y,  0.0f      
+         z: ADD_INT     R7.z,  R9.w,  176      
+    151  x: LDS_BYTE_WRITE ____,  T3.w,  0.0f      
+         y: ADD_INT     R12.y,  -8,  PV150.z      
+    152  x: LDS_BYTE_WRITE ____,  T0.z,  0.0f      
+         y: ADD_INT     R11.y,  -7,  R7.z      
+    153  x: LDS_BYTE_WRITE ____,  T2.y,  0.0f      
+         w: ADD_INT     R4.w,  -6,  R7.z      
+    154  x: LDS_BYTE_WRITE ____,  T0.y,  0.0f      
+         z: ADD_INT     R4.z,  -5,  R7.z      
+    155  x: LDS_BYTE_WRITE ____,  T0.w,  0.0f      
+         y: ADD_INT     R8.y,  -4,  R7.z      
+    156  x: LDS_BYTE_WRITE ____,  T3.z,  0.0f      
+         y: ADD_INT     R9.y,  -3,  R7.z      
+    157  x: LDS_BYTE_WRITE ____,  T2.z,  0.0f      
+         w: ADD_INT     R0.w,  -2,  R7.z      
+    158  x: LDS_BYTE_WRITE ____,  R0.y,  0.0f      
+         z: ADD_INT     R0.z,  -1,  R7.z      
+    159  x: LDS_BYTE_WRITE ____,  R13.y,  0.0f      
+    160  x: LDS_BYTE_WRITE ____,  T2.w,  0.0f      
+         y: ADD_INT     R13.y,  R7.z,  1      
+    161  x: LDS_BYTE_WRITE ____,  T1.z,  0.0f      
+         y: ADD_INT     R0.y,  R7.z,  2      VEC_120 
+04 ALU: ADDR(649) CNT(121) 
+    162  x: LDS_BYTE_WRITE ____,  R2.y,  0.0f      
+         w: ADD_INT     T2.w,  R7.z,  3      
+    163  x: LDS_BYTE_WRITE ____,  R15.y,  0.0f      
+         z: ADD_INT     T1.z,  R7.z,  4      
+    164  x: LDS_BYTE_WRITE ____,  R3.w,  0.0f      
+         y: ADD_INT     T0.y,  R7.z,  5      
+    165  x: LDS_BYTE_WRITE ____,  R14.y,  0.0f      
+         y: ADD_INT     T2.y,  R7.z,  6      
+         w: ADD_INT     T0.w,  R7.z,  7      
+    166  x: LDS_BYTE_WRITE ____,  R3.y,  0.0f      
+         z: ADD_INT     R2.z,  R9.w,  192      
+    167  x: LDS_BYTE_WRITE ____,  R2.w,  0.0f      
+         y: ADD_INT     T3.y,  -8,  PV166.z      
+    168  x: LDS_BYTE_WRITE ____,  R1.z,  0.0f      
+         y: ADD_INT     T1.y,  -7,  R2.z      
+    169  x: LDS_BYTE_WRITE ____,  R6.y,  0.0f      
+         w: ADD_INT     T3.w,  -6,  R2.z      
+    170  x: LDS_BYTE_WRITE ____,  R5.y,  0.0f      
+         z: ADD_INT     T2.z,  -5,  R2.z      
+    171  x: LDS_BYTE_WRITE ____,  R7.w,  0.0f      
+         y: ADD_INT     R5.y,  -4,  R2.z      
+    172  x: LDS_BYTE_WRITE ____,  R5.z,  0.0f      
+         y: ADD_INT     R6.y,  -3,  R2.z      
+    173  x: LDS_BYTE_WRITE ____,  R6.z,  0.0f      
+         w: ADD_INT     T1.w,  -2,  R2.z      
+    174  x: LDS_BYTE_WRITE ____,  R4.y,  0.0f      
+         z: ADD_INT     R6.z,  -1,  R2.z      
+    175  x: LDS_BYTE_WRITE ____,  R1.y,  0.0f      
+    176  x: LDS_BYTE_WRITE ____,  R6.w,  0.0f      
+         y: ADD_INT     R1.y,  R2.z,  1      
+    177  x: LDS_BYTE_WRITE ____,  R8.z,  0.0f      
+         y: ADD_INT     R4.y,  R2.z,  2      VEC_120 
+    178  x: LDS_BYTE_WRITE ____,  R7.y,  0.0f      
+         w: ADD_INT     R6.w,  R2.z,  3      
+    179  x: LDS_BYTE_WRITE ____,  R10.y,  0.0f      
+         z: ADD_INT     R8.z,  R2.z,  4      
+    180  x: LDS_BYTE_WRITE ____,  R5.w,  0.0f      
+         y: ADD_INT     R10.y,  R2.z,  5      
+    181  x: LDS_BYTE_WRITE ____,  R12.y,  0.0f      
+         y: ADD_INT     R12.y,  R2.z,  6      
+         w: ADD_INT     R5.w,  R2.z,  7      
+    182  x: LDS_BYTE_WRITE ____,  R11.y,  0.0f      
+         z: ADD_INT     R5.z,  R9.w,  208      
+    183  x: LDS_BYTE_WRITE ____,  R4.w,  0.0f      
+         y: ADD_INT     R11.y,  -8,  PV182.z      
+    184  x: LDS_BYTE_WRITE ____,  R4.z,  0.0f      
+         y: ADD_INT     R7.y,  -7,  R5.z      
+    185  x: LDS_BYTE_WRITE ____,  R8.y,  0.0f      
+         w: ADD_INT     R4.w,  -6,  R5.z      
+    186  x: LDS_BYTE_WRITE ____,  R9.y,  0.0f      
+         z: ADD_INT     R4.z,  -5,  R5.z      
+    187  x: LDS_BYTE_WRITE ____,  R0.w,  0.0f      
+         y: ADD_INT     R9.y,  -4,  R5.z      
+    188  x: LDS_BYTE_WRITE ____,  R0.z,  0.0f      
+         y: ADD_INT     R8.y,  -3,  R5.z      
+    189  x: LDS_BYTE_WRITE ____,  R7.z,  0.0f      
+         w: ADD_INT     R0.w,  -2,  R5.z      
+    190  x: LDS_BYTE_WRITE ____,  R13.y,  0.0f      
+         z: ADD_INT     R7.z,  -1,  R5.z      
+    191  x: LDS_BYTE_WRITE ____,  R0.y,  0.0f      
+    192  x: LDS_BYTE_WRITE ____,  T2.w,  0.0f      
+         y: ADD_INT     R0.y,  R5.z,  1      
+    193  x: LDS_BYTE_WRITE ____,  T1.z,  0.0f      
+         y: ADD_INT     R13.y,  R5.z,  2      VEC_120 
+    194  x: LDS_BYTE_WRITE ____,  T0.y,  0.0f      
+         w: ADD_INT     R7.w,  R5.z,  3      
+    195  x: LDS_BYTE_WRITE ____,  T2.y,  0.0f      
+         z: ADD_INT     R0.z,  R5.z,  4      
+    196  x: LDS_BYTE_WRITE ____,  T0.w,  0.0f      
+         y: ADD_INT     R3.y,  R5.z,  5      
+    197  x: LDS_BYTE_WRITE ____,  T3.y,  0.0f      
+         y: ADD_INT     R14.y,  R5.z,  6      
+         w: ADD_INT     R2.w,  R5.z,  7      
+    198  x: LDS_BYTE_WRITE ____,  T1.y,  0.0f      
+         z: ADD_INT     R3.z,  R9.w,  224      
+    199  x: LDS_BYTE_WRITE ____,  T3.w,  0.0f      
+         y: ADD_INT     R15.y,  -8,  PV198.z      
+    200  x: LDS_BYTE_WRITE ____,  T2.z,  0.0f      
+         y: ADD_INT     R2.y,  -7,  R3.z      
+    201  x: LDS_BYTE_WRITE ____,  R5.y,  0.0f      
+         w: ADD_INT     R3.w,  -6,  R3.z      
+    202  x: LDS_BYTE_WRITE ____,  R6.y,  0.0f      
+         z: ADD_INT     R1.z,  -5,  R3.z      
+    203  x: LDS_BYTE_WRITE ____,  T1.w,  0.0f      
+         y: ADD_INT     R6.y,  -4,  R3.z      
+05 ALU: ADDR(770) CNT(118) KCACHE0(CB0:0-15) KCACHE1(CB1:0-15) 
+    204  x: LDS_BYTE_WRITE ____,  R6.z,  0.0f      
+         y: ADD_INT     T1.y,  -3,  R3.z      
+    205  x: LDS_BYTE_WRITE ____,  R2.z,  0.0f      
+         w: ADD_INT     T1.w,  -2,  R3.z      
+    206  x: LDS_BYTE_WRITE ____,  R1.y,  0.0f      
+         z: ADD_INT     T2.z,  -1,  R3.z      
+    207  x: LDS_BYTE_WRITE ____,  R4.y,  0.0f      
+    208  x: LDS_BYTE_WRITE ____,  R6.w,  0.0f      
+         y: ADD_INT     T3.y,  R3.z,  1      
+    209  x: LDS_BYTE_WRITE ____,  R8.z,  0.0f      
+         y: ADD_INT     T2.y,  R3.z,  2      VEC_120 
+    210  x: LDS_BYTE_WRITE ____,  R10.y,  0.0f      
+         w: ADD_INT     T3.w,  R3.z,  3      
+    211  x: LDS_BYTE_WRITE ____,  R12.y,  0.0f      
+         z: ADD_INT     T1.z,  R3.z,  4      
+    212  x: LDS_BYTE_WRITE ____,  R5.w,  0.0f      
+         y: ADD_INT     T0.y,  R3.z,  5      
+    213  x: LDS_BYTE_WRITE ____,  R11.y,  0.0f      
+         y: ADD_INT     R11.y,  R3.z,  6      
+         w: ADD_INT     R5.w,  R3.z,  7      
+    214  x: LDS_BYTE_WRITE ____,  R7.y,  0.0f      
+         z: ADD_INT     R8.z,  R9.w,  240      
+    215  x: LDS_BYTE_WRITE ____,  R4.w,  0.0f      
+         y: ADD_INT     R7.y,  -8,  PV214.z      
+    216  x: LDS_BYTE_WRITE ____,  R4.z,  0.0f      
+         y: ADD_INT     R12.y,  -7,  R8.z      
+    217  x: LDS_BYTE_WRITE ____,  R9.y,  0.0f      
+         w: ADD_INT     R4.w,  -6,  R8.z      
+    218  x: LDS_BYTE_WRITE ____,  R8.y,  0.0f      
+         z: ADD_INT     R4.z,  -5,  R8.z      
+    219  x: LDS_BYTE_WRITE ____,  R0.w,  0.0f      
+         y: ADD_INT     R8.y,  -4,  R8.z      
+    220  x: LDS_BYTE_WRITE ____,  R7.z,  0.0f      
+         y: ADD_INT     R9.y,  -3,  R8.z      
+    221  x: LDS_BYTE_WRITE ____,  R5.z,  0.0f      
+         w: ADD_INT     R0.w,  -2,  R8.z      
+    222  x: LDS_BYTE_WRITE ____,  R0.y,  0.0f      
+         z: ADD_INT     R5.z,  -1,  R8.z      
+    223  x: LDS_BYTE_WRITE ____,  R13.y,  0.0f      
+    224  x: LDS_BYTE_WRITE ____,  R7.w,  0.0f      
+         y: ADD_INT     R13.y,  R8.z,  1      
+    225  x: LDS_BYTE_WRITE ____,  R0.z,  0.0f      
+         y: ADD_INT     R0.y,  R8.z,  2      VEC_120 
+    226  x: LDS_BYTE_WRITE ____,  R3.y,  0.0f      
+         w: ADD_INT     R7.w,  R8.z,  3      
+    227  x: LDS_BYTE_WRITE ____,  R14.y,  0.0f      
+         z: ADD_INT     R0.z,  R8.z,  4      
+    228  x: LDS_BYTE_WRITE ____,  R2.w,  0.0f      
+         y: ADD_INT     R14.y,  R8.z,  5      
+    229  x: LDS_BYTE_WRITE ____,  R15.y,  0.0f      
+         y: ADD_INT     R3.y,  R8.z,  6      
+         w: ADD_INT     R2.w,  R8.z,  7      
+    230  x: LDS_BYTE_WRITE ____,  R2.y,  0.0f      
+         y: ADD_INT     R5.y,  R1.x,  KC0[7].x      
+         z: LSHL        ____,  R0.x,  2      VEC_120 
+    231  x: LDS_BYTE_WRITE ____,  R3.w,  0.0f      
+         y: ADD_INT     R15.y,  KC1[0].x,  PV230.z      
+    232  x: LDS_BYTE_WRITE ____,  R1.z,  0.0f      
+         y: LSHL        R2.y,  R5.y,  8      
+         t: MULLO_INT   ____,  R5.y,  KC0[1].x      
+    233  x: LDS_BYTE_WRITE ____,  R6.y,  0.0f      
+         z: LSHL        ____,  PS232,  10      
+    234  x: LDS_BYTE_WRITE ____,  T1.y,  0.0f      
+         y: OR_INT      ____,  1,  R2.y      
+         t: ADD_INT     R5.x,  R15.y,  PV233.z      
+    235  x: LDS_BYTE_WRITE ____,  T1.w,  0.0f      
+         y: LSHR        R1.y,  PS234,  2      
+         t: MULLO_INT   ____,  KC0[1].x,  PV234.y      
+    236  x: LDS_BYTE_WRITE ____,  T2.z,  0.0f      
+         z: LSHL        ____,  PS235,  2      
+    237  x: LDS_BYTE_WRITE ____,  R3.z,  0.0f      
+         y: OR_INT      ____,  0x00000002,  R2.y      
+         z: ADD_INT     R6.z,  R15.y,  PV236.z      
+    238  x: LDS_BYTE_WRITE ____,  T3.y,  0.0f      
+         w: LSHR        R1.w,  PV237.z,  2      
+         t: MULLO_INT   ____,  KC0[1].x,  PV237.y      
+    239  x: LDS_BYTE_WRITE ____,  T2.y,  0.0f      
+         y: LSHL        ____,  PS238,  2      
+    240  x: LDS_BYTE_WRITE ____,  T3.w,  0.0f      
+         y: OR_INT      ____,  0x00000003,  R2.y      
+         w: ADD_INT     R6.w,  R15.y,  PV239.y      
+    241  x: LDS_BYTE_WRITE ____,  T1.z,  0.0f      
+         z: LSHR        R1.z,  PV240.w,  2      
+         t: MULLO_INT   ____,  KC0[1].x,  PV240.y      
+    242  x: LDS_BYTE_WRITE ____,  T0.y,  0.0f      
+         z: LSHL        R3.z,  PS241,  2      
+         w: OR_INT      R3.w,  0x00000004,  R2.y      
+06 ALU: ADDR(888) CNT(48) KCACHE0(CB0:0-15) 
+    243  x: LDS_BYTE_WRITE ____,  R11.y,  0.0f      
+         t: ADD_INT     R6.x,  R15.y,  R3.z      
+    244  x: LDS_BYTE_WRITE ____,  R5.w,  0.0f      
+         y: LSHR        R4.y,  PS243,  2      
+         t: MULLO_INT   ____,  KC0[1].x,  R3.w      
+    245  x: LDS_BYTE_WRITE ____,  R7.y,  0.0f      
+         y: LSHL        ____,  PS244,  2      
+         z: OR_INT      ____,  0x00000005,  R2.y      
+    246  x: LDS_BYTE_WRITE ____,  R12.y,  0.0f      
+         y: ADD_INT     R6.y,  R15.y,  PV245.y      VEC_120 
+         t: MULLO_INT   ____,  KC0[1].x,  PV245.z      
+    247  x: LDS_BYTE_WRITE ____,  R4.w,  0.0f      
+         y: OR_INT      ____,  0x00000006,  R2.y      
+         z: LSHL        ____,  PS246,  2      
+         w: OR_INT      T3.w,  0x00000007,  R2.y      
+         t: LSHR        R7.x,  PV246.y,  2      
+    248  x: LDS_BYTE_WRITE ____,  R4.z,  0.0f      
+         z: ADD_INT     R4.z,  R15.y,  PV247.z      
+         t: MULLO_INT   ____,  KC0[1].x,  PV247.y      
+    249  x: LDS_BYTE_WRITE ____,  R8.y,  0.0f      
+         y: LSHL        ____,  PS248,  2      
+         w: LSHR        R4.w,  PV248.z,  2      
+         t: MULLO_INT   ____,  KC0[1].x,  T3.w      
+    250  x: LDS_BYTE_WRITE ____,  R9.y,  0.0f      
+         z: LSHL        ____,  PS249,  2      
+         w: ADD_INT     R5.w,  R15.y,  PV249.y      VEC_120 
+    251  x: LDS_BYTE_WRITE ____,  R0.w,  0.0f      
+         z: LSHR        R2.z,  PV250.w,  2      
+         t: ADD_INT     R8.x,  R15.y,  PV250.z      
+    252  x: LDS_BYTE_WRITE ____,  R5.z,  0.0f      
+         y: LSHR        R2.y,  PS251,  2      
+    253  x: LDS_BYTE_WRITE ____,  R8.z,  0.0f      
+    254  x: LDS_BYTE_WRITE ____,  R13.y,  0.0f      
+    255  x: LDS_BYTE_WRITE ____,  R0.y,  0.0f      
+    256  x: LDS_BYTE_WRITE ____,  R7.w,  0.0f      
+    257  x: LDS_BYTE_WRITE ____,  R0.z,  0.0f      
+    258  x: LDS_BYTE_WRITE ____,  R14.y,  0.0f      
+    259  x: LDS_BYTE_WRITE ____,  R3.y,  0.0f      
+    260  x: LDS_BYTE_WRITE ____,  R2.w,  0.0f      
+    261  x: GROUP_BARRIER  ____      
+07 TEX: ADDR(3056) CNT(4) 
+    262  VFETCH R0.x___, R1.y, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    263  VFETCH R1.x___, R1.w, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    264  VFETCH R2.x___, R1.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    265  VFETCH R3.x___, R4.y, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+08 ALU: ADDR(936) CNT(33) KCACHE0(CB0:0-15) KCACHE1(CB1:0-15) 
+    266  x: ADD_INT     ____,  R9.z,  R1.x      
+         y: ADD_INT     T0.y,  R9.z,  R2.x      VEC_021 
+         z: ADD_INT     ____,  R9.z,  R0.x      VEC_102 
+         w: LSHL        R3.w,  KC0[1].x,  5      
+         t: RCP_UINT__EG  R4.x,  KC0[1].x      
+    267  x: ADD_INT     T0.x,  KC1[1].x,  PV266.z      
+         y: ADD_INT     T1.y,  KC1[1].x,  PV266.x      
+         z: ADD_INT     ____,  R9.z,  R3.x      
+    268  x: LDS_BYTE_READ_RET QA,  PV267.x      
+         y: ADD_INT     T0.y,  KC1[1].x,  T0.y      
+         z: ADD_INT     T1.z,  KC1[1].x,  PV267.z      
+         w: ADD_INT     R2.w,  R3.w,  0.0f      
+    269  z: ADD_INT     T0.z,  R5.x,  PV268.w      
+    270  w: ADD_INT     ____,  QA[268].pop,  1      
+    271  x: LDS_BYTE_WRITE ____,  T0.x,  PV270.w      
+         y: LSHR        R0.y,  T0.z,  2      
+    272  x: LDS_BYTE_READ_RET QA,  T1.y      
+    273  z: ADD_INT     ____,  QA[272].pop,  1      
+    274  x: LDS_BYTE_WRITE ____,  T1.y,  PV273.z      
+         w: ADD_INT     ____,  R6.z,  R2.w      
+    275  x: LDS_BYTE_READ_RET QA,  T0.y      
+         z: LSHR        R0.z,  PV274.w,  2      
+    276  z: ADD_INT     ____,  QA[275].pop,  1      
+    277  x: LDS_BYTE_WRITE ____,  T0.y,  PV276.z      
+    278  x: LDS_BYTE_READ_RET QA,  T1.z      
+         y: ADD_INT     ____,  R6.w,  R2.w      
+    279  w: LSHR        R0.w,  PV278.y,  2      
+    280  z: ADD_INT     ____,  QA[278].pop,  1      
+    281  x: LDS_BYTE_WRITE ____,  T1.z,  PV280.z      
+09 TEX: ADDR(3064) CNT(4) 
+    282  VFETCH R3.x___, R7.x, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    283  VFETCH R0.x___, R4.w, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    284  VFETCH R1.x___, R2.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    285  VFETCH R2.x___, R2.y, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+10 ALU: ADDR(969) CNT(29) KCACHE0(CB1:0-15) 
+    286  x: ADD_INT     ____,  R9.z,  R0.x      
+         y: ADD_INT     ____,  R9.z,  R3.x      VEC_021 
+         w: ADD_INT     T0.w,  R9.z,  R1.x      VEC_102 
+    287  x: ADD_INT     T0.x,  KC0[1].x,  PV286.x      
+         y: ADD_INT     ____,  R9.z,  R2.x      
+         z: ADD_INT     ____,  R6.x,  R2.w      
+         w: ADD_INT     T1.w,  KC0[1].x,  PV286.y      
+    288  x: LDS_BYTE_READ_RET QA,  PV287.w      
+         y: ADD_INT     T0.y,  KC0[1].x,  PV287.y      
+         z: ADD_INT     T1.z,  KC0[1].x,  T0.w      
+         w: LSHR        R1.w,  PV287.z,  2      
+    289  y: ADD_INT     ____,  QA[288].pop,  1      
+    290  x: LDS_BYTE_WRITE ____,  T1.w,  PV289.y      
+    291  x: LDS_BYTE_READ_RET QA,  T0.x      
+    292  w: ADD_INT     T1.w,  R6.y,  R2.w      
+    293  y: ADD_INT     ____,  QA[291].pop,  1      
+    294  x: LDS_BYTE_WRITE ____,  T0.x,  PV293.y      
+         z: LSHR        R1.z,  T1.w,  2      
+    295  x: LDS_BYTE_READ_RET QA,  T1.z      
+    296  y: ADD_INT     ____,  QA[295].pop,  1      
+    297  x: LDS_BYTE_WRITE ____,  T1.z,  PV296.y      
+         y: ADD_INT     ____,  R4.z,  R2.w      VEC_120 
+    298  x: LDS_BYTE_READ_RET QA,  T0.y      
+         y: LSHR        R1.y,  PV297.y,  2      
+    299  y: ADD_INT     ____,  QA[298].pop,  1      
+    300  x: LDS_BYTE_WRITE ____,  T0.y,  PV299.y      
+11 TEX: ADDR(3072) CNT(4) 
+    301  VFETCH R2.x___, R0.y, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    302  VFETCH R0.x___, R0.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    303  VFETCH R1.x___, R0.w, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    304  VFETCH R3.x___, R1.w, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+12 ALU: ADDR(998) CNT(33) KCACHE0(CB1:0-15) 
+    305  x: ADD_INT     ____,  R5.w,  R2.w      
+         y: ADD_INT     ____,  R9.z,  R0.x      
+         z: ADD_INT     T1.z,  R9.z,  R1.x      VEC_021 
+         w: ADD_INT     ____,  R9.z,  R2.x      VEC_102 
+    306  x: ADD_INT     T0.x,  KC0[1].x,  PV305.y      
+         y: ADD_INT     ____,  R9.z,  R3.x      
+         z: ADD_INT     T0.z,  KC0[1].x,  PV305.w      
+         w: LSHR        R1.w,  PV305.x,  2      
+    307  x: LDS_BYTE_READ_RET QA,  PV306.z      
+         y: ADD_INT     T0.y,  KC0[1].x,  T1.z      
+         w: ADD_INT     T1.w,  KC0[1].x,  PV306.y      
+    308  y: ADD_INT     ____,  QA[307].pop,  1      
+    309  x: LDS_BYTE_WRITE ____,  T0.z,  PV308.y      
+    310  x: LDS_BYTE_READ_RET QA,  T0.x      
+         y: ADD_INT     ____,  R8.x,  R2.w      VEC_120 
+    311  w: LSHR        R0.w,  PV310.y,  2      
+    312  z: ADD_INT     ____,  QA[310].pop,  1      
+    313  x: LDS_BYTE_WRITE ____,  T0.x,  PV312.z      
+    314  x: LDS_BYTE_READ_RET QA,  T0.y      
+         z: ADD_INT     R0.z,  R3.w,  R2.w      
+    315  y: ADD_INT     ____,  R5.x,  PV314.z      
+    316  w: LSHR        R2.w,  PV315.y,  2      
+    317  w: ADD_INT     ____,  QA[314].pop,  1      
+    318  x: LDS_BYTE_WRITE ____,  T0.y,  PV317.w      
+    319  x: LDS_BYTE_READ_RET QA,  T1.w      
+         z: ADD_INT     ____,  R6.z,  R0.z      
+    320  y: LSHR        R0.y,  PV319.z,  2      
+    321  y: ADD_INT     ____,  QA[319].pop,  1      
+    322  x: LDS_BYTE_WRITE ____,  T1.w,  PV321.y      
+13 TEX: ADDR(3080) CNT(4) 
+    323  VFETCH R3.x___, R1.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    324  VFETCH R0.x___, R1.y, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    325  VFETCH R1.x___, R1.w, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    326  VFETCH R2.x___, R0.w, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+14 ALU: ADDR(1031) CNT(32) KCACHE0(CB1:0-15) 
+    327  x: ADD_INT     ____,  R9.z,  R3.x      
+         y: ADD_INT     T0.y,  R9.z,  R1.x      VEC_021 
+         z: ADD_INT     ____,  R6.w,  R0.z      
+         w: ADD_INT     ____,  R9.z,  R0.x      VEC_201 
+    328  x: ADD_INT     ____,  R9.z,  R2.x      
+         y: ADD_INT     T1.y,  KC0[1].x,  PV327.x      
+         z: ADD_INT     T0.z,  KC0[1].x,  PV327.w      
+         w: LSHR        R0.w,  PV327.z,  2      
+    329  x: LDS_BYTE_READ_RET QA,  PV328.y      
+         y: ADD_INT     T0.y,  KC0[1].x,  PV328.x      
+         w: ADD_INT     T1.w,  KC0[1].x,  T0.y      
+    330  z: ADD_INT     ____,  QA[329].pop,  1      
+    331  x: LDS_BYTE_WRITE ____,  T1.y,  PV330.z      
+    332  x: LDS_BYTE_READ_RET QA,  T0.z      
+         y: ADD_INT     ____,  R6.x,  R0.z      
+    333  y: LSHR        R1.y,  PV332.y,  2      
+    334  y: ADD_INT     ____,  QA[332].pop,  1      
+    335  x: LDS_BYTE_WRITE ____,  T0.z,  PV334.y      
+    336  x: LDS_BYTE_READ_RET QA,  T1.w      
+         w: ADD_INT     ____,  R6.y,  R0.z      
+    337  z: LSHR        R1.z,  PV336.w,  2      
+    338  y: ADD_INT     ____,  QA[336].pop,  1      
+    339  x: LDS_BYTE_WRITE ____,  T1.w,  PV338.y      
+    340  x: LDS_BYTE_READ_RET QA,  T0.y      
+         y: ADD_INT     ____,  R4.z,  R0.z      
+    341  w: LSHR        R1.w,  PV340.y,  2      
+    342  w: ADD_INT     ____,  QA[340].pop,  1      
+    343  x: LDS_BYTE_WRITE ____,  T0.y,  PV342.w      
+15 TEX: ADDR(3088) CNT(4) 
+    344  VFETCH R2.x___, R2.w, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    345  VFETCH R0.x___, R0.y, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    346  VFETCH R1.x___, R0.w, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    347  VFETCH R3.x___, R1.y, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+16 ALU: ADDR(1063) CNT(33) KCACHE0(CB1:0-15) 
+    348  x: ADD_INT     ____,  R9.z,  R0.x      
+         y: ADD_INT     T0.y,  R9.z,  R1.x      VEC_021 
+         z: ADD_INT     ____,  R9.z,  R2.x      VEC_102 
+         w: ADD_INT     ____,  R5.w,  R0.z      VEC_021 
+    349  x: ADD_INT     T0.x,  KC0[1].x,  PV348.z      
+         y: ADD_INT     ____,  R9.z,  R3.x      
+         z: LSHR        R2.z,  PV348.w,  2      
+         w: ADD_INT     T1.w,  KC0[1].x,  PV348.x      
+    350  x: LDS_BYTE_READ_RET QA,  PV349.x      
+         y: ADD_INT     T0.y,  KC0[1].x,  T0.y      
+         z: ADD_INT     T0.z,  KC0[1].x,  PV349.y      
+    351  w: ADD_INT     ____,  QA[350].pop,  1      
+    352  x: LDS_BYTE_WRITE ____,  T0.x,  PV351.w      
+    353  x: LDS_BYTE_READ_RET QA,  T1.w      
+         w: ADD_INT     ____,  R8.x,  R0.z      
+    354  z: LSHR        R3.z,  PV353.w,  2      
+    355  y: ADD_INT     ____,  QA[353].pop,  1      
+    356  x: LDS_BYTE_WRITE ____,  T1.w,  PV355.y      
+    357  x: LDS_BYTE_READ_RET QA,  T0.y      
+         y: ADD_INT     R0.y,  R3.w,  R0.z      
+    358  w: ADD_INT     ____,  R5.x,  PV357.y      
+    359  z: LSHR        R0.z,  PV358.w,  2      
+    360  z: ADD_INT     ____,  QA[357].pop,  1      
+    361  x: LDS_BYTE_WRITE ____,  T0.y,  PV360.z      
+    362  x: LDS_BYTE_READ_RET QA,  T0.z      
+         y: ADD_INT     ____,  R6.z,  R0.y      VEC_120 
+    363  y: LSHR        R1.y,  PV362.y,  2      
+    364  y: ADD_INT     ____,  QA[362].pop,  1      
+    365  x: LDS_BYTE_WRITE ____,  T0.z,  PV364.y      
+17 TEX: ADDR(3096) CNT(4) 
+    366  VFETCH R3.x___, R1.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    367  VFETCH R0.x___, R1.w, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    368  VFETCH R1.x___, R2.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    369  VFETCH R2.x___, R3.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+18 ALU: ADDR(1096) CNT(32) KCACHE0(CB1:0-15) 
+    370  x: ADD_INT     ____,  R6.w,  R0.y      
+         y: ADD_INT     ____,  R9.z,  R3.x      
+         z: ADD_INT     ____,  R9.z,  R0.x      VEC_021 
+         w: ADD_INT     T1.w,  R9.z,  R1.x      VEC_102 
+    371  x: ADD_INT     ____,  R9.z,  R2.x      
+         y: ADD_INT     T0.y,  KC0[1].x,  PV370.z      
+         z: LSHR        R3.z,  PV370.x,  2      
+         w: ADD_INT     T0.w,  KC0[1].x,  PV370.y      
+    372  x: LDS_BYTE_READ_RET QA,  PV371.w      
+         y: ADD_INT     T1.y,  KC0[1].x,  PV371.x      
+         z: ADD_INT     T0.z,  KC0[1].x,  T1.w      
+    373  y: ADD_INT     ____,  QA[372].pop,  1      
+    374  x: LDS_BYTE_WRITE ____,  T0.w,  PV373.y      
+    375  x: LDS_BYTE_READ_RET QA,  T0.y      
+         y: ADD_INT     ____,  R6.x,  R0.y      
+    376  w: LSHR        R1.w,  PV375.y,  2      
+    377  w: ADD_INT     ____,  QA[375].pop,  1      
+    378  x: LDS_BYTE_WRITE ____,  T0.y,  PV377.w      
+    379  x: LDS_BYTE_READ_RET QA,  T0.z      
+         z: ADD_INT     ____,  R6.y,  R0.y      
+    380  y: LSHR        R2.y,  PV379.z,  2      
+    381  y: ADD_INT     ____,  QA[379].pop,  1      
+    382  x: LDS_BYTE_WRITE ____,  T0.z,  PV381.y      
+    383  x: LDS_BYTE_READ_RET QA,  T1.y      
+         w: ADD_INT     ____,  R4.z,  R0.y      
+    384  z: LSHR        R2.z,  PV383.w,  2      
+    385  z: ADD_INT     ____,  QA[383].pop,  1      
+    386  x: LDS_BYTE_WRITE ____,  T1.y,  PV385.z      
+19 TEX: ADDR(3104) CNT(4) 
+    387  VFETCH R2.x___, R0.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    388  VFETCH R0.x___, R1.y, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    389  VFETCH R1.x___, R3.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    390  VFETCH R3.x___, R1.w, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+20 ALU: ADDR(1128) CNT(33) KCACHE0(CB1:0-15) 
+    391  x: ADD_INT     ____,  R9.z,  R2.x      
+         y: ADD_INT     T1.y,  R9.z,  R1.x      VEC_021 
+         z: ADD_INT     ____,  R5.w,  R0.y      
+         w: ADD_INT     ____,  R9.z,  R0.x      VEC_102 
+    392  x: ADD_INT     ____,  R9.z,  R3.x      
+         y: ADD_INT     T0.y,  KC0[1].x,  PV391.x      
+         z: ADD_INT     T0.z,  KC0[1].x,  PV391.w      
+         w: LSHR        R1.w,  PV391.z,  2      
+    393  x: LDS_BYTE_READ_RET QA,  PV392.y      
+         y: ADD_INT     T1.y,  KC0[1].x,  PV392.x      
+         w: ADD_INT     T0.w,  KC0[1].x,  T1.y      
+    394  z: ADD_INT     ____,  QA[393].pop,  1      
+    395  x: LDS_BYTE_WRITE ____,  T0.y,  PV394.z      
+    396  x: LDS_BYTE_READ_RET QA,  T0.z      
+         z: ADD_INT     ____,  R8.x,  R0.y      
+    397  y: LSHR        R1.y,  PV396.z,  2      
+    398  y: ADD_INT     ____,  QA[396].pop,  1      
+    399  x: LDS_BYTE_WRITE ____,  T0.z,  PV398.y      
+    400  x: LDS_BYTE_READ_RET QA,  T0.w      
+         y: ADD_INT     R0.y,  R3.w,  R0.y      VEC_120 
+    401  w: ADD_INT     ____,  R5.x,  PV400.y      
+    402  z: LSHR        R3.z,  PV401.w,  2      
+    403  y: ADD_INT     ____,  QA[400].pop,  1      
+    404  x: LDS_BYTE_WRITE ____,  T0.w,  PV403.y      
+    405  x: LDS_BYTE_READ_RET QA,  T1.y      
+         y: ADD_INT     ____,  R6.z,  R0.y      
+    406  w: LSHR        R0.w,  PV405.y,  2      
+    407  w: ADD_INT     ____,  QA[405].pop,  1      
+    408  x: LDS_BYTE_WRITE ____,  T1.y,  PV407.w      
+21 TEX: ADDR(3112) CNT(4) 
+    409  VFETCH R3.x___, R2.y, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    410  VFETCH R0.x___, R2.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    411  VFETCH R1.x___, R1.w, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    412  VFETCH R2.x___, R1.y, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+22 ALU: ADDR(1161) CNT(32) KCACHE0(CB1:0-15) 
+    413  x: ADD_INT     ____,  R6.w,  R0.y      
+         y: ADD_INT     ____,  R9.z,  R0.x      
+         z: ADD_INT     T0.z,  R9.z,  R1.x      VEC_021 
+         w: ADD_INT     ____,  R9.z,  R3.x      VEC_102 
+    414  x: ADD_INT     T0.x,  KC0[1].x,  PV413.y      
+         y: ADD_INT     ____,  R9.z,  R2.x      
+         z: ADD_INT     T1.z,  KC0[1].x,  PV413.w      
+         w: LSHR        R1.w,  PV413.x,  2      
+    415  x: LDS_BYTE_READ_RET QA,  PV414.z      
+         y: ADD_INT     T1.y,  KC0[1].x,  T0.z      
+         w: ADD_INT     T0.w,  KC0[1].x,  PV414.y      
+    416  y: ADD_INT     ____,  QA[415].pop,  1      
+    417  x: LDS_BYTE_WRITE ____,  T1.z,  PV416.y      
+    418  x: LDS_BYTE_READ_RET QA,  T0.x      
+         w: ADD_INT     ____,  R6.x,  R0.y      VEC_120 
+    419  z: LSHR        R2.z,  PV418.w,  2      
+    420  z: ADD_INT     ____,  QA[418].pop,  1      
+    421  x: LDS_BYTE_WRITE ____,  T0.x,  PV420.z      
+    422  x: LDS_BYTE_READ_RET QA,  T1.y      
+         y: ADD_INT     ____,  R6.y,  R0.y      VEC_120 
+    423  w: LSHR        R2.w,  PV422.y,  2      
+    424  w: ADD_INT     ____,  QA[422].pop,  1      
+    425  x: LDS_BYTE_WRITE ____,  T1.y,  PV424.w      
+    426  x: LDS_BYTE_READ_RET QA,  T0.w      
+         z: ADD_INT     ____,  R4.z,  R0.y      
+    427  y: LSHR        R1.y,  PV426.z,  2      
+    428  y: ADD_INT     ____,  QA[426].pop,  1      
+    429  x: LDS_BYTE_WRITE ____,  T0.w,  PV428.y      
+23 TEX: ADDR(3120) CNT(4) 
+    430  VFETCH R2.x___, R3.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    431  VFETCH R0.x___, R0.w, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    432  VFETCH R1.x___, R1.w, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    433  VFETCH R3.x___, R2.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+24 ALU: ADDR(1193) CNT(33) KCACHE0(CB1:0-15) 
+    434  x: ADD_INT     ____,  R5.w,  R0.y      
+         y: ADD_INT     ____,  R9.z,  R2.x      
+         z: ADD_INT     ____,  R9.z,  R0.x      VEC_021 
+         w: ADD_INT     T0.w,  R9.z,  R1.x      VEC_102 
+    435  x: ADD_INT     ____,  R9.z,  R3.x      
+         y: ADD_INT     T1.y,  KC0[1].x,  PV434.z      
+         z: LSHR        R2.z,  PV434.x,  2      
+         w: ADD_INT     T1.w,  KC0[1].x,  PV434.y      
+    436  x: LDS_BYTE_READ_RET QA,  PV435.w      
+         y: ADD_INT     T0.y,  KC0[1].x,  PV435.x      
+         z: ADD_INT     T1.z,  KC0[1].x,  T0.w      
+    437  y: ADD_INT     ____,  QA[436].pop,  1      
+    438  x: LDS_BYTE_WRITE ____,  T1.w,  PV437.y      
+    439  x: LDS_BYTE_READ_RET QA,  T1.y      
+         y: ADD_INT     ____,  R8.x,  R0.y      
+    440  y: LSHR        R2.y,  PV439.y,  2      
+    441  w: ADD_INT     ____,  QA[439].pop,  1      
+    442  x: LDS_BYTE_WRITE ____,  T1.y,  PV441.w      
+    443  x: LDS_BYTE_READ_RET QA,  T1.z      
+         w: ADD_INT     R1.w,  R3.w,  R0.y      
+    444  z: ADD_INT     ____,  R5.x,  PV443.w      
+    445  y: LSHR        R0.y,  PV444.z,  2      
+    446  y: ADD_INT     ____,  QA[443].pop,  1      
+    447  x: LDS_BYTE_WRITE ____,  T1.z,  PV446.y      
+    448  x: LDS_BYTE_READ_RET QA,  T0.y      
+         w: ADD_INT     ____,  R6.z,  R1.w      
+    449  z: LSHR        R3.z,  PV448.w,  2      
+    450  z: ADD_INT     ____,  QA[448].pop,  1      
+    451  x: LDS_BYTE_WRITE ____,  T0.y,  PV450.z      
+25 TEX: ADDR(3128) CNT(4) 
+    452  VFETCH R3.x___, R2.w, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    453  VFETCH R0.x___, R1.y, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    454  VFETCH R1.x___, R2.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    455  VFETCH R2.x___, R2.y, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+26 ALU: ADDR(1226) CNT(32) KCACHE0(CB1:0-15) 
+    456  x: ADD_INT     ____,  R9.z,  R0.x      
+         y: ADD_INT     T0.y,  R9.z,  R1.x      VEC_021 
+         z: ADD_INT     ____,  R9.z,  R3.x      VEC_102 
+         w: ADD_INT     ____,  R6.w,  R1.w      
+    457  x: ADD_INT     T0.x,  KC0[1].x,  PV456.z      
+         y: ADD_INT     ____,  R9.z,  R2.x      
+         z: LSHR        R2.z,  PV456.w,  2      
+         w: ADD_INT     T1.w,  KC0[1].x,  PV456.x      
+    458  x: LDS_BYTE_READ_RET QA,  PV457.x      
+         y: ADD_INT     T0.y,  KC0[1].x,  T0.y      
+         z: ADD_INT     T1.z,  KC0[1].x,  PV457.y      
+    459  w: ADD_INT     ____,  QA[458].pop,  1      
+    460  x: LDS_BYTE_WRITE ____,  T0.x,  PV459.w      
+    461  x: LDS_BYTE_READ_RET QA,  T1.w      
+         z: ADD_INT     ____,  R6.x,  R1.w      
+    462  y: LSHR        R2.y,  PV461.z,  2      
+    463  y: ADD_INT     ____,  QA[461].pop,  1      
+    464  x: LDS_BYTE_WRITE ____,  T1.w,  PV463.y      
+    465  x: LDS_BYTE_READ_RET QA,  T0.y      
+         w: ADD_INT     ____,  R6.y,  R1.w      VEC_120 
+    466  z: LSHR        R0.z,  PV465.w,  2      
+    467  z: ADD_INT     ____,  QA[465].pop,  1      
+    468  x: LDS_BYTE_WRITE ____,  T0.y,  PV467.z      
+    469  x: LDS_BYTE_READ_RET QA,  T1.z      
+         y: ADD_INT     ____,  R4.z,  R1.w      VEC_120 
+    470  y: LSHR        R1.y,  PV469.y,  2      
+    471  y: ADD_INT     ____,  QA[469].pop,  1      
+    472  x: LDS_BYTE_WRITE ____,  T1.z,  PV471.y      
+27 TEX: ADDR(3136) CNT(4) 
+    473  VFETCH R2.x___, R0.y, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    474  VFETCH R0.x___, R3.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    475  VFETCH R1.x___, R2.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    476  VFETCH R3.x___, R2.y, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+28 ALU: ADDR(1258) CNT(33) KCACHE0(CB1:0-15) 
+    477  x: ADD_INT     ____,  R5.w,  R1.w      
+         y: ADD_INT     ____,  R9.z,  R0.x      
+         z: ADD_INT     T1.z,  R9.z,  R1.x      VEC_021 
+         w: ADD_INT     ____,  R9.z,  R2.x      VEC_102 
+    478  x: ADD_INT     T0.x,  KC0[1].x,  PV477.y      
+         y: ADD_INT     ____,  R9.z,  R3.x      
+         z: ADD_INT     T0.z,  KC0[1].x,  PV477.w      
+         w: LSHR        R2.w,  PV477.x,  2      
+    479  x: LDS_BYTE_READ_RET QA,  PV478.z      
+         y: ADD_INT     T0.y,  KC0[1].x,  T1.z      
+         w: ADD_INT     T1.w,  KC0[1].x,  PV478.y      
+    480  y: ADD_INT     ____,  QA[479].pop,  1      
+    481  x: LDS_BYTE_WRITE ____,  T0.z,  PV480.y      
+    482  x: LDS_BYTE_READ_RET QA,  T0.x      
+         y: ADD_INT     ____,  R8.x,  R1.w      VEC_120 
+    483  w: LSHR        R0.w,  PV482.y,  2      
+    484  z: ADD_INT     ____,  QA[482].pop,  1      
+    485  x: LDS_BYTE_WRITE ____,  T0.x,  PV484.z      
+    486  x: LDS_BYTE_READ_RET QA,  T0.y      
+         z: ADD_INT     R2.z,  R3.w,  R1.w      
+    487  y: ADD_INT     ____,  R5.x,  PV486.z      
+    488  w: LSHR        R1.w,  PV487.y,  2      
+    489  w: ADD_INT     ____,  QA[486].pop,  1      
+    490  x: LDS_BYTE_WRITE ____,  T0.y,  PV489.w      
+    491  x: LDS_BYTE_READ_RET QA,  T1.w      
+         z: ADD_INT     ____,  R6.z,  R2.z      
+    492  y: LSHR        R2.y,  PV491.z,  2      
+    493  y: ADD_INT     ____,  QA[491].pop,  1      
+    494  x: LDS_BYTE_WRITE ____,  T1.w,  PV493.y      
+29 TEX: ADDR(3144) CNT(4) 
+    495  VFETCH R3.x___, R0.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    496  VFETCH R0.x___, R1.y, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    497  VFETCH R1.x___, R2.w, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    498  VFETCH R2.x___, R0.w, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+30 ALU: ADDR(1291) CNT(32) KCACHE0(CB1:0-15) 
+    499  x: ADD_INT     ____,  R9.z,  R3.x      
+         y: ADD_INT     T0.y,  R9.z,  R1.x      VEC_021 
+         z: ADD_INT     ____,  R6.w,  R2.z      
+         w: ADD_INT     ____,  R9.z,  R0.x      VEC_201 
+    500  x: ADD_INT     ____,  R9.z,  R2.x      
+         y: ADD_INT     T1.y,  KC0[1].x,  PV499.x      
+         z: ADD_INT     T0.z,  KC0[1].x,  PV499.w      
+         w: LSHR        R0.w,  PV499.z,  2      
+    501  x: LDS_BYTE_READ_RET QA,  PV500.y      
+         y: ADD_INT     T0.y,  KC0[1].x,  PV500.x      
+         w: ADD_INT     T1.w,  KC0[1].x,  T0.y      
+    502  z: ADD_INT     ____,  QA[501].pop,  1      
+    503  x: LDS_BYTE_WRITE ____,  T1.y,  PV502.z      
+    504  x: LDS_BYTE_READ_RET QA,  T0.z      
+         y: ADD_INT     ____,  R6.x,  R2.z      
+    505  y: LSHR        R1.y,  PV504.y,  2      
+    506  y: ADD_INT     ____,  QA[504].pop,  1      
+    507  x: LDS_BYTE_WRITE ____,  T0.z,  PV506.y      
+    508  x: LDS_BYTE_READ_RET QA,  T1.w      
+         w: ADD_INT     ____,  R6.y,  R2.z      
+    509  z: LSHR        R0.z,  PV508.w,  2      
+    510  y: ADD_INT     ____,  QA[508].pop,  1      
+    511  x: LDS_BYTE_WRITE ____,  T1.w,  PV510.y      
+    512  x: LDS_BYTE_READ_RET QA,  T0.y      
+         y: ADD_INT     ____,  R4.z,  R2.z      
+    513  w: LSHR        R2.w,  PV512.y,  2      
+    514  w: ADD_INT     ____,  QA[512].pop,  1      
+    515  x: LDS_BYTE_WRITE ____,  T0.y,  PV514.w      
+31 TEX: ADDR(3152) CNT(4) 
+    516  VFETCH R2.x___, R1.w, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    517  VFETCH R0.x___, R2.y, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    518  VFETCH R1.x___, R0.w, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    519  VFETCH R3.x___, R1.y, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+32 ALU: ADDR(1323) CNT(33) KCACHE0(CB1:0-15) 
+    520  x: ADD_INT     ____,  R9.z,  R0.x      
+         y: ADD_INT     T0.y,  R9.z,  R1.x      VEC_021 
+         z: ADD_INT     ____,  R9.z,  R2.x      VEC_102 
+         w: ADD_INT     ____,  R5.w,  R2.z      VEC_021 
+    521  x: ADD_INT     T0.x,  KC0[1].x,  PV520.z      
+         y: ADD_INT     ____,  R9.z,  R3.x      
+         z: LSHR        R3.z,  PV520.w,  2      
+         w: ADD_INT     T1.w,  KC0[1].x,  PV520.x      
+    522  x: LDS_BYTE_READ_RET QA,  PV521.x      
+         y: ADD_INT     T0.y,  KC0[1].x,  T0.y      
+         z: ADD_INT     T0.z,  KC0[1].x,  PV521.y      
+    523  w: ADD_INT     ____,  QA[522].pop,  1      
+    524  x: LDS_BYTE_WRITE ____,  T0.x,  PV523.w      
+    525  x: LDS_BYTE_READ_RET QA,  T1.w      
+         w: ADD_INT     ____,  R8.x,  R2.z      
+    526  z: LSHR        R1.z,  PV525.w,  2      
+    527  y: ADD_INT     ____,  QA[525].pop,  1      
+    528  x: LDS_BYTE_WRITE ____,  T1.w,  PV527.y      
+    529  x: LDS_BYTE_READ_RET QA,  T0.y      
+         y: ADD_INT     R2.y,  R3.w,  R2.z      
+    530  w: ADD_INT     ____,  R5.x,  PV529.y      
+    531  z: LSHR        R2.z,  PV530.w,  2      
+    532  z: ADD_INT     ____,  QA[529].pop,  1      
+    533  x: LDS_BYTE_WRITE ____,  T0.y,  PV532.z      
+    534  x: LDS_BYTE_READ_RET QA,  T0.z      
+         y: ADD_INT     ____,  R6.z,  R2.y      VEC_120 
+    535  y: LSHR        R1.y,  PV534.y,  2      
+    536  y: ADD_INT     ____,  QA[534].pop,  1      
+    537  x: LDS_BYTE_WRITE ____,  T0.z,  PV536.y      
+33 TEX: ADDR(3160) CNT(4) 
+    538  VFETCH R3.x___, R0.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    539  VFETCH R0.x___, R2.w, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    540  VFETCH R1.x___, R3.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    541  VFETCH R2.x___, R1.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+34 ALU: ADDR(1356) CNT(32) KCACHE0(CB1:0-15) 
+    542  x: ADD_INT     ____,  R6.w,  R2.y      
+         y: ADD_INT     ____,  R9.z,  R3.x      
+         z: ADD_INT     ____,  R9.z,  R0.x      VEC_021 
+         w: ADD_INT     T1.w,  R9.z,  R1.x      VEC_102 
+    543  x: ADD_INT     ____,  R9.z,  R2.x      
+         y: ADD_INT     T0.y,  KC0[1].x,  PV542.z      
+         z: LSHR        R1.z,  PV542.x,  2      
+         w: ADD_INT     T0.w,  KC0[1].x,  PV542.y      
+    544  x: LDS_BYTE_READ_RET QA,  PV543.w      
+         y: ADD_INT     T1.y,  KC0[1].x,  PV543.x      
+         z: ADD_INT     T0.z,  KC0[1].x,  T1.w      
+    545  y: ADD_INT     ____,  QA[544].pop,  1      
+    546  x: LDS_BYTE_WRITE ____,  T0.w,  PV545.y      
+    547  x: LDS_BYTE_READ_RET QA,  T0.y      
+         y: ADD_INT     ____,  R6.x,  R2.y      
+    548  w: LSHR        R2.w,  PV547.y,  2      
+    549  w: ADD_INT     ____,  QA[547].pop,  1      
+    550  x: LDS_BYTE_WRITE ____,  T0.y,  PV549.w      
+    551  x: LDS_BYTE_READ_RET QA,  T0.z      
+         z: ADD_INT     ____,  R6.y,  R2.y      
+    552  y: LSHR        R0.y,  PV551.z,  2      
+    553  y: ADD_INT     ____,  QA[551].pop,  1      
+    554  x: LDS_BYTE_WRITE ____,  T0.z,  PV553.y      
+    555  x: LDS_BYTE_READ_RET QA,  T1.y      
+         w: ADD_INT     ____,  R4.z,  R2.y      
+    556  z: LSHR        R3.z,  PV555.w,  2      
+    557  z: ADD_INT     ____,  QA[555].pop,  1      
+    558  x: LDS_BYTE_WRITE ____,  T1.y,  PV557.z      
+35 TEX: ADDR(3168) CNT(4) 
+    559  VFETCH R2.x___, R2.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    560  VFETCH R0.x___, R1.y, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    561  VFETCH R1.x___, R1.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    562  VFETCH R3.x___, R2.w, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+36 ALU: ADDR(1388) CNT(33) KCACHE0(CB1:0-15) 
+    563  x: ADD_INT     ____,  R9.z,  R2.x      
+         y: ADD_INT     T1.y,  R9.z,  R1.x      VEC_021 
+         z: ADD_INT     ____,  R5.w,  R2.y      
+         w: ADD_INT     ____,  R9.z,  R0.x      VEC_102 
+    564  x: ADD_INT     ____,  R9.z,  R3.x      
+         y: ADD_INT     T0.y,  KC0[1].x,  PV563.x      
+         z: ADD_INT     T0.z,  KC0[1].x,  PV563.w      
+         w: LSHR        R2.w,  PV563.z,  2      
+    565  x: LDS_BYTE_READ_RET QA,  PV564.y      
+         y: ADD_INT     T1.y,  KC0[1].x,  PV564.x      
+         w: ADD_INT     T0.w,  KC0[1].x,  T1.y      
+    566  z: ADD_INT     ____,  QA[565].pop,  1      
+    567  x: LDS_BYTE_WRITE ____,  T0.y,  PV566.z      
+    568  x: LDS_BYTE_READ_RET QA,  T0.z      
+         z: ADD_INT     ____,  R8.x,  R2.y      
+    569  y: LSHR        R1.y,  PV568.z,  2      
+    570  y: ADD_INT     ____,  QA[568].pop,  1      
+    571  x: LDS_BYTE_WRITE ____,  T0.z,  PV570.y      
+    572  x: LDS_BYTE_READ_RET QA,  T0.w      
+         y: ADD_INT     R2.y,  R3.w,  R2.y      VEC_120 
+    573  w: ADD_INT     ____,  R5.x,  PV572.y      
+    574  z: LSHR        R1.z,  PV573.w,  2      
+    575  y: ADD_INT     ____,  QA[572].pop,  1      
+    576  x: LDS_BYTE_WRITE ____,  T0.w,  PV575.y      
+    577  x: LDS_BYTE_READ_RET QA,  T1.y      
+         y: ADD_INT     ____,  R6.z,  R2.y      
+    578  w: LSHR        R0.w,  PV577.y,  2      
+    579  w: ADD_INT     ____,  QA[577].pop,  1      
+    580  x: LDS_BYTE_WRITE ____,  T1.y,  PV579.w      
+37 TEX: ADDR(3176) CNT(4) 
+    581  VFETCH R3.x___, R0.y, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    582  VFETCH R0.x___, R3.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    583  VFETCH R1.x___, R2.w, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    584  VFETCH R2.x___, R1.y, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+38 ALU: ADDR(1421) CNT(32) KCACHE0(CB1:0-15) 
+    585  x: ADD_INT     ____,  R6.w,  R2.y      
+         y: ADD_INT     ____,  R9.z,  R0.x      
+         z: ADD_INT     T0.z,  R9.z,  R1.x      VEC_021 
+         w: ADD_INT     ____,  R9.z,  R3.x      VEC_102 
+    586  x: ADD_INT     T0.x,  KC0[1].x,  PV585.y      
+         y: ADD_INT     ____,  R9.z,  R2.x      
+         z: ADD_INT     T1.z,  KC0[1].x,  PV585.w      
+         w: LSHR        R2.w,  PV585.x,  2      
+    587  x: LDS_BYTE_READ_RET QA,  PV586.z      
+         y: ADD_INT     T1.y,  KC0[1].x,  T0.z      
+         w: ADD_INT     T0.w,  KC0[1].x,  PV586.y      
+    588  y: ADD_INT     ____,  QA[587].pop,  1      
+    589  x: LDS_BYTE_WRITE ____,  T1.z,  PV588.y      
+    590  x: LDS_BYTE_READ_RET QA,  T0.x      
+         w: ADD_INT     ____,  R6.x,  R2.y      VEC_120 
+    591  z: LSHR        R3.z,  PV590.w,  2      
+    592  z: ADD_INT     ____,  QA[590].pop,  1      
+    593  x: LDS_BYTE_WRITE ____,  T0.x,  PV592.z      
+    594  x: LDS_BYTE_READ_RET QA,  T1.y      
+         y: ADD_INT     ____,  R6.y,  R2.y      VEC_120 
+    595  w: LSHR        R1.w,  PV594.y,  2      
+    596  w: ADD_INT     ____,  QA[594].pop,  1      
+    597  x: LDS_BYTE_WRITE ____,  T1.y,  PV596.w      
+    598  x: LDS_BYTE_READ_RET QA,  T0.w      
+         z: ADD_INT     ____,  R4.z,  R2.y      
+    599  y: LSHR        R1.y,  PV598.z,  2      
+    600  y: ADD_INT     ____,  QA[598].pop,  1      
+    601  x: LDS_BYTE_WRITE ____,  T0.w,  PV600.y      
+39 TEX: ADDR(3184) CNT(4) 
+    602  VFETCH R2.x___, R1.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    603  VFETCH R0.x___, R0.w, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    604  VFETCH R1.x___, R2.w, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    605  VFETCH R3.x___, R3.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+40 ALU: ADDR(1453) CNT(33) KCACHE0(CB1:0-15) 
+    606  x: ADD_INT     ____,  R5.w,  R2.y      
+         y: ADD_INT     ____,  R9.z,  R2.x      
+         z: ADD_INT     ____,  R9.z,  R0.x      VEC_021 
+         w: ADD_INT     T0.w,  R9.z,  R1.x      VEC_102 
+    607  x: ADD_INT     ____,  R9.z,  R3.x      
+         y: ADD_INT     T1.y,  KC0[1].x,  PV606.z      
+         z: LSHR        R3.z,  PV606.x,  2      
+         w: ADD_INT     T1.w,  KC0[1].x,  PV606.y      
+    608  x: LDS_BYTE_READ_RET QA,  PV607.w      
+         y: ADD_INT     T0.y,  KC0[1].x,  PV607.x      
+         z: ADD_INT     T1.z,  KC0[1].x,  T0.w      
+    609  y: ADD_INT     ____,  QA[608].pop,  1      
+    610  x: LDS_BYTE_WRITE ____,  T1.w,  PV609.y      
+    611  x: LDS_BYTE_READ_RET QA,  T1.y      
+         y: ADD_INT     ____,  R8.x,  R2.y      
+    612  y: LSHR        R0.y,  PV611.y,  2      
+    613  w: ADD_INT     ____,  QA[611].pop,  1      
+    614  x: LDS_BYTE_WRITE ____,  T1.y,  PV613.w      
+    615  x: LDS_BYTE_READ_RET QA,  T1.z      
+         w: ADD_INT     R2.w,  R3.w,  R2.y      
+    616  z: ADD_INT     ____,  R5.x,  PV615.w      
+    617  y: LSHR        R2.y,  PV616.z,  2      
+    618  y: ADD_INT     ____,  QA[615].pop,  1      
+    619  x: LDS_BYTE_WRITE ____,  T1.z,  PV618.y      
+    620  x: LDS_BYTE_READ_RET QA,  T0.y      
+         w: ADD_INT     ____,  R6.z,  R2.w      
+    621  z: LSHR        R1.z,  PV620.w,  2      
+    622  z: ADD_INT     ____,  QA[620].pop,  1      
+    623  x: LDS_BYTE_WRITE ____,  T0.y,  PV622.z      
+41 TEX: ADDR(3192) CNT(4) 
+    624  VFETCH R3.x___, R1.w, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    625  VFETCH R0.x___, R1.y, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    626  VFETCH R1.x___, R3.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    627  VFETCH R2.x___, R0.y, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+42 ALU: ADDR(1486) CNT(32) KCACHE0(CB1:0-15) 
+    628  x: ADD_INT     ____,  R9.z,  R0.x      
+         y: ADD_INT     T0.y,  R9.z,  R1.x      VEC_021 
+         z: ADD_INT     ____,  R9.z,  R3.x      VEC_102 
+         w: ADD_INT     ____,  R6.w,  R2.w      
+    629  x: ADD_INT     T0.x,  KC0[1].x,  PV628.z      
+         y: ADD_INT     ____,  R9.z,  R2.x      
+         z: LSHR        R3.z,  PV628.w,  2      
+         w: ADD_INT     T1.w,  KC0[1].x,  PV628.x      
+    630  x: LDS_BYTE_READ_RET QA,  PV629.x      
+         y: ADD_INT     T0.y,  KC0[1].x,  T0.y      
+         z: ADD_INT     T1.z,  KC0[1].x,  PV629.y      
+    631  w: ADD_INT     ____,  QA[630].pop,  1      
+    632  x: LDS_BYTE_WRITE ____,  T0.x,  PV631.w      
+    633  x: LDS_BYTE_READ_RET QA,  T1.w      
+         z: ADD_INT     ____,  R6.x,  R2.w      
+    634  y: LSHR        R0.y,  PV633.z,  2      
+    635  y: ADD_INT     ____,  QA[633].pop,  1      
+    636  x: LDS_BYTE_WRITE ____,  T1.w,  PV635.y      
+    637  x: LDS_BYTE_READ_RET QA,  T0.y      
+         w: ADD_INT     ____,  R6.y,  R2.w      VEC_120 
+    638  z: LSHR        R2.z,  PV637.w,  2      
+    639  z: ADD_INT     ____,  QA[637].pop,  1      
+    640  x: LDS_BYTE_WRITE ____,  T0.y,  PV639.z      
+    641  x: LDS_BYTE_READ_RET QA,  T1.z      
+         y: ADD_INT     ____,  R4.z,  R2.w      VEC_120 
+    642  y: LSHR        R1.y,  PV641.y,  2      
+    643  y: ADD_INT     ____,  QA[641].pop,  1      
+    644  x: LDS_BYTE_WRITE ____,  T1.z,  PV643.y      
+43 TEX: ADDR(3200) CNT(4) 
+    645  VFETCH R2.x___, R2.y, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    646  VFETCH R0.x___, R1.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    647  VFETCH R1.x___, R3.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    648  VFETCH R3.x___, R0.y, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+44 ALU: ADDR(1518) CNT(33) KCACHE0(CB1:0-15) 
+    649  x: ADD_INT     ____,  R5.w,  R2.w      
+         y: ADD_INT     ____,  R9.z,  R0.x      
+         z: ADD_INT     T1.z,  R9.z,  R1.x      VEC_021 
+         w: ADD_INT     ____,  R9.z,  R2.x      VEC_102 
+    650  x: ADD_INT     T0.x,  KC0[1].x,  PV649.y      
+         y: ADD_INT     ____,  R9.z,  R3.x      
+         z: ADD_INT     T0.z,  KC0[1].x,  PV649.w      
+         w: LSHR        R1.w,  PV649.x,  2      
+    651  x: LDS_BYTE_READ_RET QA,  PV650.z      
+         y: ADD_INT     T0.y,  KC0[1].x,  T1.z      
+         w: ADD_INT     T1.w,  KC0[1].x,  PV650.y      
+    652  y: ADD_INT     ____,  QA[651].pop,  1      
+    653  x: LDS_BYTE_WRITE ____,  T0.z,  PV652.y      
+    654  x: LDS_BYTE_READ_RET QA,  T0.x      
+         y: ADD_INT     ____,  R8.x,  R2.w      VEC_120 
+    655  w: LSHR        R0.w,  PV654.y,  2      
+    656  z: ADD_INT     ____,  QA[654].pop,  1      
+    657  x: LDS_BYTE_WRITE ____,  T0.x,  PV656.z      
+    658  x: LDS_BYTE_READ_RET QA,  T0.y      
+         z: ADD_INT     R3.z,  R3.w,  R2.w      
+    659  y: ADD_INT     ____,  R5.x,  PV658.z      
+    660  w: LSHR        R2.w,  PV659.y,  2      
+    661  w: ADD_INT     ____,  QA[658].pop,  1      
+    662  x: LDS_BYTE_WRITE ____,  T0.y,  PV661.w      
+    663  x: LDS_BYTE_READ_RET QA,  T1.w      
+         z: ADD_INT     ____,  R6.z,  R3.z      
+    664  y: LSHR        R0.y,  PV663.z,  2      
+    665  y: ADD_INT     ____,  QA[663].pop,  1      
+    666  x: LDS_BYTE_WRITE ____,  T1.w,  PV665.y      
+45 TEX: ADDR(3208) CNT(4) 
+    667  VFETCH R3.x___, R2.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    668  VFETCH R0.x___, R1.y, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    669  VFETCH R1.x___, R1.w, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    670  VFETCH R2.x___, R0.w, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+46 ALU: ADDR(1551) CNT(32) KCACHE0(CB1:0-15) 
+    671  x: ADD_INT     ____,  R9.z,  R3.x      
+         y: ADD_INT     T0.y,  R9.z,  R1.x      VEC_021 
+         z: ADD_INT     ____,  R6.w,  R3.z      
+         w: ADD_INT     ____,  R9.z,  R0.x      VEC_201 
+    672  x: ADD_INT     ____,  R9.z,  R2.x      
+         y: ADD_INT     T1.y,  KC0[1].x,  PV671.x      
+         z: ADD_INT     T0.z,  KC0[1].x,  PV671.w      
+         w: LSHR        R0.w,  PV671.z,  2      
+    673  x: LDS_BYTE_READ_RET QA,  PV672.y      
+         y: ADD_INT     T0.y,  KC0[1].x,  PV672.x      
+         w: ADD_INT     T1.w,  KC0[1].x,  T0.y      
+    674  z: ADD_INT     ____,  QA[673].pop,  1      
+    675  x: LDS_BYTE_WRITE ____,  T1.y,  PV674.z      
+    676  x: LDS_BYTE_READ_RET QA,  T0.z      
+         y: ADD_INT     ____,  R6.x,  R3.z      
+    677  y: LSHR        R1.y,  PV676.y,  2      
+    678  y: ADD_INT     ____,  QA[676].pop,  1      
+    679  x: LDS_BYTE_WRITE ____,  T0.z,  PV678.y      
+    680  x: LDS_BYTE_READ_RET QA,  T1.w      
+         w: ADD_INT     ____,  R6.y,  R3.z      
+    681  z: LSHR        R2.z,  PV680.w,  2      
+    682  y: ADD_INT     ____,  QA[680].pop,  1      
+    683  x: LDS_BYTE_WRITE ____,  T1.w,  PV682.y      
+    684  x: LDS_BYTE_READ_RET QA,  T0.y      
+         y: ADD_INT     ____,  R4.z,  R3.z      
+    685  w: LSHR        R1.w,  PV684.y,  2      
+    686  w: ADD_INT     ____,  QA[684].pop,  1      
+    687  x: LDS_BYTE_WRITE ____,  T0.y,  PV686.w      
+47 TEX: ADDR(3216) CNT(4) 
+    688  VFETCH R2.x___, R2.w, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    689  VFETCH R0.x___, R0.y, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    690  VFETCH R1.x___, R0.w, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    691  VFETCH R3.x___, R1.y, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+48 ALU: ADDR(1583) CNT(33) KCACHE0(CB1:0-15) 
+    692  x: ADD_INT     ____,  R9.z,  R0.x      
+         y: ADD_INT     T0.y,  R9.z,  R1.x      VEC_021 
+         z: ADD_INT     ____,  R9.z,  R2.x      VEC_102 
+         w: ADD_INT     ____,  R5.w,  R3.z      VEC_021 
+    693  x: ADD_INT     T0.x,  KC0[1].x,  PV692.z      
+         y: ADD_INT     ____,  R9.z,  R3.x      
+         z: LSHR        R1.z,  PV692.w,  2      
+         w: ADD_INT     T1.w,  KC0[1].x,  PV692.x      
+    694  x: LDS_BYTE_READ_RET QA,  PV693.x      
+         y: ADD_INT     T0.y,  KC0[1].x,  T0.y      
+         z: ADD_INT     T0.z,  KC0[1].x,  PV693.y      
+    695  w: ADD_INT     ____,  QA[694].pop,  1      
+    696  x: LDS_BYTE_WRITE ____,  T0.x,  PV695.w      
+    697  x: LDS_BYTE_READ_RET QA,  T1.w      
+         w: ADD_INT     ____,  R8.x,  R3.z      
+    698  z: LSHR        R0.z,  PV697.w,  2      
+    699  y: ADD_INT     ____,  QA[697].pop,  1      
+    700  x: LDS_BYTE_WRITE ____,  T1.w,  PV699.y      
+    701  x: LDS_BYTE_READ_RET QA,  T0.y      
+         y: ADD_INT     R0.y,  R3.w,  R3.z      
+    702  w: ADD_INT     ____,  R5.x,  PV701.y      
+    703  z: LSHR        R3.z,  PV702.w,  2      
+    704  z: ADD_INT     ____,  QA[701].pop,  1      
+    705  x: LDS_BYTE_WRITE ____,  T0.y,  PV704.z      
+    706  x: LDS_BYTE_READ_RET QA,  T0.z      
+         y: ADD_INT     ____,  R6.z,  R0.y      VEC_120 
+    707  y: LSHR        R1.y,  PV706.y,  2      
+    708  y: ADD_INT     ____,  QA[706].pop,  1      
+    709  x: LDS_BYTE_WRITE ____,  T0.z,  PV708.y      
+49 TEX: ADDR(3224) CNT(4) 
+    710  VFETCH R3.x___, R2.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    711  VFETCH R0.x___, R1.w, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    712  VFETCH R1.x___, R1.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    713  VFETCH R2.x___, R0.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+50 ALU: ADDR(1616) CNT(32) KCACHE0(CB1:0-15) 
+    714  x: ADD_INT     ____,  R6.w,  R0.y      
+         y: ADD_INT     ____,  R9.z,  R3.x      
+         z: ADD_INT     ____,  R9.z,  R0.x      VEC_021 
+         w: ADD_INT     T1.w,  R9.z,  R1.x      VEC_102 
+    715  x: ADD_INT     ____,  R9.z,  R2.x      
+         y: ADD_INT     T0.y,  KC0[1].x,  PV714.z      
+         z: LSHR        R0.z,  PV714.x,  2      
+         w: ADD_INT     T0.w,  KC0[1].x,  PV714.y      
+    716  x: LDS_BYTE_READ_RET QA,  PV715.w      
+         y: ADD_INT     T1.y,  KC0[1].x,  PV715.x      
+         z: ADD_INT     T0.z,  KC0[1].x,  T1.w      
+    717  y: ADD_INT     ____,  QA[716].pop,  1      
+    718  x: LDS_BYTE_WRITE ____,  T0.w,  PV717.y      
+    719  x: LDS_BYTE_READ_RET QA,  T0.y      
+         y: ADD_INT     ____,  R6.x,  R0.y      
+    720  w: LSHR        R1.w,  PV719.y,  2      
+    721  w: ADD_INT     ____,  QA[719].pop,  1      
+    722  x: LDS_BYTE_WRITE ____,  T0.y,  PV721.w      
+    723  x: LDS_BYTE_READ_RET QA,  T0.z      
+         z: ADD_INT     ____,  R6.y,  R0.y      
+    724  y: LSHR        R2.y,  PV723.z,  2      
+    725  y: ADD_INT     ____,  QA[723].pop,  1      
+    726  x: LDS_BYTE_WRITE ____,  T0.z,  PV725.y      
+    727  x: LDS_BYTE_READ_RET QA,  T1.y      
+         w: ADD_INT     ____,  R4.z,  R0.y      
+    728  z: LSHR        R1.z,  PV727.w,  2      
+    729  z: ADD_INT     ____,  QA[727].pop,  1      
+    730  x: LDS_BYTE_WRITE ____,  T1.y,  PV729.z      
+51 TEX: ADDR(3232) CNT(4) 
+    731  VFETCH R2.x___, R3.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    732  VFETCH R0.x___, R1.y, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    733  VFETCH R1.x___, R0.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    734  VFETCH R3.x___, R1.w, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+52 ALU: ADDR(1648) CNT(33) KCACHE0(CB1:0-15) 
+    735  x: ADD_INT     ____,  R9.z,  R2.x      
+         y: ADD_INT     T1.y,  R9.z,  R1.x      VEC_021 
+         z: ADD_INT     ____,  R5.w,  R0.y      
+         w: ADD_INT     ____,  R9.z,  R0.x      VEC_102 
+    736  x: ADD_INT     ____,  R9.z,  R3.x      
+         y: ADD_INT     T0.y,  KC0[1].x,  PV735.x      
+         z: ADD_INT     T0.z,  KC0[1].x,  PV735.w      
+         w: LSHR        R1.w,  PV735.z,  2      
+    737  x: LDS_BYTE_READ_RET QA,  PV736.y      
+         y: ADD_INT     T1.y,  KC0[1].x,  PV736.x      
+         w: ADD_INT     T0.w,  KC0[1].x,  T1.y      
+    738  z: ADD_INT     ____,  QA[737].pop,  1      
+    739  x: LDS_BYTE_WRITE ____,  T0.y,  PV738.z      
+    740  x: LDS_BYTE_READ_RET QA,  T0.z      
+         z: ADD_INT     ____,  R8.x,  R0.y      
+    741  y: LSHR        R1.y,  PV740.z,  2      
+    742  y: ADD_INT     ____,  QA[740].pop,  1      
+    743  x: LDS_BYTE_WRITE ____,  T0.z,  PV742.y      
+    744  x: LDS_BYTE_READ_RET QA,  T0.w      
+         y: ADD_INT     R0.y,  R3.w,  R0.y      VEC_120 
+    745  w: ADD_INT     ____,  R5.x,  PV744.y      
+    746  z: LSHR        R0.z,  PV745.w,  2      
+    747  y: ADD_INT     ____,  QA[744].pop,  1      
+    748  x: LDS_BYTE_WRITE ____,  T0.w,  PV747.y      
+    749  x: LDS_BYTE_READ_RET QA,  T1.y      
+         y: ADD_INT     ____,  R6.z,  R0.y      
+    750  w: LSHR        R0.w,  PV749.y,  2      
+    751  w: ADD_INT     ____,  QA[749].pop,  1      
+    752  x: LDS_BYTE_WRITE ____,  T1.y,  PV751.w      
+53 TEX: ADDR(3240) CNT(4) 
+    753  VFETCH R3.x___, R2.y, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    754  VFETCH R0.x___, R1.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    755  VFETCH R1.x___, R1.w, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    756  VFETCH R2.x___, R1.y, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+54 ALU: ADDR(1681) CNT(32) KCACHE0(CB1:0-15) 
+    757  x: ADD_INT     ____,  R6.w,  R0.y      
+         y: ADD_INT     ____,  R9.z,  R0.x      
+         z: ADD_INT     T0.z,  R9.z,  R1.x      VEC_021 
+         w: ADD_INT     ____,  R9.z,  R3.x      VEC_102 
+    758  x: ADD_INT     T0.x,  KC0[1].x,  PV757.y      
+         y: ADD_INT     ____,  R9.z,  R2.x      
+         z: ADD_INT     T1.z,  KC0[1].x,  PV757.w      
+         w: LSHR        R1.w,  PV757.x,  2      
+    759  x: LDS_BYTE_READ_RET QA,  PV758.z      
+         y: ADD_INT     T1.y,  KC0[1].x,  T0.z      
+         w: ADD_INT     T0.w,  KC0[1].x,  PV758.y      
+    760  y: ADD_INT     ____,  QA[759].pop,  1      
+    761  x: LDS_BYTE_WRITE ____,  T1.z,  PV760.y      
+    762  x: LDS_BYTE_READ_RET QA,  T0.x      
+         w: ADD_INT     ____,  R6.x,  R0.y      VEC_120 
+    763  z: LSHR        R1.z,  PV762.w,  2      
+    764  z: ADD_INT     ____,  QA[762].pop,  1      
+    765  x: LDS_BYTE_WRITE ____,  T0.x,  PV764.z      
+    766  x: LDS_BYTE_READ_RET QA,  T1.y      
+         y: ADD_INT     ____,  R6.y,  R0.y      VEC_120 
+    767  w: LSHR        R2.w,  PV766.y,  2      
+    768  w: ADD_INT     ____,  QA[766].pop,  1      
+    769  x: LDS_BYTE_WRITE ____,  T1.y,  PV768.w      
+    770  x: LDS_BYTE_READ_RET QA,  T0.w      
+         z: ADD_INT     ____,  R4.z,  R0.y      
+    771  y: LSHR        R1.y,  PV770.z,  2      
+    772  y: ADD_INT     ____,  QA[770].pop,  1      
+    773  x: LDS_BYTE_WRITE ____,  T0.w,  PV772.y      
+55 TEX: ADDR(3248) CNT(4) 
+    774  VFETCH R2.x___, R0.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    775  VFETCH R0.x___, R0.w, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    776  VFETCH R1.x___, R1.w, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    777  VFETCH R3.x___, R1.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+56 ALU: ADDR(1713) CNT(33) KCACHE0(CB1:0-15) 
+    778  x: ADD_INT     ____,  R5.w,  R0.y      
+         y: ADD_INT     ____,  R9.z,  R2.x      
+         z: ADD_INT     ____,  R9.z,  R0.x      VEC_021 
+         w: ADD_INT     T0.w,  R9.z,  R1.x      VEC_102 
+    779  x: ADD_INT     ____,  R9.z,  R3.x      
+         y: ADD_INT     T1.y,  KC0[1].x,  PV778.z      
+         z: LSHR        R1.z,  PV778.x,  2      
+         w: ADD_INT     T1.w,  KC0[1].x,  PV778.y      
+    780  x: LDS_BYTE_READ_RET QA,  PV779.w      
+         y: ADD_INT     T0.y,  KC0[1].x,  PV779.x      
+         z: ADD_INT     T1.z,  KC0[1].x,  T0.w      
+    781  y: ADD_INT     ____,  QA[780].pop,  1      
+    782  x: LDS_BYTE_WRITE ____,  T1.w,  PV781.y      
+    783  x: LDS_BYTE_READ_RET QA,  T1.y      
+         y: ADD_INT     ____,  R8.x,  R0.y      
+    784  y: LSHR        R2.y,  PV783.y,  2      
+    785  w: ADD_INT     ____,  QA[783].pop,  1      
+    786  x: LDS_BYTE_WRITE ____,  T1.y,  PV785.w      
+    787  x: LDS_BYTE_READ_RET QA,  T1.z      
+         w: ADD_INT     R1.w,  R3.w,  R0.y      
+    788  z: ADD_INT     ____,  R5.x,  PV787.w      
+    789  y: LSHR        R0.y,  PV788.z,  2      
+    790  y: ADD_INT     ____,  QA[787].pop,  1      
+    791  x: LDS_BYTE_WRITE ____,  T1.z,  PV790.y      
+    792  x: LDS_BYTE_READ_RET QA,  T0.y      
+         w: ADD_INT     ____,  R6.z,  R1.w      
+    793  z: LSHR        R0.z,  PV792.w,  2      
+    794  z: ADD_INT     ____,  QA[792].pop,  1      
+    795  x: LDS_BYTE_WRITE ____,  T0.y,  PV794.z      
+57 TEX: ADDR(3256) CNT(4) 
+    796  VFETCH R3.x___, R2.w, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    797  VFETCH R0.x___, R1.y, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    798  VFETCH R1.x___, R1.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    799  VFETCH R2.x___, R2.y, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+58 ALU: ADDR(1746) CNT(32) KCACHE0(CB1:0-15) 
+    800  x: ADD_INT     ____,  R9.z,  R0.x      
+         y: ADD_INT     T0.y,  R9.z,  R1.x      VEC_021 
+         z: ADD_INT     ____,  R9.z,  R3.x      VEC_102 
+         w: ADD_INT     ____,  R6.w,  R1.w      
+    801  x: ADD_INT     T0.x,  KC0[1].x,  PV800.z      
+         y: ADD_INT     ____,  R9.z,  R2.x      
+         z: LSHR        R1.z,  PV800.w,  2      
+         w: ADD_INT     T1.w,  KC0[1].x,  PV800.x      
+    802  x: LDS_BYTE_READ_RET QA,  PV801.x      
+         y: ADD_INT     T0.y,  KC0[1].x,  T0.y      
+         z: ADD_INT     T1.z,  KC0[1].x,  PV801.y      
+    803  w: ADD_INT     ____,  QA[802].pop,  1      
+    804  x: LDS_BYTE_WRITE ____,  T0.x,  PV803.w      
+    805  x: LDS_BYTE_READ_RET QA,  T1.w      
+         z: ADD_INT     ____,  R6.x,  R1.w      
+    806  y: LSHR        R2.y,  PV805.z,  2      
+    807  y: ADD_INT     ____,  QA[805].pop,  1      
+    808  x: LDS_BYTE_WRITE ____,  T1.w,  PV807.y      
+    809  x: LDS_BYTE_READ_RET QA,  T0.y      
+         w: ADD_INT     ____,  R6.y,  R1.w      VEC_120 
+    810  z: LSHR        R3.z,  PV809.w,  2      
+    811  z: ADD_INT     ____,  QA[809].pop,  1      
+    812  x: LDS_BYTE_WRITE ____,  T0.y,  PV811.z      
+    813  x: LDS_BYTE_READ_RET QA,  T1.z      
+         y: ADD_INT     ____,  R4.z,  R1.w      VEC_120 
+    814  y: LSHR        R1.y,  PV813.y,  2      
+    815  y: ADD_INT     ____,  QA[813].pop,  1      
+    816  x: LDS_BYTE_WRITE ____,  T1.z,  PV815.y      
+59 TEX: ADDR(3264) CNT(4) 
+    817  VFETCH R2.x___, R0.y, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    818  VFETCH R0.x___, R0.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    819  VFETCH R1.x___, R1.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    820  VFETCH R3.x___, R2.y, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+60 ALU: ADDR(1778) CNT(33) KCACHE0(CB1:0-15) 
+    821  x: ADD_INT     ____,  R5.w,  R1.w      
+         y: ADD_INT     ____,  R9.z,  R0.x      
+         z: ADD_INT     T1.z,  R9.z,  R1.x      VEC_021 
+         w: ADD_INT     ____,  R9.z,  R2.x      VEC_102 
+    822  x: ADD_INT     T0.x,  KC0[1].x,  PV821.y      
+         y: ADD_INT     ____,  R9.z,  R3.x      
+         z: ADD_INT     T0.z,  KC0[1].x,  PV821.w      
+         w: LSHR        R2.w,  PV821.x,  2      
+    823  x: LDS_BYTE_READ_RET QA,  PV822.z      
+         y: ADD_INT     T0.y,  KC0[1].x,  T1.z      
+         w: ADD_INT     T1.w,  KC0[1].x,  PV822.y      
+    824  y: ADD_INT     ____,  QA[823].pop,  1      
+    825  x: LDS_BYTE_WRITE ____,  T0.z,  PV824.y      
+    826  x: LDS_BYTE_READ_RET QA,  T0.x      
+         y: ADD_INT     ____,  R8.x,  R1.w      VEC_120 
+    827  w: LSHR        R0.w,  PV826.y,  2      
+    828  z: ADD_INT     ____,  QA[826].pop,  1      
+    829  x: LDS_BYTE_WRITE ____,  T0.x,  PV828.z      
+    830  x: LDS_BYTE_READ_RET QA,  T0.y      
+         z: ADD_INT     R1.z,  R3.w,  R1.w      
+    831  y: ADD_INT     ____,  R5.x,  PV830.z      
+    832  w: LSHR        R1.w,  PV831.y,  2      
+    833  w: ADD_INT     ____,  QA[830].pop,  1      
+    834  x: LDS_BYTE_WRITE ____,  T0.y,  PV833.w      
+    835  x: LDS_BYTE_READ_RET QA,  T1.w      
+         z: ADD_INT     ____,  R6.z,  R1.z      
+    836  y: LSHR        R2.y,  PV835.z,  2      
+    837  y: ADD_INT     ____,  QA[835].pop,  1      
+    838  x: LDS_BYTE_WRITE ____,  T1.w,  PV837.y      
+61 TEX: ADDR(3272) CNT(4) 
+    839  VFETCH R3.x___, R3.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    840  VFETCH R0.x___, R1.y, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    841  VFETCH R1.x___, R2.w, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    842  VFETCH R2.x___, R0.w, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+62 ALU: ADDR(1811) CNT(32) KCACHE0(CB1:0-15) 
+    843  x: ADD_INT     ____,  R9.z,  R3.x      
+         y: ADD_INT     T0.y,  R9.z,  R1.x      VEC_021 
+         z: ADD_INT     ____,  R6.w,  R1.z      
+         w: ADD_INT     ____,  R9.z,  R0.x      VEC_201 
+    844  x: ADD_INT     ____,  R9.z,  R2.x      
+         y: ADD_INT     T1.y,  KC0[1].x,  PV843.x      
+         z: ADD_INT     T0.z,  KC0[1].x,  PV843.w      
+         w: LSHR        R0.w,  PV843.z,  2      
+    845  x: LDS_BYTE_READ_RET QA,  PV844.y      
+         y: ADD_INT     T0.y,  KC0[1].x,  PV844.x      
+         w: ADD_INT     T1.w,  KC0[1].x,  T0.y      
+    846  z: ADD_INT     ____,  QA[845].pop,  1      
+    847  x: LDS_BYTE_WRITE ____,  T1.y,  PV846.z      
+    848  x: LDS_BYTE_READ_RET QA,  T0.z      
+         y: ADD_INT     ____,  R6.x,  R1.z      
+    849  y: LSHR        R1.y,  PV848.y,  2      
+    850  y: ADD_INT     ____,  QA[848].pop,  1      
+    851  x: LDS_BYTE_WRITE ____,  T0.z,  PV850.y      
+    852  x: LDS_BYTE_READ_RET QA,  T1.w      
+         w: ADD_INT     ____,  R6.y,  R1.z      
+    853  z: LSHR        R3.z,  PV852.w,  2      
+    854  y: ADD_INT     ____,  QA[852].pop,  1      
+    855  x: LDS_BYTE_WRITE ____,  T1.w,  PV854.y      
+    856  x: LDS_BYTE_READ_RET QA,  T0.y      
+         y: ADD_INT     ____,  R4.z,  R1.z      
+    857  w: LSHR        R2.w,  PV856.y,  2      
+    858  w: ADD_INT     ____,  QA[856].pop,  1      
+    859  x: LDS_BYTE_WRITE ____,  T0.y,  PV858.w      
+63 TEX: ADDR(3280) CNT(4) 
+    860  VFETCH R2.x___, R1.w, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    861  VFETCH R0.x___, R2.y, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    862  VFETCH R1.x___, R0.w, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    863  VFETCH R3.x___, R1.y, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+64 ALU: ADDR(1843) CNT(33) KCACHE0(CB1:0-15) 
+    864  x: ADD_INT     ____,  R9.z,  R0.x      
+         y: ADD_INT     T0.y,  R9.z,  R1.x      VEC_021 
+         z: ADD_INT     ____,  R9.z,  R2.x      VEC_102 
+         w: ADD_INT     ____,  R5.w,  R1.z      VEC_021 
+    865  x: ADD_INT     T0.x,  KC0[1].x,  PV864.z      
+         y: ADD_INT     ____,  R9.z,  R3.x      
+         z: LSHR        R0.z,  PV864.w,  2      
+         w: ADD_INT     T1.w,  KC0[1].x,  PV864.x      
+    866  x: LDS_BYTE_READ_RET QA,  PV865.x      
+         y: ADD_INT     T0.y,  KC0[1].x,  T0.y      
+         z: ADD_INT     T0.z,  KC0[1].x,  PV865.y      
+    867  w: ADD_INT     ____,  QA[866].pop,  1      
+    868  x: LDS_BYTE_WRITE ____,  T0.x,  PV867.w      
+    869  x: LDS_BYTE_READ_RET QA,  T1.w      
+         w: ADD_INT     ____,  R8.x,  R1.z      
+    870  z: LSHR        R2.z,  PV869.w,  2      
+    871  y: ADD_INT     ____,  QA[869].pop,  1      
+    872  x: LDS_BYTE_WRITE ____,  T1.w,  PV871.y      
+    873  x: LDS_BYTE_READ_RET QA,  T0.y      
+         y: ADD_INT     R2.y,  R3.w,  R1.z      
+    874  w: ADD_INT     ____,  R5.x,  PV873.y      
+    875  z: LSHR        R1.z,  PV874.w,  2      
+    876  z: ADD_INT     ____,  QA[873].pop,  1      
+    877  x: LDS_BYTE_WRITE ____,  T0.y,  PV876.z      
+    878  x: LDS_BYTE_READ_RET QA,  T0.z      
+         y: ADD_INT     ____,  R6.z,  R2.y      VEC_120 
+    879  y: LSHR        R1.y,  PV878.y,  2      
+    880  y: ADD_INT     ____,  QA[878].pop,  1      
+    881  x: LDS_BYTE_WRITE ____,  T0.z,  PV880.y      
+65 TEX: ADDR(3288) CNT(4) 
+    882  VFETCH R3.x___, R3.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    883  VFETCH R0.x___, R2.w, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    884  VFETCH R1.x___, R0.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    885  VFETCH R2.x___, R2.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+66 ALU: ADDR(1876) CNT(32) KCACHE0(CB1:0-15) 
+    886  x: ADD_INT     ____,  R6.w,  R2.y      
+         y: ADD_INT     ____,  R9.z,  R3.x      
+         z: ADD_INT     ____,  R9.z,  R0.x      VEC_021 
+         w: ADD_INT     T1.w,  R9.z,  R1.x      VEC_102 
+    887  x: ADD_INT     ____,  R9.z,  R2.x      
+         y: ADD_INT     T0.y,  KC0[1].x,  PV886.z      
+         z: LSHR        R2.z,  PV886.x,  2      
+         w: ADD_INT     T0.w,  KC0[1].x,  PV886.y      
+    888  x: LDS_BYTE_READ_RET QA,  PV887.w      
+         y: ADD_INT     T1.y,  KC0[1].x,  PV887.x      
+         z: ADD_INT     T0.z,  KC0[1].x,  T1.w      
+    889  y: ADD_INT     ____,  QA[888].pop,  1      
+    890  x: LDS_BYTE_WRITE ____,  T0.w,  PV889.y      
+    891  x: LDS_BYTE_READ_RET QA,  T0.y      
+         y: ADD_INT     ____,  R6.x,  R2.y      
+    892  w: LSHR        R2.w,  PV891.y,  2      
+    893  w: ADD_INT     ____,  QA[891].pop,  1      
+    894  x: LDS_BYTE_WRITE ____,  T0.y,  PV893.w      
+    895  x: LDS_BYTE_READ_RET QA,  T0.z      
+         z: ADD_INT     ____,  R6.y,  R2.y      
+    896  y: LSHR        R0.y,  PV895.z,  2      
+    897  y: ADD_INT     ____,  QA[895].pop,  1      
+    898  x: LDS_BYTE_WRITE ____,  T0.z,  PV897.y      
+    899  x: LDS_BYTE_READ_RET QA,  T1.y      
+         w: ADD_INT     ____,  R4.z,  R2.y      
+    900  z: LSHR        R0.z,  PV899.w,  2      
+    901  z: ADD_INT     ____,  QA[899].pop,  1      
+    902  x: LDS_BYTE_WRITE ____,  T1.y,  PV901.z      
+67 TEX: ADDR(3296) CNT(4) 
+    903  VFETCH R2.x___, R1.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    904  VFETCH R0.x___, R1.y, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    905  VFETCH R1.x___, R2.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    906  VFETCH R3.x___, R2.w, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+68 ALU: ADDR(1908) CNT(33) KCACHE0(CB1:0-15) 
+    907  x: ADD_INT     ____,  R9.z,  R2.x      
+         y: ADD_INT     T1.y,  R9.z,  R1.x      VEC_021 
+         z: ADD_INT     ____,  R5.w,  R2.y      
+         w: ADD_INT     ____,  R9.z,  R0.x      VEC_102 
+    908  x: ADD_INT     ____,  R9.z,  R3.x      
+         y: ADD_INT     T0.y,  KC0[1].x,  PV907.x      
+         z: ADD_INT     T0.z,  KC0[1].x,  PV907.w      
+         w: LSHR        R2.w,  PV907.z,  2      
+    909  x: LDS_BYTE_READ_RET QA,  PV908.y      
+         y: ADD_INT     T1.y,  KC0[1].x,  PV908.x      
+         w: ADD_INT     T0.w,  KC0[1].x,  T1.y      
+    910  z: ADD_INT     ____,  QA[909].pop,  1      
+    911  x: LDS_BYTE_WRITE ____,  T0.y,  PV910.z      
+    912  x: LDS_BYTE_READ_RET QA,  T0.z      
+         z: ADD_INT     ____,  R8.x,  R2.y      
+    913  y: LSHR        R1.y,  PV912.z,  2      
+    914  y: ADD_INT     ____,  QA[912].pop,  1      
+    915  x: LDS_BYTE_WRITE ____,  T0.z,  PV914.y      
+    916  x: LDS_BYTE_READ_RET QA,  T0.w      
+         y: ADD_INT     R2.y,  R3.w,  R2.y      VEC_120 
+    917  w: ADD_INT     ____,  R5.x,  PV916.y      
+    918  z: LSHR        R2.z,  PV917.w,  2      
+    919  y: ADD_INT     ____,  QA[916].pop,  1      
+    920  x: LDS_BYTE_WRITE ____,  T0.w,  PV919.y      
+    921  x: LDS_BYTE_READ_RET QA,  T1.y      
+         y: ADD_INT     ____,  R6.z,  R2.y      
+    922  w: LSHR        R0.w,  PV921.y,  2      
+    923  w: ADD_INT     ____,  QA[921].pop,  1      
+    924  x: LDS_BYTE_WRITE ____,  T1.y,  PV923.w      
+69 TEX: ADDR(3304) CNT(4) 
+    925  VFETCH R3.x___, R0.y, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    926  VFETCH R0.x___, R0.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    927  VFETCH R1.x___, R2.w, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    928  VFETCH R2.x___, R1.y, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+70 ALU: ADDR(1941) CNT(32) KCACHE0(CB1:0-15) 
+    929  x: ADD_INT     ____,  R6.w,  R2.y      
+         y: ADD_INT     ____,  R9.z,  R0.x      
+         z: ADD_INT     T0.z,  R9.z,  R1.x      VEC_021 
+         w: ADD_INT     ____,  R9.z,  R3.x      VEC_102 
+    930  x: ADD_INT     T0.x,  KC0[1].x,  PV929.y      
+         y: ADD_INT     ____,  R9.z,  R2.x      
+         z: ADD_INT     T1.z,  KC0[1].x,  PV929.w      
+         w: LSHR        R2.w,  PV929.x,  2      
+    931  x: LDS_BYTE_READ_RET QA,  PV930.z      
+         y: ADD_INT     T1.y,  KC0[1].x,  T0.z      
+         w: ADD_INT     T0.w,  KC0[1].x,  PV930.y      
+    932  y: ADD_INT     ____,  QA[931].pop,  1      
+    933  x: LDS_BYTE_WRITE ____,  T1.z,  PV932.y      
+    934  x: LDS_BYTE_READ_RET QA,  T0.x      
+         w: ADD_INT     ____,  R6.x,  R2.y      VEC_120 
+    935  z: LSHR        R0.z,  PV934.w,  2      
+    936  z: ADD_INT     ____,  QA[934].pop,  1      
+    937  x: LDS_BYTE_WRITE ____,  T0.x,  PV936.z      
+    938  x: LDS_BYTE_READ_RET QA,  T1.y      
+         y: ADD_INT     ____,  R6.y,  R2.y      VEC_120 
+    939  w: LSHR        R1.w,  PV938.y,  2      
+    940  w: ADD_INT     ____,  QA[938].pop,  1      
+    941  x: LDS_BYTE_WRITE ____,  T1.y,  PV940.w      
+    942  x: LDS_BYTE_READ_RET QA,  T0.w      
+         z: ADD_INT     ____,  R4.z,  R2.y      
+    943  y: LSHR        R1.y,  PV942.z,  2      
+    944  y: ADD_INT     ____,  QA[942].pop,  1      
+    945  x: LDS_BYTE_WRITE ____,  T0.w,  PV944.y      
+71 TEX: ADDR(3312) CNT(4) 
+    946  VFETCH R2.x___, R2.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    947  VFETCH R0.x___, R0.w, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    948  VFETCH R1.x___, R2.w, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    949  VFETCH R3.x___, R0.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+72 ALU: ADDR(1973) CNT(33) KCACHE0(CB1:0-15) 
+    950  x: ADD_INT     ____,  R5.w,  R2.y      
+         y: ADD_INT     ____,  R9.z,  R2.x      
+         z: ADD_INT     ____,  R9.z,  R0.x      VEC_021 
+         w: ADD_INT     T0.w,  R9.z,  R1.x      VEC_102 
+    951  x: ADD_INT     ____,  R9.z,  R3.x      
+         y: ADD_INT     T1.y,  KC0[1].x,  PV950.z      
+         z: LSHR        R0.z,  PV950.x,  2      
+         w: ADD_INT     T1.w,  KC0[1].x,  PV950.y      
+    952  x: LDS_BYTE_READ_RET QA,  PV951.w      
+         y: ADD_INT     T0.y,  KC0[1].x,  PV951.x      
+         z: ADD_INT     T1.z,  KC0[1].x,  T0.w      
+    953  y: ADD_INT     ____,  QA[952].pop,  1      
+    954  x: LDS_BYTE_WRITE ____,  T1.w,  PV953.y      
+    955  x: LDS_BYTE_READ_RET QA,  T1.y      
+         y: ADD_INT     ____,  R8.x,  R2.y      
+    956  y: LSHR        R0.y,  PV955.y,  2      
+    957  w: ADD_INT     ____,  QA[955].pop,  1      
+    958  x: LDS_BYTE_WRITE ____,  T1.y,  PV957.w      
+    959  x: LDS_BYTE_READ_RET QA,  T1.z      
+         w: ADD_INT     R2.w,  R3.w,  R2.y      
+    960  z: ADD_INT     ____,  R5.x,  PV959.w      
+    961  y: LSHR        R2.y,  PV960.z,  2      
+    962  y: ADD_INT     ____,  QA[959].pop,  1      
+    963  x: LDS_BYTE_WRITE ____,  T1.z,  PV962.y      
+    964  x: LDS_BYTE_READ_RET QA,  T0.y      
+         w: ADD_INT     ____,  R6.z,  R2.w      
+    965  z: LSHR        R2.z,  PV964.w,  2      
+    966  z: ADD_INT     ____,  QA[964].pop,  1      
+    967  x: LDS_BYTE_WRITE ____,  T0.y,  PV966.z      
+73 TEX: ADDR(3320) CNT(4) 
+    968  VFETCH R3.x___, R1.w, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    969  VFETCH R0.x___, R1.y, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    970  VFETCH R1.x___, R0.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    971  VFETCH R2.x___, R0.y, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+74 ALU: ADDR(2006) CNT(32) KCACHE0(CB1:0-15) 
+    972  x: ADD_INT     ____,  R9.z,  R0.x      
+         y: ADD_INT     T0.y,  R9.z,  R1.x      VEC_021 
+         z: ADD_INT     ____,  R9.z,  R3.x      VEC_102 
+         w: ADD_INT     ____,  R6.w,  R2.w      
+    973  x: ADD_INT     T0.x,  KC0[1].x,  PV972.z      
+         y: ADD_INT     ____,  R9.z,  R2.x      
+         z: LSHR        R0.z,  PV972.w,  2      
+         w: ADD_INT     T1.w,  KC0[1].x,  PV972.x      
+    974  x: LDS_BYTE_READ_RET QA,  PV973.x      
+         y: ADD_INT     T0.y,  KC0[1].x,  T0.y      
+         z: ADD_INT     T1.z,  KC0[1].x,  PV973.y      
+    975  w: ADD_INT     ____,  QA[974].pop,  1      
+    976  x: LDS_BYTE_WRITE ____,  T0.x,  PV975.w      
+    977  x: LDS_BYTE_READ_RET QA,  T1.w      
+         z: ADD_INT     ____,  R6.x,  R2.w      
+    978  y: LSHR        R0.y,  PV977.z,  2      
+    979  y: ADD_INT     ____,  QA[977].pop,  1      
+    980  x: LDS_BYTE_WRITE ____,  T1.w,  PV979.y      
+    981  x: LDS_BYTE_READ_RET QA,  T0.y      
+         w: ADD_INT     ____,  R6.y,  R2.w      VEC_120 
+    982  z: LSHR        R1.z,  PV981.w,  2      
+    983  z: ADD_INT     ____,  QA[981].pop,  1      
+    984  x: LDS_BYTE_WRITE ____,  T0.y,  PV983.z      
+    985  x: LDS_BYTE_READ_RET QA,  T1.z      
+         y: ADD_INT     ____,  R4.z,  R2.w      VEC_120 
+    986  y: LSHR        R1.y,  PV985.y,  2      
+    987  y: ADD_INT     ____,  QA[985].pop,  1      
+    988  x: LDS_BYTE_WRITE ____,  T1.z,  PV987.y      
+75 TEX: ADDR(3328) CNT(4) 
+    989  VFETCH R2.x___, R2.y, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    990  VFETCH R0.x___, R2.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    991  VFETCH R1.x___, R0.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+    992  VFETCH R3.x___, R0.y, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+76 ALU: ADDR(2038) CNT(33) KCACHE0(CB1:0-15) 
+    993  x: ADD_INT     ____,  R5.w,  R2.w      
+         y: ADD_INT     ____,  R9.z,  R0.x      
+         z: ADD_INT     T1.z,  R9.z,  R1.x      VEC_021 
+         w: ADD_INT     ____,  R9.z,  R2.x      VEC_102 
+    994  x: ADD_INT     T0.x,  KC0[1].x,  PV993.y      
+         y: ADD_INT     ____,  R9.z,  R3.x      
+         z: ADD_INT     T0.z,  KC0[1].x,  PV993.w      
+         w: LSHR        R1.w,  PV993.x,  2      
+    995  x: LDS_BYTE_READ_RET QA,  PV994.z      
+         y: ADD_INT     T0.y,  KC0[1].x,  T1.z      
+         w: ADD_INT     T1.w,  KC0[1].x,  PV994.y      
+    996  y: ADD_INT     ____,  QA[995].pop,  1      
+    997  x: LDS_BYTE_WRITE ____,  T0.z,  PV996.y      
+    998  x: LDS_BYTE_READ_RET QA,  T0.x      
+         y: ADD_INT     ____,  R8.x,  R2.w      VEC_120 
+    999  w: LSHR        R0.w,  PV998.y,  2      
+   1000  z: ADD_INT     ____,  QA[998].pop,  1      
+   1001  x: LDS_BYTE_WRITE ____,  T0.x,  PV1000.z      
+   1002  x: LDS_BYTE_READ_RET QA,  T0.y      
+         z: ADD_INT     R0.z,  R3.w,  R2.w      
+   1003  y: ADD_INT     ____,  R5.x,  PV1002.z      
+   1004  w: LSHR        R2.w,  PV1003.y,  2      
+   1005  w: ADD_INT     ____,  QA[1002].pop,  1      
+   1006  x: LDS_BYTE_WRITE ____,  T0.y,  PV1005.w      
+   1007  x: LDS_BYTE_READ_RET QA,  T1.w      
+         z: ADD_INT     ____,  R6.z,  R0.z      
+   1008  y: LSHR        R0.y,  PV1007.z,  2      
+   1009  y: ADD_INT     ____,  QA[1007].pop,  1      
+   1010  x: LDS_BYTE_WRITE ____,  T1.w,  PV1009.y      
+77 TEX: ADDR(3336) CNT(4) 
+   1011  VFETCH R3.x___, R1.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+   1012  VFETCH R0.x___, R1.y, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+   1013  VFETCH R1.x___, R1.w, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+   1014  VFETCH R2.x___, R0.w, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+78 ALU: ADDR(2071) CNT(32) KCACHE0(CB1:0-15) 
+   1015  x: ADD_INT     ____,  R9.z,  R3.x      
+         y: ADD_INT     T0.y,  R9.z,  R1.x      VEC_021 
+         z: ADD_INT     ____,  R6.w,  R0.z      
+         w: ADD_INT     ____,  R9.z,  R0.x      VEC_201 
+   1016  x: ADD_INT     ____,  R9.z,  R2.x      
+         y: ADD_INT     T1.y,  KC0[1].x,  PV1015.x      
+         z: ADD_INT     T0.z,  KC0[1].x,  PV1015.w      
+         w: LSHR        R0.w,  PV1015.z,  2      
+   1017  x: LDS_BYTE_READ_RET QA,  PV1016.y      
+         y: ADD_INT     T0.y,  KC0[1].x,  PV1016.x      
+         w: ADD_INT     T1.w,  KC0[1].x,  T0.y      
+   1018  z: ADD_INT     ____,  QA[1017].pop,  1      
+   1019  x: LDS_BYTE_WRITE ____,  T1.y,  PV1018.z      
+   1020  x: LDS_BYTE_READ_RET QA,  T0.z      
+         y: ADD_INT     ____,  R6.x,  R0.z      
+   1021  y: LSHR        R1.y,  PV1020.y,  2      
+   1022  y: ADD_INT     ____,  QA[1020].pop,  1      
+   1023  x: LDS_BYTE_WRITE ____,  T0.z,  PV1022.y      
+   1024  x: LDS_BYTE_READ_RET QA,  T1.w      
+         w: ADD_INT     ____,  R6.y,  R0.z      
+   1025  z: LSHR        R1.z,  PV1024.w,  2      
+   1026  y: ADD_INT     ____,  QA[1024].pop,  1      
+   1027  x: LDS_BYTE_WRITE ____,  T1.w,  PV1026.y      
+   1028  x: LDS_BYTE_READ_RET QA,  T0.y      
+         y: ADD_INT     ____,  R4.z,  R0.z      
+   1029  w: LSHR        R1.w,  PV1028.y,  2      
+   1030  w: ADD_INT     ____,  QA[1028].pop,  1      
+   1031  x: LDS_BYTE_WRITE ____,  T0.y,  PV1030.w      
+79 TEX: ADDR(3344) CNT(4) 
+   1032  VFETCH R2.x___, R2.w, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+   1033  VFETCH R0.x___, R0.y, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+   1034  VFETCH R1.x___, R0.w, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+   1035  VFETCH R3.x___, R1.y, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+80 ALU: ADDR(2103) CNT(33) KCACHE0(CB1:0-15) 
+   1036  x: ADD_INT     ____,  R9.z,  R0.x      
+         y: ADD_INT     T0.y,  R9.z,  R1.x      VEC_021 
+         z: ADD_INT     ____,  R9.z,  R2.x      VEC_102 
+         w: ADD_INT     ____,  R5.w,  R0.z      VEC_021 
+   1037  x: ADD_INT     T0.x,  KC0[1].x,  PV1036.z      
+         y: ADD_INT     ____,  R9.z,  R3.x      
+         z: LSHR        R2.z,  PV1036.w,  2      
+         w: ADD_INT     T1.w,  KC0[1].x,  PV1036.x      
+   1038  x: LDS_BYTE_READ_RET QA,  PV1037.x      
+         y: ADD_INT     T0.y,  KC0[1].x,  T0.y      
+         z: ADD_INT     T0.z,  KC0[1].x,  PV1037.y      
+   1039  w: ADD_INT     ____,  QA[1038].pop,  1      
+   1040  x: LDS_BYTE_WRITE ____,  T0.x,  PV1039.w      
+   1041  x: LDS_BYTE_READ_RET QA,  T1.w      
+         w: ADD_INT     ____,  R8.x,  R0.z      
+   1042  z: LSHR        R3.z,  PV1041.w,  2      
+   1043  y: ADD_INT     ____,  QA[1041].pop,  1      
+   1044  x: LDS_BYTE_WRITE ____,  T1.w,  PV1043.y      
+   1045  x: LDS_BYTE_READ_RET QA,  T0.y      
+         y: ADD_INT     R0.y,  R3.w,  R0.z      
+   1046  w: ADD_INT     ____,  R5.x,  PV1045.y      
+   1047  z: LSHR        R0.z,  PV1046.w,  2      
+   1048  z: ADD_INT     ____,  QA[1045].pop,  1      
+   1049  x: LDS_BYTE_WRITE ____,  T0.y,  PV1048.z      
+   1050  x: LDS_BYTE_READ_RET QA,  T0.z      
+         y: ADD_INT     ____,  R6.z,  R0.y      VEC_120 
+   1051  y: LSHR        R1.y,  PV1050.y,  2      
+   1052  y: ADD_INT     ____,  QA[1050].pop,  1      
+   1053  x: LDS_BYTE_WRITE ____,  T0.z,  PV1052.y      
+81 TEX: ADDR(3352) CNT(4) 
+   1054  VFETCH R3.x___, R1.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+   1055  VFETCH R0.x___, R1.w, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+   1056  VFETCH R1.x___, R2.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+   1057  VFETCH R2.x___, R3.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+82 ALU: ADDR(2136) CNT(32) KCACHE0(CB1:0-15) 
+   1058  x: ADD_INT     ____,  R6.w,  R0.y      
+         y: ADD_INT     ____,  R9.z,  R3.x      
+         z: ADD_INT     ____,  R9.z,  R0.x      VEC_021 
+         w: ADD_INT     T1.w,  R9.z,  R1.x      VEC_102 
+   1059  x: ADD_INT     ____,  R9.z,  R2.x      
+         y: ADD_INT     T0.y,  KC0[1].x,  PV1058.z      
+         z: LSHR        R3.z,  PV1058.x,  2      
+         w: ADD_INT     T0.w,  KC0[1].x,  PV1058.y      
+   1060  x: LDS_BYTE_READ_RET QA,  PV1059.w      
+         y: ADD_INT     T1.y,  KC0[1].x,  PV1059.x      
+         z: ADD_INT     T0.z,  KC0[1].x,  T1.w      
+   1061  y: ADD_INT     ____,  QA[1060].pop,  1      
+   1062  x: LDS_BYTE_WRITE ____,  T0.w,  PV1061.y      
+   1063  x: LDS_BYTE_READ_RET QA,  T0.y      
+         y: ADD_INT     ____,  R6.x,  R0.y      
+   1064  w: LSHR        R1.w,  PV1063.y,  2      
+   1065  w: ADD_INT     ____,  QA[1063].pop,  1      
+   1066  x: LDS_BYTE_WRITE ____,  T0.y,  PV1065.w      
+   1067  x: LDS_BYTE_READ_RET QA,  T0.z      
+         z: ADD_INT     ____,  R6.y,  R0.y      
+   1068  y: LSHR        R2.y,  PV1067.z,  2      
+   1069  y: ADD_INT     ____,  QA[1067].pop,  1      
+   1070  x: LDS_BYTE_WRITE ____,  T0.z,  PV1069.y      
+   1071  x: LDS_BYTE_READ_RET QA,  T1.y      
+         w: ADD_INT     ____,  R4.z,  R0.y      
+   1072  z: LSHR        R2.z,  PV1071.w,  2      
+   1073  z: ADD_INT     ____,  QA[1071].pop,  1      
+   1074  x: LDS_BYTE_WRITE ____,  T1.y,  PV1073.z      
+83 TEX: ADDR(3360) CNT(4) 
+   1075  VFETCH R2.x___, R0.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+   1076  VFETCH R0.x___, R1.y, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+   1077  VFETCH R1.x___, R3.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+   1078  VFETCH R3.x___, R1.w, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+84 ALU: ADDR(2168) CNT(33) KCACHE0(CB1:0-15) 
+   1079  x: ADD_INT     ____,  R9.z,  R2.x      
+         y: ADD_INT     T1.y,  R9.z,  R1.x      VEC_021 
+         z: ADD_INT     ____,  R5.w,  R0.y      
+         w: ADD_INT     ____,  R9.z,  R0.x      VEC_102 
+   1080  x: ADD_INT     ____,  R9.z,  R3.x      
+         y: ADD_INT     T0.y,  KC0[1].x,  PV1079.x      
+         z: ADD_INT     T0.z,  KC0[1].x,  PV1079.w      
+         w: LSHR        R1.w,  PV1079.z,  2      
+   1081  x: LDS_BYTE_READ_RET QA,  PV1080.y      
+         y: ADD_INT     T1.y,  KC0[1].x,  PV1080.x      
+         w: ADD_INT     T0.w,  KC0[1].x,  T1.y      
+   1082  z: ADD_INT     ____,  QA[1081].pop,  1      
+   1083  x: LDS_BYTE_WRITE ____,  T0.y,  PV1082.z      
+   1084  x: LDS_BYTE_READ_RET QA,  T0.z      
+         z: ADD_INT     ____,  R8.x,  R0.y      
+   1085  y: LSHR        R1.y,  PV1084.z,  2      
+   1086  y: ADD_INT     ____,  QA[1084].pop,  1      
+   1087  x: LDS_BYTE_WRITE ____,  T0.z,  PV1086.y      
+   1088  x: LDS_BYTE_READ_RET QA,  T0.w      
+         y: ADD_INT     R0.y,  R3.w,  R0.y      VEC_120 
+   1089  w: ADD_INT     ____,  R5.x,  PV1088.y      
+   1090  z: LSHR        R3.z,  PV1089.w,  2      
+   1091  y: ADD_INT     ____,  QA[1088].pop,  1      
+   1092  x: LDS_BYTE_WRITE ____,  T0.w,  PV1091.y      
+   1093  x: LDS_BYTE_READ_RET QA,  T1.y      
+         y: ADD_INT     ____,  R6.z,  R0.y      
+   1094  w: LSHR        R0.w,  PV1093.y,  2      
+   1095  w: ADD_INT     ____,  QA[1093].pop,  1      
+   1096  x: LDS_BYTE_WRITE ____,  T1.y,  PV1095.w      
+85 TEX: ADDR(3368) CNT(4) 
+   1097  VFETCH R3.x___, R2.y, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+   1098  VFETCH R0.x___, R2.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+   1099  VFETCH R1.x___, R1.w, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+   1100  VFETCH R2.x___, R1.y, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+86 ALU: ADDR(2201) CNT(32) KCACHE0(CB1:0-15) 
+   1101  x: ADD_INT     ____,  R6.w,  R0.y      
+         y: ADD_INT     ____,  R9.z,  R0.x      
+         z: ADD_INT     T0.z,  R9.z,  R1.x      VEC_021 
+         w: ADD_INT     ____,  R9.z,  R3.x      VEC_102 
+   1102  x: ADD_INT     T0.x,  KC0[1].x,  PV1101.y      
+         y: ADD_INT     ____,  R9.z,  R2.x      
+         z: ADD_INT     T1.z,  KC0[1].x,  PV1101.w      
+         w: LSHR        R1.w,  PV1101.x,  2      
+   1103  x: LDS_BYTE_READ_RET QA,  PV1102.z      
+         y: ADD_INT     T1.y,  KC0[1].x,  T0.z      
+         w: ADD_INT     T0.w,  KC0[1].x,  PV1102.y      
+   1104  y: ADD_INT     ____,  QA[1103].pop,  1      
+   1105  x: LDS_BYTE_WRITE ____,  T1.z,  PV1104.y      
+   1106  x: LDS_BYTE_READ_RET QA,  T0.x      
+         w: ADD_INT     ____,  R6.x,  R0.y      VEC_120 
+   1107  z: LSHR        R2.z,  PV1106.w,  2      
+   1108  z: ADD_INT     ____,  QA[1106].pop,  1      
+   1109  x: LDS_BYTE_WRITE ____,  T0.x,  PV1108.z      
+   1110  x: LDS_BYTE_READ_RET QA,  T1.y      
+         y: ADD_INT     ____,  R6.y,  R0.y      VEC_120 
+   1111  w: LSHR        R2.w,  PV1110.y,  2      
+   1112  w: ADD_INT     ____,  QA[1110].pop,  1      
+   1113  x: LDS_BYTE_WRITE ____,  T1.y,  PV1112.w      
+   1114  x: LDS_BYTE_READ_RET QA,  T0.w      
+         z: ADD_INT     ____,  R4.z,  R0.y      
+   1115  y: LSHR        R1.y,  PV1114.z,  2      
+   1116  y: ADD_INT     ____,  QA[1114].pop,  1      
+   1117  x: LDS_BYTE_WRITE ____,  T0.w,  PV1116.y      
+87 TEX: ADDR(3376) CNT(4) 
+   1118  VFETCH R2.x___, R3.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+   1119  VFETCH R0.x___, R0.w, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+   1120  VFETCH R1.x___, R1.w, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+   1121  VFETCH R3.x___, R2.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+88 ALU: ADDR(2233) CNT(33) KCACHE0(CB1:0-15) 
+   1122  x: ADD_INT     ____,  R5.w,  R0.y      
+         y: ADD_INT     ____,  R9.z,  R2.x      
+         z: ADD_INT     ____,  R9.z,  R0.x      VEC_021 
+         w: ADD_INT     T0.w,  R9.z,  R1.x      VEC_102 
+   1123  x: ADD_INT     ____,  R9.z,  R3.x      
+         y: ADD_INT     T1.y,  KC0[1].x,  PV1122.z      
+         z: LSHR        R2.z,  PV1122.x,  2      
+         w: ADD_INT     T1.w,  KC0[1].x,  PV1122.y      
+   1124  x: LDS_BYTE_READ_RET QA,  PV1123.w      
+         y: ADD_INT     T0.y,  KC0[1].x,  PV1123.x      
+         z: ADD_INT     T1.z,  KC0[1].x,  T0.w      
+   1125  y: ADD_INT     ____,  QA[1124].pop,  1      
+   1126  x: LDS_BYTE_WRITE ____,  T1.w,  PV1125.y      
+   1127  x: LDS_BYTE_READ_RET QA,  T1.y      
+         y: ADD_INT     ____,  R8.x,  R0.y      
+   1128  y: LSHR        R2.y,  PV1127.y,  2      
+   1129  w: ADD_INT     ____,  QA[1127].pop,  1      
+   1130  x: LDS_BYTE_WRITE ____,  T1.y,  PV1129.w      
+   1131  x: LDS_BYTE_READ_RET QA,  T1.z      
+         w: ADD_INT     R1.w,  R3.w,  R0.y      
+   1132  z: ADD_INT     ____,  R5.x,  PV1131.w      
+   1133  y: LSHR        R0.y,  PV1132.z,  2      
+   1134  y: ADD_INT     ____,  QA[1131].pop,  1      
+   1135  x: LDS_BYTE_WRITE ____,  T1.z,  PV1134.y      
+   1136  x: LDS_BYTE_READ_RET QA,  T0.y      
+         w: ADD_INT     ____,  R6.z,  R1.w      
+   1137  z: LSHR        R3.z,  PV1136.w,  2      
+   1138  z: ADD_INT     ____,  QA[1136].pop,  1      
+   1139  x: LDS_BYTE_WRITE ____,  T0.y,  PV1138.z      
+89 TEX: ADDR(3384) CNT(4) 
+   1140  VFETCH R3.x___, R2.w, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+   1141  VFETCH R0.x___, R1.y, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+   1142  VFETCH R1.x___, R2.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+   1143  VFETCH R2.x___, R2.y, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+90 ALU: ADDR(2266) CNT(32) KCACHE0(CB1:0-15) 
+   1144  x: ADD_INT     ____,  R9.z,  R0.x      
+         y: ADD_INT     T0.y,  R9.z,  R1.x      VEC_021 
+         z: ADD_INT     ____,  R9.z,  R3.x      VEC_102 
+         w: ADD_INT     ____,  R6.w,  R1.w      
+   1145  x: ADD_INT     T0.x,  KC0[1].x,  PV1144.z      
+         y: ADD_INT     ____,  R9.z,  R2.x      
+         z: LSHR        R2.z,  PV1144.w,  2      
+         w: ADD_INT     T1.w,  KC0[1].x,  PV1144.x      
+   1146  x: LDS_BYTE_READ_RET QA,  PV1145.x      
+         y: ADD_INT     T0.y,  KC0[1].x,  T0.y      
+         z: ADD_INT     T1.z,  KC0[1].x,  PV1145.y      
+   1147  w: ADD_INT     ____,  QA[1146].pop,  1      
+   1148  x: LDS_BYTE_WRITE ____,  T0.x,  PV1147.w      
+   1149  x: LDS_BYTE_READ_RET QA,  T1.w      
+         z: ADD_INT     ____,  R6.x,  R1.w      
+   1150  y: LSHR        R2.y,  PV1149.z,  2      
+   1151  y: ADD_INT     ____,  QA[1149].pop,  1      
+   1152  x: LDS_BYTE_WRITE ____,  T1.w,  PV1151.y      
+   1153  x: LDS_BYTE_READ_RET QA,  T0.y      
+         w: ADD_INT     ____,  R6.y,  R1.w      VEC_120 
+   1154  z: LSHR        R0.z,  PV1153.w,  2      
+   1155  z: ADD_INT     ____,  QA[1153].pop,  1      
+   1156  x: LDS_BYTE_WRITE ____,  T0.y,  PV1155.z      
+   1157  x: LDS_BYTE_READ_RET QA,  T1.z      
+         y: ADD_INT     ____,  R4.z,  R1.w      VEC_120 
+   1158  y: LSHR        R1.y,  PV1157.y,  2      
+   1159  y: ADD_INT     ____,  QA[1157].pop,  1      
+   1160  x: LDS_BYTE_WRITE ____,  T1.z,  PV1159.y      
+91 TEX: ADDR(3392) CNT(4) 
+   1161  VFETCH R2.x___, R0.y, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+   1162  VFETCH R0.x___, R3.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+   1163  VFETCH R1.x___, R2.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+   1164  VFETCH R3.x___, R2.y, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+92 ALU: ADDR(2298) CNT(33) KCACHE0(CB1:0-15) 
+   1165  x: ADD_INT     ____,  R5.w,  R1.w      
+         y: ADD_INT     ____,  R9.z,  R0.x      
+         z: ADD_INT     T1.z,  R9.z,  R1.x      VEC_021 
+         w: ADD_INT     ____,  R9.z,  R2.x      VEC_102 
+   1166  x: ADD_INT     T0.x,  KC0[1].x,  PV1165.y      
+         y: ADD_INT     ____,  R9.z,  R3.x      
+         z: ADD_INT     T0.z,  KC0[1].x,  PV1165.w      
+         w: LSHR        R2.w,  PV1165.x,  2      
+   1167  x: LDS_BYTE_READ_RET QA,  PV1166.z      
+         y: ADD_INT     T0.y,  KC0[1].x,  T1.z      
+         w: ADD_INT     T1.w,  KC0[1].x,  PV1166.y      
+   1168  y: ADD_INT     ____,  QA[1167].pop,  1      
+   1169  x: LDS_BYTE_WRITE ____,  T0.z,  PV1168.y      
+   1170  x: LDS_BYTE_READ_RET QA,  T0.x      
+         y: ADD_INT     ____,  R8.x,  R1.w      VEC_120 
+   1171  w: LSHR        R0.w,  PV1170.y,  2      
+   1172  z: ADD_INT     ____,  QA[1170].pop,  1      
+   1173  x: LDS_BYTE_WRITE ____,  T0.x,  PV1172.z      
+   1174  x: LDS_BYTE_READ_RET QA,  T0.y      
+         z: ADD_INT     R2.z,  R3.w,  R1.w      
+   1175  y: ADD_INT     ____,  R5.x,  PV1174.z      
+   1176  w: LSHR        R1.w,  PV1175.y,  2      
+   1177  w: ADD_INT     ____,  QA[1174].pop,  1      
+   1178  x: LDS_BYTE_WRITE ____,  T0.y,  PV1177.w      
+   1179  x: LDS_BYTE_READ_RET QA,  T1.w      
+         z: ADD_INT     ____,  R6.z,  R2.z      
+   1180  y: LSHR        R2.y,  PV1179.z,  2      
+   1181  y: ADD_INT     ____,  QA[1179].pop,  1      
+   1182  x: LDS_BYTE_WRITE ____,  T1.w,  PV1181.y      
+93 TEX: ADDR(3400) CNT(4) 
+   1183  VFETCH R3.x___, R0.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+   1184  VFETCH R0.x___, R1.y, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+   1185  VFETCH R1.x___, R2.w, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+   1186  VFETCH R2.x___, R0.w, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+94 ALU: ADDR(2331) CNT(32) KCACHE0(CB1:0-15) 
+   1187  x: ADD_INT     ____,  R9.z,  R3.x      
+         y: ADD_INT     T0.y,  R9.z,  R1.x      VEC_021 
+         z: ADD_INT     ____,  R6.w,  R2.z      
+         w: ADD_INT     ____,  R9.z,  R0.x      VEC_201 
+   1188  x: ADD_INT     ____,  R9.z,  R2.x      
+         y: ADD_INT     T1.y,  KC0[1].x,  PV1187.x      
+         z: ADD_INT     T0.z,  KC0[1].x,  PV1187.w      
+         w: LSHR        R0.w,  PV1187.z,  2      
+   1189  x: LDS_BYTE_READ_RET QA,  PV1188.y      
+         y: ADD_INT     T0.y,  KC0[1].x,  PV1188.x      
+         w: ADD_INT     T1.w,  KC0[1].x,  T0.y      
+   1190  z: ADD_INT     ____,  QA[1189].pop,  1      
+   1191  x: LDS_BYTE_WRITE ____,  T1.y,  PV1190.z      
+   1192  x: LDS_BYTE_READ_RET QA,  T0.z      
+         y: ADD_INT     ____,  R6.x,  R2.z      
+   1193  y: LSHR        R1.y,  PV1192.y,  2      
+   1194  y: ADD_INT     ____,  QA[1192].pop,  1      
+   1195  x: LDS_BYTE_WRITE ____,  T0.z,  PV1194.y      
+   1196  x: LDS_BYTE_READ_RET QA,  T1.w      
+         w: ADD_INT     ____,  R6.y,  R2.z      
+   1197  z: LSHR        R0.z,  PV1196.w,  2      
+   1198  y: ADD_INT     ____,  QA[1196].pop,  1      
+   1199  x: LDS_BYTE_WRITE ____,  T1.w,  PV1198.y      
+   1200  x: LDS_BYTE_READ_RET QA,  T0.y      
+         y: ADD_INT     ____,  R4.z,  R2.z      
+   1201  w: LSHR        R2.w,  PV1200.y,  2      
+   1202  w: ADD_INT     ____,  QA[1200].pop,  1      
+   1203  x: LDS_BYTE_WRITE ____,  T0.y,  PV1202.w      
+95 TEX: ADDR(3408) CNT(4) 
+   1204  VFETCH R2.x___, R1.w, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+   1205  VFETCH R0.x___, R2.y, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+   1206  VFETCH R1.x___, R0.w, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+   1207  VFETCH R3.x___, R1.y, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+96 ALU: ADDR(2363) CNT(33) KCACHE0(CB1:0-15) 
+   1208  x: ADD_INT     ____,  R9.z,  R0.x      
+         y: ADD_INT     T0.y,  R9.z,  R1.x      VEC_021 
+         z: ADD_INT     ____,  R9.z,  R2.x      VEC_102 
+         w: ADD_INT     ____,  R5.w,  R2.z      VEC_021 
+   1209  x: ADD_INT     T0.x,  KC0[1].x,  PV1208.z      
+         y: ADD_INT     ____,  R9.z,  R3.x      
+         z: LSHR        R3.z,  PV1208.w,  2      
+         w: ADD_INT     T1.w,  KC0[1].x,  PV1208.x      
+   1210  x: LDS_BYTE_READ_RET QA,  PV1209.x      
+         y: ADD_INT     T0.y,  KC0[1].x,  T0.y      
+         z: ADD_INT     T0.z,  KC0[1].x,  PV1209.y      
+   1211  w: ADD_INT     ____,  QA[1210].pop,  1      
+   1212  x: LDS_BYTE_WRITE ____,  T0.x,  PV1211.w      
+   1213  x: LDS_BYTE_READ_RET QA,  T1.w      
+         w: ADD_INT     ____,  R8.x,  R2.z      
+   1214  z: LSHR        R1.z,  PV1213.w,  2      
+   1215  y: ADD_INT     ____,  QA[1213].pop,  1      
+   1216  x: LDS_BYTE_WRITE ____,  T1.w,  PV1215.y      
+   1217  x: LDS_BYTE_READ_RET QA,  T0.y      
+         y: ADD_INT     R2.y,  R3.w,  R2.z      
+   1218  w: ADD_INT     ____,  R5.x,  PV1217.y      
+   1219  z: LSHR        R2.z,  PV1218.w,  2      
+   1220  z: ADD_INT     ____,  QA[1217].pop,  1      
+   1221  x: LDS_BYTE_WRITE ____,  T0.y,  PV1220.z      
+   1222  x: LDS_BYTE_READ_RET QA,  T0.z      
+         y: ADD_INT     ____,  R6.z,  R2.y      VEC_120 
+   1223  y: LSHR        R1.y,  PV1222.y,  2      
+   1224  y: ADD_INT     ____,  QA[1222].pop,  1      
+   1225  x: LDS_BYTE_WRITE ____,  T0.z,  PV1224.y      
+97 TEX: ADDR(3416) CNT(4) 
+   1226  VFETCH R3.x___, R0.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+   1227  VFETCH R0.x___, R2.w, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+   1228  VFETCH R1.x___, R3.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+   1229  VFETCH R2.x___, R1.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+98 ALU: ADDR(2396) CNT(32) KCACHE0(CB1:0-15) 
+   1230  x: ADD_INT     ____,  R6.w,  R2.y      
+         y: ADD_INT     ____,  R9.z,  R3.x      
+         z: ADD_INT     ____,  R9.z,  R0.x      VEC_021 
+         w: ADD_INT     T1.w,  R9.z,  R1.x      VEC_102 
+   1231  x: ADD_INT     ____,  R9.z,  R2.x      
+         y: ADD_INT     T0.y,  KC0[1].x,  PV1230.z      
+         z: LSHR        R1.z,  PV1230.x,  2      
+         w: ADD_INT     T0.w,  KC0[1].x,  PV1230.y      
+   1232  x: LDS_BYTE_READ_RET QA,  PV1231.w      
+         y: ADD_INT     T1.y,  KC0[1].x,  PV1231.x      
+         z: ADD_INT     T0.z,  KC0[1].x,  T1.w      
+   1233  y: ADD_INT     ____,  QA[1232].pop,  1      
+   1234  x: LDS_BYTE_WRITE ____,  T0.w,  PV1233.y      
+   1235  x: LDS_BYTE_READ_RET QA,  T0.y      
+         y: ADD_INT     ____,  R6.x,  R2.y      
+   1236  w: LSHR        R2.w,  PV1235.y,  2      
+   1237  w: ADD_INT     ____,  QA[1235].pop,  1      
+   1238  x: LDS_BYTE_WRITE ____,  T0.y,  PV1237.w      
+   1239  x: LDS_BYTE_READ_RET QA,  T0.z      
+         z: ADD_INT     ____,  R6.y,  R2.y      
+   1240  y: LSHR        R0.y,  PV1239.z,  2      
+   1241  y: ADD_INT     ____,  QA[1239].pop,  1      
+   1242  x: LDS_BYTE_WRITE ____,  T0.z,  PV1241.y      
+   1243  x: LDS_BYTE_READ_RET QA,  T1.y      
+         w: ADD_INT     ____,  R4.z,  R2.y      
+   1244  z: LSHR        R3.z,  PV1243.w,  2      
+   1245  z: ADD_INT     ____,  QA[1243].pop,  1      
+   1246  x: LDS_BYTE_WRITE ____,  T1.y,  PV1245.z      
+99 TEX: ADDR(3424) CNT(4) 
+   1247  VFETCH R2.x___, R2.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+   1248  VFETCH R0.x___, R1.y, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+   1249  VFETCH R1.x___, R1.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+   1250  VFETCH R3.x___, R2.w, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+100 ALU: ADDR(2428) CNT(33) KCACHE0(CB1:0-15) 
+   1251  x: ADD_INT     ____,  R9.z,  R2.x      
+         y: ADD_INT     T1.y,  R9.z,  R1.x      VEC_021 
+         z: ADD_INT     ____,  R5.w,  R2.y      
+         w: ADD_INT     ____,  R9.z,  R0.x      VEC_102 
+   1252  x: ADD_INT     ____,  R9.z,  R3.x      
+         y: ADD_INT     T0.y,  KC0[1].x,  PV1251.x      
+         z: ADD_INT     T0.z,  KC0[1].x,  PV1251.w      
+         w: LSHR        R2.w,  PV1251.z,  2      
+   1253  x: LDS_BYTE_READ_RET QA,  PV1252.y      
+         y: ADD_INT     T1.y,  KC0[1].x,  PV1252.x      
+         w: ADD_INT     T0.w,  KC0[1].x,  T1.y      
+   1254  z: ADD_INT     ____,  QA[1253].pop,  1      
+   1255  x: LDS_BYTE_WRITE ____,  T0.y,  PV1254.z      
+   1256  x: LDS_BYTE_READ_RET QA,  T0.z      
+         z: ADD_INT     ____,  R8.x,  R2.y      
+   1257  y: LSHR        R1.y,  PV1256.z,  2      
+   1258  y: ADD_INT     ____,  QA[1256].pop,  1      
+   1259  x: LDS_BYTE_WRITE ____,  T0.z,  PV1258.y      
+   1260  x: LDS_BYTE_READ_RET QA,  T0.w      
+         y: ADD_INT     R2.y,  R3.w,  R2.y      VEC_120 
+   1261  w: ADD_INT     ____,  R5.x,  PV1260.y      
+   1262  z: LSHR        R1.z,  PV1261.w,  2      
+   1263  y: ADD_INT     ____,  QA[1260].pop,  1      
+   1264  x: LDS_BYTE_WRITE ____,  T0.w,  PV1263.y      
+   1265  x: LDS_BYTE_READ_RET QA,  T1.y      
+         y: ADD_INT     ____,  R6.z,  R2.y      
+   1266  w: LSHR        R0.w,  PV1265.y,  2      
+   1267  w: ADD_INT     ____,  QA[1265].pop,  1      
+   1268  x: LDS_BYTE_WRITE ____,  T1.y,  PV1267.w      
+101 TEX: ADDR(3432) CNT(4) 
+   1269  VFETCH R3.x___, R0.y, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+   1270  VFETCH R0.x___, R3.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+   1271  VFETCH R1.x___, R2.w, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+   1272  VFETCH R2.x___, R1.y, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+102 ALU: ADDR(2461) CNT(32) KCACHE0(CB1:0-15) 
+   1273  x: ADD_INT     ____,  R6.w,  R2.y      
+         y: ADD_INT     ____,  R9.z,  R0.x      
+         z: ADD_INT     T0.z,  R9.z,  R1.x      VEC_021 
+         w: ADD_INT     ____,  R9.z,  R3.x      VEC_102 
+   1274  x: ADD_INT     T0.x,  KC0[1].x,  PV1273.y      
+         y: ADD_INT     ____,  R9.z,  R2.x      
+         z: ADD_INT     T1.z,  KC0[1].x,  PV1273.w      
+         w: LSHR        R2.w,  PV1273.x,  2      
+   1275  x: LDS_BYTE_READ_RET QA,  PV1274.z      
+         y: ADD_INT     T1.y,  KC0[1].x,  T0.z      
+         w: ADD_INT     T0.w,  KC0[1].x,  PV1274.y      
+   1276  y: ADD_INT     ____,  QA[1275].pop,  1      
+   1277  x: LDS_BYTE_WRITE ____,  T1.z,  PV1276.y      
+   1278  x: LDS_BYTE_READ_RET QA,  T0.x      
+         w: ADD_INT     ____,  R6.x,  R2.y      VEC_120 
+   1279  z: LSHR        R3.z,  PV1278.w,  2      
+   1280  z: ADD_INT     ____,  QA[1278].pop,  1      
+   1281  x: LDS_BYTE_WRITE ____,  T0.x,  PV1280.z      
+   1282  x: LDS_BYTE_READ_RET QA,  T1.y      
+         y: ADD_INT     ____,  R6.y,  R2.y      VEC_120 
+   1283  w: LSHR        R1.w,  PV1282.y,  2      
+   1284  w: ADD_INT     ____,  QA[1282].pop,  1      
+   1285  x: LDS_BYTE_WRITE ____,  T1.y,  PV1284.w      
+   1286  x: LDS_BYTE_READ_RET QA,  T0.w      
+         z: ADD_INT     ____,  R4.z,  R2.y      
+   1287  y: LSHR        R1.y,  PV1286.z,  2      
+   1288  y: ADD_INT     ____,  QA[1286].pop,  1      
+   1289  x: LDS_BYTE_WRITE ____,  T0.w,  PV1288.y      
+103 TEX: ADDR(3440) CNT(4) 
+   1290  VFETCH R2.x___, R1.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+   1291  VFETCH R0.x___, R0.w, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+   1292  VFETCH R1.x___, R2.w, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+   1293  VFETCH R3.x___, R3.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+104 ALU: ADDR(2493) CNT(33) KCACHE0(CB1:0-15) 
+   1294  x: ADD_INT     ____,  R5.w,  R2.y      
+         y: ADD_INT     ____,  R9.z,  R2.x      
+         z: ADD_INT     ____,  R9.z,  R0.x      VEC_021 
+         w: ADD_INT     T0.w,  R9.z,  R1.x      VEC_102 
+   1295  x: ADD_INT     ____,  R9.z,  R3.x      
+         y: ADD_INT     T1.y,  KC0[1].x,  PV1294.z      
+         z: LSHR        R3.z,  PV1294.x,  2      
+         w: ADD_INT     T1.w,  KC0[1].x,  PV1294.y      
+   1296  x: LDS_BYTE_READ_RET QA,  PV1295.w      
+         y: ADD_INT     T0.y,  KC0[1].x,  PV1295.x      
+         z: ADD_INT     T1.z,  KC0[1].x,  T0.w      
+   1297  y: ADD_INT     ____,  QA[1296].pop,  1      
+   1298  x: LDS_BYTE_WRITE ____,  T1.w,  PV1297.y      
+   1299  x: LDS_BYTE_READ_RET QA,  T1.y      
+         y: ADD_INT     ____,  R8.x,  R2.y      
+   1300  y: LSHR        R0.y,  PV1299.y,  2      
+   1301  w: ADD_INT     ____,  QA[1299].pop,  1      
+   1302  x: LDS_BYTE_WRITE ____,  T1.y,  PV1301.w      
+   1303  x: LDS_BYTE_READ_RET QA,  T1.z      
+         w: ADD_INT     R2.w,  R3.w,  R2.y      
+   1304  z: ADD_INT     ____,  R5.x,  PV1303.w      
+   1305  y: LSHR        R2.y,  PV1304.z,  2      
+   1306  y: ADD_INT     ____,  QA[1303].pop,  1      
+   1307  x: LDS_BYTE_WRITE ____,  T1.z,  PV1306.y      
+   1308  x: LDS_BYTE_READ_RET QA,  T0.y      
+         w: ADD_INT     ____,  R6.z,  R2.w      
+   1309  z: LSHR        R1.z,  PV1308.w,  2      
+   1310  z: ADD_INT     ____,  QA[1308].pop,  1      
+   1311  x: LDS_BYTE_WRITE ____,  T0.y,  PV1310.z      
+105 TEX: ADDR(3448) CNT(4) 
+   1312  VFETCH R3.x___, R1.w, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+   1313  VFETCH R0.x___, R1.y, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+   1314  VFETCH R1.x___, R3.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+   1315  VFETCH R2.x___, R0.y, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+106 ALU: ADDR(2526) CNT(32) KCACHE0(CB1:0-15) 
+   1316  x: ADD_INT     ____,  R9.z,  R0.x      
+         y: ADD_INT     T0.y,  R9.z,  R1.x      VEC_021 
+         z: ADD_INT     ____,  R9.z,  R3.x      VEC_102 
+         w: ADD_INT     ____,  R6.w,  R2.w      
+   1317  x: ADD_INT     T0.x,  KC0[1].x,  PV1316.z      
+         y: ADD_INT     ____,  R9.z,  R2.x      
+         z: LSHR        R3.z,  PV1316.w,  2      
+         w: ADD_INT     T1.w,  KC0[1].x,  PV1316.x      
+   1318  x: LDS_BYTE_READ_RET QA,  PV1317.x      
+         y: ADD_INT     T0.y,  KC0[1].x,  T0.y      
+         z: ADD_INT     T1.z,  KC0[1].x,  PV1317.y      
+   1319  w: ADD_INT     ____,  QA[1318].pop,  1      
+   1320  x: LDS_BYTE_WRITE ____,  T0.x,  PV1319.w      
+   1321  x: LDS_BYTE_READ_RET QA,  T1.w      
+         z: ADD_INT     ____,  R6.x,  R2.w      
+   1322  y: LSHR        R0.y,  PV1321.z,  2      
+   1323  y: ADD_INT     ____,  QA[1321].pop,  1      
+   1324  x: LDS_BYTE_WRITE ____,  T1.w,  PV1323.y      
+   1325  x: LDS_BYTE_READ_RET QA,  T0.y      
+         w: ADD_INT     ____,  R6.y,  R2.w      VEC_120 
+   1326  z: LSHR        R2.z,  PV1325.w,  2      
+   1327  z: ADD_INT     ____,  QA[1325].pop,  1      
+   1328  x: LDS_BYTE_WRITE ____,  T0.y,  PV1327.z      
+   1329  x: LDS_BYTE_READ_RET QA,  T1.z      
+         y: ADD_INT     ____,  R4.z,  R2.w      VEC_120 
+   1330  y: LSHR        R1.y,  PV1329.y,  2      
+   1331  y: ADD_INT     ____,  QA[1329].pop,  1      
+   1332  x: LDS_BYTE_WRITE ____,  T1.z,  PV1331.y      
+107 TEX: ADDR(3456) CNT(4) 
+   1333  VFETCH R2.x___, R2.y, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+   1334  VFETCH R0.x___, R1.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+   1335  VFETCH R1.x___, R3.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+   1336  VFETCH R3.x___, R0.y, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+108 ALU: ADDR(2558) CNT(33) KCACHE0(CB1:0-15) 
+   1337  x: ADD_INT     ____,  R5.w,  R2.w      
+         y: ADD_INT     ____,  R9.z,  R0.x      
+         z: ADD_INT     T1.z,  R9.z,  R1.x      VEC_021 
+         w: ADD_INT     ____,  R9.z,  R2.x      VEC_102 
+   1338  x: ADD_INT     T0.x,  KC0[1].x,  PV1337.y      
+         y: ADD_INT     ____,  R9.z,  R3.x      
+         z: ADD_INT     T0.z,  KC0[1].x,  PV1337.w      
+         w: LSHR        R1.w,  PV1337.x,  2      
+   1339  x: LDS_BYTE_READ_RET QA,  PV1338.z      
+         y: ADD_INT     T0.y,  KC0[1].x,  T1.z      
+         w: ADD_INT     T1.w,  KC0[1].x,  PV1338.y      
+   1340  y: ADD_INT     ____,  QA[1339].pop,  1      
+   1341  x: LDS_BYTE_WRITE ____,  T0.z,  PV1340.y      
+   1342  x: LDS_BYTE_READ_RET QA,  T0.x      
+         y: ADD_INT     ____,  R8.x,  R2.w      VEC_120 
+   1343  w: LSHR        R0.w,  PV1342.y,  2      
+   1344  z: ADD_INT     ____,  QA[1342].pop,  1      
+   1345  x: LDS_BYTE_WRITE ____,  T0.x,  PV1344.z      
+   1346  x: LDS_BYTE_READ_RET QA,  T0.y      
+         z: ADD_INT     R3.z,  R3.w,  R2.w      
+   1347  y: ADD_INT     ____,  R5.x,  PV1346.z      
+   1348  w: LSHR        R2.w,  PV1347.y,  2      
+   1349  w: ADD_INT     ____,  QA[1346].pop,  1      
+   1350  x: LDS_BYTE_WRITE ____,  T0.y,  PV1349.w      
+   1351  x: LDS_BYTE_READ_RET QA,  T1.w      
+         z: ADD_INT     ____,  R6.z,  R3.z      
+   1352  y: LSHR        R0.y,  PV1351.z,  2      
+   1353  y: ADD_INT     ____,  QA[1351].pop,  1      
+   1354  x: LDS_BYTE_WRITE ____,  T1.w,  PV1353.y      
+109 TEX: ADDR(3464) CNT(4) 
+   1355  VFETCH R3.x___, R2.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+   1356  VFETCH R0.x___, R1.y, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+   1357  VFETCH R1.x___, R1.w, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+   1358  VFETCH R2.x___, R0.w, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+110 ALU: ADDR(2591) CNT(32) KCACHE0(CB1:0-15) 
+   1359  x: ADD_INT     ____,  R9.z,  R3.x      
+         y: ADD_INT     T0.y,  R9.z,  R1.x      VEC_021 
+         z: ADD_INT     ____,  R6.w,  R3.z      
+         w: ADD_INT     ____,  R9.z,  R0.x      VEC_201 
+   1360  x: ADD_INT     ____,  R9.z,  R2.x      
+         y: ADD_INT     T1.y,  KC0[1].x,  PV1359.x      
+         z: ADD_INT     T0.z,  KC0[1].x,  PV1359.w      
+         w: LSHR        R0.w,  PV1359.z,  2      
+   1361  x: LDS_BYTE_READ_RET QA,  PV1360.y      
+         y: ADD_INT     T0.y,  KC0[1].x,  PV1360.x      
+         w: ADD_INT     T1.w,  KC0[1].x,  T0.y      
+   1362  z: ADD_INT     ____,  QA[1361].pop,  1      
+   1363  x: LDS_BYTE_WRITE ____,  T1.y,  PV1362.z      
+   1364  x: LDS_BYTE_READ_RET QA,  T0.z      
+         y: ADD_INT     ____,  R6.x,  R3.z      
+   1365  y: LSHR        R1.y,  PV1364.y,  2      
+   1366  y: ADD_INT     ____,  QA[1364].pop,  1      
+   1367  x: LDS_BYTE_WRITE ____,  T0.z,  PV1366.y      
+   1368  x: LDS_BYTE_READ_RET QA,  T1.w      
+         w: ADD_INT     ____,  R6.y,  R3.z      
+   1369  z: LSHR        R2.z,  PV1368.w,  2      
+   1370  y: ADD_INT     ____,  QA[1368].pop,  1      
+   1371  x: LDS_BYTE_WRITE ____,  T1.w,  PV1370.y      
+   1372  x: LDS_BYTE_READ_RET QA,  T0.y      
+         y: ADD_INT     ____,  R4.z,  R3.z      
+   1373  w: LSHR        R1.w,  PV1372.y,  2      
+   1374  w: ADD_INT     ____,  QA[1372].pop,  1      
+   1375  x: LDS_BYTE_WRITE ____,  T0.y,  PV1374.w      
+111 TEX: ADDR(3472) CNT(4) 
+   1376  VFETCH R2.x___, R2.w, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+   1377  VFETCH R0.x___, R0.y, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+   1378  VFETCH R1.x___, R0.w, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+   1379  VFETCH R3.x___, R1.y, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+112 ALU: ADDR(2623) CNT(33) KCACHE0(CB1:0-15) 
+   1380  x: ADD_INT     ____,  R9.z,  R0.x      
+         y: ADD_INT     T0.y,  R9.z,  R1.x      VEC_021 
+         z: ADD_INT     ____,  R9.z,  R2.x      VEC_102 
+         w: ADD_INT     ____,  R5.w,  R3.z      VEC_021 
+   1381  x: ADD_INT     T0.x,  KC0[1].x,  PV1380.z      
+         y: ADD_INT     ____,  R9.z,  R3.x      
+         z: LSHR        R1.z,  PV1380.w,  2      
+         w: ADD_INT     T1.w,  KC0[1].x,  PV1380.x      
+   1382  x: LDS_BYTE_READ_RET QA,  PV1381.x      
+         y: ADD_INT     T0.y,  KC0[1].x,  T0.y      
+         z: ADD_INT     T0.z,  KC0[1].x,  PV1381.y      
+   1383  w: ADD_INT     ____,  QA[1382].pop,  1      
+   1384  x: LDS_BYTE_WRITE ____,  T0.x,  PV1383.w      
+   1385  x: LDS_BYTE_READ_RET QA,  T1.w      
+         w: ADD_INT     ____,  R8.x,  R3.z      
+   1386  z: LSHR        R0.z,  PV1385.w,  2      
+   1387  y: ADD_INT     ____,  QA[1385].pop,  1      
+   1388  x: LDS_BYTE_WRITE ____,  T1.w,  PV1387.y      
+   1389  x: LDS_BYTE_READ_RET QA,  T0.y      
+         y: ADD_INT     R0.y,  R3.w,  R3.z      
+   1390  w: ADD_INT     ____,  R5.x,  PV1389.y      
+   1391  z: LSHR        R3.z,  PV1390.w,  2      
+   1392  z: ADD_INT     ____,  QA[1389].pop,  1      
+   1393  x: LDS_BYTE_WRITE ____,  T0.y,  PV1392.z      
+   1394  x: LDS_BYTE_READ_RET QA,  T0.z      
+         y: ADD_INT     ____,  R6.z,  R0.y      VEC_120 
+   1395  y: LSHR        R1.y,  PV1394.y,  2      
+   1396  y: ADD_INT     ____,  QA[1394].pop,  1      
+   1397  x: LDS_BYTE_WRITE ____,  T0.z,  PV1396.y      
+113 TEX: ADDR(3480) CNT(4) 
+   1398  VFETCH R3.x___, R2.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+   1399  VFETCH R0.x___, R1.w, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+   1400  VFETCH R1.x___, R1.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+   1401  VFETCH R2.x___, R0.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+114 ALU: ADDR(2656) CNT(32) KCACHE0(CB1:0-15) 
+   1402  x: ADD_INT     ____,  R6.w,  R0.y      
+         y: ADD_INT     ____,  R9.z,  R3.x      
+         z: ADD_INT     ____,  R9.z,  R0.x      VEC_021 
+         w: ADD_INT     T1.w,  R9.z,  R1.x      VEC_102 
+   1403  x: ADD_INT     ____,  R9.z,  R2.x      
+         y: ADD_INT     T0.y,  KC0[1].x,  PV1402.z      
+         z: LSHR        R0.z,  PV1402.x,  2      
+         w: ADD_INT     T0.w,  KC0[1].x,  PV1402.y      
+   1404  x: LDS_BYTE_READ_RET QA,  PV1403.w      
+         y: ADD_INT     T1.y,  KC0[1].x,  PV1403.x      
+         z: ADD_INT     T0.z,  KC0[1].x,  T1.w      
+   1405  y: ADD_INT     ____,  QA[1404].pop,  1      
+   1406  x: LDS_BYTE_WRITE ____,  T0.w,  PV1405.y      
+   1407  x: LDS_BYTE_READ_RET QA,  T0.y      
+         y: ADD_INT     ____,  R6.x,  R0.y      
+   1408  w: LSHR        R1.w,  PV1407.y,  2      
+   1409  w: ADD_INT     ____,  QA[1407].pop,  1      
+   1410  x: LDS_BYTE_WRITE ____,  T0.y,  PV1409.w      
+   1411  x: LDS_BYTE_READ_RET QA,  T0.z      
+         z: ADD_INT     ____,  R6.y,  R0.y      
+   1412  y: LSHR        R2.y,  PV1411.z,  2      
+   1413  y: ADD_INT     ____,  QA[1411].pop,  1      
+   1414  x: LDS_BYTE_WRITE ____,  T0.z,  PV1413.y      
+   1415  x: LDS_BYTE_READ_RET QA,  T1.y      
+         w: ADD_INT     ____,  R4.z,  R0.y      
+   1416  z: LSHR        R1.z,  PV1415.w,  2      
+   1417  z: ADD_INT     ____,  QA[1415].pop,  1      
+   1418  x: LDS_BYTE_WRITE ____,  T1.y,  PV1417.z      
+115 TEX: ADDR(3488) CNT(4) 
+   1419  VFETCH R2.x___, R3.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+   1420  VFETCH R0.x___, R1.y, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+   1421  VFETCH R1.x___, R0.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+   1422  VFETCH R3.x___, R1.w, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+116 ALU: ADDR(2688) CNT(33) KCACHE0(CB1:0-15) 
+   1423  x: ADD_INT     ____,  R9.z,  R2.x      
+         y: ADD_INT     T1.y,  R9.z,  R1.x      VEC_021 
+         z: ADD_INT     ____,  R5.w,  R0.y      
+         w: ADD_INT     ____,  R9.z,  R0.x      VEC_102 
+   1424  x: ADD_INT     ____,  R9.z,  R3.x      
+         y: ADD_INT     T0.y,  KC0[1].x,  PV1423.x      
+         z: ADD_INT     T0.z,  KC0[1].x,  PV1423.w      
+         w: LSHR        R1.w,  PV1423.z,  2      
+   1425  x: LDS_BYTE_READ_RET QA,  PV1424.y      
+         y: ADD_INT     T1.y,  KC0[1].x,  PV1424.x      
+         w: ADD_INT     T0.w,  KC0[1].x,  T1.y      
+   1426  z: ADD_INT     ____,  QA[1425].pop,  1      
+   1427  x: LDS_BYTE_WRITE ____,  T0.y,  PV1426.z      
+   1428  x: LDS_BYTE_READ_RET QA,  T0.z      
+         z: ADD_INT     ____,  R8.x,  R0.y      
+   1429  y: LSHR        R1.y,  PV1428.z,  2      
+   1430  y: ADD_INT     ____,  QA[1428].pop,  1      
+   1431  x: LDS_BYTE_WRITE ____,  T0.z,  PV1430.y      
+   1432  x: LDS_BYTE_READ_RET QA,  T0.w      
+         y: ADD_INT     R0.y,  R3.w,  R0.y      VEC_120 
+   1433  w: ADD_INT     ____,  R5.x,  PV1432.y      
+   1434  z: LSHR        R0.z,  PV1433.w,  2      
+   1435  y: ADD_INT     ____,  QA[1432].pop,  1      
+   1436  x: LDS_BYTE_WRITE ____,  T0.w,  PV1435.y      
+   1437  x: LDS_BYTE_READ_RET QA,  T1.y      
+         y: ADD_INT     ____,  R6.z,  R0.y      
+   1438  w: LSHR        R0.w,  PV1437.y,  2      
+   1439  w: ADD_INT     ____,  QA[1437].pop,  1      
+   1440  x: LDS_BYTE_WRITE ____,  T1.y,  PV1439.w      
+117 TEX: ADDR(3496) CNT(4) 
+   1441  VFETCH R3.x___, R2.y, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+   1442  VFETCH R0.x___, R1.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+   1443  VFETCH R1.x___, R1.w, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+   1444  VFETCH R2.x___, R1.y, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+118 ALU: ADDR(2721) CNT(32) KCACHE0(CB1:0-15) 
+   1445  x: ADD_INT     ____,  R6.w,  R0.y      
+         y: ADD_INT     ____,  R9.z,  R0.x      
+         z: ADD_INT     T0.z,  R9.z,  R1.x      VEC_021 
+         w: ADD_INT     ____,  R9.z,  R3.x      VEC_102 
+   1446  x: ADD_INT     T0.x,  KC0[1].x,  PV1445.y      
+         y: ADD_INT     ____,  R9.z,  R2.x      
+         z: ADD_INT     T1.z,  KC0[1].x,  PV1445.w      
+         w: LSHR        R1.w,  PV1445.x,  2      
+   1447  x: LDS_BYTE_READ_RET QA,  PV1446.z      
+         y: ADD_INT     T1.y,  KC0[1].x,  T0.z      
+         w: ADD_INT     T0.w,  KC0[1].x,  PV1446.y      
+   1448  y: ADD_INT     ____,  QA[1447].pop,  1      
+   1449  x: LDS_BYTE_WRITE ____,  T1.z,  PV1448.y      
+   1450  x: LDS_BYTE_READ_RET QA,  T0.x      
+         w: ADD_INT     ____,  R6.x,  R0.y      VEC_120 
+   1451  z: LSHR        R1.z,  PV1450.w,  2      
+   1452  z: ADD_INT     ____,  QA[1450].pop,  1      
+   1453  x: LDS_BYTE_WRITE ____,  T0.x,  PV1452.z      
+   1454  x: LDS_BYTE_READ_RET QA,  T1.y      
+         y: ADD_INT     ____,  R6.y,  R0.y      VEC_120 
+   1455  w: LSHR        R2.w,  PV1454.y,  2      
+   1456  w: ADD_INT     ____,  QA[1454].pop,  1      
+   1457  x: LDS_BYTE_WRITE ____,  T1.y,  PV1456.w      
+   1458  x: LDS_BYTE_READ_RET QA,  T0.w      
+         z: ADD_INT     ____,  R4.z,  R0.y      
+   1459  y: LSHR        R1.y,  PV1458.z,  2      
+   1460  y: ADD_INT     ____,  QA[1458].pop,  1      
+   1461  x: LDS_BYTE_WRITE ____,  T0.w,  PV1460.y      
+119 TEX: ADDR(3504) CNT(4) 
+   1462  VFETCH R2.x___, R0.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+   1463  VFETCH R0.x___, R0.w, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+   1464  VFETCH R1.x___, R1.w, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+   1465  VFETCH R3.x___, R1.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+120 ALU: ADDR(2753) CNT(33) KCACHE0(CB1:0-15) 
+   1466  x: ADD_INT     ____,  R5.w,  R0.y      
+         y: ADD_INT     ____,  R9.z,  R2.x      
+         z: ADD_INT     ____,  R9.z,  R0.x      VEC_021 
+         w: ADD_INT     T0.w,  R9.z,  R1.x      VEC_102 
+   1467  x: ADD_INT     ____,  R9.z,  R3.x      
+         y: ADD_INT     T1.y,  KC0[1].x,  PV1466.z      
+         z: LSHR        R1.z,  PV1466.x,  2      
+         w: ADD_INT     T1.w,  KC0[1].x,  PV1466.y      
+   1468  x: LDS_BYTE_READ_RET QA,  PV1467.w      
+         y: ADD_INT     T0.y,  KC0[1].x,  PV1467.x      
+         z: ADD_INT     T1.z,  KC0[1].x,  T0.w      
+   1469  y: ADD_INT     ____,  QA[1468].pop,  1      
+   1470  x: LDS_BYTE_WRITE ____,  T1.w,  PV1469.y      
+   1471  x: LDS_BYTE_READ_RET QA,  T1.y      
+         y: ADD_INT     ____,  R8.x,  R0.y      
+   1472  y: LSHR        R2.y,  PV1471.y,  2      
+   1473  w: ADD_INT     ____,  QA[1471].pop,  1      
+   1474  x: LDS_BYTE_WRITE ____,  T1.y,  PV1473.w      
+   1475  x: LDS_BYTE_READ_RET QA,  T1.z      
+         w: ADD_INT     R1.w,  R3.w,  R0.y      
+   1476  z: ADD_INT     ____,  R5.x,  PV1475.w      
+   1477  y: LSHR        R0.y,  PV1476.z,  2      
+   1478  y: ADD_INT     ____,  QA[1475].pop,  1      
+   1479  x: LDS_BYTE_WRITE ____,  T1.z,  PV1478.y      
+   1480  x: LDS_BYTE_READ_RET QA,  T0.y      
+         w: ADD_INT     ____,  R6.z,  R1.w      
+   1481  z: LSHR        R0.z,  PV1480.w,  2      
+   1482  z: ADD_INT     ____,  QA[1480].pop,  1      
+   1483  x: LDS_BYTE_WRITE ____,  T0.y,  PV1482.z      
+121 TEX: ADDR(3512) CNT(4) 
+   1484  VFETCH R3.x___, R2.w, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+   1485  VFETCH R0.x___, R1.y, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+   1486  VFETCH R1.x___, R1.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+   1487  VFETCH R2.x___, R2.y, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+122 ALU: ADDR(2786) CNT(32) KCACHE0(CB1:0-15) 
+   1488  x: ADD_INT     ____,  R9.z,  R0.x      
+         y: ADD_INT     T0.y,  R9.z,  R1.x      VEC_021 
+         z: ADD_INT     ____,  R9.z,  R3.x      VEC_102 
+         w: ADD_INT     ____,  R6.w,  R1.w      
+   1489  x: ADD_INT     T0.x,  KC0[1].x,  PV1488.z      
+         y: ADD_INT     ____,  R9.z,  R2.x      
+         z: LSHR        R1.z,  PV1488.w,  2      
+         w: ADD_INT     T1.w,  KC0[1].x,  PV1488.x      
+   1490  x: LDS_BYTE_READ_RET QA,  PV1489.x      
+         y: ADD_INT     T0.y,  KC0[1].x,  T0.y      
+         z: ADD_INT     T1.z,  KC0[1].x,  PV1489.y      
+   1491  w: ADD_INT     ____,  QA[1490].pop,  1      
+   1492  x: LDS_BYTE_WRITE ____,  T0.x,  PV1491.w      
+   1493  x: LDS_BYTE_READ_RET QA,  T1.w      
+         z: ADD_INT     ____,  R6.x,  R1.w      
+   1494  y: LSHR        R2.y,  PV1493.z,  2      
+   1495  y: ADD_INT     ____,  QA[1493].pop,  1      
+   1496  x: LDS_BYTE_WRITE ____,  T1.w,  PV1495.y      
+   1497  x: LDS_BYTE_READ_RET QA,  T0.y      
+         w: ADD_INT     ____,  R6.y,  R1.w      VEC_120 
+   1498  z: LSHR        R3.z,  PV1497.w,  2      
+   1499  z: ADD_INT     ____,  QA[1497].pop,  1      
+   1500  x: LDS_BYTE_WRITE ____,  T0.y,  PV1499.z      
+   1501  x: LDS_BYTE_READ_RET QA,  T1.z      
+         y: ADD_INT     ____,  R4.z,  R1.w      VEC_120 
+   1502  y: LSHR        R1.y,  PV1501.y,  2      
+   1503  y: ADD_INT     ____,  QA[1501].pop,  1      
+   1504  x: LDS_BYTE_WRITE ____,  T1.z,  PV1503.y      
+123 TEX: ADDR(3520) CNT(4) 
+   1505  VFETCH R2.x___, R0.y, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+   1506  VFETCH R0.x___, R0.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+   1507  VFETCH R1.x___, R1.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+   1508  VFETCH R3.x___, R2.y, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+124 ALU: ADDR(2818) CNT(33) KCACHE0(CB1:0-15) 
+   1509  x: ADD_INT     ____,  R5.w,  R1.w      
+         y: ADD_INT     ____,  R9.z,  R0.x      
+         z: ADD_INT     T1.z,  R9.z,  R1.x      VEC_021 
+         w: ADD_INT     ____,  R9.z,  R2.x      VEC_102 
+   1510  x: ADD_INT     T0.x,  KC0[1].x,  PV1509.y      
+         y: ADD_INT     ____,  R9.z,  R3.x      
+         z: ADD_INT     T0.z,  KC0[1].x,  PV1509.w      
+         w: LSHR        R2.w,  PV1509.x,  2      
+   1511  x: LDS_BYTE_READ_RET QA,  PV1510.z      
+         y: ADD_INT     T0.y,  KC0[1].x,  T1.z      
+         w: ADD_INT     T1.w,  KC0[1].x,  PV1510.y      
+   1512  y: ADD_INT     ____,  QA[1511].pop,  1      
+   1513  x: LDS_BYTE_WRITE ____,  T0.z,  PV1512.y      
+   1514  x: LDS_BYTE_READ_RET QA,  T0.x      
+         y: ADD_INT     ____,  R8.x,  R1.w      VEC_120 
+   1515  w: LSHR        R0.w,  PV1514.y,  2      
+   1516  z: ADD_INT     ____,  QA[1514].pop,  1      
+   1517  x: LDS_BYTE_WRITE ____,  T0.x,  PV1516.z      
+   1518  x: LDS_BYTE_READ_RET QA,  T0.y      
+         z: ADD_INT     R1.z,  R3.w,  R1.w      
+   1519  y: ADD_INT     ____,  R5.x,  PV1518.z      
+   1520  w: LSHR        R1.w,  PV1519.y,  2      
+   1521  w: ADD_INT     ____,  QA[1518].pop,  1      
+   1522  x: LDS_BYTE_WRITE ____,  T0.y,  PV1521.w      
+   1523  x: LDS_BYTE_READ_RET QA,  T1.w      
+         z: ADD_INT     ____,  R6.z,  R1.z      
+   1524  y: LSHR        R2.y,  PV1523.z,  2      
+   1525  y: ADD_INT     ____,  QA[1523].pop,  1      
+   1526  x: LDS_BYTE_WRITE ____,  T1.w,  PV1525.y      
+125 TEX: ADDR(3528) CNT(4) 
+   1527  VFETCH R3.x___, R3.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+   1528  VFETCH R0.x___, R1.y, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+   1529  VFETCH R1.x___, R2.w, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+   1530  VFETCH R2.x___, R0.w, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+126 ALU: ADDR(2851) CNT(32) KCACHE0(CB1:0-15) 
+   1531  x: ADD_INT     ____,  R9.z,  R3.x      
+         y: ADD_INT     T0.y,  R9.z,  R1.x      VEC_021 
+         z: ADD_INT     ____,  R6.w,  R1.z      
+         w: ADD_INT     ____,  R9.z,  R0.x      VEC_201 
+   1532  x: ADD_INT     ____,  R9.z,  R2.x      
+         y: ADD_INT     T1.y,  KC0[1].x,  PV1531.x      
+         z: ADD_INT     T0.z,  KC0[1].x,  PV1531.w      
+         w: LSHR        R0.w,  PV1531.z,  2      
+   1533  x: LDS_BYTE_READ_RET QA,  PV1532.y      
+         y: ADD_INT     T0.y,  KC0[1].x,  PV1532.x      
+         w: ADD_INT     T1.w,  KC0[1].x,  T0.y      
+   1534  z: ADD_INT     ____,  QA[1533].pop,  1      
+   1535  x: LDS_BYTE_WRITE ____,  T1.y,  PV1534.z      
+   1536  x: LDS_BYTE_READ_RET QA,  T0.z      
+         y: ADD_INT     ____,  R6.x,  R1.z      
+   1537  y: LSHR        R1.y,  PV1536.y,  2      
+   1538  y: ADD_INT     ____,  QA[1536].pop,  1      
+   1539  x: LDS_BYTE_WRITE ____,  T0.z,  PV1538.y      
+   1540  x: LDS_BYTE_READ_RET QA,  T1.w      
+         w: ADD_INT     ____,  R6.y,  R1.z      
+   1541  z: LSHR        R3.z,  PV1540.w,  2      
+   1542  y: ADD_INT     ____,  QA[1540].pop,  1      
+   1543  x: LDS_BYTE_WRITE ____,  T1.w,  PV1542.y      
+   1544  x: LDS_BYTE_READ_RET QA,  T0.y      
+         y: ADD_INT     ____,  R4.z,  R1.z      
+   1545  w: LSHR        R2.w,  PV1544.y,  2      
+   1546  w: ADD_INT     ____,  QA[1544].pop,  1      
+   1547  x: LDS_BYTE_WRITE ____,  T0.y,  PV1546.w      
+127 TEX: ADDR(3536) CNT(4) 
+   1548  VFETCH R2.x___, R1.w, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+   1549  VFETCH R0.x___, R2.y, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+   1550  VFETCH R1.x___, R0.w, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+   1551  VFETCH R3.x___, R1.y, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+128 ALU: ADDR(2883) CNT(33) KCACHE0(CB1:0-15) 
+   1552  x: ADD_INT     ____,  R9.z,  R0.x      
+         y: ADD_INT     T0.y,  R9.z,  R1.x      VEC_021 
+         z: ADD_INT     ____,  R9.z,  R2.x      VEC_102 
+         w: ADD_INT     ____,  R5.w,  R1.z      VEC_021 
+   1553  x: ADD_INT     T0.x,  KC0[1].x,  PV1552.z      
+         y: ADD_INT     ____,  R9.z,  R3.x      
+         z: LSHR        R0.z,  PV1552.w,  2      
+         w: ADD_INT     T1.w,  KC0[1].x,  PV1552.x      
+   1554  x: LDS_BYTE_READ_RET QA,  PV1553.x      
+         y: ADD_INT     T0.y,  KC0[1].x,  T0.y      
+         z: ADD_INT     T0.z,  KC0[1].x,  PV1553.y      
+   1555  w: ADD_INT     ____,  QA[1554].pop,  1      
+   1556  x: LDS_BYTE_WRITE ____,  T0.x,  PV1555.w      
+   1557  x: LDS_BYTE_READ_RET QA,  T1.w      
+         w: ADD_INT     ____,  R8.x,  R1.z      
+   1558  z: LSHR        R2.z,  PV1557.w,  2      
+   1559  y: ADD_INT     ____,  QA[1557].pop,  1      
+   1560  x: LDS_BYTE_WRITE ____,  T1.w,  PV1559.y      
+   1561  x: LDS_BYTE_READ_RET QA,  T0.y      
+         y: ADD_INT     R2.y,  R3.w,  R1.z      
+   1562  w: ADD_INT     ____,  R5.x,  PV1561.y      
+   1563  z: LSHR        R1.z,  PV1562.w,  2      
+   1564  z: ADD_INT     ____,  QA[1561].pop,  1      
+   1565  x: LDS_BYTE_WRITE ____,  T0.y,  PV1564.z      
+   1566  x: LDS_BYTE_READ_RET QA,  T0.z      
+         y: ADD_INT     ____,  R6.z,  R2.y      VEC_120 
+   1567  y: LSHR        R1.y,  PV1566.y,  2      
+   1568  y: ADD_INT     ____,  QA[1566].pop,  1      
+   1569  x: LDS_BYTE_WRITE ____,  T0.z,  PV1568.y      
+129 TEX: ADDR(3544) CNT(4) 
+   1570  VFETCH R3.x___, R3.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+   1571  VFETCH R0.x___, R2.w, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+   1572  VFETCH R1.x___, R0.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+   1573  VFETCH R2.x___, R2.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+130 ALU: ADDR(2916) CNT(32) KCACHE0(CB1:0-15) 
+   1574  x: ADD_INT     ____,  R6.w,  R2.y      
+         y: ADD_INT     ____,  R9.z,  R3.x      
+         z: ADD_INT     ____,  R9.z,  R0.x      VEC_021 
+         w: ADD_INT     T1.w,  R9.z,  R1.x      VEC_102 
+   1575  x: ADD_INT     ____,  R9.z,  R2.x      
+         y: ADD_INT     T0.y,  KC0[1].x,  PV1574.z      
+         z: LSHR        R2.z,  PV1574.x,  2      
+         w: ADD_INT     T0.w,  KC0[1].x,  PV1574.y      
+   1576  x: LDS_BYTE_READ_RET QA,  PV1575.w      
+         y: ADD_INT     T1.y,  KC0[1].x,  PV1575.x      
+         z: ADD_INT     T0.z,  KC0[1].x,  T1.w      
+   1577  y: ADD_INT     ____,  QA[1576].pop,  1      
+   1578  x: LDS_BYTE_WRITE ____,  T0.w,  PV1577.y      
+   1579  x: LDS_BYTE_READ_RET QA,  T0.y      
+         y: ADD_INT     ____,  R6.x,  R2.y      
+   1580  w: LSHR        R2.w,  PV1579.y,  2      
+   1581  w: ADD_INT     ____,  QA[1579].pop,  1      
+   1582  x: LDS_BYTE_WRITE ____,  T0.y,  PV1581.w      
+   1583  x: LDS_BYTE_READ_RET QA,  T0.z      
+         z: ADD_INT     ____,  R6.y,  R2.y      
+   1584  y: LSHR        R0.y,  PV1583.z,  2      
+   1585  y: ADD_INT     ____,  QA[1583].pop,  1      
+   1586  x: LDS_BYTE_WRITE ____,  T0.z,  PV1585.y      
+   1587  x: LDS_BYTE_READ_RET QA,  T1.y      
+         w: ADD_INT     ____,  R4.z,  R2.y      
+   1588  z: LSHR        R0.z,  PV1587.w,  2      
+   1589  z: ADD_INT     ____,  QA[1587].pop,  1      
+   1590  x: LDS_BYTE_WRITE ____,  T1.y,  PV1589.z      
+131 TEX: ADDR(3552) CNT(4) 
+   1591  VFETCH R2.x___, R1.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+   1592  VFETCH R0.x___, R1.y, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+   1593  VFETCH R1.x___, R2.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+   1594  VFETCH R3.x___, R2.w, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+132 ALU: ADDR(2948) CNT(46) KCACHE0(CB1:0-15) KCACHE1(CB0:0-15) 
+   1595  x: ADD_INT     ____,  R9.z,  R2.x      
+         y: ADD_INT     T1.y,  R9.z,  R1.x      VEC_021 
+         z: ADD_INT     ____,  R5.w,  R2.y      
+         w: ADD_INT     ____,  R9.z,  R0.x      VEC_102 
+   1596  x: ADD_INT     ____,  R9.z,  R3.x      
+         y: ADD_INT     T0.y,  KC0[1].x,  PV1595.x      
+         z: ADD_INT     T0.z,  KC0[1].x,  PV1595.w      
+         w: LSHR        R2.w,  PV1595.z,  2      
+   1597  x: LDS_BYTE_READ_RET QA,  PV1596.y      
+         y: ADD_INT     T1.y,  KC0[1].x,  PV1596.x      
+         w: ADD_INT     T1.w,  KC0[1].x,  T1.y      
+   1598  z: ADD_INT     ____,  QA[1597].pop,  1      
+   1599  x: LDS_BYTE_WRITE ____,  T0.y,  PV1598.z      
+   1600  x: LDS_BYTE_READ_RET QA,  T0.z      
+         z: ADD_INT     ____,  R8.x,  R2.y      
+   1601  y: LSHR        R2.y,  PV1600.z,  2      
+   1602  y: ADD_INT     ____,  QA[1600].pop,  1      
+   1603  x: LDS_BYTE_WRITE ____,  T0.z,  PV1602.y      
+   1604  x: LDS_BYTE_READ_RET QA,  T1.w      
+         t: MULLO_UINT  T0.w,  KC1[1].x,  R4.x      
+   1605  y: SUB_INT     ____,  0.0f,  PS1604      
+         t: MULHI_UINT  T0.z,  KC1[1].x,  R4.x      
+   1606  x: CNDE_INT    R123.x,  PS1605,  PV1605.y,  T0.w      
+   1607  t: MULHI_UINT  T0.w,  PV1606.x,  R4.x      
+   1608  y: ADD_INT     ____,  QA[1604].pop,  1      
+   1609  x: LDS_BYTE_WRITE ____,  T1.w,  PV1608.y      
+         y: ADD_INT     ____,  R4.x,  T0.w      
+         z: SUB_INT     ____,  R4.x,  T0.w      
+   1610  x: CNDE_INT    R123.x,  T0.z,  PV1609.y,  PV1609.z      
+   1611  x: LDS_BYTE_READ_RET QA,  T1.y      
+         t: MULHI_UINT  T0.w,  PV1610.x,  256      
+   1612  x: ADD_INT     T1.x,  -1,  PS1611      
+         w: ADD_INT     T1.w,  PS1611,  1      
+         t: MULLO_UINT  ____,  PS1611,  KC1[1].x      
+   1613  x: SETGE_UINT  T0.x,  256,  PS1612      
+         y: SUB_INT     ____,  256,  PS1612      
+   1614  z: SETGE_UINT  ____,  PV1613.y,  KC1[1].x      
+   1615  y: AND_INT     ____,  T0.x,  PV1614.z      
+   1616  x: CNDE_INT    R123.x,  PV1615.y,  T0.w,  T1.w      
+         w: ADD_INT     ____,  QA[1611].pop,  1      
+   1617  x: LDS_BYTE_WRITE ____,  T1.y,  PV1616.w      
+         z: CNDE_INT    R2.z,  T0.x,  T1.x,  PV1616.x      
+133 TEX: ADDR(3560) CNT(4) 
+   1618  VFETCH R4.x___, R0.y, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+   1619  VFETCH R3.x___, R0.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+   1620  VFETCH R0.x___, R2.w, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+   1621  VFETCH R1.x___, R2.y, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+134 ALU: ADDR(2994) CNT(23) KCACHE0(CB0:0-15) KCACHE1(CB1:0-15) 
+   1622  y: ADD_INT     ____,  R9.z,  R3.x      
+         z: ADD_INT     T0.z,  R9.z,  R0.x      VEC_021 
+         w: ADD_INT     ____,  R9.z,  R4.x      VEC_102 
+         t: CNDE_INT    R0.y,  KC0[1].x,  -1,  R2.z      VEC_021 
+   1623  x: ADD_INT     T0.x,  KC1[1].x,  PV1622.y      
+         y: ADD_INT     ____,  R9.z,  R1.x      
+         z: ADD_INT     T1.z,  KC1[1].x,  PV1622.w      
+         t: SETE_INT    R0.x,  PS1622,  0.0f      
+   1624  x: LDS_BYTE_READ_RET QA,  PV1623.z      
+         y: ADD_INT     T1.y,  KC1[1].x,  T0.z      
+         w: ADD_INT     T0.w,  KC1[1].x,  PV1623.y      
+   1625  y: ADD_INT     ____,  QA[1624].pop,  1      
+   1626  x: LDS_BYTE_WRITE ____,  T1.z,  PV1625.y      
+   1627  x: LDS_BYTE_READ_RET QA,  T0.x      
+   1628  z: ADD_INT     ____,  QA[1627].pop,  1      
+   1629  x: LDS_BYTE_WRITE ____,  T0.x,  PV1628.z      
+   1630  x: LDS_BYTE_READ_RET QA,  T1.y      
+   1631  w: ADD_INT     ____,  QA[1630].pop,  1      
+   1632  x: LDS_BYTE_WRITE ____,  T1.y,  PV1631.w      
+   1633  x: LDS_BYTE_READ_RET QA,  T0.w      
+   1634  y: ADD_INT     ____,  QA[1633].pop,  1      
+   1635  x: LDS_BYTE_WRITE ____,  T0.w,  PV1634.y      
+   1636  x: GROUP_BARRIER  ____      
+135 ALU_PUSH_BEFORE: ADDR(3017) CNT(1) 
+   1637  x: PREDE_INT   ____,  R0.x,  0.0f      UPDATE_EXEC_MASK UPDATE_PRED 
+136 JUMP  POP_CNT(1) ADDR(151) 
+137 ALU: ADDR(3018) CNT(3) KCACHE0(CB1:0-15) 
+   1638  x: LSHL        ____,  R5.y,  10      
+   1639  z: ADD_INT     R0.z,  KC0[2].x,  PV1638.x      
+138 LOOP_DX10 i0 FAIL_JUMP_ADDR(150) 
+    139 ALU_PUSH_BEFORE: ADDR(3021) CNT(5) KCACHE0(CB1:0-15) KCACHE1(CB0:0-15) 
+       1640  x: ADD_INT     R0.x,  KC0[1].x,  R10.w      
+             w: SETE_INT    R0.w,  KC1[1].x,  0.0f      
+             t: MOV         R1.x,  0.0f      
+       1641  z: MOV         R1.z,  KC1[1].x      
+       1642  x: PREDE_INT   ____,  R0.w,  0.0f      UPDATE_EXEC_MASK UPDATE_PRED 
+    140 JUMP  POP_CNT(1) ADDR(146) 
+    141 ALU: ADDR(3026) CNT(1) 
+       1643  x: MOV         R1.x,  0.0f      
+    142 LOOP_DX10 i0 FAIL_JUMP_ADDR(145) 
+        143 ALU_BREAK: ADDR(3027) CNT(8) 
+           1644  x: LDS_UBYTE_READ_RET QA,  R0.x      
+                 z: ADD_INT     R1.z,  -1,  R1.z      
+                 t: ADD_INT     R0.x,  R0.x,  256      
+           1645  y: AND_INT     ____,  QA[1644].pop,  0x000000FF      
+           1646  x: ADD_INT     R1.x,  R1.x,  PV1645.y      
+           1647  x: PREDNE_INT  ____,  R1.z,  0.0f      UPDATE_EXEC_MASK UPDATE_PRED 
+    144 ENDLOOP i0 PASS_JUMP_ADDR(143) 
+    145 POP (1) ADDR(146) 
+    146 ALU: ADDR(3035) CNT(7) KCACHE0(CB0:0-15) 
+       1648  x: LSHL        ____,  R10.w,  2      
+             y: ADD_INT     R0.y,  -1,  R0.y      
+             w: ADD_INT     R10.w,  R10.w,  KC0[1].x      
+       1649  z: ADD_INT     ____,  R0.z,  PV1648.x      
+       1650  x: LSHR        R0.x,  PV1649.z,  2      
+    147 MEM_RAT_CACHELESS_STORE_RAW: RAT(11)[R0].x___, R1, ARRAY_SIZE(4)  MARK  VPM 
+    148 ALU_BREAK: ADDR(3042) CNT(1) 
+       1651  x: PREDNE_INT  ____,  R0.y,  0.0f      UPDATE_EXEC_MASK UPDATE_PRED 
+149 ENDLOOP i0 PASS_JUMP_ADDR(139) 
+150 POP (1) ADDR(151) 
+151 NOP NO_BARRIER 
+END_OF_PROGRAM
+
+; ----------------- CS Data ------------------------
+; Input Semantic Mappings
+;    No input mappings
+
+GprPoolSize = 0
+CodeLen                 = 28544;Bytes
+PGM_END_CF              = 0; words(64 bit)
+PGM_END_ALU             = 0; words(64 bit)
+PGM_END_FETCH           = 0; words(64 bit)
+MaxScratchRegsNeeded    = 0
+;AluPacking              = 0.0
+;AluClauses              = 0
+;PowerThrottleRate       = 0.0
+; texResourceUsage[0]     = 0x00000000
+; texResourceUsage[1]     = 0x00000000
+; texResourceUsage[2]     = 0x00000000
+; texResourceUsage[3]     = 0x00000000
+; texResourceUsage[4]     = 0x00000000
+; texResourceUsage[5]     = 0x00000000
+; texResourceUsage[6]     = 0x00000000
+; texResourceUsage[7]     = 0x00000000
+; fetch4ResourceUsage[0]  = 0x00000000
+; fetch4ResourceUsage[1]  = 0x00000000
+; fetch4ResourceUsage[2]  = 0x00000000
+; fetch4ResourceUsage[3]  = 0x00000000
+; fetch4ResourceUsage[4]  = 0x00000000
+; fetch4ResourceUsage[5]  = 0x00000000
+; fetch4ResourceUsage[6]  = 0x00000000
+; fetch4ResourceUsage[7]  = 0x00000000
+; texSamplerUsage         = 0x00000000
+; constBufUsage           = 0x00000000
+ResourcesAffectAlphaOutput[0]  = 0x00000000
+ResourcesAffectAlphaOutput[1]  = 0x00000000
+ResourcesAffectAlphaOutput[2]  = 0x00000000
+ResourcesAffectAlphaOutput[3]  = 0x00000000
+ResourcesAffectAlphaOutput[4]  = 0x00000000
+ResourcesAffectAlphaOutput[5]  = 0x00000000
+ResourcesAffectAlphaOutput[6]  = 0x00000000
+ResourcesAffectAlphaOutput[7]  = 0x00000000
+
+;SQ_PGM_RESOURCES        = 0x30000310
+SQ_PGM_RESOURCES:NUM_GPRS     = 16
+SQ_PGM_RESOURCES:STACK_SIZE           = 3
+SQ_PGM_RESOURCES:PRIME_CACHE_ENABLE   = 1
+;SQ_PGM_RESOURCES_2      = 0x000000C0
+SQ_LDS_ALLOC:SIZE        = 0x00002000
+; RatOpIsUsed = 0x800
+; NumThreadPerGroupFlattened = 256
+; SetBufferForNumGroup = true

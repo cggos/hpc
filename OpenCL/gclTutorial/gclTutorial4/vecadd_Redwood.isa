@@ -1,0 +1,95 @@
+ShaderType = IL_SHADER_COMPUTE
+TargetChip = c
+; ------------- SC_SRCSHADER Dump ------------------
+SC_SHADERSTATE: u32NumIntVSConst = 0
+SC_SHADERSTATE: u32NumIntPSConst = 0
+SC_SHADERSTATE: u32NumIntGSConst = 0
+SC_SHADERSTATE: u32NumBoolVSConst = 0
+SC_SHADERSTATE: u32NumBoolPSConst = 0
+SC_SHADERSTATE: u32NumBoolGSConst = 0
+SC_SHADERSTATE: u32NumFloatVSConst = 0
+SC_SHADERSTATE: u32NumFloatPSConst = 0
+SC_SHADERSTATE: u32NumFloatGSConst = 0
+fConstantsAvailable = 0
+iConstantsAvailable = 0
+bConstantsAvailable = 0
+u32SCOptions[0] = 0x01A00000 SCOption_IGNORE_SAMPLE_L_BUG SCOption_FLOAT_DO_NOT_DIST SCOption_FLOAT_DO_NOT_REASSOC
+u32SCOptions[1] = 0x00202000 SCOption_R600_ERROR_ON_DOUBLE_MEMEXP SCOption_SET_VPM_FOR_SCATTER
+u32SCOptions[2] = 0x00000045 SCOption_R800_UAV_NONARRAY_FIXUP SCOption_R8XX_CF_ALU_STACK_ENTRY_WORKAROUND SCOption_R800_UAV_NONUAV_SYNC_WORKAROUND_BUG216513_1
+
+; --------  Disassembly --------------------
+00 ALU: ADDR(32) CNT(16) KCACHE0(CB0:0-15) KCACHE1(CB1:0-15) 
+      0  t: MULLO_INT   ____,  R1.y,  KC0[1].y      
+      1  x: ADD_INT     ____,  R0.y,  PS0      
+         t: MULLO_INT   ____,  R1.x,  KC0[1].x      
+      2  y: ADD_INT     ____,  R0.x,  PS1      
+         z: ADD_INT     ____,  PV1.x,  KC0[6].y      
+      3  w: ADD_INT     ____,  PV2.y,  KC0[6].x      
+         t: MULLO_INT   ____,  KC0[0].x,  PV2.z      
+      4  x: ADD_INT     ____,  PV3.w,  PS3      
+      5  w: LSHL        T0.w,  PV4.x,  2      
+      6  z: ADD_INT     ____,  KC1[1].x,  PV5.w      
+         w: ADD_INT     ____,  KC1[0].x,  PV5.w      
+      7  x: ADD_INT     R2.x,  KC1[2].x,  T0.w      
+         y: LSHR        R0.y,  PV6.z,  2      
+         z: LSHR        R0.z,  PV6.w,  2      
+01 TEX: ADDR(64) CNT(2) 
+      8  VFETCH R0.x___, R0.y, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+      9  VFETCH R1.x___, R0.z, fc153  MEGA(4) 
+         FETCH_TYPE(NO_INDEX_OFFSET) 
+02 ALU: ADDR(48) CNT(3) 
+     10  x: ADD         R0.x,  R0.x,  R1.x      
+         t: LSHR        R1.x,  R2.x,  2      
+03 MEM_RAT_CACHELESS_STORE_RAW: RAT(11)[R1].x___, R0, ARRAY_SIZE(4)  MARK  VPM 
+END_OF_PROGRAM
+
+; ----------------- CS Data ------------------------
+; Input Semantic Mappings
+;    No input mappings
+
+GprPoolSize = 0
+CodeLen                 = 544;Bytes
+PGM_END_CF              = 0; words(64 bit)
+PGM_END_ALU             = 0; words(64 bit)
+PGM_END_FETCH           = 0; words(64 bit)
+MaxScratchRegsNeeded    = 0
+;AluPacking              = 0.0
+;AluClauses              = 0
+;PowerThrottleRate       = 0.0
+; texResourceUsage[0]     = 0x00000000
+; texResourceUsage[1]     = 0x00000000
+; texResourceUsage[2]     = 0x00000000
+; texResourceUsage[3]     = 0x00000000
+; texResourceUsage[4]     = 0x00000000
+; texResourceUsage[5]     = 0x00000000
+; texResourceUsage[6]     = 0x00000000
+; texResourceUsage[7]     = 0x00000000
+; fetch4ResourceUsage[0]  = 0x00000000
+; fetch4ResourceUsage[1]  = 0x00000000
+; fetch4ResourceUsage[2]  = 0x00000000
+; fetch4ResourceUsage[3]  = 0x00000000
+; fetch4ResourceUsage[4]  = 0x00000000
+; fetch4ResourceUsage[5]  = 0x00000000
+; fetch4ResourceUsage[6]  = 0x00000000
+; fetch4ResourceUsage[7]  = 0x00000000
+; texSamplerUsage         = 0x00000000
+; constBufUsage           = 0x00000000
+ResourcesAffectAlphaOutput[0]  = 0x00000000
+ResourcesAffectAlphaOutput[1]  = 0x00000000
+ResourcesAffectAlphaOutput[2]  = 0x00000000
+ResourcesAffectAlphaOutput[3]  = 0x00000000
+ResourcesAffectAlphaOutput[4]  = 0x00000000
+ResourcesAffectAlphaOutput[5]  = 0x00000000
+ResourcesAffectAlphaOutput[6]  = 0x00000000
+ResourcesAffectAlphaOutput[7]  = 0x00000000
+
+;SQ_PGM_RESOURCES        = 0x30000003
+SQ_PGM_RESOURCES:NUM_GPRS     = 3
+SQ_PGM_RESOURCES:STACK_SIZE           = 0
+SQ_PGM_RESOURCES:PRIME_CACHE_ENABLE   = 1
+;SQ_PGM_RESOURCES_2      = 0x000000C0
+SQ_LDS_ALLOC:SIZE        = 0x00000000
+; RatOpIsUsed = 0x800
+; NumThreadPerGroupFlattened = 256
+; SetBufferForNumGroup = true
