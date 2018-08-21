@@ -1,0 +1,110 @@
+asm_output=0
+debug=0
+Distutils=1
+openmp=0
+try:
+	from distutils import version
+except ImportError:
+	Distutils=0
+try:
+	from platform import system, machine
+except ImportError:
+	print "Python platform module not found. You need a newer python version. Exiting"
+	Exit(1)
+
+env = Environment()
+
+# Put here your library and include path in Windows
+if system() == 'Windows':
+	env['LIBPATH']=[]
+	env['CPPPATH']=[]
+	env['LIBPATH'].append('c:\\lib')
+	env['CPPPATH'].append('c:\\include')
+	env['ENV']['PATH']="c:\\mingw\\bin"
+
+
+if system() == 'Windows':
+	env = Environment(CPPPATH='c:\include', LIBPATH='c:\lib')
+	#env = Environment(tools = ['default', 'icl'])
+
+conf = Configure(env)
+
+if not conf.CheckLibWithHeader('boost_program_options', 'boost/program_options.hpp','c++'):
+        if not conf.CheckLibWithHeader('boost_program_options-mt', 'boost/program_options.hpp','c++'):
+                if not conf.CheckLibWithHeader('boost_program_options', 'program_options.hpp','c++'):
+                        if not conf.CheckLibWithHeader('boost_program_options-mt', 'program_options.hpp','c++'):
+                                print "Boost Program_options is required!"
+                                Exit(1)
+
+if not conf.CheckHeader('boost/random.hpp',language='C++'):
+	if not conf.CheckHeader('random.hpp',language='C++'):
+	        print "Boost random is required!"
+		Exit(1)
+
+env = conf.Finish()
+
+env['CPPDEFINES']=[]
+
+#
+#	Setting compiler optimizations
+#
+if Distutils:
+        # Intel compiler for linux
+        if env['CXX'] == 'icpc':
+		env['CPPDEFINES'].append('GCC')
+		# Overcome icc bug with GCC > 4.X
+		env['CPPDEFINES'].append('__sync_fetch_and_add(ptr,addend)=_InterlockedExchangeAdd(const_cast<void*>(reinterpret_cast<volatile void*>(ptr)), addend) ')
+		if openmp:
+			env['CXXFLAGS']=env['CXXFLAGS'] + "-openmp -ip -parallel -xT -fp-model fast=2 -openmp-report=2"
+			env['LINKFLAGS']=env['LINKFLAGS'] + "-openmp"
+		else:
+			env['CXXFLAGS']=env['CXXFLAGS'] + "-ip -parallel -xT -fp-model fast=2"
+
+        # GNU gcc
+        if env['CXX'] == 'g++':
+		ver42 = version.StrictVersion('4.2.0')
+		ver43 = version.StrictVersion('4.3.0')
+                ver47 = version.StrictVersion('4.7.0')
+		thisver = version.StrictVersion( env['CXXVERSION'] )
+		env['CPPDEFINES'].append('GCC')
+
+                if asm_output:
+                        env['CXXFLAGS']=env['CXXFLAGS'] + " -S"
+                        env['LINKFLAGS']=env['LINKFLAGS'] + " -S"
+
+		if not debug:
+			env['CXXFLAGS']=env['CXXFLAGS'] + " -ffast-math -O3 -fno-tree-vectorize"
+		else:
+			env['CXXFLAGS']=env['CXXFLAGS'] + " -g -O0"
+			#env['CXXFLAGS']=env['CXXFLAGS'] + " -g -O1 -D_GLIBCXX_DEBUG -D_GLIBCXX_DEBUG_PEDANTIC -ffast-math"
+
+                if (thisver < ver42):
+                        env['CXXFLAGS']=env['CXXFLAGS'] + "-mfpmath=sse -msse2"
+                elif (thisver >= ver42 and thisver < ver43):
+                        env['CXXFLAGS']=env['CXXFLAGS'] + "-mfpmath=sse -march=native"
+                elif (thisver >= ver43 and thisver < ver47):
+                        env['CXXFLAGS']=env['CXXFLAGS'] + "-mfpmath=sse -march=native -std=gnu++0x"
+                elif (thisver >= ver47):
+                        env['CXXFLAGS']=env['CXXFLAGS'] + "-mfpmath=sse -march=native -std=c++11"
+
+		if (thisver >= ver42):
+			if not debug:
+				if openmp and not profile:
+					env['CXXFLAGS']=env['CXXFLAGS'] + "-fopenmp"
+					env['LINKFLAGS']=env['LINKFLAGS'] + "-fopenmp"
+
+        # Microsoft Visual C++ on Windows
+        if env['CC'] == 'cl':
+                env['CPPDEFINES'].append('VC')
+	        env['CXXFLAGS']=env['CXXFLAGS'] + "/O2"
+		if openmp:
+	                env['CXXFLAGS']=env['CXXFLAGS'] + "/OPENMP"
+                env['LINKFLAGS']=env['LINKFLAGS'] + "-subsystem:console /NODEFAULTLIB:msvcrt /OPENMP"
+
+if debug:
+	env['CXXFLAGS']=env['CXXFLAGS'] + "-g"
+	env['LINKFLAGS']=env['LINKFLAGS'] + "-g" 
+
+env.Program(['example4.cpp'])
+
+print('---\nNOTE:\nRunning compiled example programs on x86 instead of x86-64 leads to a segfault, because the sse datatypes do not maintain proper byte-alignment when inserted into std::vectors.\n---\n')

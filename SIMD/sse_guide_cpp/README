@@ -1,0 +1,10 @@
+To compile an example go to one of the subdirectories and type: "make" or use Scons.
+
+Compilation needs Python and Boost program options. http://www.boost.org/
+
+For documentation: http://sci.tuomastonteri.fi/programming/sse
+
+---
+
+Running compiled example programs on x86 instead of x86-64 leads to a segfault, because the sse datatypes do 
+not maintain proper byte-alignment when inserted into std::vectors.

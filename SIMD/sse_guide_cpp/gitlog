@@ -1,0 +1,17 @@
+8b4e522 Update e-mail address
+bb4fb21 Add timer.hpp to fix last update
+50dcb77 Switch to C++11 chrono and random. Update README.
+79587ac Deleting OS dependent .pyc files from repository and setting example1 not to do bitwise comparison by default
+bfb6ac8 Added better warnings of the segfault on x86
+2ad7414 Added note on segfault on x86
+7ed2396 Change e-mail address
+f02b6cf Add veclib's author's BSD license and name now that they are known
+fd4c71f Fix compile errors on Windows mingw. Fix wrong bytes for true in togglemask
+95ca5bb Fix for older boost ran versions
+d399ba0 Fix last fix
+46787ca Add check for at least SSE2
+9ca9985 Minor
+9cb2de7 Improve GCC detection part
+c40a89c Add detection of Boost random
+52d46a6 Fix scons directory structure
+664be11 Initial push
