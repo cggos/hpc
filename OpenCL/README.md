@@ -1,6 +1,6 @@
-# OpenCL Demonstrationt
-OpenCL Demonstrationt .
+# OpenCL Demonstrations
 
+![opencl-program-structure](./images/opencl-program-structure.jpg)
 -----
 
 # Install OpenCL
