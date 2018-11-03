@@ -1,6 +1,9 @@
 # OpenCL Demonstrations
 
+[OpenCL™](https://www.khronos.org/opencl/) (Open Computing Language) is the open, royalty-free standard for cross-platform, parallel programming of diverse processors found in personal computers, servers, mobile devices and embedded platforms.
+
 ![opencl-program-structure](./images/opencl-program-structure.jpg)
+
 -----
 
 # Install OpenCL
