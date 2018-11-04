@@ -11,13 +11,6 @@ Software Analysis, Debug and Optimization
 
 [TOC]
 
-## [htop](http://hisham.hm/htop/) - an interactive process viewer for Unix
-
-* [htop explained](https://peteris.rocks/blog/htop/) - Explanation of everything you can see in htop/top on Linux
-
-![htop_up](images/htop_upper.png)
-![htop_bt](images/htop_lower.png)
-
 
 ## Compiler Optimization Options
 
@@ -27,20 +20,28 @@ Software Analysis, Debug and Optimization
 * [10 useful tips for using the floating point unit on the Cortex-M4](https://community.arm.com/processors/b/blog/posts/10-useful-tips-to-using-the-floating-point-unit-on-the-arm-cortex--m4-processor)
 
 
-## Cppcheck - a static analysis tool for C/C++ code
+## Analysis
+
+### [htop](http://hisham.hm/htop/) - an interactive process viewer for Unix
+
+* [htop explained](https://peteris.rocks/blog/htop/) - Explanation of everything you can see in htop/top on Linux
+
+![htop_up](images/htop_upper.png)
+![htop_bt](images/htop_lower.png)
+
+### Cppcheck - a static analysis tool for C/C++ code
 [Cppcheck](http://cppcheck.sourceforge.net/) provides unique code analysis to detect bugs and focuses on detecting undefined behaviour and dangerous coding constructs. The goal is to detect only real errors in the code (i.e. have very few false positives).
 ```
 cppcheck --enable=all src/
 ```
 
-## Valgrind - a dynamic analysis tools
+### Valgrind - a dynamic analysis tools
 [Valgrind](http://valgrind.org/) is an instrumentation framework for building dynamic analysis tools. There are Valgrind tools that can **automatically detect many memory management and threading bugs, and profile your programs in detail**. You can also use Valgrind to build new tools.
 ```
 valgrind --tool=memcheck --leak-check=full <program args>
 ```
 
-
-## gprof and gcov
+### gprof and gcov
 
 [gprof and gcov](https://alex.dzyoba.com/blog/gprof-gcov/) are classical profilers that are still in use. Since the dawn of time, they were used by hackers to gain insight into their programs at the source code level.
 
@@ -57,13 +58,22 @@ gcov -b *.gcno
 * [cpp-coveralls](https://github.com/eddyxu/cpp-coveralls) - Upload C/C++ coverage report to coveralls.io
 
 
-## [GTest](https://github.com/google/googletest) - Google C++ Testing Framework
+## Test
+
+### [GTest](https://github.com/google/googletest) - Google C++ Testing Framework
 * [Getting started with Google Test (GTest) on Ubuntu](https://www.eriksmistad.no/getting-started-with-google-test-on-ubuntu/)
 * [玩转Google开源C++单元测试框架Google Test系列(gtest)(总)](http://www.cnblogs.com/coderzh/archive/2009/04/06/1426755.html)
 
 
-## [Backward-cpp](https://github.com/bombela/backward-cpp)
-> a beautiful stack trace pretty printer for C++
+## Debug
+
+* dmesg
+* GDB
+* readelf
+* strace
+* addr2line
+* [Backward-cpp](https://github.com/bombela/backward-cpp)
+  > a beautiful stack trace pretty printer for C++
 
 
 ## Others

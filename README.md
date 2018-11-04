@@ -17,6 +17,12 @@
 
 # CPU
 
+## CPU Benchmark
+[Sysbench](https://github.com/akopytov/sysbench) -- Scriptable database and system performance benchmark, a cross-platform and multi-threaded benchmark tool
+```bash
+sysbench --test=cpu --cpu-max-prime=20000 --num-threads=4 run
+```
+
 ## Multi Threads
 
 ## SIMD
@@ -42,6 +48,9 @@ Intel [Threading Building Blocks (TBB)](https://www.threadingbuildingblocks.org/
 
 * [GPU世界技术论坛](http://bbs.gpuworld.cn/forum.php)
 * [General-Purpose Computation on Graphics Hardware](http://gpgpu.org/)
+
+## GPU Benchmark
+For the Raspberry Pi GPU benchmark, use the [OpenGL 2.1 test](https://www.geeks3d.com/20160215/raspberry-pi-opengl-2-1-support-tested-with-geexlab-0-9-6-0/) that comes with GeeXLab
 
 ## Platforms
 
