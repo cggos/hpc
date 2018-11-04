@@ -21,7 +21,21 @@ SIMD (Single Instruction, Multiple Data, pronounced "seem-dee") computation proc
 
 [Arm NEON](https://developer.arm.com/technologies/neon) technology is an advanced SIMD (single instruction multiple data) architecture extension for the Arm Cortex-A series and Cortex-R52 processors.
 
+* [NEON Intrinsics Reference](https://developer.arm.com/technologies/neon/intrinsics)
 * [ARM NEON Tutorial in C and Assembler](https://www.cnx-software.com/2011/11/27/arm-neon-tutorial-in-c-and-assembler/)
+
+### Compiler Options
+
+#### Raspberry Pi 3 Model B
+* g++ options
+  ```bash
+  -std=c++11 -O3 -mcpu=cortex-a53 -mfpu=neon-vfpv4 -mfloat-abi=softfp -ffast-math
+  ```
+* for the compilation error `error: ‘vfmaq_f32’ was not declared in this scope`, you might add the option `-mfpu=neon-vfpv4` to enable `__ARM_FEATURE_FMA` in **arm_neon.h**
+
+### Reference Books
+* *NEON Programmer’s Guide*
+* *ARM® NEON Intrinsics Reference*
 
 
 ## Converter
