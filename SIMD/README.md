@@ -4,6 +4,7 @@ SIMD (Single Instruction, Multiple Data, pronounced "seem-dee") computation proc
 
 * [veclib](https://github.com/nadult/veclib): SIMD vector library for C++
 * [Writing C++ Wrappers for SIMD Intrinsics](https://johanmabille.github.io/blog/2014/10/09/writing-c-plus-plus-wrappers-for-simd-intrinsics-1/)
+* [SIMD(tommesani)](http://www.tommesani.com/index.php/simd/)
 
 -----
 
