@@ -68,12 +68,15 @@ gcov -b *.gcno
 ## Debug
 
 * dmesg
-* GDB
 * readelf
 * strace
 * addr2line
-* [Backward-cpp](https://github.com/bombela/backward-cpp)
-  > a beautiful stack trace pretty printer for C++
+* nm
+* strip
+* [Backward-cpp](https://github.com/bombela/backward-cpp): a beautiful stack trace pretty printer for C++
+
+### GDB
+* [GDB - Debugging stripped binaries](https://felix.abecassis.me/2012/08/gdb-debugging-stripped-binaries/)
 
 
 ## Others

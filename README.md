@@ -17,17 +17,37 @@
 
 # CPU
 
+## CPU Info
+8 commands to check cpu information on Linux:  
+* **/proc/cpuinfo**: The /proc/cpuinfo file contains details about individual cpu cores.
+* **lscpu**: simply print the cpu hardware details in a user-friendly format
+* **cpuid**: fetches **CPUID** information about Intel and AMD x86 processors
+* **nproc**: just prints out the number of processing units available, note that the number of processing units might not always be the same as number of cores
+* **dmidecode**: displays some information about the cpu, which includes the socket type, vendor name and various flags
+* **hardinfo**: would produce a large report about many hardware parts, by reading files from the /proc directory
+* **lshw -class processor**: lshw by default shows information about various hardware parts, and the '-class' option can be used to pickup information about a specific hardware part
+* **inxi**: a script that uses other programs to generate a well structured easy to read report about various hardware components on the system
+
 ## CPU Benchmark
 [Sysbench](https://github.com/akopytov/sysbench) -- Scriptable database and system performance benchmark, a cross-platform and multi-threaded benchmark tool
 ```bash
 sysbench --test=cpu --cpu-max-prime=20000 --num-threads=4 run
 ```
 
-## Multi Threads
+## CPU Instructions & Intrinsics
 
-## SIMD
-### Intel MMX & SSE
-### ARM NEON
+* [Compiler Intrinsics](https://docs.microsoft.com/en-us/previous-versions/visualstudio/visual-studio-2010/26td21ds(v%3dvs.100))
+
+### Assembly
+* [x86 Assembly](https://en.wikibooks.org/wiki/X86_Assembly)
+* [winasm](http://www.winasm.net/): The x86 Assembly community and official home of WinAsm Studio and HiEditor
+* [Easy Code Visual assembly IDE](http://www.easycode.cat/)
+
+### SIMD
+#### Intel MMX & SSE
+#### ARM NEON
+
+## Multi Threads
 
 ## OpenMP
 The [OpenMP](https://www.openmp.org/) API specification for parallel programming, an Application Program Interface (API) that may be used to explicitly direct **multi-threaded, shared memory parallelism**.

@@ -9,11 +9,13 @@ SIMD (Single Instruction, Multiple Data, pronounced "seem-dee") computation proc
 
 [TOC]
 
-## Intel MMX & SSE(Streaming SIMD Extentions)
+## Intel MMX & SSE
 
 * [Intel Intrinsics Guide](https://software.intel.com/sites/landingpage/IntrinsicsGuide/)
-* [X86 Assembly/SSE](https://en.wikibooks.org/wiki/X86_Assembly/SSE)
-* [SSE (Streaming SIMD Extentions)](http://www.songho.ca/misc/sse/sse.html)
+
+### SSE(Streaming SIMD Extentions)
+
+* [C++ - Getting started with SSE](http://felix.abecassis.me/2011/09/cpp-getting-started-with-sse/)
 * [SSE - Vectorizing conditional code](https://felix.abecassis.me/2012/08/sse-vectorizing-conditional-code/)
 * [SSE图像算法优化系列(cnblogs)](https://www.cnblogs.com/Imageshop/category/334067.html)
 
