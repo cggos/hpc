@@ -1,7 +1,6 @@
 # High Performance Computing
 
 * [StreamHPC](https://streamhpc.com/) is a software development company in parallel software for many-core processors.
-* [Open MPI](https://www.open-mpi.org/): Open Source High Performance Computing.
 
 * [The Supercomputing Blog](http://supercomputingblog.com/)
 * [FastC++: Coding Cpp Efficiently](http://fastcpp.blogspot.com/)
@@ -15,12 +14,17 @@
 * [异构开发技术社区(CSDN)](http://hc.csdn.net/)
 * [Introduction to Parallel Computing](https://computing.llnl.gov/tutorials/parallel_comp/)
 
+# MPI (Message Passing Interface)
+* [MPI Forum](https://www.mpi-forum.org/): the standardization forum for MPI
+* [Open MPI](https://www.open-mpi.org/): Open Source High Performance Computing.
+
 # CPU
 
 * [Intel® 64 and IA-32 Architectures Software Developer Manuals](https://software.intel.com/en-us/articles/intel-sdm)
 * [Hotspots, FLOPS, and uOps: To-The-Metal CPU Optimization](https://www.gdcvault.com/play/1014645/Hotspots-FLOPS-and-uOps-To)
 
 ## CPU Info
+
 8 commands to check cpu information on Linux:  
 * **/proc/cpuinfo**: The /proc/cpuinfo file contains details about individual cpu cores.
 * **lscpu**: simply print the cpu hardware details in a user-friendly format
@@ -30,6 +34,9 @@
 * **hardinfo**: would produce a large report about many hardware parts, by reading files from the /proc directory
 * **lshw -class processor**: lshw by default shows information about various hardware parts, and the '-class' option can be used to pickup information about a specific hardware part
 * **inxi**: a script that uses other programs to generate a well structured easy to read report about various hardware components on the system
+
+### ARM CPU features
+* [Runtime detection of CPU features on an ARMv8-A CPU](https://community.arm.com/android-community/b/android/posts/runtime-detection-of-cpu-features-on-an-armv8-a-cpu)
 
 ## CPU Benchmark
 [Sysbench](https://github.com/akopytov/sysbench) -- Scriptable database and system performance benchmark, a cross-platform and multi-threaded benchmark tool
@@ -53,7 +60,9 @@ sysbench --test=cpu --cpu-max-prime=20000 --num-threads=4 run
 ## Multi Threads
 
 ## OpenMP
-The [OpenMP](https://www.openmp.org/) API specification for parallel programming, an Application Program Interface (API) that may be used to explicitly direct **multi-threaded, shared memory parallelism**.
+The [OpenMP](https://www.openmp.org/) API specification for parallel programming, an Application Program Interface (API) that may be used to explicitly direct **multi-threaded, shared memory parallelism**.  
+
+OpenMP有两种常用的并行开发形式: 一是通过简单的 **fork/join** 对串行程序并行化，二是采用 **单程序多数据** 对串行程序并行化。
 
 * [OpenMP Tutorials](https://computing.llnl.gov/tutorials/openMP/)
 * [OpenMP in a nutshell](http://www.bowdoin.edu/~ltoma/teaching/cs3225-GIS/fall16/Lectures/openmp.html)
@@ -62,10 +71,11 @@ The [OpenMP](https://www.openmp.org/) API specification for parallel programming
 
 [OpenACC](https://www.openacc.org/) is a user-driven directive-based performance-portable parallel programming model designed for scientists and engineers interested in porting their codes to a wide-variety of heterogeneous HPC hardware platforms and architectures with significantly less programming effort than required with a low-level model.
 
-## Threading Building Blocks (TBB)
+## Intel TBB
 
 Intel [Threading Building Blocks (TBB)](https://www.threadingbuildingblocks.org/) lets you easily write parallel C++ programs that take full advantage of **multicore performance**, that are portable and composable, and that have future-proof scalability.
 
+## Intel IPP
 
 # GPU
 

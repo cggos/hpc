@@ -19,6 +19,12 @@ Software Analysis, Debug and Optimization
 * [GCC compiler optimization for ARM-based systems](https://gist.github.com/fm4dd/c663217935dc17f0fc73c9c81b0aa845)
 * [10 useful tips for using the floating point unit on the Cortex-M4](https://community.arm.com/processors/b/blog/posts/10-useful-tips-to-using-the-floating-point-unit-on-the-arm-cortex--m4-processor)
 
+### gcc/g++ Options
+
+* `-dumpmachine`: print **the compiler's target machine** (for example, arm-linux-gnueabihf)
+* `-dM -E`:
+  - `gcc -dM -E - < /dev/null`: 显示所有预定义的宏
+
 
 ## Analysis
 
