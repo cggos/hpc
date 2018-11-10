@@ -4,6 +4,7 @@
 
 * [The Supercomputing Blog](http://supercomputingblog.com/)
 * [FastC++: Coding Cpp Efficiently](http://fastcpp.blogspot.com/)
+* [chenguang055/multicore_gpu_programming](https://github.com/chenguang055/multicore_gpu_programming)
 
 -----
 
@@ -14,9 +15,31 @@
 * [异构开发技术社区(CSDN)](http://hc.csdn.net/)
 * [Introduction to Parallel Computing](https://computing.llnl.gov/tutorials/parallel_comp/)
 
+
 # MPI (Message Passing Interface)
 * [MPI Forum](https://www.mpi-forum.org/): the standardization forum for MPI
 * [Open MPI](https://www.open-mpi.org/): Open Source High Performance Computing.
+
+
+# Concurrency
+
+* task switching
+* hardware concurrency
+
+## Multi-Processing
+
+### IPC
+
+* [Interprocess Communications (Microsoft)](https://docs.microsoft.com/en-us/windows/desktop/ipc/interprocess-communications)
+* [Inter-Process Communication (IPC) Introduction and Sample Code](https://www.codeproject.com/articles/34073/inter-process-communication-ipc-introduction-and-s)
+
+
+## Multi-Threading
+
+* POSIX C pthread
+* boost::thread
+* c++11 std::thread
+
 
 # CPU
 
@@ -57,7 +80,6 @@ sysbench --test=cpu --cpu-max-prime=20000 --num-threads=4 run
 #### Intel MMX & SSE
 #### ARM NEON
 
-## Multi Threads
 
 ## OpenMP
 The [OpenMP](https://www.openmp.org/) API specification for parallel programming, an Application Program Interface (API) that may be used to explicitly direct **multi-threaded, shared memory parallelism**.  
@@ -83,7 +105,10 @@ Intel [Threading Building Blocks (TBB)](https://www.threadingbuildingblocks.org/
 * [General-Purpose Computation on Graphics Hardware](http://gpgpu.org/)
 
 ## GPU Benchmark
-For the Raspberry Pi GPU benchmark, use the [OpenGL 2.1 test](https://www.geeks3d.com/20160215/raspberry-pi-opengl-2-1-support-tested-with-geexlab-0-9-6-0/) that comes with GeeXLab
+
+* For the Raspberry Pi GPU benchmark, use the [OpenGL 2.1 test](https://www.geeks3d.com/20160215/raspberry-pi-opengl-2-1-support-tested-with-geexlab-0-9-6-0/) that comes with GeeXLab
+
+* [msalvaris/gpu_monitor](https://github.com/msalvaris/gpu_monitor): Monitor your GPUs whether they are on a single computer or in a cluster
 
 ## Platforms
 
