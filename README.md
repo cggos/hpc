@@ -61,11 +61,22 @@
 ### ARM CPU features
 * [Runtime detection of CPU features on an ARMv8-A CPU](https://community.arm.com/android-community/b/android/posts/runtime-detection-of-cpu-features-on-an-armv8-a-cpu)
 
+
 ## CPU Benchmark
+
+### Sysbench
 [Sysbench](https://github.com/akopytov/sysbench) -- Scriptable database and system performance benchmark, a cross-platform and multi-threaded benchmark tool
 ```bash
 sysbench --test=cpu --cpu-max-prime=20000 --num-threads=4 run
 ```
+
+### [htop](http://hisham.hm/htop/) - an interactive process viewer for Unix
+
+* [htop explained](https://peteris.rocks/blog/htop/) - Explanation of everything you can see in htop/top on Linux
+
+![htop_up](images/htop_upper.png)
+![htop_bt](images/htop_lower.png)
+
 
 ## CPU Instructions & Intrinsics
 
@@ -124,3 +135,4 @@ Intel [Threading Building Blocks (TBB)](https://www.threadingbuildingblocks.org/
 
 
 # Software Optimization
+* https://github.com/cggos/programming_facility/tree/master/app_build
