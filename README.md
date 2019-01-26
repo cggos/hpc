@@ -86,6 +86,7 @@ sysbench --test=cpu --cpu-max-prime=20000 --num-threads=4 run
 * [x86 Assembly](https://en.wikibooks.org/wiki/X86_Assembly)
 * [winasm](http://www.winasm.net/): The x86 Assembly community and official home of WinAsm Studio and HiEditor
 * [Easy Code Visual assembly IDE](http://www.easycode.cat/)
+* [0xAX/asm](https://github.com/0xAX/asm): Learning assembly for linux-x64
 
 ### SIMD
 #### Intel MMX & SSE
