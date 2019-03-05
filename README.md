@@ -12,7 +12,6 @@
 
 # Heterogeneous Computing
 
-* [异构开发技术社区(CSDN)](http://hc.csdn.net/)
 * [Introduction to Parallel Computing](https://computing.llnl.gov/tutorials/parallel_comp/)
 
 
