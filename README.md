@@ -4,7 +4,7 @@
 
 * [The Supercomputing Blog](http://supercomputingblog.com/)
 * [FastC++: Coding Cpp Efficiently](http://fastcpp.blogspot.com/)
-* [chenguang055/multicore_gpu_programming](https://github.com/chenguang055/multicore_gpu_programming)
+* [cggos/multicore_gpu_programming](https://github.com/cggos/multicore_gpu_programming)
 
 -----
 
