@@ -30,6 +30,8 @@ SIMD (Single Instruction, Multiple Data, pronounced "seem-dee") computation proc
 
 ### Compiler Options
 
+* test ARM NEON: `gcc -dM -E -x c /dev/null | grep -i -E "(SIMD|NEON|ARM)"`
+
 #### Raspberry Pi 3 Model B
 * g++ options
   ```bash
