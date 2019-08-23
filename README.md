@@ -10,17 +10,17 @@
 
 [TOC]
 
-# Heterogeneous Computing
+# 1. Heterogeneous Computing
 
 * [Introduction to Parallel Computing](https://computing.llnl.gov/tutorials/parallel_comp/)
 
 
-# MPI (Message Passing Interface)
+# 2. MPI (Message Passing Interface)
 * [MPI Forum](https://www.mpi-forum.org/): the standardization forum for MPI
 * [Open MPI](https://www.open-mpi.org/): Open Source High Performance Computing.
 
 
-# Concurrency
+# 3. Concurrency
 
 * task switching
 * hardware concurrency
@@ -40,7 +40,7 @@
 * c++11 std::thread
 
 
-# CPU
+# 4. CPU
 
 * [Intel® 64 and IA-32 Architectures Software Developer Manuals](https://software.intel.com/en-us/articles/intel-sdm)
 * [Hotspots, FLOPS, and uOps: To-The-Metal CPU Optimization](https://www.gdcvault.com/play/1014645/Hotspots-FLOPS-and-uOps-To)
@@ -110,7 +110,7 @@ Intel [Threading Building Blocks (TBB)](https://www.threadingbuildingblocks.org/
 
 ## Intel IPP
 
-# GPU
+# 5. GPU
 
 * [GPU世界技术论坛](http://bbs.gpuworld.cn/forum.php)
 * [General-Purpose Computation on Graphics Hardware](http://gpgpu.org/)
@@ -134,5 +134,5 @@ Intel [Threading Building Blocks (TBB)](https://www.threadingbuildingblocks.org/
 ### CUDA
 
 
-# Software Optimization
+# 6. Software Optimization
 * https://github.com/cggos/DevOps/tree/master/app_build
