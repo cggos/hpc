@@ -26,11 +26,9 @@ int main(int argc, char* argv[])
     __m128 xDelta = _mm_set1_ps(4.0f);		// Set the xDelta to (4,4,4,4)
     __m128 *pResultSSE = (__m128*) pResult;
 
-
     const int SSELength = length / 4;
 
     for (int stress = 0; stress < 100000; stress++)	// lots of stress loops so we can easily use a stopwatch
-
     {
 #define TIME_SSE	// Define this if you want to run with SSE
 
@@ -39,7 +37,6 @@ int main(int argc, char* argv[])
 
         for (int i=0; i < SSELength; i++)
         {
-
             __m128 xSqrt = _mm_sqrt_ps(x);
             // Note! Division is slow. It's actually faster to take the reciprocal of a number and multiply
             // Also note that Division is more accurate than taking the reciprocal and multiplying
@@ -50,12 +47,12 @@ int main(int argc, char* argv[])
             __m128 xRecip = _mm_rcp_ps(x);
 
             pResultSSE[i] = _mm_mul_ps(xRecip, xSqrt);
-#endif //USE_FAST_METHOD
+#endif // USE_FAST_METHOD
 
 #ifdef USE_DIVISION_METHOD
             pResultSSE[i] = _mm_div_ps(xSqrt, x);
 
-#endif	// USE_DIVISION_METHOD
+#endif // USE_DIVISION_METHOD
 
             // NOTE! Sometimes, the order in which things are done in SSE may seem reversed.
             // When the command above executes, the four floating elements are actually flipped around
@@ -68,13 +65,11 @@ int main(int argc, char* argv[])
 
 #ifndef TIME_SSE
         float xFloat = 1.0f;
-		for (int i=0 ; i < length; i++)
-		{
-
-			pResult[i] = sqrt(xFloat) / xFloat;	// Even though division is slow, there are no intrinsic functions like there are in SSE
-			xFloat += 1.0f;
-		}
-
+    		for (int i=0 ; i < length; i++)
+    		{
+    			pResult[i] = sqrt(xFloat) / xFloat;	// Even though division is slow, there are no intrinsic functions like there are in SSE
+    			xFloat += 1.0f;
+    		}
 #endif	// !TIME_SSE
     }
 

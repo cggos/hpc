@@ -11,7 +11,6 @@ int main()
     __m128 sum4 = _mm_add_ps(a4, b4);
     __m128 sub4 = _mm_sub_ps(a4, b4);
 
-
     int SCRHEIGHT = 480, SCRWIDTH = 640;
 
     float scale = 1.f;
@@ -19,7 +18,8 @@ int main()
     // normal
     for( int y = 0; y < SCRHEIGHT; y++ ) {
         float yoffs = ((float) y / SCRHEIGHT - 0.5f) * scale;
-        float xoffs = -0.5f * scale, dx = scale / SCRWIDTH;
+        float xoffs = -0.5f * scale
+        float dx = scale / SCRWIDTH;
 
         for (int x = 0; x < SCRWIDTH; x++, xoffs += dx) {
             float ox = 0, oy = 0;
@@ -37,7 +37,8 @@ int main()
     // simd
     for( int y = 0; y < SCRHEIGHT; y++ ) {
         float yoffs = ((float) y / SCRHEIGHT - 0.5f) * scale;
-        float xoffs = -0.5f * scale, dx = scale / SCRWIDTH;
+        float xoffs = -0.5f * scale
+        float dx = scale / SCRWIDTH;
 
         for (int x = 0; x < SCRWIDTH; x += 4, xoffs += dx * 4) {
             union {
@@ -71,6 +72,3 @@ int main()
 
     return 0;
 }
-
-
-

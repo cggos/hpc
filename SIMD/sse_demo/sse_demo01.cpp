@@ -22,9 +22,7 @@ void sse(float* a, int N)
 
 int main(int argc, char **argv)
 {
-    if (argc != 2)
-        return 1;
-    int N = atoi(argv[1]);
+    int N = 1e8;
 
     //    float a[] __attribute__ ((aligned (16))) = { 41982.,  81.5091, 3.14, 42.666 };
     float *a;
@@ -50,6 +48,8 @@ int main(int argc, char **argv)
         TIMER("sleep");
         usleep(2);
     }
+
+    free(a);
 
     return 0;
 }
