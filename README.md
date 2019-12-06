@@ -64,6 +64,7 @@
 ## CPU Benchmark
 
 ### Sysbench
+
 [Sysbench](https://github.com/akopytov/sysbench) -- Scriptable database and system performance benchmark, a cross-platform and multi-threaded benchmark tool
 ```bash
 sysbench --test=cpu --cpu-max-prime=20000 --num-threads=4 run
@@ -82,17 +83,20 @@ sysbench --test=cpu --cpu-max-prime=20000 --num-threads=4 run
 * [Compiler Intrinsics](https://docs.microsoft.com/en-us/previous-versions/visualstudio/visual-studio-2010/26td21ds(v%3dvs.100))
 
 ### Assembly
+
 * [x86 Assembly](https://en.wikibooks.org/wiki/X86_Assembly)
 * [winasm](http://www.winasm.net/): The x86 Assembly community and official home of WinAsm Studio and HiEditor
 * [Easy Code Visual assembly IDE](http://www.easycode.cat/)
 * [0xAX/asm](https://github.com/0xAX/asm): Learning assembly for linux-x64
 
 ### SIMD
-#### Intel MMX & SSE
-#### ARM NEON
+
+* Intel MMX & SSE
+* ARM NEON
 
 
 ## OpenMP
+
 The [OpenMP](https://www.openmp.org/) API specification for parallel programming, an Application Program Interface (API) that may be used to explicitly direct **multi-threaded, shared memory parallelism**.  
 
 OpenMP有两种常用的并行开发形式: 一是通过简单的 **fork/join** 对串行程序并行化，二是采用 **单程序多数据** 对串行程序并行化。
@@ -101,6 +105,7 @@ OpenMP有两种常用的并行开发形式: 一是通过简单的 **fork/join** 
 * [OpenMP in a nutshell](http://www.bowdoin.edu/~ltoma/teaching/cs3225-GIS/fall16/Lectures/openmp.html)
 
 OpenMP in CMakeLists.txt:  
+
 ```cmake
 find_package(OpenMP)
 if (OPENMP_FOUND)
@@ -133,15 +138,12 @@ Intel [Threading Building Blocks (TBB)](https://www.threadingbuildingblocks.org/
 
 ## Platforms
 
-### ARM Mali
 * [ARM MALI GPU](https://streamhpc.com/knowledge/sdks/arm-mali/)
+* Nvidia GPU
 
 ## Languages
 
 * [CUDA vs OpenCL: Which should I use?](https://wiki.tiker.net/CudaVsOpenCL)
-
-### OpenCL
-### CUDA
 
 
 # 6. Software Optimization

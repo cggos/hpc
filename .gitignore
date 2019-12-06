@@ -291,3 +291,4 @@ build/
 cmake-build-debug
 
 .idea/
+.tags
