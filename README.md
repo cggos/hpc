@@ -136,6 +136,11 @@ Intel [Threading Building Blocks (TBB)](https://www.threadingbuildingblocks.org/
 
 * [msalvaris/gpu_monitor](https://github.com/msalvaris/gpu_monitor): Monitor your GPUs whether they are on a single computer or in a cluster
 
+
+```sh
+watch -n 10 nvidia-smi       # 每隔10秒更新一下显卡
+```
+
 ## Platforms
 
 * [ARM MALI GPU](https://streamhpc.com/knowledge/sdks/arm-mali/)
