@@ -152,4 +152,3 @@ watch -n 10 nvidia-smi       # 每隔10秒更新一下显卡
 
 
 # 6. Software Optimization
-* https://github.com/cggos/DevOps/tree/master/app_build
