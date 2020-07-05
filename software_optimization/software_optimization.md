@@ -16,7 +16,16 @@
 * [10 useful tips for using the floating point unit on the Cortex-M4](https://community.arm.com/processors/b/blog/posts/10-useful-tips-to-using-the-floating-point-unit-on-the-arm-cortex--m4-processor)
 
 
+## 绑定进程到指定CPU上运行
+
+我们由于处理效率要求，需要绑定固定进程或者线程到固定CPU上运行，以提高算法和程序运行效率。
+
+## 分治法
+
 ## Others
+
+* 浮点尽量用float（why）
+* 除法 改为 乘法
 * for循环
   - 重点优化计算量大的for循环
 * 内存
