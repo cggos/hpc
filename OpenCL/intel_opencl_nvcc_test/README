@@ -1,0 +1,60 @@
+Demonstration of Intel OpenCL issue
+===================================
+
+ref: https://github.com/sergeyvfx/intel_opencl_nvcc_test
+
+There seems to be an issue in one of Intel OpenCL libraries, which closes stdin
+file descriptor, which might cause issues with various other routines. For example,
+it will make it impossible to invoke nvcc after querying OpenCL platforms.
+
+This repository contains a simplified version of what's happening in Blender. This
+could be summarized as following:
+
+- First, we query OpenCL platforms from Blender side
+- Second, we try to compile CUDA kernel using external command to NVCC.
+  This step will fail, with NVCC reporting:
+
+    <built-in>: fatal error: when writing output to : Bad file descriptor
+
+What happens inbetween of this two steps is libigdrcl.so closing stdin file
+descriptor when it's being unloaded. This makes NVCC (and maybe other GCC/Clang
+related commands?) to be fully unhappy.
+
+Steps to reproduce:
+
+- Compile the project, using `make` command.
+- Run `intel_opencl_test` binary, which does the two steps described above.
+- This step should give issue mentioned above.
+- It is also possible to get some sort of backtrace by pre-loading myclose.so
+  library (which is also compiled by makefile):
+
+    LD_PRELOAD=./myclose.so gdb ./intel_opencl_test
+
+  Running the program will give the following backtrace:
+
+  #0  __GI_raise (sig=sig@entry=6) at ../sysdeps/unix/sysv/linux/raise.c:51
+  #1  0x00007ffff76643fa in __GI_abort () at abort.c:89
+  #2  0x00007ffff7bd77b3 in close () from ./myclose.so
+  #3  0x00007fffecfbaecb in ?? () from /opt/intel/opencl/libigdrcl.so
+  #4  0x00007fffecfb4dac in ?? () from /opt/intel/opencl/libigdrcl.so
+  #5  0x00007ffff7dedaa9 in _dl_close_worker (map=<optimized out>, force=<optimized out>) at dl-close.c:286
+  #6  0x00007ffff7dee66e in _dl_close (_map=0x555555788490) at dl-close.c:840
+  #7  0x00007ffff7de8754 in _dl_catch_error (objname=0x55555575f2f0, errstring=0x55555575f2f8, mallocedp=0x55555575f2e8, operate=0x7ffff720ffb0 <dlclose_doit>, args=0x555555788490) at dl-error.c:187
+  #8  0x00007ffff7210531 in _dlerror_run (operate=operate@entry=0x7ffff720ffb0 <dlclose_doit>, args=0x555555788490) at dlerror.c:163
+  #9  0x00007ffff720ffdf in __dlclose (handle=<optimized out>) at dlclose.c:46
+  #10 0x00007fffeee9078b in ?? () from /opt/intel/opencl/libIntelOpenCL.so
+  #11 0x00007fffeee8f9f5 in ?? () from /opt/intel/opencl/libIntelOpenCL.so
+  #12 0x00007fffeee6ff20 in ?? () from /opt/intel/opencl/libIntelOpenCL.so
+  #13 0x00007ffff79d177e in ?? () from /opt/intel/opencl/libOpenCL.so.1
+  #14 0x00007ffff79d36cf in ?? () from /opt/intel/opencl/libOpenCL.so.1
+  #15 0x00007ffff7421739 in __pthread_once_slow (once_control=0x7ffff7bd6018, init_routine=0x7ffff79d3550) at pthread_once.c:116
+  #16 0x00007ffff79d1d21 in clGetPlatformIDs () from /opt/intel/opencl/libOpenCL.so.1
+  #17 0x00005555555547a5 in main ()
+
+System info
+===========
+
+- Debian BNU/Linux Stretch, 64bit
+- OpenCL installed from SRB5.0_linux64.zip,
+  https://software.intel.com/en-us/articles/opencl-drivers#latest_linux_driver
+- NVCC version 8.0.61 (any version will show the issue)
