@@ -1,190 +1,179 @@
-#include <stdio.h>  
-#include <stdlib.h>  
-#include <string.h>  
-#include <iostream>  
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
-#ifdef MAC  
-#include <OpenCL/cl.h>  
-#else  
-#include <CL/cl.h>  
-#endif  
+#include <iostream>
 
-int main() {  
+#ifdef MAC
+#include <OpenCL/cl.h>
+#else
+#include <CL/cl.h>
+#endif
 
-	/* Host data structures */  
-	cl_platform_id *platforms;  
-	//Ã¿Ò»¸öcl_platform_id ½á¹¹±íÊ¾Ò»¸öÔÚÖ÷»úÉÏµÄOpenCLÖ´ĞĞÆ½Ì¨£¬¾ÍÊÇÖ¸µçÄÔÖĞÖ§³ÖOpenCLµÄÓ²¼ş£¬ÈçnvidiaÏÔ¿¨£¬intel CPUºÍÏÔ¿¨£¬AMDÏÔ¿¨ºÍCPUµÈ  
-	cl_uint num_platforms;  
-	cl_int err, platform_index = -1;  
+int main() {
+  /* Host data structures */
+  // æ¯ä¸€ä¸ªcl_platform_id ç»“æ„è¡¨ç¤ºä¸€ä¸ªåœ¨ä¸»æœºä¸Šçš„OpenCLæ‰§è¡Œå¹³å°ï¼Œ
+  // å°±æ˜¯æŒ‡ç”µè„‘ä¸­æ”¯æŒOpenCLçš„ç¡¬ä»¶ï¼Œå¦‚nvidiaæ˜¾å¡ï¼Œintel CPUå’Œæ˜¾å¡ï¼ŒAMDæ˜¾å¡å’ŒCPUç­‰
+  cl_platform_id *platforms;
 
-	/* Extension data */  
-	char* ext_data;                           
-	size_t ext_size;     
-	const char icd_ext[] = "cl_khr_icd";  
+  cl_uint num_platforms;
+  cl_int err, platform_index = -1;
 
-	cl_uint numDevices = 0;
-	cl_device_id *devices = NULL;
+  /* Extension data */
+  char *ext_data;
+  size_t ext_size;
+  const char icd_ext[] = "cl_khr_icd";
 
-	char        *value;
-	size_t      valueSize;
-	size_t      maxWorkItemPerGroup;
-	cl_uint     maxComputeUnits=0;
-	cl_ulong    maxGlobalMemSize=0;
-	cl_ulong    maxConstantBufferSize=0;
-	cl_ulong    maxLocalMemSize=0;
+  cl_uint numDevices = 0;
+  cl_device_id *devices = NULL;
 
-	//ÒªÊ¹platform¹¤×÷£¬ĞèÒªÁ½¸ö²½Öè¡£1 ĞèÒªÎªcl_platform_id½á¹¹·ÖÅäÄÚ´æ¿Õ¼ä¡£2 ĞèÒªµ÷ÓÃclGetPlatformIDs³õÊ¼»¯ÕâĞ©Êı¾İ½á¹¹¡£Ò»°ã»¹ĞèÒª²½Öè0£ºÑ¯ÎÊÖ÷»úÉÏÓĞ¶àÉÙplatforms  
+  char *value;
+  size_t valueSize;
+  size_t maxWorkItemPerGroup;
+  cl_uint maxComputeUnits = 0;
+  cl_ulong maxGlobalMemSize = 0;
+  cl_ulong maxConstantBufferSize = 0;
+  cl_ulong maxLocalMemSize = 0;
 
-	/* Find number of platforms */  
-	//·µ»ØÖµÈç¹ûÎª-1¾ÍËµÃ÷µ÷ÓÃº¯ÊıÊ§°Ü£¬Èç¹ûÎª0±êÃ÷³É¹¦  
-	//µÚ¶ş¸ö²ÎÊıÎªNULL´ú±íÒª×ÉÑ¯Ö÷»úÉÏÓĞ¶àÉÙ¸öplatform£¬²¢Ê¹ÓÃnum_platformsÈ¡µÃÊµ¼ÊflatformÊıÁ¿¡£  
-	//µÚÒ»¸ö²ÎÊıÎª1£¬´ú±íÎÒÃÇĞèÒªÈ¡×î¶à1¸öplatform¡£¿ÉÒÔ¸ÄÎªÈÎÒâ´óÈç£ºINT_MAXÕûÊı×î´óÖµ¡£µ«ÊÇ¾İËµ0£¬·ñÔò»á±¨´í£¬Êµ¼Ê²âÊÔºÃÏñ²»»á±¨´í¡£ÏÂÃæÊÇ²½Öè0£ºÑ¯ÎÊÖ÷»úÓĞ¶àÉÙplatforms  
-	err = clGetPlatformIDs(5, NULL, &num_platforms);          
-	if(err < 0) {          
-		perror("Couldn't find any platforms.");           
-		exit(1);                              
-	}                                     
+  cl_uint PlatformCount = 0;
+  cl_platform_id Platforms[8] = {0};
+  cl_int Status = clGetPlatformIDs(sizeof(Platforms) / sizeof(Platforms[0]), Platforms, &PlatformCount);
+  // if (Status != CL_SUCCESS || PlatformCount == 0) perror("dsds");
+  // printf("I have platforms: %d\n", PlatformCount);
 
-	printf("I have platforms: %d\n", num_platforms); //±¾ÈË¼ÆËã»úÉÏÏÔÊ¾Îª2£¬ÓĞintelºÍnvidiaÁ½¸öÆ½Ì¨  
+  // è¦ä½¿platformå·¥ä½œï¼Œéœ€è¦ä¸¤ä¸ªæ­¥éª¤ã€‚
+  // 1 éœ€è¦ä¸ºcl_platform_idç»“æ„åˆ†é…å†…å­˜ç©ºé—´ã€‚
+  // 2 éœ€è¦è°ƒç”¨clGetPlatformIDsåˆå§‹åŒ–è¿™äº›æ•°æ®ç»“æ„ã€‚
+  // ä¸€èˆ¬è¿˜éœ€è¦æ­¥éª¤0ï¼šè¯¢é—®ä¸»æœºä¸Šæœ‰å¤šå°‘platforms
 
-	/* Access all installed platforms */  
-	//²½Öè1 ´´½¨cl_platform_id£¬²¢·ÖÅä¿Õ¼ä  
-	platforms = (cl_platform_id*)malloc(sizeof(cl_platform_id) * num_platforms);   
-	//²½Öè2 µÚ¶ş¸ö²ÎÊıÓÃÖ¸Õëplatforms´æ´¢platform  
-	clGetPlatformIDs(num_platforms, platforms, NULL);         
+  /* Find number of platforms */
+  //è¿”å›å€¼å¦‚æœä¸º-1å°±è¯´æ˜è°ƒç”¨å‡½æ•°å¤±è´¥ï¼Œå¦‚æœä¸º0æ ‡æ˜æˆåŠŸ
+  //ç¬¬äºŒä¸ªå‚æ•°ä¸ºNULLä»£è¡¨è¦å’¨è¯¢ä¸»æœºä¸Šæœ‰å¤šå°‘ä¸ªplatformï¼Œå¹¶ä½¿ç”¨num_platformså–å¾—å®é™…flatformæ•°é‡ã€‚
+  //ç¬¬ä¸€ä¸ªå‚æ•°ä¸º1ï¼Œä»£è¡¨æˆ‘ä»¬éœ€è¦å–æœ€å¤š1ä¸ªplatformã€‚å¯ä»¥æ”¹ä¸ºä»»æ„å¤§å¦‚ï¼šINT_MAXæ•´æ•°æœ€å¤§å€¼ã€‚ä½†æ˜¯æ®è¯´0ï¼Œå¦åˆ™ä¼šæŠ¥é”™ï¼Œå®é™…æµ‹è¯•å¥½åƒä¸ä¼šæŠ¥é”™ã€‚
+  // ä¸‹é¢æ˜¯æ­¥éª¤0ï¼šè¯¢é—®ä¸»æœºæœ‰å¤šå°‘platforms
+  err = clGetPlatformIDs(5, NULL, &num_platforms);
+  if (err < 0) {
+    perror("Couldn't find any platforms.");
+    exit(1);
+  }
 
-	/* Find extensions of all platforms */  
-	//»ñÈ¡¶îÍâµÄÆ½Ì¨ĞÅÏ¢¡£ÉÏÃæÒÑ¾­È¡µÃÁËÆ½Ì¨idÁË£¬ÄÇÃ´¾Í¿ÉÒÔ½øÒ»²½»ñÈ¡¸ü¼ÓÏêÏ¸µÄĞÅÏ¢ÁË¡£  
-	//Ò»¸öforÑ­»·»ñÈ¡ËùÓĞµÄÖ÷»úÉÏµÄplatformsĞÅÏ¢  
-	for(cl_int i=0; i<num_platforms; i++)   
-	{  
-		/* Find size of extension data */  
-		//Ò²ÊÇºÍÇ°ÃæÒ»Ñù£¬ÏÈÉèÖÃµÚÈıºÍµÚËÄ¸ö²ÎÊıÎª0ºÍNULL£¬È»ºó¾Í¿ÉÒÔÓÃµÚÎå¸ö²ÎÊıext_size»ñÈ¡¶îÍâĞÅÏ¢µÄ³¤¶ÈÁË¡£  
-		err = clGetPlatformInfo(platforms[i],             
-			CL_PLATFORM_EXTENSIONS, 0, NULL, &ext_size);      
-		if(err < 0)   
-		{  
-			perror("Couldn't read extension data.");              
-			exit(1);  
-		}     
+  printf("I have platforms: %d\n", num_platforms);
 
-		printf("The size of extension data is: %d\n", ext_size);//ÎÒµÄ¼ÆËã»úÏÔÊ¾224.  
+  /* Access all installed platforms */
+  //æ­¥éª¤1 åˆ›å»ºcl_platform_idï¼Œå¹¶åˆ†é…ç©ºé—´
+  platforms = (cl_platform_id *)malloc(sizeof(cl_platform_id) * num_platforms);
 
-		/* Access extension data */    
-		//ÕâÀïµÄext_dataÏàµ±ÓÚÒ»¸ö»º´æ£¬´æ´¢Ïà¹ØĞÅÏ¢¡£  
-		ext_data = (char*)malloc(ext_size);   
-		//Õâ¸öº¯Êı¾ÍÊÇ»ñÈ¡Ïà¹ØĞÅÏ¢µÄº¯Êı£¬µÚ¶ş¸ö²ÎÊıÖ¸Ã÷ÁËĞèÒªÊ²Ã´ÑùµÄĞÅÏ¢£¬ÈçÕâÀïµÄCL_PLATFORM_EXTENSIONS±íÊ¾ÊÇopenclÖ§³ÖµÄÀ©Õ¹¹¦ÄÜĞÅÏ¢¡£ÎÒ¼ÆËã»úÊä³öÒ»´ó´®£¬»úÆ÷±È½ÏĞÂ£¨×¨ÃÅÎªÁËÑ§Í¼ĞÎÑ§¶ø¹ºÖÃµÄµçÄÔ£©£¬Ö§³ÖµÄ¶«Î÷±È½Ï¶à¡£  
-		clGetPlatformInfo(platforms[i], CL_PLATFORM_EXTENSIONS,       
-			ext_size, ext_data, NULL);                
-		printf("Platform %d supports extensions: %s\n", i, ext_data);  
+  //æ­¥éª¤2 ç¬¬äºŒä¸ªå‚æ•°ç”¨æŒ‡é’ˆplatformså­˜å‚¨platform
+  clGetPlatformIDs(num_platforms, platforms, NULL);
 
-		//ÕâÀïÊÇÊä³öÉú²úÉÌµÄÃû×Ö£¬±ÈÈçÎÒÏÔ¿¨ĞÅÏ¢ÊÇ£ºNVIDIA CUDA  
-		char *name = (char*)malloc(ext_size);  
-		clGetPlatformInfo(platforms[i], CL_PLATFORM_NAME,     
-			ext_size, name, NULL);                
-		printf("Platform %d name: %s\n", i, name);  
+  /* Find extensions of all platforms */
+  //è·å–é¢å¤–çš„å¹³å°ä¿¡æ¯ã€‚ä¸Šé¢å·²ç»å–å¾—äº†å¹³å°idäº†ï¼Œé‚£ä¹ˆå°±å¯ä»¥è¿›ä¸€æ­¥è·å–æ›´åŠ è¯¦ç»†çš„ä¿¡æ¯äº†ã€‚
+  //ä¸€ä¸ªforå¾ªç¯è·å–æ‰€æœ‰çš„ä¸»æœºä¸Šçš„platformsä¿¡æ¯
+  for (cl_int i = 0; i < num_platforms; i++) {
+    /* Find size of extension data */
+    //ä¹Ÿæ˜¯å’Œå‰é¢ä¸€æ ·ï¼Œå…ˆè®¾ç½®ç¬¬ä¸‰å’Œç¬¬å››ä¸ªå‚æ•°ä¸º0å’ŒNULLï¼Œç„¶åå°±å¯ä»¥ç”¨ç¬¬äº”ä¸ªå‚æ•°ext_sizeè·å–é¢å¤–ä¿¡æ¯çš„é•¿åº¦äº†ã€‚
+    err = clGetPlatformInfo(platforms[i], CL_PLATFORM_EXTENSIONS, 0, NULL, &ext_size);
+    if (err < 0) {
+      perror("Couldn't read extension data.");
+      exit(1);
+    }
 
-		//ÕâÀïÊÇ¹©Ó¦ÉÌĞÅÏ¢£¬ÎÒÏÔ¿¨ĞÅÏ¢£ºNVIDIA Corporation  
-		char *vendor = (char*)malloc(ext_size);  
-		clGetPlatformInfo(platforms[i], CL_PLATFORM_VENDOR,       
-			ext_size, vendor, NULL);                  
-		printf("Platform %d vendor: %s\n", i, vendor);  
+    printf("The size of extension data is: %d\n", ext_size);
 
-		//×î¸ßÖ§³ÖµÄOpenCL°æ±¾£¬±¾»úÏÔÊ¾£ºOpenCL1.1 CUDA 4.2.1  
-		char *version = (char*)malloc(ext_size);  
-		clGetPlatformInfo(platforms[i], CL_PLATFORM_VERSION,      
-			ext_size, version, NULL);                 
-		printf("Platform %d version: %s\n", i, version);  
+    /* Access extension data */
+    //è¿™é‡Œçš„ext_dataç›¸å½“äºä¸€ä¸ªç¼“å­˜ï¼Œå­˜å‚¨ç›¸å…³ä¿¡æ¯ã€‚
+    ext_data = (char *)malloc(ext_size);
+    //è¿™ä¸ªå‡½æ•°å°±æ˜¯è·å–ç›¸å…³ä¿¡æ¯çš„å‡½æ•°ï¼Œç¬¬äºŒä¸ªå‚æ•°æŒ‡æ˜äº†éœ€è¦ä»€ä¹ˆæ ·çš„ä¿¡æ¯ï¼Œå¦‚è¿™é‡Œçš„CL_PLATFORM_EXTENSIONSè¡¨ç¤ºæ˜¯openclæ”¯æŒçš„æ‰©å±•åŠŸèƒ½ä¿¡æ¯ã€‚
+    clGetPlatformInfo(platforms[i], CL_PLATFORM_EXTENSIONS, ext_size, ext_data, NULL);
+    printf("Platform %d supports extensions: %s\n", i, ext_data);
 
-		//Õâ¸öÖ»ÓĞÁ½¸öÖµ£ºfull profile ºÍ embeded profile  
-		char *profile = (char*)malloc(ext_size);  
-		clGetPlatformInfo(platforms[i], CL_PLATFORM_PROFILE,      
-			ext_size, profile, NULL);                 
-		printf("Platform %d full profile or embeded profile?: %s\n", i, profile);  
+    //è¿™é‡Œæ˜¯è¾“å‡ºç”Ÿäº§å•†çš„åå­—ï¼Œæ¯”å¦‚æˆ‘æ˜¾å¡ä¿¡æ¯æ˜¯ï¼šNVIDIA CUDA
+    char *name = (char *)malloc(ext_size);
+    clGetPlatformInfo(platforms[i], CL_PLATFORM_NAME, ext_size, name, NULL);
+    printf("Platform %d name: %s\n", i, name);
 
-		/* Look for ICD extension */     
-		//Èç¹ûÖ§³ÖICDÕâÒ»À©Õ¹¹¦ÄÜµÄplatform£¬Êä³öÏÔÊ¾£¬±¾»úµÄIntelºÍNvidia¶¼Ö§³ÖÕâÒ»À©Õ¹¹¦ÄÜ  
-		if(strstr(ext_data, icd_ext) != NULL)   
-			platform_index = i;  
-		std::cout<<"Platform_index = "<<platform_index<<std::endl;  
-		/* Display whether ICD extension is supported */  
-		if(platform_index > -1)  
-			printf("Platform %d supports the %s extension.\n",   
-			platform_index, icd_ext);  
+    //è¿™é‡Œæ˜¯ä¾›åº”å•†ä¿¡æ¯ï¼Œæˆ‘æ˜¾å¡ä¿¡æ¯ï¼šNVIDIA Corporation
+    char *vendor = (char *)malloc(ext_size);
+    clGetPlatformInfo(platforms[i], CL_PLATFORM_VENDOR, ext_size, vendor, NULL);
+    printf("Platform %d vendor: %s\n", i, vendor);
 
-		//ÊÍ·Å¿Õ¼ä  
-		free(ext_data);  
-		free(name);  
-		free(vendor);  
-		free(version);  
-		free(profile);  
+    //æœ€é«˜æ”¯æŒçš„OpenCLç‰ˆæœ¬
+    char *version = (char *)malloc(ext_size);
+    clGetPlatformInfo(platforms[i], CL_PLATFORM_VERSION, ext_size, version, NULL);
+    printf("Platform %d version: %s\n", i, version);
 
+    //è¿™ä¸ªåªæœ‰ä¸¤ä¸ªå€¼ï¼šfull profile å’Œ embeded profile
+    char *profile = (char *)malloc(ext_size);
+    clGetPlatformInfo(platforms[i], CL_PLATFORM_PROFILE, ext_size, profile, NULL);
+    printf("Platform %d full profile or embeded profile: %s\n", i, profile);
 
-		//-----------------------------------------------------
-		// Discover and initialize the devices
-		//----------------------------------------------------- 
+    /* Look for ICD extension */
+    //å¦‚æœæ”¯æŒICDè¿™ä¸€æ‰©å±•åŠŸèƒ½çš„platformï¼Œè¾“å‡ºæ˜¾ç¤º
+    if (strstr(ext_data, icd_ext) != NULL) platform_index = i;
+    std::cout << "Platform_index = " << platform_index << std::endl;
+    /* Display whether ICD extension is supported */
+    if (platform_index > -1) printf("Platform %d supports the %s extension.\n", platform_index, icd_ext);
 
-		// Use clGetDeviceIDs() to retrieve the number of 
-		// devices present
-		clGetDeviceIDs(
-			platforms[i], 
-			CL_DEVICE_TYPE_ALL, 
-			0, 
-			NULL, 
-			&numDevices);
+    //é‡Šæ”¾ç©ºé—´
+    free(ext_data);
+    free(name);
+    free(vendor);
+    free(version);
+    free(profile);
 
-		// Allocate enough space for each device
-		devices = (cl_device_id*)malloc(numDevices*sizeof(cl_device_id));
+    //-----------------------------------------------------
+    // Discover and initialize the devices
+    //-----------------------------------------------------
 
-		// Fill in devices with clGetDeviceIDs()
-		clGetDeviceIDs(
-			platforms[i], 
-			CL_DEVICE_TYPE_ALL,        
-			numDevices, 
-			devices, 
-			NULL);
+    // Use clGetDeviceIDs() to retrieve the number of devices present
+    clGetDeviceIDs(platforms[i], CL_DEVICE_TYPE_ALL, 0, NULL, &numDevices);
 
-		for (cl_int j=0;j<numDevices;j++)
-		{
-			//print the device name
-			clGetDeviceInfo(devices[j], CL_DEVICE_NAME, 0, NULL, &valueSize);
-			value = (char*) malloc(valueSize);
-			clGetDeviceInfo(devices[j], CL_DEVICE_NAME, valueSize, value, NULL);
-			printf("Platform %d, Device %d, Device Name: %s\n", i,j,value);
-			free(value);
+    // Allocate enough space for each device
+    devices = (cl_device_id *)malloc(numDevices * sizeof(cl_device_id));
 
-			/// print parallel compute units(CU)
-			clGetDeviceInfo(devices[j], CL_DEVICE_MAX_COMPUTE_UNITS,sizeof(maxComputeUnits), &maxComputeUnits, NULL);
-			printf("Platform %d, Device %d, Parallel compute units: %u\n", i,j,maxComputeUnits);
-			 
-			///maxWorkItemPerGroup
-			clGetDeviceInfo(devices[j], CL_DEVICE_MAX_WORK_GROUP_SIZE,sizeof(maxWorkItemPerGroup), &maxWorkItemPerGroup, NULL);
-			printf("Platform %d, Device %d, maxWorkItemPerGroup: %zd\n", i,j,maxWorkItemPerGroup);
-			 
-			/// print maxGlobalMemSize
-			clGetDeviceInfo(devices[j], CL_DEVICE_GLOBAL_MEM_SIZE,sizeof(maxGlobalMemSize), &maxGlobalMemSize, NULL);
-			printf("Platform %d, Device %d, maxGlobalMemSize: %lu(MB)\n", i,j,maxGlobalMemSize/1024/1024);
-			
-			/// print maxConstantBufferSize
-			clGetDeviceInfo(devices[j], CL_DEVICE_MAX_CONSTANT_BUFFER_SIZE,sizeof(maxConstantBufferSize), &maxConstantBufferSize, NULL);
-			printf("Platform %d, Device %d, maxConstantBufferSize: %lu(KB)\n", i,j,maxConstantBufferSize/1024);
-			
-			/// print maxLocalMemSize
-			clGetDeviceInfo(devices[j], CL_DEVICE_LOCAL_MEM_SIZE,sizeof(maxLocalMemSize), &maxLocalMemSize, NULL);
-			printf("Platform %d, Device %d, maxLocalMemSize: %lu(KB)\n", i,j,maxLocalMemSize/1024);
-		}
+    // Fill in devices with clGetDeviceIDs()
+    clGetDeviceIDs(platforms[i], CL_DEVICE_TYPE_ALL, numDevices, devices, NULL);
 
-		free(devices);
+    for (cl_int j = 0; j < numDevices; j++) {
+      // print the device name
+      clGetDeviceInfo(devices[j], CL_DEVICE_NAME, 0, NULL, &valueSize);
+      value = (char *)malloc(valueSize);
+      clGetDeviceInfo(devices[j], CL_DEVICE_NAME, valueSize, value, NULL);
+      printf("Platform %d, Device %d, Device Name: %s\n", i, j, value);
+      free(value);
 
-		std::cout<<std::endl;
-		std::cout<<std::endl;
-	}  
+      /// print parallel compute units(CU)
+      clGetDeviceInfo(devices[j], CL_DEVICE_MAX_COMPUTE_UNITS, sizeof(maxComputeUnits), &maxComputeUnits, NULL);
+      printf("Platform %d, Device %d, Parallel compute units: %u\n", i, j, maxComputeUnits);
 
-	if(platform_index <= -1)  
-		printf("No platforms support the %s extension.\n", icd_ext);  
+      /// maxWorkItemPerGroup
+      clGetDeviceInfo(devices[j], CL_DEVICE_MAX_WORK_GROUP_SIZE, sizeof(maxWorkItemPerGroup), &maxWorkItemPerGroup,
+                      NULL);
+      printf("Platform %d, Device %d, maxWorkItemPerGroup: %zd\n", i, j, maxWorkItemPerGroup);
 
-	/* Deallocate resources */  
-	free(platforms); 
+      /// print maxGlobalMemSize
+      clGetDeviceInfo(devices[j], CL_DEVICE_GLOBAL_MEM_SIZE, sizeof(maxGlobalMemSize), &maxGlobalMemSize, NULL);
+      printf("Platform %d, Device %d, maxGlobalMemSize: %lu(MB)\n", i, j, maxGlobalMemSize / 1024 / 1024);
 
-	return 0;  
-} 
+      /// print maxConstantBufferSize
+      clGetDeviceInfo(devices[j], CL_DEVICE_MAX_CONSTANT_BUFFER_SIZE, sizeof(maxConstantBufferSize),
+                      &maxConstantBufferSize, NULL);
+      printf("Platform %d, Device %d, maxConstantBufferSize: %lu(KB)\n", i, j, maxConstantBufferSize / 1024);
+
+      /// print maxLocalMemSize
+      clGetDeviceInfo(devices[j], CL_DEVICE_LOCAL_MEM_SIZE, sizeof(maxLocalMemSize), &maxLocalMemSize, NULL);
+      printf("Platform %d, Device %d, maxLocalMemSize: %lu(KB)\n", i, j, maxLocalMemSize / 1024);
+    }
+
+    free(devices);
+
+    std::cout << std::endl;
+  }
+
+  if (platform_index <= -1) printf("No platforms support the %s extension.\n", icd_ext);
+
+  /* Deallocate resources */
+  free(platforms);
+
+  return 0;
+}
