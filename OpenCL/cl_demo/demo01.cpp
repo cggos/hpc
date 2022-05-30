@@ -35,12 +35,6 @@ int main() {
   cl_ulong maxConstantBufferSize = 0;
   cl_ulong maxLocalMemSize = 0;
 
-  cl_uint PlatformCount = 0;
-  cl_platform_id Platforms[8] = {0};
-  cl_int Status = clGetPlatformIDs(sizeof(Platforms) / sizeof(Platforms[0]), Platforms, &PlatformCount);
-  // if (Status != CL_SUCCESS || PlatformCount == 0) perror("dsds");
-  // printf("I have platforms: %d\n", PlatformCount);
-
   // 要使platform工作，需要两个步骤。
   // 1 需要为cl_platform_id结构分配内存空间。
   // 2 需要调用clGetPlatformIDs初始化这些数据结构。
@@ -52,7 +46,7 @@ int main() {
   //第一个参数为1，代表我们需要取最多1个platform。可以改为任意大如：INT_MAX整数最大值。但是据说0，否则会报错，实际测试好像不会报错。
   // 下面是步骤0：询问主机有多少platforms
   err = clGetPlatformIDs(5, NULL, &num_platforms);
-  if (err < 0) {
+  if (err != CL_SUCCESS || num_platforms == 0) {
     perror("Couldn't find any platforms.");
     exit(1);
   }
