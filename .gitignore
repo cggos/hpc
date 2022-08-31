@@ -295,3 +295,5 @@ cmake-build-debug
 a.out
 
 .vscode/
+
+site/
