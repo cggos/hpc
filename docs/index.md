@@ -44,3 +44,5 @@
 
 
 ## Software Optimization
+
+* 定点（浮点）计算

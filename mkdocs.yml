@@ -94,6 +94,7 @@ nav:
 
   - CPU:
     - Overview: cpu/README.md
+    - ARM: cpu/arm.md
     - CPU Info: cpu/info.md
     - OpenMP: cpu/omp.md
     - Instructions & Intrinsics: cpu/intrinsics.md
@@ -110,6 +111,8 @@ nav:
       - Overview: gpu/languages/README.md
       - OpenCL: gpu/languages/ocl.md
       - CUDA: gpu/languages/cuda.md
+    - Build:
+      - NVCC: gpu/building/nvcc.md
     - Benchmark: gpu/benchmark.md
   
   - DSP:
