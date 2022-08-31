@@ -1,6 +1,5 @@
-# HPC
+# HPC (High-Performance Computing)
   
-
 ---
 
 ## Overview
@@ -40,8 +39,8 @@
 ### Multi-Threading
 
 * POSIX C: `pthread`
-* `boost::thread`
-* c++11: `std::thread`
+* Boost: `boost::thread`
+* C++11: `std::thread`
 
 
 ## Software Optimization

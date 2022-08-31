@@ -102,8 +102,14 @@ nav:
 
   - GPU:
     - Overview: gpu/README.md
-    - Platforms: gpu/platforms.md
-    - Languages: gpu/languages.md
+    - Platforms:
+      - Overview: gpu/platform/README.md
+      - Nvidia: gpu/platform/nvidia.md
+      - Mali: gpu/platform/mali.md
+    - Languages: 
+      - Overview: gpu/languages/README.md
+      - OpenCL: gpu/languages/ocl.md
+      - CUDA: gpu/languages/cuda.md
     - Benchmark: gpu/benchmark.md
   
   - DSP:
