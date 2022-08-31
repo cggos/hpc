@@ -12,21 +12,21 @@
         <meta name="author" content="Gavin Gao">
       
       
-        <link rel="canonical" href="https://hpc.cgabc.xyz/gpu/benchmark/">
+        <link rel="canonical" href="https://hpc.cgabc.xyz/gpu/building/nvcc/">
       
-      <link rel="icon" href="../../images/favicon.png">
+      <link rel="icon" href="../../../images/favicon.png">
       <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.3.9">
     
     
       
-        <title>Benchmark - HPC</title>
+        <title>NVCC - HPC</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.1d29e8d0.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.1d29e8d0.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.cbb835fc.min.css">
         
       
       
@@ -42,7 +42,7 @@
       
     
     
-    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#GPU_Benchmark" class="md-skip">
+        <a href="#NVCC" class="md-skip">
           跳转至
         </a>
       
@@ -80,7 +80,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../.." title="HPC" class="md-header__button md-logo" aria-label="HPC" data-md-component="logo">
+    <a href="../../.." title="HPC" class="md-header__button md-logo" aria-label="HPC" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -99,7 +99,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Benchmark
+              NVCC
             
           </span>
         </div>
@@ -174,7 +174,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="../.." class="md-tabs__link">
+    <a href="../../.." class="md-tabs__link">
       Home
     </a>
   </li>
@@ -189,7 +189,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../cpu/" class="md-tabs__link">
+      <a href="../../../cpu/" class="md-tabs__link">
         CPU
       </a>
     </li>
@@ -207,7 +207,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../" class="md-tabs__link md-tabs__link--active">
+      <a href="../../" class="md-tabs__link md-tabs__link--active">
         GPU
       </a>
     </li>
@@ -223,7 +223,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../dsp/" class="md-tabs__link">
+      <a href="../../../dsp/" class="md-tabs__link">
         DSP
       </a>
     </li>
@@ -251,7 +251,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="HPC" class="md-nav__button md-logo" aria-label="HPC" data-md-component="logo">
+    <a href="../../.." title="HPC" class="md-nav__button md-logo" aria-label="HPC" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -282,7 +282,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         Home
       </a>
     </li>
@@ -326,7 +326,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../cpu/">CPU</a>
+          <a href="../../../cpu/">CPU</a>
           
             <label for="__nav_2">
               <span class="md-nav__icon md-icon"></span>
@@ -349,7 +349,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpu/arm/" class="md-nav__link">
+      <a href="../../../cpu/arm/" class="md-nav__link">
         ARM
       </a>
     </li>
@@ -363,7 +363,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpu/info/" class="md-nav__link">
+      <a href="../../../cpu/info/" class="md-nav__link">
         CPU Info
       </a>
     </li>
@@ -377,7 +377,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpu/omp/" class="md-nav__link">
+      <a href="../../../cpu/omp/" class="md-nav__link">
         OpenMP
       </a>
     </li>
@@ -391,7 +391,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpu/intrinsics/" class="md-nav__link">
+      <a href="../../../cpu/intrinsics/" class="md-nav__link">
         Instructions & Intrinsics
       </a>
     </li>
@@ -405,7 +405,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpu/benchmark/" class="md-nav__link">
+      <a href="../../../cpu/benchmark/" class="md-nav__link">
         Benchmark
       </a>
     </li>
@@ -419,7 +419,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpu/others/" class="md-nav__link">
+      <a href="../../../cpu/others/" class="md-nav__link">
         Others
       </a>
     </li>
@@ -468,7 +468,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../">GPU</a>
+          <a href="../../">GPU</a>
           
             <label for="__nav_3">
               <span class="md-nav__icon md-icon"></span>
@@ -514,7 +514,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../platform/">Platforms</a>
+          <a href="../../platform/">Platforms</a>
           
             <label for="__nav_3_2">
               <span class="md-nav__icon md-icon"></span>
@@ -537,7 +537,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../platform/nvidia/" class="md-nav__link">
+      <a href="../../platform/nvidia/" class="md-nav__link">
         Nvidia
       </a>
     </li>
@@ -551,7 +551,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../platform/mali/" class="md-nav__link">
+      <a href="../../platform/mali/" class="md-nav__link">
         Mali
       </a>
     </li>
@@ -595,7 +595,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../languages/">Languages</a>
+          <a href="../../languages/">Languages</a>
           
             <label for="__nav_3_3">
               <span class="md-nav__icon md-icon"></span>
@@ -618,7 +618,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../languages/ocl/" class="md-nav__link">
+      <a href="../../languages/ocl/" class="md-nav__link">
         OpenCL
       </a>
     </li>
@@ -632,7 +632,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../languages/cuda/" class="md-nav__link">
+      <a href="../../languages/cuda/" class="md-nav__link">
         CUDA
       </a>
     </li>
@@ -651,14 +651,16 @@
               
   
   
+    
+  
   
     
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_3_4" type="checkbox" id="__nav_3_4" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4" type="checkbox" id="__nav_3_4" checked>
       
       
       
@@ -683,11 +685,66 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../building/nvcc/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          NVCC
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         NVCC
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#Overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#Build_with_CMake" class="md-nav__link">
+    Build with CMake
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#Build_OpenCV_with_CUDA" class="md-nav__link">
+    Build OpenCV with CUDA
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -704,21 +761,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../benchmark/" class="md-nav__link">
         Benchmark
       </a>
-      
     </li>
   
 
@@ -755,7 +802,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../dsp/">DSP</a>
+          <a href="../../../dsp/">DSP</a>
           
         </div>
       
@@ -794,6 +841,35 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#Overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#Build_with_CMake" class="md-nav__link">
+    Build with CMake
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#Build_OpenCV_with_CUDA" class="md-nav__link">
+    Build OpenCV with CUDA
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -804,7 +880,7 @@
             <article class="md-content__inner md-typeset">
               
                 
-  <a href="https://github.com/cggos/hpc/edit/master/docs/gpu/benchmark.md" title="编辑此页" class="md-content__button md-icon">
+  <a href="https://github.com/cggos/hpc/edit/master/docs/gpu/building/nvcc.md" title="编辑此页" class="md-content__button md-icon">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
@@ -813,23 +889,51 @@
 
 
 
-<h1 id="GPU_Benchmark">GPU Benchmark<a class="headerlink" href="#GPU_Benchmark" title="Permanent link">&para;</a></h1>
+<h1 id="NVCC">NVCC<a class="headerlink" href="#NVCC" title="Permanent link">&para;</a></h1>
 <hr />
+<h2 id="Overview">Overview<a class="headerlink" href="#Overview" title="Permanent link">&para;</a></h2>
 <ul>
-<li>
-<p>For the Raspberry Pi GPU benchmark, use the <a href="https://www.geeks3d.com/20160215/raspberry-pi-opengl-2-1-support-tested-with-geexlab-0-9-6-0/">OpenGL 2.1 test</a> that comes with GeeXLab</p>
-</li>
-<li>
-<p><a href="https://github.com/msalvaris/gpu_monitor">msalvaris/gpu_monitor</a>: Monitor your GPUs whether they are on a single computer or in a cluster</p>
-</li>
-<li>
-<p><a href="https://linuxconfig.org/benchmark-your-graphics-card-on-linux">Benchmark Your Graphics Card On Linux</a></p>
-</li>
+<li><a href="https://patrickorcl.medium.com/compile-with-nvcc-3566fbdfdbf">https://patrickorcl.medium.com/compile-with-nvcc-3566fbdfdbf</a></li>
+<li><a href="https://arnon.dk/matching-sm-architectures-arch-and-gencode-for-various-nvidia-cards/">https://arnon.dk/matching-sm-architectures-arch-and-gencode-for-various-nvidia-cards/</a></li>
+<li><a href="https://stackoverflow.com/questions/35656294/cuda-how-to-use-arch-and-code-and-sm-vs-compute">https://stackoverflow.com/questions/35656294/cuda-how-to-use-arch-and-code-and-sm-vs-compute</a></li>
+<li><a href="https://www.cnblogs.com/phillee/p/12049208.html">https://www.cnblogs.com/phillee/p/12049208.html</a></li>
 </ul>
-<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>watch -n <span class="m">10</span> nvidia-smi       <span class="c1"># 每隔10秒更新一下显卡</span>
+<h2 id="Build_with_CMake">Build with CMake<a class="headerlink" href="#Build_with_CMake" title="Permanent link">&para;</a></h2>
+<div class="highlight"><span class="filename">CMakeLists</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">set</span><span class="p">(</span><span class="s">CUDA_NVCC_FLAGS</span><span class="w"> </span><span class="o">${</span><span class="nv">CUDA_NVCC_FLAGS</span><span class="o">}</span><span class="w"> </span><span class="s">-O3</span><span class="w"> </span><span class="s">-std=c++11</span><span class="w"> </span><span class="s">-gencode</span><span class="w"> </span><span class="s">arch=compute_52,code=sm_52</span><span class="p">)</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1"># on Android</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>watch -n <span class="m">0</span>.1 adb shell cat /sys/class/kgsl/kgsl-3d0/gpu_busy_percentage <span class="c1"># 0.1s</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nb">set</span><span class="p">(</span><span class="s">CUDA_NVCC_FLAGS</span><span class="w"> </span><span class="o">${</span><span class="nv">CUDA_NVCC_FLAGS</span><span class="o">}</span><span class="w"> </span><span class="s">-arch</span><span class="w"> </span><span class="s">compute_52</span><span class="w"> </span><span class="s">-code</span><span class="w"> </span><span class="s">sm_52</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li>compute_XX 指的是 PTX 版本</li>
+<li>sm_XX 指的是 cubin 版本</li>
+<li>nvcc 的 -gencode= 命令行选项的 arch= 指定前端编译目标，并且必须始终为 PTX 版本。</li>
+<li>code= 指定后端编译目标，可以是 cubin 或 PTX 或两者均可。</li>
+<li>只有由 code= 指定的后端目标版本将保留在结果二进制文件中，至少包含一个PTX以提供Volta兼容性</li>
+</ul>
+<h2 id="Build_OpenCV_with_CUDA">Build OpenCV with CUDA<a class="headerlink" href="#Build_OpenCV_with_CUDA" title="Permanent link">&para;</a></h2>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="ch">#!/bin/sh</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>cmake <span class="se">\</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    -D <span class="nv">CMAKE_BUILD_TYPE</span><span class="o">=</span>Release <span class="se">\</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    -D <span class="nv">CMAKE_INSTALL_PREFIX</span><span class="o">=</span>/opt/opencv_34 <span class="se">\</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    -D <span class="nv">WITH_VTK</span><span class="o">=</span>OFF <span class="se">\</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    -D <span class="nv">WITH_MATLAB</span><span class="o">=</span>OFF <span class="se">\</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>    -D <span class="nv">WITH_TBB</span><span class="o">=</span>ON <span class="se">\</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>    -D <span class="nv">WITH_IPP</span><span class="o">=</span>OFF <span class="se">\</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>    -D <span class="nv">WITH_FFMPEG</span><span class="o">=</span>OFF <span class="se">\</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>    -D <span class="nv">WITH_V4L</span><span class="o">=</span>ON <span class="se">\</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>    -D <span class="nv">WITH_CUDA</span><span class="o">=</span>ON <span class="se">\</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>    -D <span class="nv">CUDA_GENERATION</span><span class="o">=</span>Pascal <span class="se">\</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>    -D <span class="nv">ENABLE_PRECOMPILED_HEADERS</span><span class="o">=</span>OFF <span class="se">\</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>    -D <span class="nv">OPENCV_EXTRA_MODULES_PATH</span><span class="o">=</span>../opencv_contrib/modules <span class="se">\</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>    ../opencv/
+</code></pre></div>
+<div class="highlight"><span class="filename">output</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>--   NVIDIA CUDA
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>--     Use CUFFT:                   YES
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>--     Use CUBLAS:                  NO
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>--     USE NVCUVID:                 NO
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>--     NVIDIA GPU arch:             30 35
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>--     NVIDIA PTX archs:
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>--     Use fast math:               NO
 </code></pre></div>
 
               
@@ -851,7 +955,7 @@
     <nav class="md-footer__inner md-grid" aria-label="页脚" >
       
         
-        <a href="../building/nvcc/" class="md-footer__link md-footer__link--prev" aria-label="上一页: NVCC" rel="prev">
+        <a href="../../languages/cuda/" class="md-footer__link md-footer__link--prev" aria-label="上一页: CUDA" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -860,20 +964,20 @@
               <span class="md-footer__direction">
                 上一页
               </span>
-              NVCC
+              CUDA
             </div>
           </div>
         </a>
       
       
         
-        <a href="../../dsp/" class="md-footer__link md-footer__link--next" aria-label="下一页: Overview" rel="next">
+        <a href="../../benchmark/" class="md-footer__link md-footer__link--next" aria-label="下一页: Benchmark" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 下一页
               </span>
-              Overview
+              Benchmark
             </div>
           </div>
           <div class="md-footer__button md-icon">
@@ -919,10 +1023,10 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.expand", "navigation.prune", "navigation.indexes", "navigation.top", "toc.follow", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\uff0c\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.expand", "navigation.prune", "navigation.indexes", "navigation.top", "toc.follow", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\uff0c\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.6c7ad80a.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.6c7ad80a.min.js"></script>
       
     
   </body>

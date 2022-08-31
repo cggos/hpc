@@ -11,6 +11,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://hpc.cgabc.xyz/cpu/arm/</loc>
+         <lastmod>2022-08-31</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://hpc.cgabc.xyz/cpu/benchmark/</loc>
          <lastmod>2022-08-31</lastmod>
          <changefreq>daily</changefreq>
@@ -47,6 +52,11 @@
     </url>
     <url>
          <loc>https://hpc.cgabc.xyz/gpu/benchmark/</loc>
+         <lastmod>2022-08-31</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://hpc.cgabc.xyz/gpu/building/nvcc/</loc>
          <lastmod>2022-08-31</lastmod>
          <changefreq>daily</changefreq>
     </url>

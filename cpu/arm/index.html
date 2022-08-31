@@ -12,14 +12,14 @@
         <meta name="author" content="Gavin Gao">
       
       
-        <link rel="canonical" href="https://hpc.cgabc.xyz/gpu/benchmark/">
+        <link rel="canonical" href="https://hpc.cgabc.xyz/cpu/arm/">
       
       <link rel="icon" href="../../images/favicon.png">
       <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.3.9">
     
     
       
-        <title>Benchmark - HPC</title>
+        <title>ARM - HPC</title>
       
     
     
@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#GPU_Benchmark" class="md-skip">
+        <a href="#ARM" class="md-skip">
           跳转至
         </a>
       
@@ -99,7 +99,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Benchmark
+              ARM
             
           </span>
         </div>
@@ -183,22 +183,6 @@
         
   
   
-
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../cpu/" class="md-tabs__link">
-        CPU
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
     
   
 
@@ -208,6 +192,22 @@
   
     <li class="md-tabs__item">
       <a href="../" class="md-tabs__link md-tabs__link--active">
+        CPU
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../gpu/" class="md-tabs__link">
         GPU
       </a>
     </li>
@@ -295,12 +295,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
       
       
       
@@ -326,7 +328,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../cpu/">CPU</a>
+          <a href="../">CPU</a>
           
             <label for="__nav_2">
               <span class="md-nav__icon md-icon"></span>
@@ -347,11 +349,52 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../cpu/arm/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          ARM
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         ARM
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#Android_Performance" class="md-nav__link">
+    Android Performance
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -363,7 +406,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpu/info/" class="md-nav__link">
+      <a href="../info/" class="md-nav__link">
         CPU Info
       </a>
     </li>
@@ -377,7 +420,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpu/omp/" class="md-nav__link">
+      <a href="../omp/" class="md-nav__link">
         OpenMP
       </a>
     </li>
@@ -391,7 +434,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpu/intrinsics/" class="md-nav__link">
+      <a href="../intrinsics/" class="md-nav__link">
         Instructions & Intrinsics
       </a>
     </li>
@@ -405,7 +448,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpu/benchmark/" class="md-nav__link">
+      <a href="../benchmark/" class="md-nav__link">
         Benchmark
       </a>
     </li>
@@ -419,7 +462,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpu/others/" class="md-nav__link">
+      <a href="../others/" class="md-nav__link">
         Others
       </a>
     </li>
@@ -439,14 +482,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
       
       
       
@@ -468,7 +509,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../">GPU</a>
+          <a href="../../gpu/">GPU</a>
           
             <label for="__nav_3">
               <span class="md-nav__icon md-icon"></span>
@@ -514,7 +555,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../platform/">Platforms</a>
+          <a href="../../gpu/platform/">Platforms</a>
           
             <label for="__nav_3_2">
               <span class="md-nav__icon md-icon"></span>
@@ -537,7 +578,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../platform/nvidia/" class="md-nav__link">
+      <a href="../../gpu/platform/nvidia/" class="md-nav__link">
         Nvidia
       </a>
     </li>
@@ -551,7 +592,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../platform/mali/" class="md-nav__link">
+      <a href="../../gpu/platform/mali/" class="md-nav__link">
         Mali
       </a>
     </li>
@@ -595,7 +636,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../languages/">Languages</a>
+          <a href="../../gpu/languages/">Languages</a>
           
             <label for="__nav_3_3">
               <span class="md-nav__icon md-icon"></span>
@@ -618,7 +659,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../languages/ocl/" class="md-nav__link">
+      <a href="../../gpu/languages/ocl/" class="md-nav__link">
         OpenCL
       </a>
     </li>
@@ -632,7 +673,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../languages/cuda/" class="md-nav__link">
+      <a href="../../gpu/languages/cuda/" class="md-nav__link">
         CUDA
       </a>
     </li>
@@ -685,7 +726,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../building/nvcc/" class="md-nav__link">
+      <a href="../../gpu/building/nvcc/" class="md-nav__link">
         NVCC
       </a>
     </li>
@@ -704,21 +745,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../gpu/benchmark/" class="md-nav__link">
         Benchmark
       </a>
-      
     </li>
   
 
@@ -794,6 +825,21 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#Android_Performance" class="md-nav__link">
+    Android Performance
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -804,7 +850,7 @@
             <article class="md-content__inner md-typeset">
               
                 
-  <a href="https://github.com/cggos/hpc/edit/master/docs/gpu/benchmark.md" title="编辑此页" class="md-content__button md-icon">
+  <a href="https://github.com/cggos/hpc/edit/master/docs/cpu/arm.md" title="编辑此页" class="md-content__button md-icon">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
@@ -813,23 +859,73 @@
 
 
 
-<h1 id="GPU_Benchmark">GPU Benchmark<a class="headerlink" href="#GPU_Benchmark" title="Permanent link">&para;</a></h1>
+<h1 id="ARM">ARM<a class="headerlink" href="#ARM" title="Permanent link">&para;</a></h1>
 <hr />
-<ul>
-<li>
-<p>For the Raspberry Pi GPU benchmark, use the <a href="https://www.geeks3d.com/20160215/raspberry-pi-opengl-2-1-support-tested-with-geexlab-0-9-6-0/">OpenGL 2.1 test</a> that comes with GeeXLab</p>
-</li>
-<li>
-<p><a href="https://github.com/msalvaris/gpu_monitor">msalvaris/gpu_monitor</a>: Monitor your GPUs whether they are on a single computer or in a cluster</p>
-</li>
-<li>
-<p><a href="https://linuxconfig.org/benchmark-your-graphics-card-on-linux">Benchmark Your Graphics Card On Linux</a></p>
-</li>
-</ul>
-<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>watch -n <span class="m">10</span> nvidia-smi       <span class="c1"># 每隔10秒更新一下显卡</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1"># on Android</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>watch -n <span class="m">0</span>.1 adb shell cat /sys/class/kgsl/kgsl-3d0/gpu_busy_percentage <span class="c1"># 0.1s</span>
+<h2 id="Android_Performance">Android Performance<a class="headerlink" href="#Android_Performance" title="Permanent link">&para;</a></h2>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>adb shell <span class="s2">&quot;echo performance &gt; /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor&quot;</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>adb shell <span class="s2">&quot;echo 1766400 &gt; /sys/devices/system/cpu/cpu0/cpufreq/scaling_setspeed&quot;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>adb shell <span class="s2">&quot;echo 1766400 &gt; /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq&quot;</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>adb shell <span class="s2">&quot;echo 1766400 &gt; /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq&quot;</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>adb shell cat /sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_cur_freq
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>adb shell cat /sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_max_freq
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>adb shell cat /sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_min_freq
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>adb shell cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>adb shell <span class="s2">&quot;echo performance &gt; /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor&quot;</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>adb shell <span class="s2">&quot;echo 1766400 &gt; /sys/devices/system/cpu/cpu1/cpufreq/scaling_setspeed&quot;</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>adb shell <span class="s2">&quot;echo 1766400 &gt; /sys/devices/system/cpu/cpu1/cpufreq/scaling_max_freq&quot;</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>adb shell <span class="s2">&quot;echo 1766400 &gt; /sys/devices/system/cpu/cpu1/cpufreq/scaling_min_freq&quot;</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>adb shell cat /sys/devices/system/cpu/cpu1/cpufreq/cpuinfo_cur_freq
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>adb shell cat /sys/devices/system/cpu/cpu1/cpufreq/cpuinfo_max_freq
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>adb shell cat /sys/devices/system/cpu/cpu1/cpufreq/cpuinfo_min_freq
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>adb shell cat /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>adb shell <span class="s2">&quot;echo performance &gt; /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor&quot;</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>adb shell <span class="s2">&quot;echo 1766400 &gt; /sys/devices/system/cpu/cpu2/cpufreq/scaling_setspeed&quot;</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>adb shell <span class="s2">&quot;echo 1766400 &gt; /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq&quot;</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>adb shell <span class="s2">&quot;echo 1766400 &gt; /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq&quot;</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>adb shell cat /sys/devices/system/cpu/cpu2/cpufreq/cpuinfo_cur_freq
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>adb shell cat /sys/devices/system/cpu/cpu2/cpufreq/cpuinfo_max_freq
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>adb shell cat /sys/devices/system/cpu/cpu2/cpufreq/cpuinfo_min_freq
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>adb shell cat /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>adb shell <span class="s2">&quot;echo performance &gt; /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor&quot;</span>
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>adb shell <span class="s2">&quot;echo 1766400 &gt; /sys/devices/system/cpu/cpu3/cpufreq/scaling_setspeed&quot;</span>
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>adb shell <span class="s2">&quot;echo 1766400 &gt; /sys/devices/system/cpu/cpu3/cpufreq/scaling_max_freq&quot;</span>
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>adb shell <span class="s2">&quot;echo 1766400 &gt; /sys/devices/system/cpu/cpu3/cpufreq/scaling_min_freq&quot;</span>
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>adb shell cat /sys/devices/system/cpu/cpu3/cpufreq/cpuinfo_cur_freq
+<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>adb shell cat /sys/devices/system/cpu/cpu3/cpufreq/cpuinfo_max_freq
+<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>adb shell cat /sys/devices/system/cpu/cpu3/cpufreq/cpuinfo_min_freq
+<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>adb shell cat /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor
+<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>adb shell <span class="s2">&quot;echo performance &gt; /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor&quot;</span>
+<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>adb shell <span class="s2">&quot;echo 2649600 &gt; /sys/devices/system/cpu/cpu4/cpufreq/scaling_setspeed&quot;</span>
+<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>adb shell <span class="s2">&quot;echo 2649600 &gt; /sys/devices/system/cpu/cpu4/cpufreq/scaling_max_freq&quot;</span>
+<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>adb shell <span class="s2">&quot;echo 2649600 &gt; /sys/devices/system/cpu/cpu4/cpufreq/scaling_min_freq&quot;</span>
+<a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a>adb shell cat /sys/devices/system/cpu/cpu4/cpufreq/cpuinfo_cur_freq
+<a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a>adb shell cat /sys/devices/system/cpu/cpu4/cpufreq/cpuinfo_max_freq
+<a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a>adb shell cat /sys/devices/system/cpu/cpu4/cpufreq/cpuinfo_min_freq
+<a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a>adb shell cat /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor
+<a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a>adb shell <span class="s2">&quot;echo performance &gt; /sys/devices/system/cpu/cpu5/cpufreq/scaling_governor&quot;</span>
+<a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a>adb shell <span class="s2">&quot;echo 2649600 &gt; /sys/devices/system/cpu/cpu5/cpufreq/scaling_setspeed&quot;</span>
+<a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a>adb shell <span class="s2">&quot;echo 2649600 &gt; /sys/devices/system/cpu/cpu5/cpufreq/scaling_max_freq&quot;</span>
+<a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a>adb shell <span class="s2">&quot;echo 2649600 &gt; /sys/devices/system/cpu/cpu5/cpufreq/scaling_min_freq&quot;</span>
+<a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a>adb shell cat /sys/devices/system/cpu/cpu5/cpufreq/cpuinfo_cur_freq
+<a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a>adb shell cat /sys/devices/system/cpu/cpu5/cpufreq/cpuinfo_max_freq
+<a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a>adb shell cat /sys/devices/system/cpu/cpu5/cpufreq/cpuinfo_min_freq
+<a id="__codelineno-0-48" name="__codelineno-0-48" href="#__codelineno-0-48"></a>adb shell cat /sys/devices/system/cpu/cpu5/cpufreq/scaling_governor
+<a id="__codelineno-0-49" name="__codelineno-0-49" href="#__codelineno-0-49"></a>adb shell <span class="s2">&quot;echo performance &gt; /sys/devices/system/cpu/cpu6/cpufreq/scaling_governor&quot;</span>
+<a id="__codelineno-0-50" name="__codelineno-0-50" href="#__codelineno-0-50"></a>adb shell <span class="s2">&quot;echo 2649600 &gt; /sys/devices/system/cpu/cpu6/cpufreq/scaling_setspeed&quot;</span>
+<a id="__codelineno-0-51" name="__codelineno-0-51" href="#__codelineno-0-51"></a>adb shell <span class="s2">&quot;echo 2649600 &gt; /sys/devices/system/cpu/cpu6/cpufreq/scaling_max_freq&quot;</span>
+<a id="__codelineno-0-52" name="__codelineno-0-52" href="#__codelineno-0-52"></a>adb shell <span class="s2">&quot;echo 2649600 &gt; /sys/devices/system/cpu/cpu6/cpufreq/scaling_min_freq&quot;</span>
+<a id="__codelineno-0-53" name="__codelineno-0-53" href="#__codelineno-0-53"></a>adb shell cat /sys/devices/system/cpu/cpu6/cpufreq/cpuinfo_cur_freq
+<a id="__codelineno-0-54" name="__codelineno-0-54" href="#__codelineno-0-54"></a>adb shell cat /sys/devices/system/cpu/cpu6/cpufreq/cpuinfo_max_freq
+<a id="__codelineno-0-55" name="__codelineno-0-55" href="#__codelineno-0-55"></a>adb shell cat /sys/devices/system/cpu/cpu6/cpufreq/cpuinfo_min_freq
+<a id="__codelineno-0-56" name="__codelineno-0-56" href="#__codelineno-0-56"></a>adb shell cat /sys/devices/system/cpu/cpu6/cpufreq/scaling_governor
+<a id="__codelineno-0-57" name="__codelineno-0-57" href="#__codelineno-0-57"></a>adb shell <span class="s2">&quot;echo performance &gt; /sys/devices/system/cpu/cpu7/cpufreq/scaling_governor&quot;</span>
+<a id="__codelineno-0-58" name="__codelineno-0-58" href="#__codelineno-0-58"></a>adb shell <span class="s2">&quot;echo 2649600 &gt; /sys/devices/system/cpu/cpu7/cpufreq/scaling_setspeed&quot;</span>
+<a id="__codelineno-0-59" name="__codelineno-0-59" href="#__codelineno-0-59"></a>adb shell <span class="s2">&quot;echo 2649600 &gt; /sys/devices/system/cpu/cpu7/cpufreq/scaling_max_freq&quot;</span>
+<a id="__codelineno-0-60" name="__codelineno-0-60" href="#__codelineno-0-60"></a>adb shell <span class="s2">&quot;echo 2649600 &gt; /sys/devices/system/cpu/cpu7/cpufreq/scaling_min_freq&quot;</span>
+<a id="__codelineno-0-61" name="__codelineno-0-61" href="#__codelineno-0-61"></a>adb shell cat /sys/devices/system/cpu/cpu7/cpufreq/cpuinfo_cur_freq
+<a id="__codelineno-0-62" name="__codelineno-0-62" href="#__codelineno-0-62"></a>adb shell cat /sys/devices/system/cpu/cpu7/cpufreq/cpuinfo_max_freq
+<a id="__codelineno-0-63" name="__codelineno-0-63" href="#__codelineno-0-63"></a>adb shell cat /sys/devices/system/cpu/cpu7/cpufreq/cpuinfo_min_freq
+<a id="__codelineno-0-64" name="__codelineno-0-64" href="#__codelineno-0-64"></a>adb shell cat /sys/devices/system/cpu/cpu7/cpufreq/scaling_governor
 </code></pre></div>
 
               
@@ -851,7 +947,7 @@
     <nav class="md-footer__inner md-grid" aria-label="页脚" >
       
         
-        <a href="../building/nvcc/" class="md-footer__link md-footer__link--prev" aria-label="上一页: NVCC" rel="prev">
+        <a href="../" class="md-footer__link md-footer__link--prev" aria-label="上一页: Overview" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -860,20 +956,20 @@
               <span class="md-footer__direction">
                 上一页
               </span>
-              NVCC
+              Overview
             </div>
           </div>
         </a>
       
       
         
-        <a href="../../dsp/" class="md-footer__link md-footer__link--next" aria-label="下一页: Overview" rel="next">
+        <a href="../info/" class="md-footer__link md-footer__link--next" aria-label="下一页: CPU Info" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 下一页
               </span>
-              Overview
+              CPU Info
             </div>
           </div>
           <div class="md-footer__button md-icon">
