@@ -56,7 +56,27 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://hpc.cgabc.xyz/gpu/platforms/</loc>
+         <loc>https://hpc.cgabc.xyz/gpu/languages/cuda/</loc>
+         <lastmod>2022-08-31</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://hpc.cgabc.xyz/gpu/languages/ocl/</loc>
+         <lastmod>2022-08-31</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://hpc.cgabc.xyz/gpu/platform/</loc>
+         <lastmod>2022-08-31</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://hpc.cgabc.xyz/gpu/platform/mali/</loc>
+         <lastmod>2022-08-31</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://hpc.cgabc.xyz/gpu/platform/nvidia/</loc>
          <lastmod>2022-08-31</lastmod>
          <changefreq>daily</changefreq>
     </url>

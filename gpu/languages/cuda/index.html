@@ -12,21 +12,21 @@
         <meta name="author" content="Gavin Gao">
       
       
-        <link rel="canonical" href="https://hpc.cgabc.xyz/cpu/others/">
+        <link rel="canonical" href="https://hpc.cgabc.xyz/gpu/languages/cuda/">
       
-      <link rel="icon" href="../../images/favicon.png">
+      <link rel="icon" href="../../../images/favicon.png">
       <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.4.2">
     
     
       
-        <title>Others - HPC</title>
+        <title>CUDA - HPC</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.69437709.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.69437709.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.cbb835fc.min.css">
         
       
       
@@ -42,7 +42,7 @@
       
     
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#Others" class="md-skip">
+        <a href="#CUDA" class="md-skip">
           跳转至
         </a>
       
@@ -80,7 +80,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../.." title="HPC" class="md-header__button md-logo" aria-label="HPC" data-md-component="logo">
+    <a href="../../.." title="HPC" class="md-header__button md-logo" aria-label="HPC" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -99,7 +99,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Others
+              CUDA
             
           </span>
         </div>
@@ -174,10 +174,26 @@
 
 
   <li class="md-tabs__item">
-    <a href="../.." class="md-tabs__link">
+    <a href="../../.." class="md-tabs__link">
       Home
     </a>
   </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../cpu/" class="md-tabs__link">
+        CPU
+      </a>
+    </li>
+  
 
       
         
@@ -191,23 +207,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../" class="md-tabs__link md-tabs__link--active">
-        CPU
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../gpu/" class="md-tabs__link">
+      <a href="../../" class="md-tabs__link md-tabs__link--active">
         GPU
       </a>
     </li>
@@ -223,7 +223,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../dsp/" class="md-tabs__link">
+      <a href="../../../dsp/" class="md-tabs__link">
         DSP
       </a>
     </li>
@@ -251,7 +251,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="HPC" class="md-nav__button md-logo" aria-label="HPC" data-md-component="logo">
+    <a href="../../.." title="HPC" class="md-nav__button md-logo" aria-label="HPC" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -282,7 +282,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         Home
       </a>
     </li>
@@ -295,14 +295,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
       
       
       
@@ -326,7 +324,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../">CPU</a>
+          <a href="../../../cpu/">CPU</a>
           
             <label for="__nav_2">
               <span class="md-nav__icon md-icon"></span>
@@ -349,7 +347,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../info/" class="md-nav__link">
+      <a href="../../../cpu/info/" class="md-nav__link">
         CPU Info
       </a>
     </li>
@@ -363,7 +361,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../omp/" class="md-nav__link">
+      <a href="../../../cpu/omp/" class="md-nav__link">
         OpenMP
       </a>
     </li>
@@ -377,7 +375,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../intrinsics/" class="md-nav__link">
+      <a href="../../../cpu/intrinsics/" class="md-nav__link">
         Instructions & Intrinsics
       </a>
     </li>
@@ -391,7 +389,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../benchmark/" class="md-nav__link">
+      <a href="../../../cpu/benchmark/" class="md-nav__link">
         Benchmark
       </a>
     </li>
@@ -403,66 +401,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Others
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../cpu/others/" class="md-nav__link">
         Others
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#OpenACC" class="md-nav__link">
-    OpenACC
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#Intel_TBB" class="md-nav__link">
-    Intel TBB
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#Intel_IPP" class="md-nav__link">
-    Intel IPP
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -480,12 +423,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
       
       
       
@@ -505,7 +450,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../gpu/">GPU</a>
+          <a href="../../">GPU</a>
           
             <label for="__nav_3">
               <span class="md-nav__icon md-icon"></span>
@@ -551,7 +496,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../gpu/platform/">Platforms</a>
+          <a href="../../platform/">Platforms</a>
           
             <label for="__nav_3_2">
               <span class="md-nav__icon md-icon"></span>
@@ -574,7 +519,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../gpu/platform/nvidia/" class="md-nav__link">
+      <a href="../../platform/nvidia/" class="md-nav__link">
         Nvidia
       </a>
     </li>
@@ -588,7 +533,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../gpu/platform/mali/" class="md-nav__link">
+      <a href="../../platform/mali/" class="md-nav__link">
         Mali
       </a>
     </li>
@@ -607,14 +552,16 @@
               
   
   
+    
+  
   
     
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" checked>
       
       
       
@@ -632,7 +579,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../gpu/languages/">Languages</a>
+          <a href="../">Languages</a>
           
             <label for="__nav_3_3">
               <span class="md-nav__icon md-icon"></span>
@@ -655,7 +602,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../gpu/languages/ocl/" class="md-nav__link">
+      <a href="../ocl/" class="md-nav__link">
         OpenCL
       </a>
     </li>
@@ -667,11 +614,85 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../gpu/languages/cuda/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          CUDA
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         CUDA
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#Overview" class="md-nav__link">
+    Overview
+  </a>
+  
+    <nav class="md-nav" aria-label="Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#Thrust" class="md-nav__link">
+    Thrust
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#Install" class="md-nav__link">
+    Install
+  </a>
+  
+    <nav class="md-nav" aria-label="Install">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#Install_cuDNN" class="md-nav__link">
+    Install cuDNN
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -690,7 +711,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../gpu/benchmark/" class="md-nav__link">
+      <a href="../../benchmark/" class="md-nav__link">
         Benchmark
       </a>
     </li>
@@ -729,7 +750,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../dsp/">DSP</a>
+          <a href="../../../dsp/">DSP</a>
           
         </div>
       
@@ -775,23 +796,42 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#OpenACC" class="md-nav__link">
-    OpenACC
+  <a href="#Overview" class="md-nav__link">
+    Overview
   </a>
+  
+    <nav class="md-nav" aria-label="Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#Thrust" class="md-nav__link">
+    Thrust
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#Intel_TBB" class="md-nav__link">
-    Intel TBB
+  <a href="#Install" class="md-nav__link">
+    Install
+  </a>
+  
+    <nav class="md-nav" aria-label="Install">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#Install_cuDNN" class="md-nav__link">
+    Install cuDNN
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#Intel_IPP" class="md-nav__link">
-    Intel IPP
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -807,7 +847,7 @@
             <article class="md-content__inner md-typeset">
               
                 
-  <a href="https://github.com/cggos/hpc/edit/master/docs/cpu/others.md" title="编辑此页" class="md-content__button md-icon">
+  <a href="https://github.com/cggos/hpc/edit/master/docs/gpu/languages/cuda.md" title="编辑此页" class="md-content__button md-icon">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
@@ -816,13 +856,126 @@
 
 
 
-<h1 id="Others">Others<a class="headerlink" href="#Others" title="Permanent link">&para;</a></h1>
+<h1 id="CUDA">CUDA<a class="headerlink" href="#CUDA" title="Permanent link">&para;</a></h1>
 <hr />
-<h2 id="OpenACC">OpenACC<a class="headerlink" href="#OpenACC" title="Permanent link">&para;</a></h2>
-<p><a href="https://www.openacc.org/">OpenACC</a> is a user-driven directive-based performance-portable parallel programming model designed for scientists and engineers interested in porting their codes to a wide-variety of heterogeneous HPC hardware platforms and architectures with significantly less programming effort than required with a low-level model.</p>
-<h2 id="Intel_TBB">Intel TBB<a class="headerlink" href="#Intel_TBB" title="Permanent link">&para;</a></h2>
-<p>Intel <a href="https://www.threadingbuildingblocks.org/">Threading Building Blocks (TBB)</a> lets you easily write parallel C++ programs that take full advantage of <strong>multicore performance</strong>, that are portable and composable, and that have future-proof scalability.</p>
-<h2 id="Intel_IPP">Intel IPP<a class="headerlink" href="#Intel_IPP" title="Permanent link">&para;</a></h2>
+<h2 id="Overview">Overview<a class="headerlink" href="#Overview" title="Permanent link">&para;</a></h2>
+<p>CUDA® is a parallel computing platform and programming model developed by NVIDIA for general computing on graphical processing units (GPUs).</p>
+<ul>
+<li><a href="https://developer.nvidia.com/cuda-zone">CUDA Zone</a></li>
+<li><a href="https://github.com/ArchaeaSoftware/cudahandbook">ArchaeaSoftware/cudahandbook</a></li>
+<li><a href="https://devblogs.nvidia.com/cuda-arm-platforms-now-available/">CUDA for ARM Platforms is Now Available</a></li>
+</ul>
+<h3 id="Thrust">Thrust<a class="headerlink" href="#Thrust" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="http://thrust.github.io/">Thrust</a></li>
+<li><a href="https://docs.nvidia.com/cuda/thrust/">Thrust in CUDA Toolkit</a></li>
+</ul>
+<h2 id="Install">Install<a class="headerlink" href="#Install" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p><a href="https://developer.nvidia.com/cuda-toolkit">https://developer.nvidia.com/cuda-toolkit</a></p>
+</li>
+<li>
+<p>cuda 9.0:
+  <a href="https://developer.nvidia.com/cuda-90-download-archive?target_os=Linux&amp;target_arch=x86_64&amp;target_distro=Ubuntu&amp;target_version=1604&amp;target_type=runfilelocal">https://developer.nvidia.com/cuda-90-download-archive?target_os=Linux&amp;target_arch=x86_64&amp;target_distro=Ubuntu&amp;target_version=1604&amp;target_type=runfilelocal</a></p>
+</li>
+</ul>
+<p>install</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo sh cuda_8.0.44_linux.run --override --no-opengl-lib
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>sudo sh cuda_9.0.176_384.81_linux.run
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>sudo sh cuda_10.0.130_410.48_linux.run --toolkit --silent <span class="c1"># ubuntu 18.04</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="c1"># for pytorch 1.10</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>sudo sh cuda_10.2.89_440.33.01_linux.run --toolkit --silent <span class="c1"># ubuntu 18.04</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>sudo sh cuda_11.5.1_495.29.05_linux.run --toolkit --silent --override
+</code></pre></div>
+<p>config</p>
+<div class="highlight"><span class="filename">.bashrc</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">export</span> <span class="nv">CUDA_HOME</span><span class="o">=</span><span class="nv">$CUDA_HOME</span>:/usr/local/cuda-10.0
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:<span class="nv">$CUDA_HOME</span>/bin
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1"># or, add /usr/local/cuda-8.0/lib64 to /etc/ld.so.conf and run ldconfig as root</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="nb">export</span> <span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span><span class="nv">$LD_LIBRARY_PATH</span>:<span class="nv">$CUDA_HOME</span>/lib64
+</code></pre></div>
+<p>check</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>nvcc --version
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="c1"># or</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>nvcc -V
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="c1"># on Jetson  </span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>cat /usr/local/cuda/version.txt
+</code></pre></div>
+<p>test</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">cd</span> /usr/local/cuda-10.0/samples/1_Utilities/deviceQuery
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>sudo make
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>./deviceQuery
+</code></pre></div>
+<div class="highlight"><span class="filename">output</span><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>./deviceQuery Starting...
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a> CUDA Device Query (Runtime API) version (CUDART static linking)
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>Detected 1 CUDA Capable device(s)
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>Device 0: &quot;NVIDIA GeForce GTX 1660 SUPER&quot;
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>  CUDA Driver Version / Runtime Version          11.4 / 8.0
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>  CUDA Capability Major/Minor version number:    7.5
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>  Total amount of global memory:                 5943 MBytes (6232014848 bytes)
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>MapSMtoCores for SM 7.5 is undefined.  Default to use 128 Cores/SM
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>MapSMtoCores for SM 7.5 is undefined.  Default to use 128 Cores/SM
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>  (22) Multiprocessors, (128) CUDA Cores/MP:     2816 CUDA Cores
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>  GPU Max Clock rate:                            1785 MHz (1.78 GHz)
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>  Memory Clock rate:                             7001 Mhz
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>  Memory Bus Width:                              192-bit
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>  L2 Cache Size:                                 1572864 bytes
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>  Maximum Texture Dimension Size (x,y,z)         1D=(131072), 2D=(131072, 65536), 3D=(16384, 16384, 16384)
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>  Maximum Layered 1D Texture Size, (num) layers  1D=(32768), 2048 layers
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>  Maximum Layered 2D Texture Size, (num) layers  2D=(32768, 32768), 2048 layers
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>  Total amount of constant memory:               65536 bytes
+<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>  Total amount of shared memory per block:       49152 bytes
+<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a>  Total number of registers available per block: 65536
+<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a>  Warp size:                                     32
+<a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a>  Maximum number of threads per multiprocessor:  1024
+<a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a>  Maximum number of threads per block:           1024
+<a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a>  Max dimension size of a thread block (x,y,z): (1024, 1024, 64)
+<a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a>  Max dimension size of a grid size    (x,y,z): (2147483647, 65535, 65535)
+<a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a>  Maximum memory pitch:                          2147483647 bytes
+<a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a>  Texture alignment:                             512 bytes
+<a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a>  Concurrent copy and kernel execution:          Yes with 3 copy engine(s)
+<a id="__codelineno-4-32" name="__codelineno-4-32" href="#__codelineno-4-32"></a>  Run time limit on kernels:                     Yes
+<a id="__codelineno-4-33" name="__codelineno-4-33" href="#__codelineno-4-33"></a>  Integrated GPU sharing Host Memory:            No
+<a id="__codelineno-4-34" name="__codelineno-4-34" href="#__codelineno-4-34"></a>  Support host page-locked memory mapping:       Yes
+<a id="__codelineno-4-35" name="__codelineno-4-35" href="#__codelineno-4-35"></a>  Alignment requirement for Surfaces:            Yes
+<a id="__codelineno-4-36" name="__codelineno-4-36" href="#__codelineno-4-36"></a>  Device has ECC support:                        Disabled
+<a id="__codelineno-4-37" name="__codelineno-4-37" href="#__codelineno-4-37"></a>  Device supports Unified Addressing (UVA):      Yes
+<a id="__codelineno-4-38" name="__codelineno-4-38" href="#__codelineno-4-38"></a>  Device PCI Domain ID / Bus ID / location ID:   0 / 1 / 0
+<a id="__codelineno-4-39" name="__codelineno-4-39" href="#__codelineno-4-39"></a>  Compute Mode:
+<a id="__codelineno-4-40" name="__codelineno-4-40" href="#__codelineno-4-40"></a>     &lt; Default (multiple host threads can use ::cudaSetDevice() with device simultaneously) &gt;
+<a id="__codelineno-4-41" name="__codelineno-4-41" href="#__codelineno-4-41"></a>
+<a id="__codelineno-4-42" name="__codelineno-4-42" href="#__codelineno-4-42"></a>deviceQuery, CUDA Driver = CUDART, CUDA Driver Version = 11.4, CUDA Runtime Version = 8.0, NumDevs = 1, Device0 = NVIDIA GeForce GTX 1660 SUPER
+<a id="__codelineno-4-43" name="__codelineno-4-43" href="#__codelineno-4-43"></a>Result = PASS
+</code></pre></div>
+<h3 id="Install_cuDNN">Install cuDNN<a class="headerlink" href="#Install_cuDNN" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://developer.nvidia.com/cudnn">https://developer.nvidia.com/cudnn</a></li>
+</ul>
+<p align="center">
+  <img src="../../img/dl_cudnn.png" style="width:80%;"/>
+</p>
+
+<p>解压，并进入到相应目录，运行以下命令</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>sudo cp &lt;cudnn-path&gt;/include/* /usr/local/cuda-10.2/include/
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>sudo cp &lt;cudnn-path&gt;/lib/* /usr/local/cuda-10.2/lib64/
+</code></pre></div>
+<p>查看cuDNN版本</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>cat /usr/local/cuda-10.2/include/cudnn.h <span class="p">|</span> grep CUDNN_MAJOR -A <span class="m">2</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="c1"># Jetson</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>cat /usr/local/cuda/include/cudnn.h <span class="p">|</span> grep CUDNN_MAJOR -A <span class="m">2</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>cat /usr/include/cudnn.h <span class="p">|</span> grep CUDNN_MAJOR -A <span class="m">2</span>
+</code></pre></div>
 
 
 
@@ -846,7 +999,7 @@
     <nav class="md-footer__inner md-grid" aria-label="页脚" >
       
         
-        <a href="../benchmark/" class="md-footer__link md-footer__link--prev" aria-label="上一页: Benchmark" rel="prev">
+        <a href="../ocl/" class="md-footer__link md-footer__link--prev" aria-label="上一页: OpenCL" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -855,20 +1008,20 @@
               <span class="md-footer__direction">
                 上一页
               </span>
-              Benchmark
+              OpenCL
             </div>
           </div>
         </a>
       
       
         
-        <a href="../../gpu/" class="md-footer__link md-footer__link--next" aria-label="下一页: Overview" rel="next">
+        <a href="../../benchmark/" class="md-footer__link md-footer__link--next" aria-label="下一页: Benchmark" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 下一页
               </span>
-              Overview
+              Benchmark
             </div>
           </div>
           <div class="md-footer__button md-icon">
@@ -915,10 +1068,10 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.expand", "navigation.prune", "navigation.indexes", "navigation.top", "toc.follow", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\uff0c\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.expand", "navigation.prune", "navigation.indexes", "navigation.top", "toc.follow", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\uff0c\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.9c69f0bc.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.9c69f0bc.min.js"></script>
       
     
   </body>
