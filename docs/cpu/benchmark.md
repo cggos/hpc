@@ -16,10 +16,10 @@ sysbench --test=cpu --cpu-max-prime=20000 --num-threads=4 run
 
 * [htop explained](https://peteris.rocks/blog/htop/) - Explanation of everything you can see in htop/top on Linux
 
-<p align="center">
+<div align="center">
   <img src="../img/htop_upper.png" style="width:100%;"/>
   <img src="../img/htop_lower.png" style="width:100%;"/>
-</p>
+</div>
 
 ## 压力测试
 

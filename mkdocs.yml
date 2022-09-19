@@ -96,7 +96,9 @@ nav:
     - Overview: cpu/README.md
     - ARM: cpu/arm.md
     - CPU Info: cpu/info.md
-    - OpenMP: cpu/omp.md
+    - Multi-Threads:
+      - Thread Pool: cpu/threadpool.md
+      - OpenMP: cpu/omp.md
     - Instructions & Intrinsics: cpu/intrinsics.md
     - Benchmark: cpu/benchmark.md
     - Others: cpu/others.md
