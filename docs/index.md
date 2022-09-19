@@ -36,13 +36,3 @@
 * [Inter-Process Communication (IPC) Introduction and Sample Code](https://www.codeproject.com/articles/34073/inter-process-communication-ipc-introduction-and-s)
 
 
-### Multi-Threading
-
-* POSIX C: `pthread`
-* Boost: `boost::thread`
-* C++11: `std::thread`
-
-
-## Software Optimization
-
-* 定点（浮点）计算

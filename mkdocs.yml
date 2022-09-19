@@ -94,11 +94,17 @@ nav:
 
   - CPU:
     - Overview: cpu/README.md
-    - ARM: cpu/arm.md
-    - CPU Info: cpu/info.md
+    - Architecture:
+      - Overview: cpu/arch/README.md
+      - ARM: cpu/arch/arm.md
+    - Info:
+      - CPU Info: cpu/info.md
+    - Software Optimization:
+      - Overview: cpu/software_optimization.md
     - Multi-Threads:
-      - Thread Pool: cpu/threadpool.md
-      - OpenMP: cpu/omp.md
+      - Overview: cpu/multi_thread/README.md
+      - Thread Pool: cpu/multi_thread/threadpool.md
+      - OpenMP: cpu/multi_thread/omp.md
     - Instructions & Intrinsics: cpu/intrinsics.md
     - Benchmark: cpu/benchmark.md
     - Others: cpu/others.md
