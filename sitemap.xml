@@ -2,92 +2,97 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://hpc.cgabc.xyz/</loc>
-         <lastmod>2022-08-31</lastmod>
+         <lastmod>2022-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://hpc.cgabc.xyz/cpu/</loc>
-         <lastmod>2022-08-31</lastmod>
+         <lastmod>2022-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://hpc.cgabc.xyz/cpu/arm/</loc>
-         <lastmod>2022-08-31</lastmod>
+         <lastmod>2022-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://hpc.cgabc.xyz/cpu/benchmark/</loc>
-         <lastmod>2022-08-31</lastmod>
+         <lastmod>2022-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://hpc.cgabc.xyz/cpu/info/</loc>
-         <lastmod>2022-08-31</lastmod>
+         <lastmod>2022-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://hpc.cgabc.xyz/cpu/intrinsics/</loc>
-         <lastmod>2022-08-31</lastmod>
+         <lastmod>2022-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://hpc.cgabc.xyz/cpu/omp/</loc>
-         <lastmod>2022-08-31</lastmod>
+         <lastmod>2022-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://hpc.cgabc.xyz/cpu/others/</loc>
-         <lastmod>2022-08-31</lastmod>
+         <lastmod>2022-09-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://hpc.cgabc.xyz/cpu/threadpool/</loc>
+         <lastmod>2022-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://hpc.cgabc.xyz/dsp/</loc>
-         <lastmod>2022-08-31</lastmod>
+         <lastmod>2022-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://hpc.cgabc.xyz/gpu/</loc>
-         <lastmod>2022-08-31</lastmod>
+         <lastmod>2022-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://hpc.cgabc.xyz/gpu/benchmark/</loc>
-         <lastmod>2022-08-31</lastmod>
+         <lastmod>2022-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://hpc.cgabc.xyz/gpu/building/nvcc/</loc>
-         <lastmod>2022-08-31</lastmod>
+         <lastmod>2022-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://hpc.cgabc.xyz/gpu/languages/</loc>
-         <lastmod>2022-08-31</lastmod>
+         <lastmod>2022-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://hpc.cgabc.xyz/gpu/languages/cuda/</loc>
-         <lastmod>2022-08-31</lastmod>
+         <lastmod>2022-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://hpc.cgabc.xyz/gpu/languages/ocl/</loc>
-         <lastmod>2022-08-31</lastmod>
+         <lastmod>2022-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://hpc.cgabc.xyz/gpu/platform/</loc>
-         <lastmod>2022-08-31</lastmod>
+         <lastmod>2022-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://hpc.cgabc.xyz/gpu/platform/mali/</loc>
-         <lastmod>2022-08-31</lastmod>
+         <lastmod>2022-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://hpc.cgabc.xyz/gpu/platform/nvidia/</loc>
-         <lastmod>2022-08-31</lastmod>
+         <lastmod>2022-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>

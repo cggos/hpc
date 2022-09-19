@@ -12,14 +12,14 @@
         <meta name="author" content="Gavin Gao">
       
       
-        <link rel="canonical" href="https://hpc.cgabc.xyz/gpu/platform/">
+        <link rel="canonical" href="https://hpc.cgabc.xyz/cpu/threadpool/">
       
       <link rel="icon" href="../../images/favicon.png">
       <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.4.2">
     
     
       
-        <title>Overview - HPC</title>
+        <title>Thread Pool - HPC</title>
       
     
     
@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#Platforms" class="md-skip">
+        <a href="#Thread_Pool" class="md-skip">
           跳转至
         </a>
       
@@ -99,7 +99,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Overview
+              Thread Pool
             
           </span>
         </div>
@@ -183,22 +183,6 @@
         
   
   
-
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../cpu/" class="md-tabs__link">
-        CPU
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
     
   
 
@@ -208,6 +192,22 @@
   
     <li class="md-tabs__item">
       <a href="../" class="md-tabs__link md-tabs__link--active">
+        CPU
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../gpu/" class="md-tabs__link">
         GPU
       </a>
     </li>
@@ -295,12 +295,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
       
       
       
@@ -326,7 +328,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../cpu/">CPU</a>
+          <a href="../">CPU</a>
           
             <label for="__nav_2">
               <span class="md-nav__icon md-icon"></span>
@@ -349,7 +351,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpu/arm/" class="md-nav__link">
+      <a href="../arm/" class="md-nav__link">
         ARM
       </a>
     </li>
@@ -363,7 +365,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpu/info/" class="md-nav__link">
+      <a href="../info/" class="md-nav__link">
         CPU Info
       </a>
     </li>
@@ -375,14 +377,16 @@
               
   
   
+    
+  
   
     
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" checked>
       
       
       
@@ -409,11 +413,59 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../cpu/threadpool/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Thread Pool
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Thread Pool
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#Overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#Code" class="md-nav__link">
+    Code
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -425,7 +477,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpu/omp/" class="md-nav__link">
+      <a href="../omp/" class="md-nav__link">
         OpenMP
       </a>
     </li>
@@ -446,7 +498,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpu/intrinsics/" class="md-nav__link">
+      <a href="../intrinsics/" class="md-nav__link">
         Instructions & Intrinsics
       </a>
     </li>
@@ -460,7 +512,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpu/benchmark/" class="md-nav__link">
+      <a href="../benchmark/" class="md-nav__link">
         Benchmark
       </a>
     </li>
@@ -474,7 +526,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpu/others/" class="md-nav__link">
+      <a href="../others/" class="md-nav__link">
         Others
       </a>
     </li>
@@ -494,14 +546,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
       
       
       
@@ -523,7 +573,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../">GPU</a>
+          <a href="../../gpu/">GPU</a>
           
             <label for="__nav_3">
               <span class="md-nav__icon md-icon"></span>
@@ -544,16 +594,14 @@
               
   
   
-    
-  
   
     
       
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" checked>
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" checked>
       
       
       
@@ -570,8 +618,8 @@
       
         
         
-        <div class="md-nav__link md-nav__link--index md-nav__link--active">
-          <a href="./">Platforms</a>
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../gpu/platform/">Platforms</a>
           
             <label for="__nav_3_2">
               <span class="md-nav__icon md-icon"></span>
@@ -594,7 +642,7 @@
   
   
     <li class="md-nav__item">
-      <a href="nvidia/" class="md-nav__link">
+      <a href="../../gpu/platform/nvidia/" class="md-nav__link">
         Nvidia
       </a>
     </li>
@@ -608,7 +656,7 @@
   
   
     <li class="md-nav__item">
-      <a href="mali/" class="md-nav__link">
+      <a href="../../gpu/platform/mali/" class="md-nav__link">
         Mali
       </a>
     </li>
@@ -652,7 +700,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../languages/">Languages</a>
+          <a href="../../gpu/languages/">Languages</a>
           
             <label for="__nav_3_3">
               <span class="md-nav__icon md-icon"></span>
@@ -675,7 +723,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../languages/ocl/" class="md-nav__link">
+      <a href="../../gpu/languages/ocl/" class="md-nav__link">
         OpenCL
       </a>
     </li>
@@ -689,7 +737,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../languages/cuda/" class="md-nav__link">
+      <a href="../../gpu/languages/cuda/" class="md-nav__link">
         CUDA
       </a>
     </li>
@@ -742,7 +790,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../building/nvcc/" class="md-nav__link">
+      <a href="../../gpu/building/nvcc/" class="md-nav__link">
         NVCC
       </a>
     </li>
@@ -763,7 +811,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../benchmark/" class="md-nav__link">
+      <a href="../../gpu/benchmark/" class="md-nav__link">
         Benchmark
       </a>
     </li>
@@ -841,6 +889,28 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#Overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#Code" class="md-nav__link">
+    Code
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -851,7 +921,7 @@
             <article class="md-content__inner md-typeset">
               
                 
-  <a href="https://github.com/cggos/hpc/edit/master/docs/gpu/platform/README.md" title="编辑此页" class="md-content__button md-icon">
+  <a href="https://github.com/cggos/hpc/edit/master/docs/cpu/threadpool.md" title="编辑此页" class="md-content__button md-icon">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
@@ -860,8 +930,18 @@
 
 
 
-<h1 id="Platforms">Platforms<a class="headerlink" href="#Platforms" title="Permanent link">&para;</a></h1>
+<h1 id="Thread_Pool">Thread Pool<a class="headerlink" href="#Thread_Pool" title="Permanent link">&para;</a></h1>
 <hr />
+<h2 id="Overview">Overview<a class="headerlink" href="#Overview" title="Permanent link">&para;</a></h2>
+<div align="center">
+  <img src="../img/threadpool.png"/>
+</div>
+
+<p>作用：管理一个任务队列，一个线程队列，然后每次取一个任务分配给一个线程去做，循环往复</p>
+<h2 id="Code">Code<a class="headerlink" href="#Code" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://github.com/progschj/ThreadPool">https://github.com/progschj/ThreadPool</a></li>
+</ul>
 
 
 
@@ -885,7 +965,7 @@
     <nav class="md-footer__inner md-grid" aria-label="页脚" >
       
         
-        <a href="../" class="md-footer__link md-footer__link--prev" aria-label="上一页: Overview" rel="prev">
+        <a href="../info/" class="md-footer__link md-footer__link--prev" aria-label="上一页: CPU Info" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -894,20 +974,20 @@
               <span class="md-footer__direction">
                 上一页
               </span>
-              Overview
+              CPU Info
             </div>
           </div>
         </a>
       
       
         
-        <a href="nvidia/" class="md-footer__link md-footer__link--next" aria-label="下一页: Nvidia" rel="next">
+        <a href="../omp/" class="md-footer__link md-footer__link--next" aria-label="下一页: OpenMP" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 下一页
               </span>
-              Nvidia
+              OpenMP
             </div>
           </div>
           <div class="md-footer__button md-icon">
