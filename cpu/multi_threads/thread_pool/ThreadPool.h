@@ -5,9 +5,9 @@
  * @ref https://github.com/progschj/ThreadPool
  * @version 0.1
  * @date 2022-09-19
- * 
+ *
  * @copyright Copyright (c) 2022
- * 
+ *
  */
 #ifndef THREADPOOL_H
 #define THREADPOOL_H

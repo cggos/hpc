@@ -3,14 +3,14 @@
  * @author Gavin Gao (cggos@outlook.com)
  * @brief 基于C++11的线程池(threadpool)
  *    作用：管理一个任务队列，一个线程队列，然后每次取一个任务分配给一个线程去做，循环往复
- * @ref 
+ * @ref
  *    https://github.com/lzpong/
  *    https://www.cnblogs.com/lzpong/p/6397997.html
  * @version 0.1
  * @date 2022-09-19
- * 
+ *
  * @copyright Copyright (c) 2022
- * 
+ *
  */
 
 #pragma once
@@ -19,34 +19,34 @@
 #include <future>
 #include <queue>
 #include <vector>
-//#include <condition_variable>
-//#include <thread>
-//#include <functional>
+// #include <condition_variable>
+// #include <thread>
+// #include <functional>
 #include <stdexcept>
 
 using namespace std;
 
 namespace cg {
 
-//线程池最大容量,应尽量设小一点
+// 线程池最大容量,应尽量设小一点
 #define THREADPOOL_MAX_NUM 16
-//线程池是否可以自动增长(如果需要,且不超过 THREADPOOL_MAX_NUM)
-#define  THREADPOOL_AUTO_GROW
+// 线程池是否可以自动增长(如果需要,且不超过 THREADPOOL_MAX_NUM)
+#define THREADPOOL_AUTO_GROW
 
-//线程池,可以提交变参函数或拉姆达表达式的匿名函数执行,可以获取执行返回值
-//不直接支持类成员函数, 支持类静态成员函数或全局函数,Opteron()函数等
+// 线程池,可以提交变参函数或拉姆达表达式的匿名函数执行,可以获取执行返回值
+// 不直接支持类成员函数, 支持类静态成员函数或全局函数,Opteron()函数等
 class threadpool {
-  unsigned short _initSize;       //初始化线程数量
-  using Task = function<void()>;  //定义类型
-  vector<thread> _pool;           //线程池
-  queue<Task> _tasks;             //任务队列
-  mutex _lock;                    //任务队列同步锁
+  unsigned short _initSize;       // 初始化线程数量
+  using Task = function<void()>;  // 定义类型
+  vector<thread> _pool;           // 线程池
+  queue<Task> _tasks;             // 任务队列
+  mutex _lock;                    // 任务队列同步锁
 #ifdef THREADPOOL_AUTO_GROW
-  mutex _lockGrow;              //线程池增长同步锁
+  mutex _lockGrow;              // 线程池增长同步锁
 #endif                          // !THREADPOOL_AUTO_GROW
-  condition_variable _task_cv;  //条件阻塞
-  atomic<bool> _run{true};      //线程池是否执行
-  atomic<int> _idlThrNum{0};    //空闲线程数量
+  condition_variable _task_cv;  // 条件阻塞
+  atomic<bool> _run{true};      // 线程池是否执行
+  atomic<int> _idlThrNum{0};    // 空闲线程数量
 
  public:
   inline threadpool(unsigned short size = 4) {
@@ -79,7 +79,7 @@ class threadpool {
     future<RetType> future = task->get_future();
     {  // 添加任务到队列
       lock_guard<mutex> lock{
-          _lock};  //对当前块的语句加锁  lock_guard 是 mutex 的 stack 封装类，构造的时候 lock()，析构的时候 unlock()
+          _lock};  // 对当前块的语句加锁  lock_guard 是 mutex 的 stack 封装类，构造的时候 lock()，析构的时候 unlock()
       _tasks.emplace([task]() {  // push(Task{...}) 放到队列后面
         (*task)();
       });
@@ -92,25 +92,25 @@ class threadpool {
     return future;
   }
 
-  //空闲线程数量
+  // 空闲线程数量
   int idlCount() { return _idlThrNum; }
-  //线程数量
+  // 线程数量
   int thrCount() { return _pool.size(); }
 
 #ifndef THREADPOOL_AUTO_GROW
  private:
 #endif  // !THREADPOOL_AUTO_GROW
-  //添加指定数量的线程
+  // 添加指定数量的线程
   void addThread(unsigned short size) {
 #ifndef THREADPOOL_AUTO_GROW
     if (!_run)  // stoped ??
       throw runtime_error("Grow on ThreadPool is stopped.");
-    unique_lock<mutex> lockGrow{_lockGrow};  //自动增长锁
+    unique_lock<mutex> lockGrow{_lockGrow};  // 自动增长锁
 #endif                                       // !THREADPOOL_AUTO_GROW
     for (; _pool.size() < THREADPOOL_MAX_NUM && size > 0;
-         --size) {                 //增加线程数量,但不超过 预定义数量 THREADPOOL_MAX_NUM
-      _pool.emplace_back([this] {  //工作线程函数
-        while (true)               //防止 _run==false 时立即结束,此时任务队列可能不为空
+         --size) {                 // 增加线程数量,但不超过 预定义数量 THREADPOOL_MAX_NUM
+      _pool.emplace_back([this] {  // 工作线程函数
+        while (true)               // 防止 _run==false 时立即结束,此时任务队列可能不为空
         {
           Task task;  // 获取一个待执行的 task
           {
@@ -124,9 +124,9 @@ class threadpool {
             task = move(_tasks.front());  // 按先进先出从队列取一个 task
             _tasks.pop();
           }
-          task();  //执行任务
+          task();  // 执行任务
 #ifndef THREADPOOL_AUTO_GROW
-          if (_idlThrNum > 0 && _pool.size() > _initSize)  //支持自动释放空闲线程,避免峰值过后大量空闲线程
+          if (_idlThrNum > 0 && _pool.size() > _initSize)  // 支持自动释放空闲线程,避免峰值过后大量空闲线程
             return;
 #endif  // !THREADPOOL_AUTO_GROW
           {
