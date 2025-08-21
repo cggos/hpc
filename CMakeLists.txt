@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.28)
 project(hpc)
 
-message("\n****************** project hpc ******************\n")
+message("\n******************************** project hpc ********************************")
 
 set(HPC_VERSION_MAJOR 1)
 set(HPC_VERSION_MINOR 0)
@@ -10,6 +10,9 @@ set(HPC_VERSION_PATCH 0)
 option(HPC_BUILD_TEST "Build unit tests" OFF)
 
 include(${PROJECT_SOURCE_DIR}/cmake/build_flags.cmake)
+
+set(Eigen3_DIR "${CG_LIBS_DIR}/eigen3/share/eigen3/cmake/")
+find_package(Eigen3 REQUIRED)
 
 set(OpenCV_DIR "$ENV{CG_THIRDPARTY}/${PLATFORM_ARCH}/opencv/lib/cmake/opencv4/")
 find_package(OpenCV 4.2 REQUIRED COMPONENTS core)

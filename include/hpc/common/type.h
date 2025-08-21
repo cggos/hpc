@@ -13,6 +13,7 @@
 
 #include <math.h>
 
+#include <Eigen/Core>
 #include <limits>
 
 namespace hpc {
@@ -32,5 +33,62 @@ constexpr float kDEG2RAD = M_PI / 180.f;
 // single- or double-precision floating-point format scalar
 using TScalarF = double;
 using TScalarI = int;
+
+template <class Scalar, int M>
+using TVec = Eigen::Matrix<Scalar, M, 1>;
+
+template <class Scalar, int M, int N>
+using TMat = Eigen::Matrix<Scalar, M, N>;
+
+template <int M>
+using TVecf = TVec<TScalarF, M>;
+
+template <int M>
+using TVeci = TVec<TScalarI, M>;
+
+template <int M, int N>
+using TMatf = TMat<TScalarF, M, N>;
+
+template <int M, int N>
+using TMati = TMat<TScalarI, M, N>;
+
+using TVec2f = TVecf<2>;
+using TVec3f = TVecf<3>;
+using TVec4f = TVecf<4>;
+using TVec5f = TVecf<5>;
+using TVec6f = TVecf<6>;
+using TVec7f = TVecf<7>;
+using TVec8f = TVecf<8>;
+
+using TVec2i = TVeci<2>;
+using TVec3i = TVeci<3>;
+using TVec4i = TVeci<4>;
+using TVec6i = TVeci<6>;
+using TVec7i = TVeci<7>;
+using TVec8i = TVeci<8>;
+
+using TMat2f = TMatf<2, 2>;
+using TMat3f = TMatf<3, 3>;
+using TMat4f = TMatf<4, 4>;
+using TMat6f = TMatf<6, 6>;
+
+using TMat2i = TMati<2, 2>;
+using TMat3i = TMati<3, 3>;
+using TMat4i = TMati<4, 4>;
+using TMat6i = TMati<6, 6>;
+
+using TVecXf = TVecf<Eigen::Dynamic>;
+using TMatXf = TMatf<Eigen::Dynamic, Eigen::Dynamic>;
+
+using TVecXi = TVeci<Eigen::Dynamic>;
+using TMatXi = TMati<Eigen::Dynamic, Eigen::Dynamic>;
+
+using TVec3FP64 = TVec<double, 3>;
+
+template <int M>
+using TMatDf = Eigen::DiagonalMatrix<TScalarF, M>;
+
+using TMatD3f = TMatDf<3>;
+using TMatD6f = TMatDf<6>;
 
 }  // namespace hpc
