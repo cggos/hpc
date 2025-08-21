@@ -11,7 +11,7 @@ option(HPC_BUILD_TEST "Build unit tests" OFF)
 
 include(${PROJECT_SOURCE_DIR}/cmake/build_flags.cmake)
 
-set(Eigen3_DIR "${CG_LIBS_DIR}/eigen3/share/eigen3/cmake/")
+set(Eigen3_DIR "$ENV{CG_THIRDPARTY}/${PLATFORM_ARCH}/eigen3/share/eigen3/cmake/")
 find_package(Eigen3 REQUIRED)
 
 set(OpenCV_DIR "$ENV{CG_THIRDPARTY}/${PLATFORM_ARCH}/opencv/lib/cmake/opencv4/")
