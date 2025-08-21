@@ -9,7 +9,7 @@
  *
  */
 
-#include "hpc/common/log/print.h"
+#include "hpc/common/logger/print.h"
 
 namespace hpc {
 
