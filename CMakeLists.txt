@@ -11,12 +11,12 @@ option(HPC_BUILD_TEST "Build unit tests" OFF)
 
 include(${PROJECT_SOURCE_DIR}/cmake/build_flags.cmake)
 
-set(Eigen3_DIR "$ENV{CG_THIRDPARTY}/${PLATFORM_ARCH}/eigen3/share/eigen3/cmake/")
+set(Eigen3_DIR "$ENV{CG_APP_RELEASE}/${PLATFORM_ARCH}/eigen3/share/eigen3/cmake/")
 find_package(Eigen3 REQUIRED)
 
-set(OpenCV_DIR "$ENV{CG_THIRDPARTY}/${PLATFORM_ARCH}/opencv/lib/cmake/opencv4/")
+set(OpenCV_DIR "$ENV{CG_APP_RELEASE}/${PLATFORM_ARCH}/opencv/lib/cmake/opencv4/")
 find_package(OpenCV 4.2 REQUIRED COMPONENTS core)
-set(OpenCV_INCLUDE_DIRS "$ENV{CG_THIRDPARTY}/${PLATFORM_ARCH}/opencv/include/opencv4/")
+set(OpenCV_INCLUDE_DIRS "$ENV{CG_APP_RELEASE}/${PLATFORM_ARCH}/opencv/include/opencv4/")
 
 include_directories(include)
 
