@@ -5,5 +5,8 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
-add_executable(memory_pool_demo memory_pool_demo.cpp ../../src/cpu/memory_pool.cpp)
-target_include_directories(memory_pool_demo PRIVATE ../../include)
+add_library(hpc_memory_pool_demo_lib ../../src/cpu/memory_pool.cpp)
+target_include_directories(hpc_memory_pool_demo_lib PUBLIC ../../include)
+
+add_executable(memory_pool_demo memory_pool_demo.cpp)
+target_link_libraries(memory_pool_demo PRIVATE hpc_memory_pool_demo_lib)

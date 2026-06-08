@@ -1,0 +1,20 @@
+cmake_minimum_required(VERSION 3.10)
+project(hpc_cpu_simd_demos LANGUAGES CXX)
+
+option(HPC_BUILD_CPU_SSE_DEMOS "Build x86 SSE demos" ON)
+option(HPC_BUILD_CPU_NEON_DEMOS "Build ARM NEON demos" ON)
+option(HPC_BUILD_CPU_SSE_MSVC_DEMO "Build legacy SSE MSVC demo" OFF)
+
+if(CMAKE_SYSTEM_PROCESSOR MATCHES "^(x86_64|AMD64|i[3-6]86)$")
+  if(HPC_BUILD_CPU_SSE_DEMOS)
+    add_subdirectory(sse_demo)
+  endif()
+elseif(CMAKE_SYSTEM_PROCESSOR MATCHES "^(arm|arm64|aarch64)")
+  if(HPC_BUILD_CPU_NEON_DEMOS)
+    add_subdirectory(neon_demo)
+  endif()
+endif()
+
+if(HPC_BUILD_CPU_SSE_MSVC_DEMO)
+  add_subdirectory(sse_msvc)
+endif()

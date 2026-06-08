@@ -7,6 +7,9 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 
 find_package(Threads REQUIRED)
 
-add_executable(thread_pool_demo thread_pool_demo.cpp ../../src/cpu/thread_pool.cpp)
-target_include_directories(thread_pool_demo PRIVATE ../../include)
-target_link_libraries(thread_pool_demo PRIVATE Threads::Threads)
+add_library(hpc_thread_pool_demo_lib ../../src/cpu/thread_pool.cpp)
+target_include_directories(hpc_thread_pool_demo_lib PUBLIC ../../include)
+target_link_libraries(hpc_thread_pool_demo_lib PUBLIC Threads::Threads)
+
+add_executable(thread_pool_demo thread_pool_demo.cpp)
+target_link_libraries(thread_pool_demo PRIVATE hpc_thread_pool_demo_lib)

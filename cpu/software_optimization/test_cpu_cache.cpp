@@ -2,6 +2,7 @@
 #include <ctime>
 #include <iostream>
 #include <random>
+#include <vector>
 
 #define KB(x) ((size_t)(x) << 10)
 

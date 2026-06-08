@@ -1,18 +1,19 @@
-cmake_minimum_required( VERSION 2.8 )
-project( test_opencv_cl )
-
-set( CMAKE_CXX_FLAGS "-std=c++11" )
+cmake_minimum_required(VERSION 3.10)
+project(hpc_opencl_opencv_demos LANGUAGES CXX)
 
 find_package(OpenCV REQUIRED COMPONENTS core imgproc highgui calib3d)
-if (OpenCV_FOUND)
-    include_directories(${OpenCV_INCLUDE_DIRS})
-    link_libraries(${OpenCV_LIBS})
-endif ()
 
-add_executable( camera camera.cc )
-target_link_libraries( camera ${OpenCV_LIBS} )
+add_executable(hpc_opencv_cl_camera camera.cc)
+target_compile_features(hpc_opencv_cl_camera PRIVATE cxx_std_17)
+target_link_libraries(hpc_opencv_cl_camera PRIVATE ${OpenCV_LIBS})
+set_target_properties(hpc_opencv_cl_camera PROPERTIES OUTPUT_NAME opencv_cl_camera)
 
-add_executable( stereobm stereobm.cc )
-target_link_libraries( stereobm ${OpenCV_LIBS} )
+add_executable(hpc_opencv_cl_stereobm stereobm.cc)
+target_compile_features(hpc_opencv_cl_stereobm PRIVATE cxx_std_17)
+target_link_libraries(hpc_opencv_cl_stereobm PRIVATE ${OpenCV_LIBS})
+set_target_properties(hpc_opencv_cl_stereobm PROPERTIES OUTPUT_NAME opencv_cl_stereobm)
 
-add_executable(test_ocl test_ocl.cpp)
+add_executable(hpc_opencv_cl_test test_ocl.cpp)
+target_compile_features(hpc_opencv_cl_test PRIVATE cxx_std_17)
+target_link_libraries(hpc_opencv_cl_test PRIVATE ${OpenCV_LIBS})
+set_target_properties(hpc_opencv_cl_test PROPERTIES OUTPUT_NAME opencv_cl_test)

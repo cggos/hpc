@@ -1,10 +1,19 @@
-cmake_minimum_required( VERSION 2.8 )
+cmake_minimum_required(VERSION 3.18)
+project(hpc_cuda_demo LANGUAGES CXX)
 
-project( test_cuda )
+if(NOT CMAKE_CUDA_ARCHITECTURES)
+  set(CMAKE_CUDA_ARCHITECTURES 52)
+endif()
 
-find_package( CUDA REQUIRED )
+if(NOT CMAKE_CUDA_COMPILER)
+  find_program(CMAKE_CUDA_COMPILER nvcc HINTS /usr/local/cuda/bin)
+endif()
 
-set(CUDA_NVCC_FLAGS ${CUDA_NVCC_FLAGS} -O3 -gencode arch=compute_52,code=sm_52 --std=c++11)
+enable_language(CUDA)
 
-cuda_add_executable(${PROJECT_NAME} test.cu)
-target_link_libraries(${PROJECT_NAME} ${CUDA_LIBRARIES})
+add_executable(hpc_cuda_test test.cu)
+target_compile_features(hpc_cuda_test PRIVATE cxx_std_17)
+set_target_properties(hpc_cuda_test PROPERTIES
+  CUDA_STANDARD 17
+  CUDA_STANDARD_REQUIRED ON
+  OUTPUT_NAME test_cuda)

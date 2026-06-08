@@ -10,7 +10,7 @@ namespace hpc {
 
 class FixedBlockPool {
  public:
-  FixedBlockPool(std::size_t block_size, std::size_t block_count);
+  FixedBlockPool(std::size_t block_size, std::size_t block_count, std::size_t alignment = alignof(std::max_align_t));
   ~FixedBlockPool();
 
   FixedBlockPool(const FixedBlockPool&) = delete;
@@ -28,6 +28,7 @@ class FixedBlockPool {
 
   std::size_t block_size_{};
   std::size_t block_count_{};
+  std::size_t alignment_{};
   void* storage_{};
   std::vector<std::byte*> free_list_;
   std::size_t used_blocks_{0};
@@ -36,7 +37,7 @@ class FixedBlockPool {
 template <typename T>
 class ObjectPool {
  public:
-  explicit ObjectPool(std::size_t capacity) : pool_(sizeof(T), capacity) {}
+  explicit ObjectPool(std::size_t capacity) : pool_(sizeof(T), capacity, alignof(T)) {}
 
   template <typename... Args>
   T* create(Args&&... args) {

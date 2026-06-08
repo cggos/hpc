@@ -133,7 +133,7 @@ void CPU::tfunc(const std::string& str_thread_name, std::function<void()> func, 
     auto t2 = std::chrono::system_clock::now();
     auto period02 = std::chrono::duration_cast<std::chrono::milliseconds>(t2 - t0).count();
 
-    printf("(%s)\t period01 %d ms, period02 %d ms", str_thread_name.c_str(), period01, period02);
+    printf("(%s)\t period01 %ld ms, period02 %ld ms\n", str_thread_name.c_str(), period01, period02);
   }
 }
 

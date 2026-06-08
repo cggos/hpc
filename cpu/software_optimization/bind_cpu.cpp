@@ -20,7 +20,6 @@ unsigned int systemCPUNum() {
 }
 
 void setCurrentThreadAffinityMask(int mask, pid_t pid) {
-  int err;
   int syscallres = syscall(__NR_sched_setaffinity, pid, sizeof(mask), &mask);
   if (syscallres) {
     // err = errno;
@@ -181,14 +180,10 @@ int main() {
         if (CPU_ISSET(i, &cpuset)) cpu_ids.push_back(i);
       }
 
-      printf("[cggos cpu %d] thread_backend %s, ret1 %d, ret2 %d, cpu_ids %d size: ",
-             id,
-             __FUNCTION__,
-             ret1,
-             ret2,
+      printf("[cggos cpu %u] thread_backend %s, ret1 %d, ret2 %d, cpu_ids %zu size: ", id, __FUNCTION__, ret1, ret2,
              cpu_ids.size());
-      for (int i = 0; i < cpu_ids.size(); i++) {
-        std::cout << cpu_ids[i] << " ";
+      for (auto cpu_id : cpu_ids) {
+        std::cout << cpu_id << " ";
       }
       std::cout << std::endl;
     }

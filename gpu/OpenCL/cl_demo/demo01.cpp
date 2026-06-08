@@ -63,7 +63,7 @@ int main() {
   /* Find extensions of all platforms */
   //获取额外的平台信息。上面已经取得了平台id了，那么就可以进一步获取更加详细的信息了。
   //一个for循环获取所有的主机上的platforms信息
-  for (cl_int i = 0; i < num_platforms; i++) {
+  for (cl_uint i = 0; i < num_platforms; i++) {
     /* Find size of extension data */
     //也是和前面一样，先设置第三和第四个参数为0和NULL，然后就可以用第五个参数ext_size获取额外信息的长度了。
     err = clGetPlatformInfo(platforms[i], CL_PLATFORM_EXTENSIONS, 0, NULL, &ext_size);
@@ -72,7 +72,7 @@ int main() {
       exit(1);
     }
 
-    printf("The size of extension data is: %d\n", ext_size);
+    printf("The size of extension data is: %zu\n", ext_size);
 
     /* Access extension data */
     //这里的ext_data相当于一个缓存，存储相关信息。
@@ -128,7 +128,7 @@ int main() {
     // Fill in devices with clGetDeviceIDs()
     clGetDeviceIDs(platforms[i], CL_DEVICE_TYPE_ALL, numDevices, devices, NULL);
 
-    for (cl_int j = 0; j < numDevices; j++) {
+    for (cl_uint j = 0; j < numDevices; j++) {
       // print the device name
       clGetDeviceInfo(devices[j], CL_DEVICE_NAME, 0, NULL, &valueSize);
       value = (char *)malloc(valueSize);

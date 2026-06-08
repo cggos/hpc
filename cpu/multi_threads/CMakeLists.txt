@@ -1,0 +1,15 @@
+cmake_minimum_required(VERSION 3.10)
+project(hpc_cpu_multi_thread_demos LANGUAGES CXX)
+
+find_package(Threads REQUIRED)
+
+add_executable(hpc_multi_thread_basic t01.cc)
+target_compile_features(hpc_multi_thread_basic PRIVATE cxx_std_17)
+target_link_libraries(hpc_multi_thread_basic PRIVATE Threads::Threads)
+set_target_properties(hpc_multi_thread_basic PROPERTIES OUTPUT_NAME multi_thread_basic)
+
+add_executable(hpc_thread_pool_legacy_example thread_pool/example.cpp)
+target_compile_features(hpc_thread_pool_legacy_example PRIVATE cxx_std_17)
+target_include_directories(hpc_thread_pool_legacy_example PRIVATE thread_pool)
+target_link_libraries(hpc_thread_pool_legacy_example PRIVATE Threads::Threads)
+set_target_properties(hpc_thread_pool_legacy_example PROPERTIES OUTPUT_NAME thread_pool_legacy_example)
