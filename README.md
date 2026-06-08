@@ -7,8 +7,8 @@ This repository collects C++ HPC utilities, CPU/GPU examples, benchmarks, and no
 
 ## Features
 
-- CPU utilities: architecture detection, affinity helpers, fixed-block memory pool, and thread pool.
-- CPU examples: async/promise, multi-threading, thread pool, memory pool, cache tests, affinity binding, SSE, and NEON.
+- CPU utilities: architecture detection, affinity helpers, fixed-block memory pool, POSIX shared memory, and thread pool.
+- CPU examples: async/promise, multi-threading, thread pool, memory pool, shared memory, cache tests, affinity binding, SSE, and NEON.
 - GPU examples: CUDA and OpenCL demos, kept behind explicit CMake options because they require SDK/runtime support.
 - Documentation: MkDocs-based guides under `docs/`.
 - Legacy references: Assembly and older tutorial code are retained for study, but are not all part of the default build.
@@ -58,6 +58,7 @@ Run the new memory pool and thread pool demos:
 
 ```bash
 ./build/examples/cpu/memory_pool_demo/memory_pool_demo
+./build/examples/cpu/shared_memory_demo/shared_memory_demo
 ./build/examples/cpu/thread_pool_demo/thread_pool_demo
 ```
 
@@ -72,6 +73,7 @@ CPU demo options, active when `HPC_BUILD_DEMOS=ON`:
 
 - `HPC_BUILD_CPU_ASYNC_DEMOS=ON`
 - `HPC_BUILD_CPU_MEMORY_POOL_DEMO=ON`
+- `HPC_BUILD_CPU_SHARED_MEMORY_DEMO=ON`
 - `HPC_BUILD_CPU_THREAD_POOL_DEMO=ON`
 - `HPC_BUILD_CPU_MULTI_THREAD_DEMOS=ON`
 - `HPC_BUILD_CPU_SOFTWARE_OPT_DEMOS=ON`

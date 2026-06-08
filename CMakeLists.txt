@@ -13,6 +13,7 @@ option(HPC_BUILD_DEMOS "Build standalone demo programs" OFF)
 include(${PROJECT_SOURCE_DIR}/cmake/build_flags.cmake)
 
 find_package(Threads REQUIRED)
+find_library(HPC_RT_LIBRARY rt)
 
 set(Eigen3_DIR "$ENV{CG_APP_RELEASE}/${PLATFORM_ARCH}/eigen3/share/eigen3/cmake/")
 find_package(Eigen3 REQUIRED)
@@ -33,6 +34,7 @@ target_link_libraries(${PROJECT_NAME}.common PUBLIC Threads::Threads)
 add_library(${PROJECT_NAME} SHARED
   src/cpu/cpu.cpp
   src/cpu/memory_pool.cpp
+  src/cpu/shared_memory.cpp
   src/cpu/thread_pool.cpp)
 set_target_properties(${PROJECT_NAME} PROPERTIES VERSION ${HPC_VERSION_MAJOR}.${HPC_VERSION_MINOR}.${HPC_VERSION_PATCH} SOVERSION ${HPC_VERSION_MAJOR})
 target_include_directories(${PROJECT_NAME} PUBLIC
@@ -41,6 +43,9 @@ target_include_directories(${PROJECT_NAME} PUBLIC
   $<INSTALL_INTERFACE:include>)
 target_compile_features(${PROJECT_NAME} PUBLIC cxx_std_17)
 target_link_libraries(${PROJECT_NAME} PUBLIC ${OpenCV_LIBS} Threads::Threads)
+if(HPC_RT_LIBRARY)
+  target_link_libraries(${PROJECT_NAME} PUBLIC ${HPC_RT_LIBRARY})
+endif()
 
 # ******************************** unit test ********************************
 if(HPC_BUILD_TEST)

@@ -102,6 +102,7 @@ nav:
     - Software Optimization:
       - Overview: cpu/software_optimization.md
       - Memory Pool: cpu/memory_pool.md
+      - Shared Memory: cpu/shared_memory.md
     - Multi-Threads:
       - Overview: cpu/multi_thread/README.md
       - Thread Pool Concepts: cpu/thread_pool.md
