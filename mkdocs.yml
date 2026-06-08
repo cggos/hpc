@@ -101,8 +101,10 @@ nav:
       - CPU Info: cpu/info.md
     - Software Optimization:
       - Overview: cpu/software_optimization.md
+      - Memory Pool: cpu/memory_pool.md
     - Multi-Threads:
       - Overview: cpu/multi_thread/README.md
+      - Thread Pool Concepts: cpu/thread_pool.md
       - Thread Pool: cpu/multi_thread/threadpool.md
       - OpenMP: cpu/multi_thread/omp.md
     - Instructions & Intrinsics: cpu/intrinsics.md

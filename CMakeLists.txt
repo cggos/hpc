@@ -25,9 +25,12 @@ add_library(${PROJECT_NAME}.common SHARED src/common/print.cpp)
 target_link_libraries(${PROJECT_NAME}.common pthread)
 
 # ******************************** hpc ********************************
-add_library(${PROJECT_NAME} SHARED src/cpu/cpu.cpp)
+add_library(${PROJECT_NAME} SHARED
+  src/cpu/cpu.cpp
+  src/cpu/memory_pool.cpp
+  src/cpu/thread_pool.cpp)
 set_target_properties(${PROJECT_NAME} PROPERTIES VERSION ${HPC_VERSION_MAJOR}.${HPC_VERSION_MINOR}.${HPC_VERSION_PATCH} SOVERSION ${HPC_VERSION_MAJOR})
-target_link_libraries(${PROJECT_NAME} ${OpenCV_LIBS})
+target_link_libraries(${PROJECT_NAME} ${OpenCV_LIBS} pthread)
 
 # ******************************** unit test ********************************
 if(HPC_BUILD_TEST)
@@ -49,4 +52,3 @@ install(TARGETS ${PROJECT_NAME}.common ${PROJECT_NAME}
   RUNTIME DESTINATION bin
   LIBRARY DESTINATION lib
   ARCHIVE DESTINATION lib)
-
